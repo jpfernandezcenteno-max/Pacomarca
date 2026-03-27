@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 
 function FadeUp({
   children,
@@ -120,6 +120,25 @@ export default function HomePage() {
   const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
   const textY = useTransform(scrollY, [0, 40], [0, -30])
   const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
+
+  useEffect(() => {
+    let jumping = false
+
+    const handleWheel = (e: WheelEvent) => {
+      const y = window.scrollY
+      const vh = window.innerHeight
+      // Si estamos en la zona del video (texto ya desapareció) y scrolleamos hacia abajo
+      if (y > 40 && y < vh * 1.9 && e.deltaY > 0 && !jumping) {
+        e.preventDefault()
+        jumping = true
+        window.scrollTo({ top: vh * 2, behavior: 'smooth' })
+        setTimeout(() => { jumping = false }, 1000)
+      }
+    }
+
+    window.addEventListener('wheel', handleWheel, { passive: false })
+    return () => window.removeEventListener('wheel', handleWheel)
+  }, [])
 
   return (
     <>
