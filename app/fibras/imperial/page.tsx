@@ -91,13 +91,19 @@ export default function ImperialPage() {
       <section className="bg-beige py-20">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <FadeUp>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
               <div>
                 <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Responsible Alpaca Standard</p>
                 <h2 className="font-serif text-3xl text-ink mb-6">¿Qué certifica el RAS?</h2>
                 <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
                   <p>El Responsible Alpaca Standard (RAS) es el estándar internacional desarrollado por Textile Exchange para garantizar que la fibra de alpaca proviene de animales bien tratados y de comunidades que se benefician equitativamente del comercio.</p>
                   <p>La certificación incluye auditorías independientes de bienestar animal, condiciones laborales de las comunidades, gestión de la tierra y trazabilidad de la cadena de suministro.</p>
+                </div>
+              </div>
+              {/* Sello RAS — reemplazar con <Image> cuando esté disponible */}
+              <div className="flex items-center justify-center">
+                <div className="w-48 h-48 bg-white border border-sand/60 flex items-center justify-center">
+                  <p className="text-xs text-ink/30 text-center px-4">Sello<br />RAS</p>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
