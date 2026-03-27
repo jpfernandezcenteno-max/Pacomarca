@@ -85,6 +85,25 @@ export default function IncaEsquilaPage() {
         </div>
       </section>
 
+      {/* Video */}
+      <section className="py-20 bg-beige">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <FadeUp>
+            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6 text-center">Video</p>
+            <div className="aspect-video bg-sand/40 flex items-center justify-center border border-sand/60">
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-white/70 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-ink/40 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+                <p className="text-sm text-ink/40">Video Inca Esquila — próximamente</p>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* Benefits */}
       <section className="bg-cream py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -126,9 +145,13 @@ export default function IncaEsquilaPage() {
           <div className="border border-gold/30 p-12">
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Reconocimiento oficial</p>
             <h2 className="font-serif text-3xl text-ink mb-6">NTP 231.370-2014</h2>
-            <p className="text-base text-ink/65 leading-relaxed">
+            <p className="text-base text-ink/65 leading-relaxed mb-10">
               La Norma Técnica Peruana NTP 231.370-2014 establece los requisitos para la esquila, recolección, acondicionamiento, clasificación y almacenamiento de la fibra de alpaca. Es el primer estándar peruano que formaliza el proceso de esquila con base en criterios científicos de bienestar animal y calidad de fibra, fruto del trabajo conjunto entre Pacomarca, el INDECOPI y el sector académico.
             </p>
+            {/* Sello NTP — reemplazar con <Image> cuando esté disponible */}
+            <div className="w-40 h-40 mx-auto bg-beige border border-sand/60 flex items-center justify-center">
+              <p className="text-xs text-ink/30 text-center px-4">Sello NTP<br />231.370-2014</p>
+            </div>
           </div>
         </FadeUp>
       </section>
