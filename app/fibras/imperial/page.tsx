@@ -115,8 +115,8 @@ export default function ImperialPage() {
                   'Sin maltrato',
                   'Auditoría independiente',
                 ].map((item) => (
-                  <div key={item} className="bg-white p-4 flex gap-3 items-center">
-                    <span className="text-gold">◆</span>
+                  <div key={item} className="bg-white p-6 flex gap-4 items-center">
+                    <span className="text-gold shrink-0">◆</span>
                     <span className="text-sm text-ink/65">{item}</span>
                   </div>
                 ))}
