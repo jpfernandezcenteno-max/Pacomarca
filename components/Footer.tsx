@@ -140,7 +140,7 @@ export default function Footer() {
                 Contacto
               </Link>
               <Link href="/actualidad" className="text-xs text-white/30 hover:text-white/60 transition-colors">
-                Actualidad
+                Blog
               </Link>
             </div>
           </div>
