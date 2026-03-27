@@ -140,17 +140,23 @@ export default function IncaEsquilaPage() {
       </section>
 
       {/* Standard */}
-      <section className="py-20 max-w-3xl mx-auto px-6 text-center">
+      <section className="py-20 max-w-5xl mx-auto px-6 lg:px-8">
         <FadeUp>
           <div className="border border-gold/30 p-12">
-            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Reconocimiento oficial</p>
-            <h2 className="font-serif text-3xl text-ink mb-6">NTP 231.370-2014</h2>
-            <p className="text-base text-ink/65 leading-relaxed mb-10">
-              La Norma Técnica Peruana NTP 231.370-2014 establece los requisitos para la esquila, recolección, acondicionamiento, clasificación y almacenamiento de la fibra de alpaca. Es el primer estándar peruano que formaliza el proceso de esquila con base en criterios científicos de bienestar animal y calidad de fibra, fruto del trabajo conjunto entre Pacomarca, el INDECOPI y el sector académico.
-            </p>
-            {/* Sello NTP — reemplazar con <Image> cuando esté disponible */}
-            <div className="w-40 h-40 mx-auto bg-beige border border-sand/60 flex items-center justify-center">
-              <p className="text-xs text-ink/30 text-center px-4">Sello NTP<br />231.370-2014</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Reconocimiento oficial</p>
+                <h2 className="font-serif text-3xl text-ink mb-6">NTP 231.370-2014</h2>
+                <p className="text-base text-ink/65 leading-relaxed">
+                  La Norma Técnica Peruana NTP 231.370-2014 establece los requisitos para la esquila, recolección, acondicionamiento, clasificación y almacenamiento de la fibra de alpaca. Es el primer estándar peruano que formaliza el proceso de esquila con base en criterios científicos de bienestar animal y calidad de fibra, fruto del trabajo conjunto entre Pacomarca, el INDECOPI y el sector académico.
+                </p>
+              </div>
+              {/* Sello NTP — reemplazar con <Image> cuando esté disponible */}
+              <div className="flex items-center justify-center">
+                <div className="w-48 h-48 bg-beige border border-sand/60 flex items-center justify-center">
+                  <p className="text-xs text-ink/30 text-center px-4">Sello NTP<br />231.370-2014</p>
+                </div>
+              </div>
             </div>
           </div>
         </FadeUp>
