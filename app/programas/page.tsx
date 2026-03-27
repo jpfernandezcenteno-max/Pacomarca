@@ -2,8 +2,9 @@
 
 import PageHeader from '@/components/PageHeader'
 import Link from 'next/link'
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import Image from 'next/image'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
 
 function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null)
@@ -24,6 +25,7 @@ const programs = [
     statNum: '8',
     desc: 'Viviendas dignas para familias alpaqueras en las alturas andinas, donde la temperatura puede descender a -20°C. Cada cabaña incluye servicios básicos y equipamiento para mejorar la calidad de vida.',
     icon: '🏠',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85',
   },
   {
     num: '02',
@@ -33,6 +35,7 @@ const programs = [
     statNum: '1',
     desc: 'Estructura para producir vegetales frescos en zonas donde la altitud y el frío lo hacen casi imposible. Combate la desnutrición infantil en las comunidades altoandinas.',
     icon: '🌱',
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=85',
   },
   {
     num: '03',
@@ -42,6 +45,7 @@ const programs = [
     statNum: '1,512',
     desc: 'Donación de reproductores machos genéticamente seleccionados para mejorar la calidad de la fibra de las comunidades. De 30% a 80% de fibra fina con el programa.',
     icon: '◈',
+    image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1600&q=85',
   },
   {
     num: '04',
@@ -51,6 +55,7 @@ const programs = [
     statNum: '9',
     desc: 'Infraestructura y equipamiento completo para realizar la esquila bajo el método Inca Esquila, garantizando bienestar animal, calidad de fibra y trazabilidad.',
     icon: '✂',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85',
   },
   {
     num: '05',
@@ -60,6 +65,7 @@ const programs = [
     statNum: '32',
     desc: 'Financiamiento de investigaciones científicas sobre alpacas y el ecosistema andino. Más de 32 artículos en revistas indexadas internacionales.',
     icon: '◎',
+    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1600&q=85',
   },
   {
     num: '06',
@@ -69,8 +75,96 @@ const programs = [
     statNum: '8,400+',
     desc: 'Kits de abrigo para los miembros más vulnerables de las comunidades: niños y adultos mayores. Mantas, suéteres, medias, bufandas, chullos y más.',
     icon: '♡',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=85',
   },
 ]
+
+function ProgramsBanner() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % programs.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const prog = programs[current]
+
+  return (
+    <section className="relative h-[520px] overflow-hidden bg-ink">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={prog.image}
+            alt={prog.title}
+            fill
+            className="object-cover grayscale opacity-50"
+            priority
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Overlay content */}
+      <div className="relative z-10 h-full flex flex-col justify-end max-w-7xl mx-auto px-6 lg:px-8 pb-14">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-xs tracking-[0.25em] uppercase text-white/50 mb-3">Programa {prog.num}</p>
+            <h3 className="font-serif text-4xl lg:text-5xl text-white mb-3">{prog.title}</h3>
+            <p className="text-sm text-white/60 max-w-xl mb-6">{prog.desc}</p>
+            <Link
+              href={prog.href}
+              className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-white border border-white/40 px-6 py-3 hover:bg-white hover:text-ink transition-colors"
+            >
+              Conocer más
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Dots */}
+        <div className="flex gap-2 mt-8">
+          {programs.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-1 transition-all duration-300 ${i === current ? 'w-8 bg-white' : 'w-4 bg-white/30 hover:bg-white/60'}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Arrows */}
+      <button
+        onClick={() => setCurrent((prev) => (prev - 1 + programs.length) % programs.length)}
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+      >
+        ‹
+      </button>
+      <button
+        onClick={() => setCurrent((prev) => (prev + 1) % programs.length)}
+        className="absolute right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+      >
+        ›
+      </button>
+    </section>
+  )
+}
 
 export default function ProgramasPage() {
   return (
@@ -99,6 +193,8 @@ export default function ProgramasPage() {
           </FadeUp>
         </div>
       </section>
+
+      <ProgramsBanner />
 
       {/* Programs grid */}
       <section className="pb-24 max-w-7xl mx-auto px-6 lg:px-8">
