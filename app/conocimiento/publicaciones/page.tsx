@@ -2,8 +2,8 @@
 
 import PageHeader from '@/components/PageHeader'
 import Image from 'next/image'
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useRef, useState } from 'react'
 
 function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null)
@@ -25,8 +25,8 @@ const featuredPublication = {
   image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=85',
 }
 
-// Listado de publicaciones — agregar/editar según listado real
-const publications = [
+// Revistas indexadas — agregar/editar según listado real
+const publicacionesIndexadas = [
   { title: 'Genetic parameters for fiber traits in Peruvian alpacas', authors: 'Autor et al.', journal: 'Small Ruminant Research', year: '2023', url: '#' },
   { title: 'Heritability of medullation in Huacaya alpaca fleece', authors: 'Autor et al.', journal: 'Livestock Science', year: '2022', url: '#' },
   { title: 'Welfare indicators during shearing in South American camelids', authors: 'Autor et al.', journal: 'Animal Welfare', year: '2022', url: '#' },
@@ -36,6 +36,61 @@ const publications = [
   { title: 'Genetic diversity in Peruvian alpaca populations', authors: 'Autor et al.', journal: 'Genetics Selection Evolution', year: '2020', url: '#' },
   { title: 'Impact of Inca Esquila on fiber quality and animal stress', authors: 'Autor et al.', journal: 'Small Ruminant Research', year: '2019', url: '#' },
 ]
+
+// Otras publicaciones — agregar/editar según listado real
+const otrasPub = [
+  { title: 'Manual técnico de manejo de alpacas Pacomarca', authors: 'Equipo Pacomarca', journal: 'Material técnico', year: '2022', url: '#' },
+  { title: 'Guía de clasificación de fibra de alpaca', authors: 'Equipo Pacomarca', journal: 'Material técnico', year: '2021', url: '#' },
+  { title: 'Memorias del Congreso Mundial de Camélidos', authors: 'Autor et al.', journal: 'Congreso internacional', year: '2020', url: '#' },
+]
+
+function PublicationAccordion({ title, publications }: { title: string; publications: typeof publicacionesIndexadas }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div className="border border-sand/50">
+      <button
+        className="w-full flex items-center justify-between px-8 py-6 text-left hover:bg-cream/50 transition-colors"
+        onClick={() => setOpen(!open)}
+      >
+        <span className="font-serif text-xl text-ink">{title}</span>
+        <span className="text-xs tracking-[0.15em] uppercase text-gold">{open ? '— Cerrar' : '+ Ver'}</span>
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <div className="px-8 pb-8 space-y-3">
+              {publications.map((pub, i) => (
+                <div key={i} className="bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 py-5 border-l-4 border-gold/40 hover:border-gold transition-colors">
+                  <div className="flex-1">
+                    <p className="font-serif text-base text-ink mb-1">{pub.title}</p>
+                    <p className="text-xs text-ink/45">{pub.authors} — <span className="italic">{pub.journal}</span>, {pub.year}</p>
+                  </div>
+                  <a
+                    href={pub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-gold border border-gold/50 px-5 py-3 hover:bg-ink hover:text-white hover:border-ink transition-colors shrink-0"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Descargar
+                  </a>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
 
 // Logos de revistas — reemplazar src con los logos reales
 const journals = [
@@ -167,36 +222,19 @@ export default function PublicacionesPage() {
 
       {/* Publications list */}
       <section className="bg-cream py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <FadeUp>
-            <div className="mb-12">
+            <div className="mb-12 text-center">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Bibliografía</p>
               <h2 className="font-serif text-3xl text-ink">Listado de publicaciones</h2>
             </div>
           </FadeUp>
-          <div className="space-y-3">
-            {publications.map((pub, i) => (
-              <FadeUp key={i} delay={i * 0.05}>
-                <div className="bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-8 py-6 border-l-4 border-gold/40 hover:border-gold transition-colors">
-                  <div className="flex-1">
-                    <p className="font-serif text-base text-ink mb-1">{pub.title}</p>
-                    <p className="text-xs text-ink/45">{pub.authors} — <span className="italic">{pub.journal}</span>, {pub.year}</p>
-                  </div>
-                  <a
-                    href={pub.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-gold border border-gold/50 px-5 py-3 hover:bg-ink hover:text-white hover:border-ink transition-colors shrink-0"
-                  >
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Descargar
-                  </a>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
+          <FadeUp delay={0.1}>
+            <div className="space-y-4">
+              <PublicationAccordion title="Revistas indexadas (ISI / Scopus)" publications={publicacionesIndexadas} />
+              <PublicationAccordion title="Otras publicaciones y materiales técnicos" publications={otrasPub} />
+            </div>
+          </FadeUp>
 
           <FadeUp delay={0.2}>
             <div className="mt-10 p-8 bg-beige text-center">
