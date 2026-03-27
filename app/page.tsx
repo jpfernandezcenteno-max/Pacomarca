@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
 function FadeUp({
@@ -115,69 +115,93 @@ const fibers = [
 ]
 
 export default function HomePage() {
+  const heroRef = useRef(null)
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
+  const textOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0])
+  const textY = useTransform(scrollYProgress, [0, 0.25], [0, -60])
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.4], [0.6, 0])
+
   return (
     <>
-      {/* HERO */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <Image
-          src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=2400&q=90&auto=format&fit=crop"
-          alt="Alpacas en los Andes peruanos"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/50 to-ink/70" />
-
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+      {/* HERO — 200vh para efecto inmersivo */}
+      <section ref={heroRef} className="relative h-[200vh]">
+        <div className="sticky top-0 h-screen overflow-hidden">
+          {/* Video — reemplazar src con el video real */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
           >
-            <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6 font-medium">
-              Grupo Inca — Perú
-            </p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8">
-              El principal Ecosistema de Alpaca Sostenible del mundo
-            </h1>
-            <p className="text-lg md:text-xl text-white/70 mb-10 font-light">
-              Impulsado por el Grupo Inca
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/ecosistema"
-                className="inline-block bg-gold text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-gold/90 transition-colors duration-200"
+            <source src="/hero-video.mp4" type="video/mp4" />
+            {/* Fallback imagen mientras no haya video */}
+            <img
+              src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=2400&q=90"
+              alt="Pacomarca"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </video>
+
+          {/* Overlay que desaparece al scrollear */}
+          <motion.div
+            style={{ opacity: overlayOpacity }}
+            className="absolute inset-0 bg-ink"
+          />
+
+          {/* Texto que desaparece al scrollear */}
+          <motion.div
+            style={{ opacity: textOpacity, y: textY }}
+            className="relative z-10 h-full flex items-center justify-center text-center px-6"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: 'easeOut' }}
+            >
+              <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6 font-medium">
+                Grupo Inca — Perú
+              </p>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
+                El principal Ecosistema de Alpaca Sostenible del mundo
+              </h1>
+              <p className="text-lg md:text-xl text-white/70 mb-10 font-light">
+                Impulsado por el Grupo Inca
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/ecosistema"
+                  className="inline-block bg-gold text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-gold/90 transition-colors duration-200"
+                >
+                  Conocer el ecosistema
+                </Link>
+                <Link
+                  href="/fibras"
+                  className="inline-block border border-white/50 text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-white/10 transition-colors duration-200"
+                >
+                  Ver fibras
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Scroll indicator */}
+            <motion.div
+              style={{ opacity: textOpacity }}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+            >
+              <motion.div
+                animate={{ y: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="flex flex-col items-center gap-2"
               >
-                Conocer el ecosistema
-              </Link>
-              <Link
-                href="/fibras"
-                className="inline-block border border-white/50 text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-white/10 transition-colors duration-200"
-              >
-                Ver fibras
-              </Link>
-            </div>
-          </motion.div>
+                <span className="text-xs tracking-[0.2em] text-white/50 uppercase">Scroll</span>
+                <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="flex flex-col items-center gap-2"
-          >
-            <span className="text-xs tracking-[0.2em] text-white/50 uppercase">Scroll</span>
-            <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-            </svg>
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* ABOUT STRIP */}
