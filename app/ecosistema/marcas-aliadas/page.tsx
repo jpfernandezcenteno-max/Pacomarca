@@ -16,12 +16,12 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const grupoIncaMarcas = [
-  { name: 'Grupo Inca', desc: 'El conglomerado empresarial líder en la industria textil de fibras naturales en el Perú.' },
-  { name: 'Inca Tops', desc: 'Procesadora y exportadora líder de fibras especiales. Top Maker referente a nivel mundial.' },
-  { name: 'Amano', desc: 'Marca de lujo peruana especializada en prendas de alpaca y fibras exclusivas.' },
-  { name: 'Incalpaca', desc: 'Empresa textil integrada con presencia internacional, especialista en fibras de alpaca de alta calidad.' },
-  { name: 'Kuna', desc: 'Marca de lujo con tiendas en los principales destinos turísticos del mundo, embajadora de la alpaca peruana.' },
-  { name: 'Alpaca 111', desc: 'Marca especializada en prendas de alpaca para el mercado de lujo internacional.' },
+  { name: 'Grupo Inca', desc: 'El conglomerado empresarial líder en la industria textil de fibras naturales en el Perú.', url: 'https://grupoinca.com/es/' },
+  { name: 'Inca Tops', desc: 'Procesadora y exportadora líder de fibras especiales. Top Maker referente a nivel mundial.', url: 'https://www.incatops.com/stockservice/' },
+  { name: 'Incalpaca', desc: 'Empresa textil integrada con presencia internacional, especialista en fibras de alpaca de alta calidad.', url: 'https://www.incalpaca.com/es' },
+  { name: 'Kuna', desc: 'Marca de lujo con tiendas en los principales destinos turísticos del mundo, embajadora de la alpaca peruana.', url: 'https://pe.kunastores.com/' },
+  { name: 'Alpaca 111', desc: 'Marca especializada en prendas de alpaca para el mercado de lujo internacional.', url: 'https://alpaca111.com/' },
+  { name: 'Amano', desc: 'Marca de lujo peruana especializada en prendas de alpaca y fibras exclusivas.', url: 'https://amanoyarns.com/pe/' },
 ]
 
 const aliadosEstrategicos = [
@@ -33,16 +33,21 @@ const aliadosEstrategicos = [
   { name: 'Hessnatur', desc: 'Referente europeo en moda sostenible y textiles naturales con certificaciones de sostenibilidad.' },
 ]
 
-function BrandCard({ name, desc }: { name: string; desc: string }) {
-  return (
-    <div className="border border-sand/40 p-8 hover:border-gold/40 hover:shadow-md transition-all duration-300 bg-white group">
+function BrandCard({ name, desc, url }: { name: string; desc: string; url?: string }) {
+  const inner = (
+    <div className="border border-sand/40 p-8 hover:border-gold/40 hover:shadow-md transition-all duration-300 bg-white group h-full">
       <div className="w-16 h-16 bg-beige flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
         <span className="font-serif text-lg text-gold font-semibold">{name.charAt(0)}</span>
       </div>
       <h3 className="font-serif text-lg text-ink mb-3 group-hover:text-gold transition-colors">{name}</h3>
       <p className="text-sm text-ink/55 leading-relaxed">{desc}</p>
+      {url && <p className="text-xs text-gold/70 mt-4 tracking-wide">Visitar sitio →</p>}
     </div>
   )
+  if (url) {
+    return <a href={url} target="_blank" rel="noopener noreferrer" className="block h-full">{inner}</a>
+  }
+  return inner
 }
 
 export default function MarcasAliadasPage() {
@@ -112,7 +117,7 @@ export default function MarcasAliadasPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {grupoIncaMarcas.map((marca, i) => (
               <FadeUp key={marca.name} delay={i * 0.08}>
-                <BrandCard name={marca.name} desc={marca.desc} />
+                <BrandCard name={marca.name} desc={marca.desc} url={marca.url} />
               </FadeUp>
             ))}
           </div>
