@@ -87,13 +87,13 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <span
-                className={`font-serif text-xl tracking-[0.25em] font-semibold transition-colors duration-300 ${
-                  scrolled || mobileOpen ? 'text-ink' : 'text-white'
+              <img
+                src="/logo.svg"
+                alt="Pacomarca"
+                className={`h-8 w-auto transition-all duration-300 ${
+                  scrolled || mobileOpen ? 'brightness-0' : 'brightness-0 invert'
                 }`}
-              >
-                PACOMARCA
-              </span>
+              />
             </Link>
 
             {/* Desktop Nav */}
