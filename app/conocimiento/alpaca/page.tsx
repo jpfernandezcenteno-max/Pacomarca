@@ -91,58 +91,78 @@ export default function AlpacaPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <FadeUp delay={0.1}>
-            <div className="bg-cream p-10 border-t-4 border-gold">
-              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Raza Suri</p>
-              <h3 className="font-serif text-3xl text-ink mb-6">Suri</h3>
-              <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-ink font-medium">Fibra lacía:</strong> Las mechas caen en forma de rizos o dreadlocks que pueden alcanzar gran longitud, llegando hasta el suelo en animales adultos.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-ink font-medium">Tipo dividido:</strong> El vellón se divide naturalmente por la línea dorsal, exponiendo la piel.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-ink font-medium">Mayor longitud:</strong> Produce mechas de mayor longitud que la Huacaya, lo que la hace especialmente valorada.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-ink font-medium">Más elástica:</strong> Mayor brillo y lustre que la Huacaya. Textura sedosa comparable a la seda natural.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-ink font-medium">Escasa:</strong> Representa solo el 5-10% de la población total de alpacas, lo que la hace especialmente valiosa.</p>
+            <div className="bg-cream border-t-4 border-gold overflow-hidden">
+              <div className="relative h-56 w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85"
+                  alt="Alpaca Suri"
+                  fill
+                  className="object-cover grayscale"
+                />
+              </div>
+              <div className="p-10">
+                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Raza Suri</p>
+                <h3 className="font-serif text-3xl text-ink mb-6">Suri</h3>
+                <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Fibra lacía:</strong> Las mechas caen en forma de rizos o dreadlocks que pueden alcanzar gran longitud, llegando hasta el suelo en animales adultos.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Tipo dividido:</strong> El vellón se divide naturalmente por la línea dorsal, exponiendo la piel.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Mayor longitud:</strong> Produce mechas de mayor longitud que la Huacaya, lo que la hace especialmente valorada.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Más elástica:</strong> Mayor brillo y lustre que la Huacaya. Textura sedosa comparable a la seda natural.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Escasa:</strong> Representa solo el 5-10% de la población total de alpacas, lo que la hace especialmente valiosa.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <div className="bg-ink text-white p-10 border-t-4 border-gold">
-              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Raza Huacaya</p>
-              <h3 className="font-serif text-3xl text-white mb-6">Huacaya</h3>
-              <div className="space-y-4 text-sm text-white/65 leading-relaxed">
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-white/90 font-medium">Mechas en rulos:</strong> El vellón forma rizos esponjosos que crecen perpendiculares al cuerpo, dando una apariencia redondeada y esponjosa.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-white/90 font-medium">Tipo entero esponjoso:</strong> El vellón cubre uniformemente todo el cuerpo del animal.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-white/90 font-medium">Mayor densidad:</strong> Produce más fibra por animal que la Suri, con mayor densidad de mechas.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-white/90 font-medium">Versatilidad:</strong> Su finura la hace ideal para prendas de uso diario de alto lujo. Es la base de fibras como Divine, Sixteen e Imperial.</p>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-gold mt-1">◆</span>
-                  <p><strong className="text-white/90 font-medium">Predominante:</strong> Representa el 90-95% de la población alpaquera en el Perú.</p>
+            <div className="bg-cream border-t-4 border-gold overflow-hidden">
+              <div className="relative h-56 w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85"
+                  alt="Alpaca Huacaya"
+                  fill
+                  className="object-cover grayscale"
+                />
+              </div>
+              <div className="p-10">
+                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Raza Huacaya</p>
+                <h3 className="font-serif text-3xl text-ink mb-6">Huacaya</h3>
+                <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Mechas en rulos:</strong> El vellón forma rizos esponjosos que crecen perpendiculares al cuerpo, dando una apariencia redondeada y esponjosa.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Tipo entero esponjoso:</strong> El vellón cubre uniformemente todo el cuerpo del animal.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Mayor densidad:</strong> Produce más fibra por animal que la Suri, con mayor densidad de mechas.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Versatilidad:</strong> Su finura la hace ideal para prendas de uso diario de alto lujo. Es la base de fibras como Divine, Sixteen e Imperial.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <span className="text-gold mt-1">◆</span>
+                    <p><strong className="text-ink font-medium">Predominante:</strong> Representa el 90-95% de la población alpaquera en el Perú.</p>
+                  </div>
                 </div>
               </div>
             </div>
