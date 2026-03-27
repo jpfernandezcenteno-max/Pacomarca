@@ -2,6 +2,7 @@
 
 import PageHeader from '@/components/PageHeader'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -102,20 +103,33 @@ export default function TrazabilidadPage() {
       </section>
 
       {/* PacoPro */}
-      <section className="py-24 max-w-5xl mx-auto px-6 lg:px-8 text-center">
-        <FadeUp>
-          <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Tecnología</p>
-          <h2 className="font-serif text-3xl text-ink mb-6">PacoPro: el sistema de registro</h2>
-          <p className="text-base text-ink/65 max-w-2xl mx-auto leading-relaxed mb-10">
-            PacoPro es el software de gestión genética y productiva desarrollado específicamente para el ecosistema Pacomarca. Permite registrar, analizar y rastrear más de 17,000 individuos con sus datos genealógicos, productivos y de calidad de fibra. Es la base tecnológica de la trazabilidad del ecosistema.
-          </p>
-          <Link
-            href="/contacto"
-            className="inline-block border border-ink/30 text-ink text-xs tracking-[0.2em] uppercase px-8 py-4 hover:border-gold hover:text-gold transition-colors"
-          >
-            Conocer más sobre el sistema
-          </Link>
-        </FadeUp>
+      <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <FadeUp>
+            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Tecnología</p>
+            <h2 className="font-serif text-3xl text-ink mb-6">PacoPro: el sistema de registro</h2>
+            <p className="text-base text-ink/65 leading-relaxed mb-10">
+              PacoPro es el software de gestión genética y productiva desarrollado específicamente para el ecosistema Pacomarca. Permite registrar, analizar y rastrear más de 17,000 individuos con sus datos genealógicos, productivos y de calidad de fibra. Es la base tecnológica de la trazabilidad del ecosistema.
+            </p>
+            <Link
+              href="/contacto"
+              className="inline-block border border-ink/30 text-ink text-xs tracking-[0.2em] uppercase px-8 py-4 hover:border-gold hover:text-gold transition-colors"
+            >
+              Conocer más sobre el sistema
+            </Link>
+          </FadeUp>
+
+          <FadeUp delay={0.2}>
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85"
+                alt="PacoPro sistema de registro"
+                fill
+                className="object-cover grayscale"
+              />
+            </div>
+          </FadeUp>
+        </div>
       </section>
     </>
   )
