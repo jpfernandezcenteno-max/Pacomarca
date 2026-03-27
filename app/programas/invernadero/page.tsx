@@ -2,6 +2,7 @@
 
 import PageHeader from '@/components/PageHeader'
 import Link from 'next/link'
+import ImageCarousel from '@/components/ImageCarousel'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -136,6 +137,14 @@ export default function InvernaderoPage() {
           </FadeUp>
         </div>
       </section>
+
+      <ImageCarousel images={[
+        'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=85',
+        'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85',
+        'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85',
+        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85',
+        'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=85',
+      ]} />
     </>
   )
 }

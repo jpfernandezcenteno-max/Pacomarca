@@ -2,6 +2,7 @@
 
 import PageHeader from '@/components/PageHeader'
 import Link from 'next/link'
+import ImageCarousel from '@/components/ImageCarousel'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -147,6 +148,14 @@ export default function FondoInvestigacionPage() {
           </FadeUp>
         </div>
       </section>
+
+      <ImageCarousel images={[
+        'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=85',
+        'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85',
+        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85',
+        'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85',
+        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85',
+      ]} />
     </>
   )
 }
