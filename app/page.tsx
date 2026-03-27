@@ -200,7 +200,7 @@ export default function HomePage() {
                 </svg>
               </motion.div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
