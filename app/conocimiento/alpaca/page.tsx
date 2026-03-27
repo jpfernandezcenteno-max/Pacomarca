@@ -89,10 +89,10 @@ export default function AlpacaPage() {
           </div>
         </FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <FadeUp delay={0.1}>
-            <div className="bg-cream border-t-4 border-gold overflow-hidden">
-              <div className="relative h-56 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <FadeUp delay={0.1} className="h-full">
+            <div className="bg-cream border-t-4 border-gold overflow-hidden h-full flex flex-col">
+              <div className="relative h-56 w-full shrink-0">
                 <Image
                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85"
                   alt="Alpaca Suri"
@@ -129,9 +129,9 @@ export default function AlpacaPage() {
             </div>
           </FadeUp>
 
-          <FadeUp delay={0.2}>
-            <div className="bg-cream border-t-4 border-gold overflow-hidden">
-              <div className="relative h-56 w-full">
+          <FadeUp delay={0.2} className="h-full">
+            <div className="bg-cream border-t-4 border-gold overflow-hidden h-full flex flex-col">
+              <div className="relative h-56 w-full shrink-0">
                 <Image
                   src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85"
                   alt="Alpaca Huacaya"

@@ -2,6 +2,7 @@
 
 import PageHeader from '@/components/PageHeader'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 
@@ -30,6 +31,7 @@ const tabs = [
     impacto: 'La fibra negra recuperó su valor de mercado gracias a la certificación Pacomarca. Marcas como Kuna, Amano y The Inoue Brothers la usan en colecciones exclusivas, generando nuevos ingresos para las comunidades alpaqueras que cuidan estas alpacas.',
     color: 'bg-ink text-white',
     accent: 'border-gold',
+    image: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?w=1200&q=85',
   },
   {
     id: 'extrafinas',
@@ -45,6 +47,7 @@ const tabs = [
     impacto: 'Beneficia directamente a entre 80,000 y 150,000 familias alpaqueras en el Perú, que reciben mejores precios por su fibra gracias a la clasificación y certificación. El Perú se posicionó como líder mundial en fibras de alpaca extrafinas.',
     color: 'bg-cream',
     accent: 'border-gold',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85',
   },
   {
     id: 'confort',
@@ -60,6 +63,7 @@ const tabs = [
     impacto: 'Dio origen al Divine Alpaca, la fibra de alpaca con el menor porcentaje de medulación del mercado. Esta innovación permitió crear prendas con la suavidad del cachemir pero con las propiedades únicas de la alpaca peruana.',
     color: 'bg-beige',
     accent: 'border-gold',
+    image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=85',
   },
 ]
 
@@ -133,7 +137,7 @@ export default function ProgramaGeneticoPage() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex-1 px-6 py-4 text-xs tracking-[0.15em] uppercase transition-all duration-200 ${
                   activeTab === tab.id
-                    ? 'bg-ink text-gold'
+                    ? 'bg-ink text-white'
                     : 'bg-white text-ink/50 hover:bg-cream hover:text-ink'
                 }`}
               >
@@ -148,8 +152,17 @@ export default function ProgramaGeneticoPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className={`${activeData.color} p-10 lg:p-16 border-t-4 ${activeData.accent}`}
+            className={`${activeData.color} border-t-4 ${activeData.accent}`}
           >
+            <div className="relative h-64 w-full overflow-hidden">
+              <Image
+                src={activeData.image}
+                alt={activeData.title}
+                fill
+                className="object-cover grayscale"
+              />
+            </div>
+            <div className="p-10 lg:p-16">
             <h3 className="font-serif text-3xl mb-10">{activeData.title}</h3>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
               <div>
@@ -171,6 +184,7 @@ export default function ProgramaGeneticoPage() {
                 <p className="text-xs tracking-[0.2em] uppercase mb-4 opacity-60">Impacto</p>
                 <p className="text-sm leading-relaxed opacity-80">{activeData.impacto}</p>
               </div>
+            </div>
             </div>
           </motion.div>
         </FadeUp>
