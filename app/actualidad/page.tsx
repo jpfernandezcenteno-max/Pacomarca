@@ -1,6 +1,7 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import Image from 'next/image'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 
@@ -19,6 +20,7 @@ const posts = [
     id: 1,
     date: 'Marzo 2024',
     category: 'Noticias',
+    image: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?w=800&q=85',
     title: 'Pacomarca presenta nuevos resultados del programa genético Black Alpaca',
     desc: 'La estación científica anuncia el registro de las alpacas número 3,000 en el programa de conservación del color negro puro, un hito histórico para la preservación genética de la especie.',
     content: `La estación científica anuncia el registro de las alpacas número 3,000 en el programa de conservación del color negro puro, un hito histórico para la preservación genética de la especie.
@@ -33,6 +35,7 @@ El programa continúa con nuevos objetivos de selección orientados a incrementa
     id: 2,
     date: 'Febrero 2024',
     category: 'Ciencia',
+    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=85',
     title: 'Publicación en Journal of Animal Breeding and Genetics sobre finura de alpaca Huacaya',
     desc: 'Un nuevo artículo co-autorado por investigadores de Pacomarca, UNAP y la Universidad Complutense de Madrid presenta avances en la estimación de parámetros genéticos para la finura de fibra.',
     content: `Un nuevo artículo co-autorado por investigadores de Pacomarca, UNAP y la Universidad Complutense de Madrid presenta avances en la estimación de parámetros genéticos para la finura de fibra.
@@ -47,6 +50,7 @@ Esta es la publicación número 33 del programa científico de Pacomarca en revi
     id: 3,
     date: 'Enero 2024',
     category: 'Programas',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85',
     title: 'Entrega de la octava Cabaña del Pastor en la comunidad de Llalli',
     desc: 'Pacomarca completó la construcción y entrega de su octava cabaña del pastor, beneficiando a una familia alpaquera de la comunidad de Llalli en la región de Puno.',
     content: `Pacomarca completó la construcción y entrega de su octava cabaña del pastor, beneficiando a una familia alpaquera de la comunidad de Llalli en la región de Puno.
@@ -61,6 +65,7 @@ El programa Cabaña del Pastor es parte del compromiso de Pacomarca con el biene
     id: 4,
     date: 'Diciembre 2023',
     category: 'Fibras',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85',
     title: 'Sixteen Alpaca premiada en la feria Première Vision de París',
     desc: 'La fibra más fina de alpaca del mundo recibió reconocimiento internacional en la principal feria textil de lujo como fibra innovadora y sostenible del año.',
     content: `La fibra más fina de alpaca del mundo recibió reconocimiento internacional en la principal feria textil de lujo como fibra innovadora y sostenible del año.
@@ -75,6 +80,7 @@ El reconocimiento refuerza la posición de Pacomarca como líder mundial en inno
     id: 5,
     date: 'Noviembre 2023',
     category: 'Programas',
+    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=85',
     title: 'Abrigando Corazones supera los 8,000 kits distribuidos',
     desc: 'El programa de donación de abrigos de alpaca alcanzó un nuevo récord histórico, protegiendo del frío a más de 8,400 niños y adultos mayores en cinco departamentos del Perú.',
     content: `El programa de donación de abrigos de alpaca alcanzó un nuevo récord histórico, protegiendo del frío a más de 8,400 niños y adultos mayores en cinco departamentos del Perú.
@@ -89,6 +95,7 @@ El programa es financiado por las marcas aliadas del ecosistema Pacomarca como p
     id: 6,
     date: 'Octubre 2023',
     category: 'Alianzas',
+    image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85',
     title: 'The Inoue Brothers visita Pacomarca y lanza colección Black Alpaca',
     desc: 'Los diseñadores daneses visitaron la estación científica y las comunidades alpaqueras de Puno, resultando en el lanzamiento de una colección exclusiva de Black Alpaca para el mercado europeo.',
     content: `Los diseñadores daneses visitaron la estación científica y las comunidades alpaqueras de Puno, resultando en el lanzamiento de una colección exclusiva de Black Alpaca para el mercado europeo.
@@ -171,23 +178,31 @@ export default function ActualidadPage() {
               </FadeUp>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
               {posts.map((post, i) => (
-                <FadeUp key={post.id} delay={i * 0.08}>
+                <FadeUp key={post.id} delay={i * 0.08} className="h-full">
                   <button
                     onClick={() => setSelected(post)}
-                    className="group bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300 text-left w-full h-full"
+                    className="group bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300 text-left w-full h-full flex flex-col overflow-hidden"
                   >
-                    <div className="bg-cream px-6 py-4 flex items-center justify-between">
+                    <div className="relative h-44 w-full shrink-0">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="px-6 py-3 flex items-center justify-between bg-cream shrink-0">
                       <span className="text-xs tracking-[0.15em] uppercase text-gold">{post.category}</span>
                       <span className="text-xs text-ink/35">{post.date}</span>
                     </div>
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-1">
                       <h3 className="font-serif text-lg text-ink mb-3 group-hover:text-gold transition-colors leading-snug">
                         {post.title}
                       </h3>
-                      <p className="text-sm text-ink/55 leading-relaxed mb-6">{post.desc}</p>
-                      <span className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-gold group-hover:gap-3 transition-all">
+                      <p className="text-sm text-ink/55 leading-relaxed mb-6 flex-1">{post.desc}</p>
+                      <span className="flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-gold group-hover:gap-3 transition-all mt-auto">
                         Leer más
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
