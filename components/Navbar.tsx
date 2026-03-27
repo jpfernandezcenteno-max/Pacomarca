@@ -50,14 +50,7 @@ const navItems = [
       { label: 'Colores Puros', href: '/fibras/colores-puros' },
     ],
   },
-  {
-    label: 'Actualidad',
-    href: '/actualidad',
-    children: [
-      { label: 'Noticias', href: '/actualidad' },
-      { label: 'Blog', href: '/actualidad' },
-    ],
-  },
+  { label: 'Blog', href: '/actualidad' },
   { label: 'Contacto', href: '/contacto' },
 ]
 
