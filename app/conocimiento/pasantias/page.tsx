@@ -2,6 +2,7 @@
 
 import PageHeader from '@/components/PageHeader'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -93,40 +94,60 @@ export default function PasantiasPage() {
             </div>
           </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <FadeUp delay={0.1}>
-              <div className="bg-white p-10 border-t-4 border-gold">
-                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Modalidad 1</p>
-                <h3 className="font-serif text-2xl text-ink mb-4">Visita de 1 día</h3>
-                <p className="text-sm text-ink/60 leading-relaxed mb-6">
-                  Recorrido completo por la estación científica con guía especializado. Ideal para grupos académicos, clientes de marcas aliadas y medios de comunicación interesados en conocer el ecosistema Pacomarca en profundidad.
-                </p>
-                <ul className="space-y-2">
-                  {['Recorrido por el rebaño y las instalaciones', 'Demostración de Inca Esquila', 'Presentación del programa genético', 'Visita a los módulos comunitarios'].map((item) => (
-                    <li key={item} className="flex gap-3 text-sm text-ink/60">
-                      <span className="text-gold">◆</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+            <FadeUp delay={0.1} className="h-full">
+              <div className="bg-white border-t-4 border-gold overflow-hidden h-full flex flex-col">
+                <div className="relative h-56 w-full shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85"
+                    alt="Visita de 1 día"
+                    fill
+                    className="object-cover grayscale"
+                  />
+                </div>
+                <div className="p-10 flex flex-col flex-1">
+                  <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Modalidad 1</p>
+                  <h3 className="font-serif text-2xl text-ink mb-4">Visita de 1 día</h3>
+                  <p className="text-sm text-ink/60 leading-relaxed mb-6">
+                    Recorrido completo por la estación científica con guía especializado. Ideal para grupos académicos, clientes de marcas aliadas y medios de comunicación interesados en conocer el ecosistema Pacomarca en profundidad.
+                  </p>
+                  <ul className="space-y-2 mt-auto">
+                    {['Recorrido por el rebaño y las instalaciones', 'Demostración de Inca Esquila', 'Presentación del programa genético', 'Visita a los módulos comunitarios'].map((item) => (
+                      <li key={item} className="flex gap-3 text-sm text-ink/60">
+                        <span className="text-gold">◆</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </FadeUp>
 
-            <FadeUp delay={0.2}>
-              <div className="bg-ink text-white p-10 border-t-4 border-gold">
-                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Modalidad 2</p>
-                <h3 className="font-serif text-2xl text-white mb-4">Pasantía de 3 días</h3>
-                <p className="text-sm text-white/60 leading-relaxed mb-6">
-                  Programa intensivo para investigadores, estudiantes de posgrado y profesionales del sector. Incluye trabajo práctico con los animales, análisis de datos y acceso a los laboratorios y sistemas de información.
-                </p>
-                <ul className="space-y-2">
-                  {['Trabajo práctico con el rebaño', 'Acceso a la base de datos PacoPro', 'Taller de clasificación de fibras', 'Sesiones con investigadores del programa', 'Visita a comunidades alpaqueras aliadas'].map((item) => (
-                    <li key={item} className="flex gap-3 text-sm text-white/60">
-                      <span className="text-gold">◆</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            <FadeUp delay={0.2} className="h-full">
+              <div className="bg-white border-t-4 border-gold overflow-hidden h-full flex flex-col">
+                <div className="relative h-56 w-full shrink-0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85"
+                    alt="Pasantía de 3 días"
+                    fill
+                    className="object-cover grayscale"
+                  />
+                </div>
+                <div className="p-10 flex flex-col flex-1">
+                  <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Modalidad 2</p>
+                  <h3 className="font-serif text-2xl text-ink mb-4">Pasantía de 3 días</h3>
+                  <p className="text-sm text-ink/60 leading-relaxed mb-6">
+                    Programa intensivo para investigadores, estudiantes de posgrado y profesionales del sector. Incluye trabajo práctico con los animales, análisis de datos y acceso a los laboratorios y sistemas de información.
+                  </p>
+                  <ul className="space-y-2 mt-auto">
+                    {['Trabajo práctico con el rebaño', 'Acceso a la base de datos PacoPro', 'Taller de clasificación de fibras', 'Sesiones con investigadores del programa', 'Visita a comunidades alpaqueras aliadas'].map((item) => (
+                      <li key={item} className="flex gap-3 text-sm text-ink/60">
+                        <span className="text-gold">◆</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </FadeUp>
           </div>
