@@ -116,10 +116,10 @@ const fibers = [
 
 export default function HomePage() {
   const heroRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] })
-  const textOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0])
-  const textY = useTransform(scrollYProgress, [0, 0.25], [0, -60])
-  const overlayOpacity = useTransform(scrollYProgress, [0, 0.4], [0.6, 0])
+  const { scrollY } = useScroll()
+  const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
+  const textY = useTransform(scrollY, [0, 40], [0, -30])
+  const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
 
   return (
     <>

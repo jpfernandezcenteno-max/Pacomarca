@@ -67,8 +67,8 @@ export default function Navbar() {
       const y = window.scrollY
       const vh = window.innerHeight
       setScrolled(y > 20)
-      // Ocultar navbar mientras el video está en zona inmersiva (entre 80px y 90% del segundo vh)
-      setHidden(y > 80 && y < vh * 1.1)
+      // Ocultar navbar mientras el video está en zona inmersiva
+      setHidden(y > 5 && y < vh * 1.1)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
