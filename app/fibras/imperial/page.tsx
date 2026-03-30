@@ -106,7 +106,7 @@ export default function ImperialPage() {
                   <p className="text-xs text-ink/30 text-center px-4">Sello<br />RAS</p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-3">
                 {[
                   'Bienestar animal verificado',
                   'Trazabilidad completa',
@@ -115,7 +115,7 @@ export default function ImperialPage() {
                   'Sin maltrato',
                   'Auditoría independiente',
                 ].map((item) => (
-                  <div key={item} className="bg-white p-6 flex gap-4 items-center">
+                  <div key={item} className="bg-white px-6 py-4 flex gap-4 items-center">
                     <span className="text-gold shrink-0">◆</span>
                     <span className="text-sm text-ink/65">{item}</span>
                   </div>
