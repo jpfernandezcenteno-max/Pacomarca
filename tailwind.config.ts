@@ -16,9 +16,10 @@ const config: Config = {
         gold:  '#4A4A4A',   // dark accent gray (was warm gold)
       },
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['"Andale Mono"', 'Courier New', 'monospace'],
+        sans: ['"Andale Mono"', 'Courier New', 'monospace'],
         cormorant: ['var(--font-cormorant)', 'Georgia', 'serif'],
+        mono: ['"Andale Mono"', 'Courier New', 'monospace'],
       },
       letterSpacing: {
         widest: '0.25em',

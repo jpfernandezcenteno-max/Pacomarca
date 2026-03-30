@@ -2,12 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Andale Mono';
+  src: url('/fonts/ANDALEMO.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   @apply bg-white text-ink font-sans antialiased;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
 }
 
 @layer utilities {
