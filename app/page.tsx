@@ -3,7 +3,32 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
+
+function useTypewriter(text: string, speed = 40, startDelay = 600) {
+  const [displayed, setDisplayed] = useState('')
+  const [done, setDone] = useState(false)
+
+  useEffect(() => {
+    setDisplayed('')
+    setDone(false)
+    let i = 0
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        i++
+        setDisplayed(text.slice(0, i))
+        if (i >= text.length) {
+          clearInterval(interval)
+          setDone(true)
+        }
+      }, speed)
+      return () => clearInterval(interval)
+    }, startDelay)
+    return () => clearTimeout(timeout)
+  }, [text, speed, startDelay])
+
+  return { displayed, done }
+}
 
 function FadeUp({
   children,
@@ -117,6 +142,7 @@ const fibers = [
 export default function HomePage() {
   const heroRef = useRef(null)
   const { scrollY } = useScroll()
+  const { displayed, done } = useTypewriter('El principal Ecosistema de Alpaca Sostenible del mundo')
   const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
   const textY = useTransform(scrollY, [0, 40], [0, -30])
   const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
@@ -182,7 +208,8 @@ export default function HomePage() {
                 Grupo Inca — Perú
               </p>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
-                El principal Ecosistema de Alpaca Sostenible del mundo
+                {displayed}
+                {!done && <span className="animate-pulse">|</span>}
               </h1>
               <p className="text-lg md:text-xl text-white/70 mb-10 font-light">
                 Impulsado por el Grupo Inca
