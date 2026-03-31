@@ -153,7 +153,7 @@ export default function HomePage() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/856010/856010-hd_1920_1080_25fps.mp4" type="video/mp4" />
             {/* Fallback imagen mientras no haya video */}
             <img
               src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=2400&q=90"
