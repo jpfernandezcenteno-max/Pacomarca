@@ -207,9 +207,14 @@ export default function HomePage() {
               <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6 font-medium">
                 Grupo Inca — Perú
               </p>
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
-                {displayed}
-                {!done && <span className="animate-pulse">|</span>}
+              <h1 className="relative font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
+                {/* Reserva el espacio completo desde el inicio */}
+                <span className="invisible">El principal Ecosistema de Alpaca Sostenible del mundo</span>
+                {/* Texto animado superpuesto */}
+                <span className="absolute inset-0">
+                  {displayed}
+                  {!done && <span className="animate-pulse">|</span>}
+                </span>
               </h1>
               <p className="text-lg md:text-xl text-white/70 mb-10 font-light">
                 Impulsado por el Grupo Inca
