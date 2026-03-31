@@ -142,7 +142,7 @@ const fibers = [
 export default function HomePage() {
   const heroRef = useRef(null)
   const { scrollY } = useScroll()
-  const { displayed, done } = useTypewriter('El principal Ecosistema de Alpaca Sostenible del mundo')
+  const { displayed, done } = useTypewriter('El principal Ecosistema de Alpaca Sostenible del mundo', 80)
   const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
   const textY = useTransform(scrollY, [0, 40], [0, -30])
   const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
