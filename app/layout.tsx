@@ -24,10 +24,85 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: 'Pacomarca — Ecosistema de Alpaca Sostenible',
+  metadataBase: new URL('https://www.pacomarca.com'),
+  title: {
+    default: 'Pacomarca — Ecosistema de Alpaca Sostenible',
+    template: '%s | Pacomarca',
+  },
   description:
-    'El principal Ecosistema de Alpaca Sostenible del mundo. Impulsado por el Grupo Inca desde las alturas de los Andes peruanos.',
-  keywords: ['alpaca', 'sostenible', 'Peru', 'fibra', 'Andes', 'Pacomarca'],
+    'El principal Ecosistema de Alpaca Sostenible del mundo. Investigación científica, fibras de excepción y programas sociales desde los Andes peruanos. Impulsado por el Grupo Inca.',
+  keywords: [
+    'alpaca', 'alpaca sostenible', 'fibra de alpaca', 'Pacomarca', 'Grupo Inca',
+    'alpaca Peru', 'fibra fina', 'Andes', 'alpaca organica', 'Imperial Alpaca',
+    'Divine Alpaca', 'Sixteen Alpaca', 'Black Alpaca', 'RAS certificacion',
+    'ecosistema alpaca', 'estacion cientifica alpacas',
+  ],
+  authors: [{ name: 'Pacomarca — Grupo Inca' }],
+  creator: 'Grupo Inca',
+  publisher: 'Pacomarca',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'es_PE',
+    url: 'https://www.pacomarca.com',
+    siteName: 'Pacomarca',
+    title: 'Pacomarca — Ecosistema de Alpaca Sostenible',
+    description:
+      'El principal Ecosistema de Alpaca Sostenible del mundo. Investigación científica, fibras de excepción y programas sociales desde los Andes peruanos.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Pacomarca — Ecosistema de Alpaca Sostenible',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pacomarca — Ecosistema de Alpaca Sostenible',
+    description:
+      'El principal Ecosistema de Alpaca Sostenible del mundo. Impulsado por el Grupo Inca desde los Andes peruanos.',
+    images: ['/og-image.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.pacomarca.com',
+  },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Pacomarca',
+  url: 'https://www.pacomarca.com',
+  logo: 'https://www.pacomarca.com/logo.svg',
+  description:
+    'El principal Ecosistema de Alpaca Sostenible del mundo. Investigación científica, fibras de excepción y programas sociales desde los Andes peruanos.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Miguel Forga 348, Parque Industrial',
+    addressLocality: 'Arequipa',
+    addressCountry: 'PE',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+51-54-602500',
+    contactType: 'customer service',
+    availableLanguage: ['Spanish'],
+  },
+  sameAs: [
+    'https://www.instagram.com/pacomarca',
+    'https://www.facebook.com/pacomarca',
+  ],
+  parentOrganization: {
+    '@type': 'Organization',
+    name: 'Grupo Inca',
+    url: 'https://www.grupoinc.com',
+  },
 }
 
 export default function RootLayout({
@@ -37,6 +112,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${playfair.variable} ${inter.variable} ${cormorant.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>
