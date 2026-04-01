@@ -3,32 +3,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 
-function useTypewriter(text: string, speed = 40, startDelay = 600) {
-  const [displayed, setDisplayed] = useState('')
-  const [done, setDone] = useState(false)
-
-  useEffect(() => {
-    setDisplayed('')
-    setDone(false)
-    let i = 0
-    const timeout = setTimeout(() => {
-      const interval = setInterval(() => {
-        i++
-        setDisplayed(text.slice(0, i))
-        if (i >= text.length) {
-          clearInterval(interval)
-          setDone(true)
-        }
-      }, speed)
-      return () => clearInterval(interval)
-    }, startDelay)
-    return () => clearTimeout(timeout)
-  }, [text, speed, startDelay])
-
-  return { displayed, done }
-}
 
 function FadeUp({
   children,
@@ -142,7 +118,6 @@ const fibers = [
 export default function HomePage() {
   const heroRef = useRef(null)
   const { scrollY } = useScroll()
-  const { displayed, done } = useTypewriter('El principal Ecosistema de Alpaca Sostenible del mundo', 80)
   const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
   const textY = useTransform(scrollY, [0, 40], [0, -30])
   const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
@@ -207,14 +182,26 @@ export default function HomePage() {
               <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6 font-medium">
                 Grupo Inca — Perú
               </p>
-              <h1 className="relative font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
-                {/* Reserva el espacio completo desde el inicio */}
-                <span className="invisible">El principal Ecosistema de Alpaca Sostenible del mundo</span>
-                {/* Texto animado superpuesto */}
-                <span className="absolute inset-0">
-                  {displayed}
-                  {!done && <span className="animate-pulse">|</span>}
-                </span>
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
+                <motion.span
+                  className="inline"
+                  initial="hidden"
+                  animate="visible"
+                  variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.6 } } }}
+                >
+                  {['El', 'principal', 'Ecosistema', 'de', 'Alpaca', 'Sostenible', 'del', 'mundo'].map((word, i) => (
+                    <motion.span
+                      key={i}
+                      className="inline-block mr-[0.3em]"
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+                      }}
+                    >
+                      {word}
+                    </motion.span>
+                  ))}
+                </motion.span>
               </h1>
               <p className="text-lg md:text-xl text-white/70 mb-10 font-light">
                 Impulsado por el Grupo Inca
