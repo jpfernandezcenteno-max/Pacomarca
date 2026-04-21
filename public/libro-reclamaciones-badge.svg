@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" width="280" height="200">
+  <!-- Border -->
+  <rect x="2" y="2" width="276" height="196" rx="4" ry="4" fill="white" stroke="#3a7fd5" stroke-width="3" stroke-dasharray="8,4"/>
+
+  <!-- Title text -->
+  <text x="140" y="52" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#3a7fd5" text-anchor="middle">Libro de</text>
+  <text x="140" y="88" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#3a7fd5" text-anchor="middle">Reclamaciones</text>
+
+  <!-- Book illustration -->
+  <!-- Left page -->
+  <path d="M60 115 Q100 108 140 115 L140 175 Q100 168 60 175 Z" fill="#d0e4f5" stroke="#3a7fd5" stroke-width="1.5"/>
+  <!-- Right page -->
+  <path d="M140 115 Q180 108 220 115 L220 175 Q180 168 140 175 Z" fill="#b8d4ef" stroke="#3a7fd5" stroke-width="1.5"/>
+  <!-- Spine -->
+  <line x1="140" y1="115" x2="140" y2="175" stroke="#3a7fd5" stroke-width="2"/>
+  <!-- Lines on left page -->
+  <line x1="75" y1="130" x2="132" y2="127" stroke="#3a7fd5" stroke-width="1" opacity="0.5"/>
+  <line x1="75" y1="140" x2="132" y2="137" stroke="#3a7fd5" stroke-width="1" opacity="0.5"/>
+  <line x1="75" y1="150" x2="132" y2="147" stroke="#3a7fd5" stroke-width="1" opacity="0.5"/>
+  <line x1="75" y1="160" x2="132" y2="157" stroke="#3a7fd5" stroke-width="1" opacity="0.5"/>
+  <!-- Lines on right page -->
+  <line x1="148" y1="127" x2="205" y2="130" stroke="#3a7fd5" stroke-width="1" opacity="0.5"/>
+  <line x1="148" y1="137" x2="205" y2="140" stroke="#3a7fd5" stroke-width="1" opacity="0.5"/>
+  <line x1="148" y1="147" x2="205" y2="150" stroke="#3a7fd5" stroke-width="1" opacity="0.5"/>
+  <line x1="148" y1="157" x2="205" y2="160" stroke="#3a7fd5" stroke-width="1" opacity="0.5"/>
+  <!-- Book shadow/bottom -->
+  <ellipse cx="140" cy="178" rx="82" ry="8" fill="#3a7fd5" opacity="0.15"/>
+</svg>

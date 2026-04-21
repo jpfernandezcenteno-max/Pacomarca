@@ -451,6 +451,21 @@ export default function HomePage() {
         </FadeUp>
       </section>
 
+      {/* LIBRO DE RECLAMACIONES — requerido por DS 011-2011-PCM */}
+      <section className="bg-white py-10 border-t border-sand/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-end">
+          <Link href="/libro-reclamaciones" title="Libro de Reclamaciones Virtual">
+            <Image
+              src="/libro-reclamaciones-badge.svg"
+              alt="Libro de Reclamaciones"
+              width={140}
+              height={100}
+              className="hover:opacity-80 transition-opacity"
+            />
+          </Link>
+        </div>
+      </section>
+
       {/* CONTACT CTA */}
       <section className="bg-beige py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">

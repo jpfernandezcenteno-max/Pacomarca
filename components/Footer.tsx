@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const footerSections = [
   {
@@ -57,9 +58,18 @@ export default function Footer() {
                 PACOMARCA
               </span>
             </Link>
-            <p className="text-xs tracking-[0.15em] text-white/40 uppercase mb-8">
+            <p className="text-xs tracking-[0.15em] text-white/40 uppercase mb-6">
               Sustainable Alpaca Network
             </p>
+            <Link href="/libro-reclamaciones" title="Libro de Reclamaciones Virtual" className="inline-block mb-8">
+              <Image
+                src="/libro-reclamaciones-badge.svg"
+                alt="Libro de Reclamaciones"
+                width={120}
+                height={86}
+                className="hover:opacity-80 transition-opacity brightness-0 invert"
+              />
+            </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-6">
               El principal Ecosistema de Alpaca Sostenible del mundo. Impulsado por el Grupo Inca.
             </p>
