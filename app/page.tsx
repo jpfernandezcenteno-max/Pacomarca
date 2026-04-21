@@ -456,7 +456,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-end">
           <Link href="/libro-reclamaciones" title="Libro de Reclamaciones Virtual">
             <Image
-              src="/libro-reclamaciones-badge.svg"
+              src="/libro-reclamaciones-badge.png"
               alt="Libro de Reclamaciones"
               width={140}
               height={100}

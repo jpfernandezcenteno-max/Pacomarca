@@ -63,7 +63,7 @@ export default function Footer() {
             </p>
             <Link href="/libro-reclamaciones" title="Libro de Reclamaciones Virtual" className="inline-block mb-8">
               <Image
-                src="/libro-reclamaciones-badge.svg"
+                src="/libro-reclamaciones-badge.png"
                 alt="Libro de Reclamaciones"
                 width={120}
                 height={86}

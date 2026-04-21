@@ -65,7 +65,7 @@ export default function LibroReclamacionesPage() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 mb-16">
           <div className="shrink-0">
             <Image
-              src="/libro-reclamaciones-badge.svg"
+              src="/libro-reclamaciones-badge.png"
               alt="Libro de Reclamaciones"
               width={160}
               height={114}
