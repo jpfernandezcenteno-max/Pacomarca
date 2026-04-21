@@ -131,16 +131,28 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="mt-8 flex flex-col md:flex-row justify-between items-start gap-6">
             <p className="text-xs text-white/30">
               © {new Date().getFullYear()} Pacomarca — Grupo Inca. Todos los derechos reservados.
             </p>
-            <div className="flex space-x-6">
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
               <Link href="/contacto" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 Contacto
               </Link>
               <Link href="/actualidad" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 Blog
+              </Link>
+              <Link href="/politica-privacidad" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+                Política de Privacidad
+              </Link>
+              <Link href="/politica-cookies" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+                Política de Cookies
+              </Link>
+              <Link href="/terminos-condiciones" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+                Términos y Condiciones
+              </Link>
+              <Link href="/terminos-condiciones-especificos" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+                Términos Específicos
               </Link>
             </div>
           </div>
