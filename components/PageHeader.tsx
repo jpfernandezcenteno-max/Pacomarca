@@ -8,6 +8,7 @@ interface PageHeaderProps {
   title: string
   subtitle?: string
   imageUrl?: string
+  imagePosition?: string
 }
 
 export default function PageHeader({
@@ -15,6 +16,7 @@ export default function PageHeader({
   title,
   subtitle,
   imageUrl = 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2400&q=90',
+  imagePosition = 'object-center',
 }: PageHeaderProps) {
   return (
     <div className="relative h-[55vh] min-h-[400px] flex items-end overflow-hidden">
@@ -23,7 +25,7 @@ export default function PageHeader({
         src={imageUrl}
         alt={title}
         fill
-        className="object-cover object-center"
+        className={`object-cover ${imagePosition}`}
         priority
       />
       {/* Dark overlay gradient */}
