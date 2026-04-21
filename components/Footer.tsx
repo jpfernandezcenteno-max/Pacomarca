@@ -67,7 +67,7 @@ export default function Footer() {
                 alt="Libro de Reclamaciones"
                 width={120}
                 height={86}
-                className="hover:opacity-80 transition-opacity brightness-0 invert"
+                className="hover:opacity-80 transition-opacity"
               />
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-6">
