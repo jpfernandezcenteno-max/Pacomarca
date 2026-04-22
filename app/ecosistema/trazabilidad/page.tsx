@@ -32,8 +32,8 @@ export default function TrazabilidadPage() {
         section="ECOSISTEMA"
         title="Trazabilidad"
         subtitle="Del animal al producto final: transparencia total en cada eslabón"
-        imageUrl="/trazabilidad/DDG_5570.jpg"
-        imagePosition="object-top"
+        imageUrl="/ecosistema/trazabilidad/DDG_5570.jpg"
+        imagePosition="object-[center_35%]"
       />
 
       {/* Intro */}
