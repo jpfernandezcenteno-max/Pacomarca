@@ -53,7 +53,8 @@ export default function EcosistemaPage() {
         section="ECOSISTEMA"
         title="El ecosistema"
         subtitle="Una red viva que conecta a los Andes con el mundo"
-        imageUrl="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2400&q=90"
+        imageUrl="/ecosistema/alpacas.jpg"
+        imagePosition="object-top"
       />
 
       {/* Intro */}
