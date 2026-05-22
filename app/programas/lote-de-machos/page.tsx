@@ -25,7 +25,7 @@ export default function LoteDeMachosPage() {
         title="Lote de Machos"
         subtitle="Mejora genética real para las comunidades alpaqueras"
         imageUrl="/programas/lote-de-machos/portada.jpg"
-        imagePosition="object-center"
+        imagePosition="object-[center_35%]"
       />
 
       {/* Stat + Quote */}
