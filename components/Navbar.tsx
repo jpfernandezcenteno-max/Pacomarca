@@ -93,7 +93,7 @@ export default function Navbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled || !isHomepage ? 'bg-white/96 backdrop-blur-md shadow-sm' : 'bg-transparent'
+          scrolled ? 'bg-white/96 backdrop-blur-md shadow-sm' : 'bg-transparent'
         } ${hidden ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -104,7 +104,7 @@ export default function Navbar() {
                 src="/logo.svg"
                 alt="Pacomarca"
                 className={`h-8 w-auto transition-all duration-300 ${
-                  scrolled || mobileOpen || !isHomepage ? 'brightness-0' : 'brightness-0 invert'
+                  scrolled || mobileOpen ? 'brightness-0' : 'brightness-0 invert'
                 }`}
               />
             </Link>
@@ -121,7 +121,7 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     className={`text-xs tracking-[0.15em] uppercase font-medium transition-colors duration-300 pb-1 border-b border-transparent hover:border-gold ${
-                      scrolled || !isHomepage ? 'text-ink hover:text-gold' : 'text-white/90 hover:text-white'
+                      scrolled ? 'text-ink hover:text-gold' : 'text-white/90 hover:text-white'
                     }`}
                   >
                     {item.label}
@@ -164,17 +164,17 @@ export default function Navbar() {
             >
               <span
                 className={`block w-6 h-px transition-all duration-300 ${
-                  scrolled || mobileOpen || !isHomepage ? 'bg-ink' : 'bg-white'
+                  scrolled || mobileOpen ? 'bg-ink' : 'bg-white'
                 } ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}
               />
               <span
                 className={`block w-6 h-px transition-all duration-300 ${
-                  scrolled || mobileOpen || !isHomepage ? 'bg-ink' : 'bg-white'
+                  scrolled || mobileOpen ? 'bg-ink' : 'bg-white'
                 } ${mobileOpen ? 'opacity-0' : ''}`}
               />
               <span
                 className={`block w-6 h-px transition-all duration-300 ${
-                  scrolled || mobileOpen || !isHomepage ? 'bg-ink' : 'bg-white'
+                  scrolled || mobileOpen ? 'bg-ink' : 'bg-white'
                 } ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}
               />
             </button>

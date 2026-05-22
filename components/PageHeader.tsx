@@ -29,7 +29,7 @@ export default function PageHeader({
         priority
       />
       {/* Dark overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/30 to-ink/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/30 to-ink/70" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pb-16 w-full">
