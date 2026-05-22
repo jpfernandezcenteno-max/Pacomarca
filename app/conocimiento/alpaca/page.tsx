@@ -136,7 +136,7 @@ export default function AlpacaPage() {
                   src="/conocimiento/alpaca/foto-3.jpg"
                   alt="Alpaca Huacaya"
                   fill
-                  className="object-cover grayscale"
+                  className="object-cover object-[center_60%] grayscale"
                 />
               </div>
               <div className="p-10">
