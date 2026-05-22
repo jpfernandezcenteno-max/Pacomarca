@@ -38,7 +38,7 @@ export default function ModuloDeEsquilaPage() {
         title="Módulo de Esquila"
         subtitle="Infraestructura profesional para la esquila con bienestar animal"
         imageUrl="/programas/modulo-de-esquila/portada.jpg"
-        imagePosition="object-center"
+        imagePosition="object-[center_40%]"
       />
 
       {/* Stat + Intro */}
