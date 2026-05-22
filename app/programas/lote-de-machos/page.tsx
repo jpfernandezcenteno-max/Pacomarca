@@ -24,7 +24,8 @@ export default function LoteDeMachosPage() {
         section="PROGRAMAS"
         title="Lote de Machos"
         subtitle="Mejora genética real para las comunidades alpaqueras"
-        imageUrl="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=2400&q=85"
+        imageUrl="/programas/lote-de-machos/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Stat + Quote */}
@@ -49,7 +50,7 @@ export default function LoteDeMachosPage() {
           <FadeUp delay={0.2}>
             <div className="relative h-[420px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=85"
+                src="/programas/lote-de-machos/foto-1.jpg"
                 alt="Alpacas en el programa"
                 fill
                 className="object-cover"
@@ -167,11 +168,8 @@ export default function LoteDeMachosPage() {
       </section>
 
       <ImageCarousel images={[
-        'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85',
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85',
-        'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85',
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85',
-        'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=85',
+        '/programas/lote-de-machos/portada.jpg',
+        '/programas/lote-de-machos/foto-1.jpg',
       ]} />
     </>
   )
