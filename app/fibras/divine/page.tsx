@@ -22,7 +22,8 @@ export default function DivinePage() {
         section="FIBRAS"
         title="Divine Alpaca"
         subtitle="Cero medulación. La suavidad perfecta."
-        imageUrl="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=2400&q=85"
+        imageUrl="/fibras/divine/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Split layout */}

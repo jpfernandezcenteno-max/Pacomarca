@@ -22,7 +22,8 @@ export default function SixteenPage() {
         section="FIBRAS"
         title="Sixteen Alpaca"
         subtitle="La fibra de alpaca más fina del mundo"
-        imageUrl="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=2400&q=85"
+        imageUrl="/fibras/sixteen/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Split layout */}

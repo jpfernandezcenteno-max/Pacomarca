@@ -47,7 +47,8 @@ export default function ColoresPurosPage() {
         section="FIBRAS"
         title="Colores Puros"
         subtitle="La paleta más amplia de colores naturales en cualquier fibra animal"
-        imageUrl="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=2400&q=85"
+        imageUrl="/fibras/colores-puros/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Split layout */}

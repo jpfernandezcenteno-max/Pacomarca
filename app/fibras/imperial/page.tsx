@@ -22,7 +22,8 @@ export default function ImperialPage() {
         section="FIBRAS"
         title="Imperial Alpaca"
         subtitle="El estándar de excelencia certificado"
-        imageUrl="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=2400&q=85"
+        imageUrl="/fibras/imperial/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Split layout */}

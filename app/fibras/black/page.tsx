@@ -22,7 +22,8 @@ export default function BlackAlpacaPage() {
         section="FIBRAS"
         title="Black Alpaca"
         subtitle="La fibra negra más escasa y valiosa del mundo"
-        imageUrl="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2400&q=90"
+        imageUrl="/fibras/black/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Split layout - dark */}
