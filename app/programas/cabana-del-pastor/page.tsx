@@ -135,6 +135,15 @@ export default function CabanaDelPastorPage() {
       <ImageCarousel images={[
         '/programas/cabana-del-pastor/portada.jpg',
         '/programas/cabana-del-pastor/foto-1.jpg',
+        '/programas/invernadero/portada.jpg',
+        '/programas/invernadero/foto-1.jpg',
+        '/programas/lote-de-machos/portada.jpg',
+        '/programas/lote-de-machos/foto-1.jpg',
+        '/programas/modulo-de-esquila/portada.jpg',
+        '/programas/modulo-de-esquila/foto-1.jpg',
+        '/programas/fondo-investigacion/portada.jpg',
+        '/programas/abrigando-corazones/portada.jpg',
+        '/programas/portada.jpg',
       ]} />
     </>
   )

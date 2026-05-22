@@ -151,11 +151,17 @@ export default function FondoInvestigacionPage() {
       </section>
 
       <ImageCarousel images={[
-        'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=85',
-        'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85',
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85',
-        'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85',
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85',
+        '/programas/fondo-investigacion/portada.jpg',
+        '/programas/cabana-del-pastor/portada.jpg',
+        '/programas/cabana-del-pastor/foto-1.jpg',
+        '/programas/invernadero/portada.jpg',
+        '/programas/invernadero/foto-1.jpg',
+        '/programas/lote-de-machos/portada.jpg',
+        '/programas/lote-de-machos/foto-1.jpg',
+        '/programas/modulo-de-esquila/portada.jpg',
+        '/programas/modulo-de-esquila/foto-1.jpg',
+        '/programas/abrigando-corazones/portada.jpg',
+        '/programas/portada.jpg',
       ]} />
     </>
   )
