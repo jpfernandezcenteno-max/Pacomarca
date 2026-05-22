@@ -21,8 +21,8 @@ const featuredPublication = {
   authors: 'Apellido, N.; Apellido, N.; Apellido, N.',
   journal: 'Small Ruminant Research',
   year: '2024',
-  doi: '#', // reemplazar con DOI o URL de descarga
-  image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=85',
+  doi: '/conocimiento/publicaciones/ultima-publicacion.png',
+  image: '/conocimiento/publicaciones/ultima-publicacion.png',
 }
 
 // Revistas indexadas — agregar/editar según listado real
@@ -110,7 +110,8 @@ export default function PublicacionesPage() {
         section="CONOCIMIENTO"
         title="Publicaciones"
         subtitle="El conocimiento Pacomarca, validado y disponible para la comunidad científica global"
-        imageUrl="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=2400&q=85"
+        imageUrl="/conocimiento/publicaciones/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
@@ -206,8 +207,7 @@ export default function PublicacionesPage() {
               </div>
               <a
                 href={featuredPublication.doi}
-                target="_blank"
-                rel="noopener noreferrer"
+                download
                 className="inline-flex items-center gap-3 bg-ink text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-ink/80 transition-colors self-start"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
