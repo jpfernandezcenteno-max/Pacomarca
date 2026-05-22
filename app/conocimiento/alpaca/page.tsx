@@ -133,7 +133,7 @@ export default function AlpacaPage() {
             <div className="bg-cream border-t-4 border-gold overflow-hidden h-full flex flex-col">
               <div className="relative h-56 w-full shrink-0">
                 <Image
-                  src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85"
+                  src="/conocimiento/alpaca/huacaya.jpg"
                   alt="Alpaca Huacaya"
                   fill
                   className="object-cover grayscale"
