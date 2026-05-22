@@ -35,7 +35,7 @@ export default function IncaEsquilaPage() {
         title="Inca Esquila"
         subtitle="El método científico que transformó la esquila de alpacas en el Perú"
         imageUrl="/conocimiento/inca-esquila/portada.jpg"
-        imagePosition="object-center"
+        imagePosition="object-[center_40%]"
       />
 
       {/* Intro */}
