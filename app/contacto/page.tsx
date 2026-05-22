@@ -204,7 +204,9 @@ export default function ContactoPage() {
                 <h3 className="font-serif text-lg text-ink mb-4">Redes sociales</h3>
                 <div className="flex gap-4">
                   <a
-                    href="#"
+                    href="https://www.instagram.com/pacomarca_official/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-ink/65 hover:text-gold transition-colors"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -213,7 +215,9 @@ export default function ContactoPage() {
                     Instagram
                   </a>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/pacomarcaperu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-ink/65 hover:text-gold transition-colors"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

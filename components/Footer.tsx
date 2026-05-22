@@ -77,7 +77,9 @@ export default function Footer() {
             {/* Social */}
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/pacomarca_official/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 border border-white/20 flex items-center justify-center hover:border-gold hover:text-gold transition-colors duration-200"
                 aria-label="Instagram"
               >
@@ -86,7 +88,9 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/pacomarcaperu/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 border border-white/20 flex items-center justify-center hover:border-gold hover:text-gold transition-colors duration-200"
                 aria-label="Facebook"
               >

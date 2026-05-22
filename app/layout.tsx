@@ -95,8 +95,8 @@ const jsonLd = {
     availableLanguage: ['Spanish'],
   },
   sameAs: [
-    'https://www.instagram.com/pacomarca',
-    'https://www.facebook.com/pacomarca',
+    'https://www.instagram.com/pacomarca_official/',
+    'https://www.facebook.com/pacomarcaperu/',
   ],
   parentOrganization: {
     '@type': 'Organization',
