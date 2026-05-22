@@ -267,7 +267,7 @@ export default function HomePage() {
           <FadeUp delay={0.2}>
             <div className="relative h-[500px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85"
+                src="/home/foto-1.jpg"
                 alt="Comunidad alpaquera peruana"
                 fill
                 className="object-cover"
