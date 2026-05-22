@@ -33,7 +33,8 @@ export default function AbrigandoCorazonesPage() {
         section="PROGRAMAS"
         title="Abrigando Corazones"
         subtitle="Abrigo de alpaca para los más vulnerables de las comunidades andinas"
-        imageUrl="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=2400&q=85"
+        imageUrl="/programas/abrigando-corazones/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Stat + Intro */}
