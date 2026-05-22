@@ -1,6 +1,7 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import Image from 'next/image'
 import Link from 'next/link'
 import ImageCarousel from '@/components/ImageCarousel'
 import { motion, useInView } from 'framer-motion'
@@ -36,7 +37,8 @@ export default function ModuloDeEsquilaPage() {
         section="PROGRAMAS"
         title="Módulo de Esquila"
         subtitle="Infraestructura profesional para la esquila con bienestar animal"
-        imageUrl="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=2400&q=85"
+        imageUrl="/programas/modulo-de-esquila/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Stat + Intro */}
@@ -98,15 +100,27 @@ export default function ModuloDeEsquilaPage() {
               <h2 className="font-serif text-3xl text-ink">¿Qué incluye el módulo?</h2>
             </div>
           </FadeUp>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-            {equipment.map((item, i) => (
-              <FadeUp key={item} delay={i * 0.06}>
-                <div className="flex gap-4 items-start bg-white p-5">
-                  <span className="text-gold font-serif text-lg mt-0.5 flex-shrink-0">◆</span>
-                  <span className="text-sm text-ink/65">{item}</span>
-                </div>
-              </FadeUp>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {equipment.map((item, i) => (
+                <FadeUp key={item} delay={i * 0.06}>
+                  <div className="flex gap-4 items-start bg-white p-5">
+                    <span className="text-gold font-serif text-lg mt-0.5 flex-shrink-0">◆</span>
+                    <span className="text-sm text-ink/65">{item}</span>
+                  </div>
+                </FadeUp>
+              ))}
+            </div>
+            <FadeUp delay={0.2}>
+              <div className="relative h-[520px] overflow-hidden">
+                <Image
+                  src="/programas/modulo-de-esquila/foto-1.jpg"
+                  alt="Módulo de esquila"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -158,11 +172,8 @@ export default function ModuloDeEsquilaPage() {
       </section>
 
       <ImageCarousel images={[
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85',
-        'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85',
-        'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85',
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85',
-        'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=85',
+        '/programas/modulo-de-esquila/portada.jpg',
+        '/programas/modulo-de-esquila/foto-1.jpg',
       ]} />
     </>
   )
