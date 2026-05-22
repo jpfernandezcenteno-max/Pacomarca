@@ -94,7 +94,7 @@ export default function AlpacaPage() {
             <div className="bg-cream border-t-4 border-gold overflow-hidden h-full flex flex-col">
               <div className="relative h-56 w-full shrink-0">
                 <Image
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85"
+                  src="/conocimiento/alpaca/foto-2.jpg"
                   alt="Alpaca Suri"
                   fill
                   className="object-cover grayscale"
@@ -133,7 +133,7 @@ export default function AlpacaPage() {
             <div className="bg-cream border-t-4 border-gold overflow-hidden h-full flex flex-col">
               <div className="relative h-56 w-full shrink-0">
                 <Image
-                  src="/conocimiento/alpaca/huacaya.jpg"
+                  src="/conocimiento/alpaca/foto-3.jpg"
                   alt="Alpaca Huacaya"
                   fill
                   className="object-cover grayscale"
