@@ -31,7 +31,7 @@ const tabs = [
     impacto: 'La fibra negra recuperó su valor de mercado gracias a la certificación Pacomarca. Marcas como Kuna, Amano y The Inoue Brothers la usan en colecciones exclusivas, generando nuevos ingresos para las comunidades alpaqueras que cuidan estas alpacas.',
     color: 'bg-ink text-white',
     accent: 'border-gold',
-    image: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?w=1200&q=85',
+    image: '/conocimiento/programa-genetico/foto-1.jpg',
   },
   {
     id: 'extrafinas',
@@ -47,7 +47,7 @@ const tabs = [
     impacto: 'Beneficia directamente a entre 80,000 y 150,000 familias alpaqueras en el Perú, que reciben mejores precios por su fibra gracias a la clasificación y certificación. El Perú se posicionó como líder mundial en fibras de alpaca extrafinas.',
     color: 'bg-cream',
     accent: 'border-gold',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85',
+    image: '/conocimiento/programa-genetico/foto-2.jpg',
   },
   {
     id: 'confort',
@@ -63,7 +63,7 @@ const tabs = [
     impacto: 'Dio origen al Divine Alpaca, la fibra de alpaca con el menor porcentaje de medulación del mercado. Esta innovación permitió crear prendas con la suavidad del cachemir pero con las propiedades únicas de la alpaca peruana.',
     color: 'bg-beige',
     accent: 'border-gold',
-    image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=85',
+    image: '/conocimiento/programa-genetico/foto-3.jpg',
   },
 ]
 
@@ -77,7 +77,8 @@ export default function ProgramaGeneticoPage() {
         section="CONOCIMIENTO"
         title="Programa Genético"
         subtitle="El programa de mejora genética de alpacas más riguroso del mundo"
-        imageUrl="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=2400&q=85"
+        imageUrl="/conocimiento/programa-genetico/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
