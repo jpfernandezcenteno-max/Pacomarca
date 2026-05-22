@@ -25,7 +25,8 @@ export default function AlpaquerosPage() {
         section="ECOSISTEMA"
         title="Alpaqueros"
         subtitle="Las familias que custodian la fibra más fina del mundo"
-        imageUrl="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=2400&q=85"
+        imageUrl="/ecosistema/alpaqueros/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
@@ -52,7 +53,7 @@ export default function AlpaquerosPage() {
           <FadeUp delay={0.2}>
             <div className="relative h-[500px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=85"
+                src="/ecosistema/alpaqueros/foto-1.jpg"
                 alt="Familia alpaquera andina"
                 fill
                 className="object-cover"
