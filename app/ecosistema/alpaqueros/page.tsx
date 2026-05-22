@@ -26,7 +26,7 @@ export default function AlpaquerosPage() {
         title="Alpaqueros"
         subtitle="Las familias que custodian la fibra más fina del mundo"
         imageUrl="/ecosistema/alpaqueros/portada.jpg"
-        imagePosition="object-top"
+        imagePosition="object-[center_15%]"
       />
 
       {/* Intro */}
