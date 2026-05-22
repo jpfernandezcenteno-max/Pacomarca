@@ -58,7 +58,7 @@ export default function AlpacaPage() {
           <FadeUp delay={0.2}>
             <div className="relative h-[480px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=85"
+                src="/conocimiento/alpaca/foto-1.jpg"
                 alt="Alpacas en los Andes"
                 fill
                 className="object-cover"
