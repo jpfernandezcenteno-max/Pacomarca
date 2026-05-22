@@ -60,7 +60,8 @@ export default function ConocimientoPage() {
         section="CONOCIMIENTO"
         title="Conocimiento"
         subtitle="Ciencia al servicio de las comunidades y la sostenibilidad"
-        imageUrl="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=2400&q=85"
+        imageUrl="/conocimiento/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
