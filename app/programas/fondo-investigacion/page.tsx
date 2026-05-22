@@ -23,7 +23,8 @@ export default function FondoInvestigacionPage() {
         section="PROGRAMAS"
         title="Fondo a la Investigación"
         subtitle="Financiando el conocimiento científico que transforma el sector alpaquero"
-        imageUrl="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=2400&q=85"
+        imageUrl="/programas/fondo-investigacion/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Stat + Quote */}
