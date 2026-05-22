@@ -16,28 +16,28 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const colors = [
-  { name: 'Blanco nieve', hex: '#FAFAFA' },
-  { name: 'Blanco crema', hex: '#F1F1F1' },
-  { name: 'Beige claro', hex: '#E3E3E3' },
-  { name: 'Arena', hex: '#C6C6C6' },
-  { name: 'Canela', hex: '#ACACAC' },
-  { name: 'Marrón claro', hex: '#818181' },
-  { name: 'Castaño', hex: '#626262' },
-  { name: 'Café oscuro', hex: '#454545' },
-  { name: 'Marrón rojizo', hex: '#545454' },
-  { name: 'Tostado', hex: '#939393' },
-  { name: 'Gris plata', hex: '#C0C0C0' },
-  { name: 'Gris medio', hex: '#A0A0A0' },
-  { name: 'Gris oscuro', hex: '#707070' },
-  { name: 'Gris carbón', hex: '#4A4A4A' },
-  { name: 'Negro puro', hex: '#1A1A1A' },
-  { name: 'Rosado suave', hex: '#D6D6D6' },
-  { name: 'Terracota', hex: '#858585' },
-  { name: 'Miel', hex: '#9F9F9F' },
-  { name: 'Rojo vino', hex: '#484848' },
-  { name: 'Gris azulado', hex: '#8D8D8D' },
-  { name: 'Pardo oscuro', hex: '#535353' },
-  { name: 'Blanco hueso', hex: '#EDEDED' },
+  { name: 'Blanco nieve', hex: '#F8F6F0' },
+  { name: 'Blanco crema', hex: '#EDE5D5' },
+  { name: 'Crema', hex: '#DDD0B5' },
+  { name: 'Beige claro', hex: '#C8B898' },
+  { name: 'Arena', hex: '#B8A080' },
+  { name: 'Gris plata', hex: '#C0C0BA' },
+  { name: 'Gris claro', hex: '#A8A8A0' },
+  { name: 'Gris medio', hex: '#888880' },
+  { name: 'Gris oscuro', hex: '#5A5A55' },
+  { name: 'Gris carbón', hex: '#3D3D38' },
+  { name: 'Canela', hex: '#C49060' },
+  { name: 'Tostado', hex: '#B07840' },
+  { name: 'Marrón claro', hex: '#9A6535' },
+  { name: 'Castaño', hex: '#8A5230' },
+  { name: 'Marrón medio', hex: '#7A4025' },
+  { name: 'Marrón rojizo', hex: '#923520' },
+  { name: 'Terracota', hex: '#A05030' },
+  { name: 'Café', hex: '#6A3020' },
+  { name: 'Chocolate', hex: '#512010' },
+  { name: 'Marrón oscuro', hex: '#3D1A10' },
+  { name: 'Pardo oscuro', hex: '#6A4520' },
+  { name: 'Negro puro', hex: '#1C1810' },
 ]
 
 export default function ColoresPurosPage() {
@@ -48,7 +48,7 @@ export default function ColoresPurosPage() {
         title="Colores Puros"
         subtitle="La paleta más amplia de colores naturales en cualquier fibra animal"
         imageUrl="/fibras/colores-puros/portada.jpg"
-        imagePosition="object-center"
+        imagePosition="object-[center_30%]"
       />
 
       {/* Split layout */}
