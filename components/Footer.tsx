@@ -153,7 +153,7 @@ export default function Footer() {
               <Link href="/contacto" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 Contacto
               </Link>
-              <Link href="/actualidad" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+              <Link href="/blog" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 Blog
               </Link>
               <Link href="/politica-privacidad" className="text-xs text-white/30 hover:text-white/60 transition-colors">

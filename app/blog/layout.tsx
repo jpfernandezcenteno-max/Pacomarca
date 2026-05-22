@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Blog | Pacomarca',
     description: 'Las últimas noticias y artículos de Pacomarca: ciencia, sostenibilidad, comunidades alpaqueras y fibras de excepción.',
-    url: 'https://www.pacomarca.com/actualidad',
+    url: 'https://www.pacomarca.com/blog',
   },
-  alternates: { canonical: 'https://www.pacomarca.com/actualidad' },
+  alternates: { canonical: 'https://www.pacomarca.com/blog' },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -29,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/fibras/sixteen', priority: 0.8, changeFrequency: 'monthly' },
     { url: '/fibras/black', priority: 0.8, changeFrequency: 'monthly' },
     { url: '/fibras/colores-puros', priority: 0.8, changeFrequency: 'monthly' },
-    { url: '/actualidad', priority: 0.8, changeFrequency: 'weekly' },
+    { url: '/blog', priority: 0.8, changeFrequency: 'weekly' },
     { url: '/contacto', priority: 0.7, changeFrequency: 'yearly' },
   ] as const
 

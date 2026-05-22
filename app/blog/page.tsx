@@ -114,10 +114,11 @@ export default function ActualidadPage() {
   return (
     <>
       <PageHeader
-        section="ACTUALIDAD"
+        section="BLOG"
         title="Blog"
         subtitle="Noticias y novedades del ecosistema Pacomarca"
-        imageUrl="/actualidad/portada.jpg"
+        imageUrl="/blog/portada.jpg"
+        imagePosition="object-center"
       />
 
       <AnimatePresence mode="wait">
