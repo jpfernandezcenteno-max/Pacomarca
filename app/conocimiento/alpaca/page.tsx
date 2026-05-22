@@ -30,7 +30,8 @@ export default function AlpacaPage() {
         section="CONOCIMIENTO"
         title="Alpaca (Vicugna pacos)"
         subtitle="Milenios de coevolución entre el ser humano y el camélido más valioso del mundo"
-        imageUrl="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=2400&q=85"
+        imageUrl="/conocimiento/alpaca/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
