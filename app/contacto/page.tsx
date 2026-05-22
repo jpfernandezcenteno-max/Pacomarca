@@ -169,7 +169,7 @@ export default function ContactoPage() {
         title="Contáctanos"
         subtitle="Cuéntanos quién eres y cómo podemos trabajar juntos"
         imageUrl="/contacto/portada.jpg"
-        imagePosition="object-[center_75%]"
+        imagePosition="object-[center_65%]"
       />
 
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">

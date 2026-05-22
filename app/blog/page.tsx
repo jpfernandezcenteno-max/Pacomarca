@@ -118,7 +118,7 @@ export default function ActualidadPage() {
         title="Blog"
         subtitle="Noticias y novedades del ecosistema Pacomarca"
         imageUrl="/blog/portada.jpg"
-        imagePosition="object-[center_75%]"
+        imagePosition="object-[center_65%]"
       />
 
       <AnimatePresence mode="wait">
