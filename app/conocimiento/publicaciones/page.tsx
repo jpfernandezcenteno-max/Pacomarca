@@ -111,7 +111,7 @@ export default function PublicacionesPage() {
         title="Publicaciones"
         subtitle="El conocimiento Pacomarca, validado y disponible para la comunidad científica global"
         imageUrl="/conocimiento/publicaciones/portada.jpg"
-        imagePosition="object-center"
+        imagePosition="object-[center_35%]"
       />
 
       {/* Intro */}

@@ -41,7 +41,7 @@ export default function PasantiasPage() {
         title="Pasantías"
         subtitle="Aprende directamente en la estación científica de alpacas más importante del mundo"
         imageUrl="/conocimiento/pasantias/portada.jpg"
-        imagePosition="object-center"
+        imagePosition="object-[center_30%]"
       />
 
       {/* Stats */}
