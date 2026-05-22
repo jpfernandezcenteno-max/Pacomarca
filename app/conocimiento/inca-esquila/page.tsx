@@ -34,7 +34,8 @@ export default function IncaEsquilaPage() {
         section="CONOCIMIENTO"
         title="Inca Esquila"
         subtitle="El método científico que transformó la esquila de alpacas en el Perú"
-        imageUrl="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=2400&q=85"
+        imageUrl="/conocimiento/inca-esquila/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
@@ -90,16 +91,12 @@ export default function IncaEsquilaPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <FadeUp>
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6 text-center">Video</p>
-            <div className="aspect-video bg-sand/40 flex items-center justify-center border border-sand/60">
-              <div className="text-center">
-                <div className="w-16 h-16 rounded-full bg-white/70 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-ink/40 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <p className="text-sm text-ink/40">Video Inca Esquila — próximamente</p>
-              </div>
-            </div>
+            <video
+              src="/conocimiento/inca-esquila/video.mp4"
+              controls
+              playsInline
+              className="w-full aspect-video"
+            />
           </FadeUp>
         </div>
       </section>
