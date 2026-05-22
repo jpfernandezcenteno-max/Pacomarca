@@ -57,7 +57,8 @@ export default function MarcasAliadasPage() {
         section="ECOSISTEMA"
         title="Marcas Aliadas"
         subtitle="Embajadoras de la fibra más fina y sostenible del mundo"
-        imageUrl="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=2400&q=85"
+        imageUrl="/ecosistema/marcas-aliadas/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}

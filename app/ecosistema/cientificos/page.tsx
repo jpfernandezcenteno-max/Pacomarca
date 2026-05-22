@@ -95,7 +95,8 @@ export default function CientificosPage() {
         section="ECOSISTEMA"
         title="Científicos"
         subtitle="Conocimiento riguroso al servicio de las comunidades andinas"
-        imageUrl="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=2400&q=85"
+        imageUrl="/ecosistema/cientificos/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
