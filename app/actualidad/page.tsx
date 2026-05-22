@@ -117,7 +117,7 @@ export default function ActualidadPage() {
         section="ACTUALIDAD"
         title="Blog"
         subtitle="Noticias y novedades del ecosistema Pacomarca"
-        imageUrl="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2400&q=90"
+        imageUrl="/actualidad/portada.jpg"
       />
 
       <AnimatePresence mode="wait">

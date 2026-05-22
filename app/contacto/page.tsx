@@ -168,7 +168,7 @@ export default function ContactoPage() {
         section="CONTACTO"
         title="Contáctanos"
         subtitle="Cuéntanos quién eres y cómo podemos trabajar juntos"
-        imageUrl="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2400&q=90"
+        imageUrl="/contacto/portada.jpg"
       />
 
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
