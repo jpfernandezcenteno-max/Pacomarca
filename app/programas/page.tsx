@@ -173,7 +173,8 @@ export default function ProgramasPage() {
         section="PROGRAMAS"
         title="Programas que sostienen comunidades"
         subtitle="Inversión real en las familias que hacen posible la fibra más fina del mundo"
-        imageUrl="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=2400&q=85"
+        imageUrl="/programas/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
