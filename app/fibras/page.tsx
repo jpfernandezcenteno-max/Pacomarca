@@ -71,7 +71,8 @@ export default function FibrasPage() {
         section="FIBRAS"
         title="Fibras de Alpaca"
         subtitle="Las fibras más exclusivas del mundo, respaldadas por ciencia y sostenibilidad"
-        imageUrl="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=2400&q=85"
+        imageUrl="/fibras/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Intro */}
