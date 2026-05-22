@@ -40,7 +40,8 @@ export default function PasantiasPage() {
         section="CONOCIMIENTO"
         title="Pasantías"
         subtitle="Aprende directamente en la estación científica de alpacas más importante del mundo"
-        imageUrl="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2400&q=90"
+        imageUrl="/conocimiento/pasantias/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Stats */}
@@ -99,7 +100,7 @@ export default function PasantiasPage() {
               <div className="bg-white border-t-4 border-gold overflow-hidden h-full flex flex-col">
                 <div className="relative h-56 w-full shrink-0">
                   <Image
-                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85"
+                    src="/conocimiento/pasantias/foto-1.jpg"
                     alt="Visita de 1 día"
                     fill
                     className="object-cover grayscale"
@@ -127,7 +128,7 @@ export default function PasantiasPage() {
               <div className="bg-white border-t-4 border-gold overflow-hidden h-full flex flex-col">
                 <div className="relative h-56 w-full shrink-0">
                   <Image
-                    src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85"
+                    src="/conocimiento/pasantias/foto-2.jpg"
                     alt="Pasantía de 3 días"
                     fill
                     className="object-cover grayscale"
