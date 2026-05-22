@@ -24,7 +24,8 @@ export default function CabanaDelPastorPage() {
         section="PROGRAMAS"
         title="Cabaña del Pastor"
         subtitle="Viviendas dignas en las alturas más extremas del Perú"
-        imageUrl="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2400&q=90"
+        imageUrl="/programas/cabana-del-pastor/portada.jpg"
+        imagePosition="object-center"
       />
 
       {/* Stat badge + quote */}
@@ -51,7 +52,7 @@ export default function CabanaDelPastorPage() {
           <FadeUp delay={0.2}>
             <div className="relative h-[420px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85"
+                src="/programas/cabana-del-pastor/foto-1.jpg"
                 alt="Cabaña del pastor en los Andes"
                 fill
                 className="object-cover"
@@ -132,11 +133,8 @@ export default function CabanaDelPastorPage() {
       </section>
 
       <ImageCarousel images={[
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85',
-        'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=85',
-        'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85',
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85',
-        'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=85',
+        '/programas/cabana-del-pastor/portada.jpg',
+        '/programas/cabana-del-pastor/foto-1.jpg',
       ]} />
     </>
   )
