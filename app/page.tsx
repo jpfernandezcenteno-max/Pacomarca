@@ -176,7 +176,7 @@ export default function HomePage() {
             loop
             playsInline
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
           >
             <source src="/home/20240813163648.mp4" type="video/mp4" />
           </video>
