@@ -33,7 +33,7 @@ export default function TrazabilidadPage() {
         title="Trazabilidad"
         subtitle="Del animal al producto final: transparencia total en cada eslabón"
         imageUrl="/ecosistema/trazabilidad/portada.jpg"
-        imagePosition="object-[center_25%]"
+        imagePosition="object-[center_45%]"
       />
 
       {/* Intro */}
