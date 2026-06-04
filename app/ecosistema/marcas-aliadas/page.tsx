@@ -16,31 +16,42 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const grupoIncaMarcas = [
-  { name: 'Grupo Inca', desc: 'El conglomerado empresarial líder en la industria textil de fibras naturales en el Perú.', url: 'https://grupoinca.com/es/' },
-  { name: 'Inca Tops', desc: 'Procesadora y exportadora líder de fibras especiales. Top Maker referente a nivel mundial.', url: 'https://www.incatops.com/stockservice/' },
-  { name: 'Incalpaca', desc: 'Empresa textil integrada con presencia internacional, especialista en fibras de alpaca de alta calidad.', url: 'https://www.incalpaca.com/es' },
-  { name: 'Kuna', desc: 'Marca de lujo con tiendas en los principales destinos turísticos del mundo, embajadora de la alpaca peruana.', url: 'https://pe.kunastores.com/' },
-  { name: 'Alpaca 111', desc: 'Marca especializada en prendas de alpaca para el mercado de lujo internacional.', url: 'https://alpaca111.com/' },
-  { name: 'Amano', desc: 'Marca de lujo peruana especializada en prendas de alpaca y fibras exclusivas.', url: 'https://amanoyarns.com/pe/' },
+  { name: 'Grupo Inca', desc: 'El conglomerado empresarial líder en la industria textil de fibras naturales en el Perú.', url: 'https://grupoinca.com/es/', logo: '/ecosistema/marcas-aliadas/logos/grupo-inca.svg' },
+  { name: 'Inca Tops', desc: 'Procesadora y exportadora líder de fibras especiales. Top Maker referente a nivel mundial.', url: 'https://www.incatops.com/stockservice/', logo: '/ecosistema/marcas-aliadas/logos/incatops.svg' },
+  { name: 'Incalpaca', desc: 'Empresa textil integrada con presencia internacional, especialista en fibras de alpaca de alta calidad.', url: 'https://www.incalpaca.com/es', logo: '/ecosistema/marcas-aliadas/logos/incalpaca.svg' },
+  { name: 'Kuna', desc: 'Marca de lujo con tiendas en los principales destinos turísticos del mundo, embajadora de la alpaca peruana.', url: 'https://pe.kunastores.com/', logo: '/ecosistema/marcas-aliadas/logos/kuna.svg' },
+  { name: 'Alpaca 111', desc: 'Marca especializada en prendas de alpaca para el mercado de lujo internacional.', url: 'https://alpaca111.com/', logo: '/ecosistema/marcas-aliadas/logos/alpaca-111.svg' },
+  { name: 'Amano', desc: 'Marca de lujo peruana especializada en prendas de alpaca y fibras exclusivas.', url: 'https://amanoyarns.com/pe/', logo: '/ecosistema/marcas-aliadas/logos/amano.svg' },
 ]
 
 const aliadosEstrategicos = [
-  { name: 'Intifil', desc: 'Empresa especializada en fibras finas. Socio estratégico en el procesamiento de fibras extrafinas.' },
-  { name: 'The Inoue Brothers', desc: 'Marca de moda sostenible danesa con profundo compromiso con las comunidades alpaqueras peruanas.' },
-  { name: 'Sandra Jordan', desc: 'Marca de lujo norteamericana pionera en el uso de fibras naturales sostenibles de alta calidad.' },
-  { name: 'Pelipeli', desc: 'Empresa europea especializada en accesorios de lujo en fibras naturales peruanas.' },
-  { name: 'Alpha Tops', desc: 'Procesadora especializada en la transformación de fibras de alpaca para el mercado textil internacional.' },
-  { name: 'Hessnatur', desc: 'Referente europeo en moda sostenible y textiles naturales con certificaciones de sostenibilidad.' },
+  { name: 'Intifil', desc: 'Empresa especializada en fibras finas. Socio estratégico en el procesamiento de fibras extrafinas.', logo: '/ecosistema/marcas-aliadas/logos/intifil.svg' },
+  { name: 'The Inoue Brothers', desc: 'Marca de moda sostenible danesa con profundo compromiso con las comunidades alpaqueras peruanas.', logo: '/ecosistema/marcas-aliadas/logos/the-inoue-brothers.svg' },
+  { name: 'Sandra Jordan', desc: 'Marca de lujo norteamericana pionera en el uso de fibras naturales sostenibles de alta calidad.', logo: '/ecosistema/marcas-aliadas/logos/sandra-jordan.svg' },
+  { name: 'Pelipeli', desc: 'Empresa europea especializada en accesorios de lujo en fibras naturales peruanas.', logo: '/ecosistema/marcas-aliadas/logos/polipeli.svg' },
+  { name: 'Alpha Tops', desc: 'Procesadora especializada en la transformación de fibras de alpaca para el mercado textil internacional.', logo: '/ecosistema/marcas-aliadas/logos/alpha-tops.svg' },
+  { name: 'Hessnatur', desc: 'Referente europeo en moda sostenible y textiles naturales con certificaciones de sostenibilidad.', logo: '/ecosistema/marcas-aliadas/logos/hessnatur.svg' },
 ]
 
-function BrandCard({ name, desc, url }: { name: string; desc: string; url?: string }) {
+function BrandCard({ name, desc, url, logo }: { name: string; desc: string; url?: string; logo?: string }) {
   const inner = (
-    <div className="border border-sand/40 p-8 hover:border-gold/40 hover:shadow-md transition-all duration-300 bg-white group h-full">
-      <div className="w-16 h-16 bg-beige flex items-center justify-center mb-6 group-hover:bg-gold/10 transition-colors">
-        <span className="font-serif text-lg text-gold font-semibold">{name.charAt(0)}</span>
+    <div className="border border-sand/40 p-8 hover:border-gold/40 hover:shadow-md transition-all duration-300 bg-white group h-full flex flex-col">
+      <div className="h-14 flex items-center mb-6">
+        {logo ? (
+          <img
+            src={logo}
+            alt={name}
+            className="max-h-full w-auto max-w-[160px] object-contain"
+            style={{ mixBlendMode: 'multiply' }}
+          />
+        ) : (
+          <div className="w-14 h-14 bg-beige flex items-center justify-center group-hover:bg-gold/10 transition-colors">
+            <span className="font-serif text-lg text-gold font-semibold">{name.charAt(0)}</span>
+          </div>
+        )}
       </div>
       <h3 className="font-serif text-lg text-ink mb-3 group-hover:text-gold transition-colors">{name}</h3>
-      <p className="text-sm text-ink/55 leading-relaxed">{desc}</p>
+      <p className="text-sm text-ink/55 leading-relaxed flex-1">{desc}</p>
       {url && <p className="text-xs text-gold/70 mt-4 tracking-wide">Visitar sitio →</p>}
     </div>
   )
