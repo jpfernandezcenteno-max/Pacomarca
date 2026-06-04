@@ -171,26 +171,15 @@ export default function HomePage() {
       {/* HERO — 200vh para efecto inmersivo */}
       <section ref={heroRef} className="relative h-[200vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
-          {/* Wrapper para forzar full-cover sin márgenes negros */}
-          <div className="absolute inset-0 overflow-hidden">
-            <video
-              ref={videoRef}
-              loop
-              playsInline
-              preload="auto"
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                height: '100vh',
-                width: 'auto',
-                minWidth: '100%',
-                transform: 'translate(-50%, -50%)',
-              }}
-            >
-              <source src="/home/20240813163648.mp4" type="video/mp4" />
-            </video>
-          </div>
+          <video
+            ref={videoRef}
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/home/20240813163648.mp4" type="video/mp4" />
+          </video>
 
           {/* Overlay que desaparece al scrollear */}
           <motion.div
