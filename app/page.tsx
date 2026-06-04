@@ -117,18 +117,23 @@ const fibers = [
 
 export default function HomePage() {
   const heroRef = useRef(null)
+  const videoRef = useRef<HTMLVideoElement>(null)
   const { scrollY } = useScroll()
   const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
   const textY = useTransform(scrollY, [0, 40], [0, -30])
   const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
 
   useEffect(() => {
-    let jumping = false
+    // Arrancar video en el primer scroll
+    const handleFirstScroll = () => {
+      videoRef.current?.play()
+    }
+    window.addEventListener('scroll', handleFirstScroll, { once: true })
 
+    let jumping = false
     const handleWheel = (e: WheelEvent) => {
       const y = window.scrollY
       const vh = window.innerHeight
-      // Si estamos en la zona del video (texto ya desapareció) y scrolleamos hacia abajo
       if (y > 40 && y < vh * 1.9 && e.deltaY > 0 && !jumping) {
         e.preventDefault()
         jumping = true
@@ -138,7 +143,10 @@ export default function HomePage() {
     }
 
     window.addEventListener('wheel', handleWheel, { passive: false })
-    return () => window.removeEventListener('wheel', handleWheel)
+    return () => {
+      window.removeEventListener('scroll', handleFirstScroll)
+      window.removeEventListener('wheel', handleWheel)
+    }
   }, [])
 
   return (
@@ -146,21 +154,15 @@ export default function HomePage() {
       {/* HERO — 200vh para efecto inmersivo */}
       <section ref={heroRef} className="relative h-[200vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
-          {/* Video — reemplazar src con el video real */}
           <video
-            autoPlay
+            ref={videoRef}
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute w-auto h-auto min-w-full min-h-full"
+            style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
           >
             <source src="/home/20240813163648.mp4" type="video/mp4" />
-            {/* Fallback imagen mientras no haya video */}
-            <img
-              src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=2400&q=90"
-              alt="Pacomarca"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
           </video>
 
           {/* Overlay que desaparece al scrollear */}
