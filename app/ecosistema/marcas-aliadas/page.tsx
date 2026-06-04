@@ -129,7 +129,7 @@ export default function MarcasAliadasPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {grupoIncaMarcas.map((marca, i) => (
               <FadeUp key={marca.name} delay={i * 0.08}>
-                <BrandCard name={marca.name} desc={marca.desc} url={marca.url} />
+                <BrandCard name={marca.name} desc={marca.desc} url={marca.url} logo={marca.logo} />
               </FadeUp>
             ))}
           </div>
@@ -148,7 +148,7 @@ export default function MarcasAliadasPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {aliadosEstrategicos.map((aliado, i) => (
               <FadeUp key={aliado.name} delay={i * 0.08}>
-                <BrandCard name={aliado.name} desc={aliado.desc} />
+                <BrandCard name={aliado.name} desc={aliado.desc} logo={aliado.logo} />
               </FadeUp>
             ))}
           </div>
