@@ -15,101 +15,108 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
   )
 }
 
-const posts = [
+type Post = {
+  id: number
+  date: string
+  category: string
+  image: string | null
+  images: string[]
+  title: string
+  desc: string
+  content: string
+  location?: string
+  readTime?: string
+  journal?: string
+  doi?: string
+  doiUrl?: string
+  authors?: string
+}
+
+const posts: Post[] = [
   {
     id: 1,
-    date: 'Marzo 2024',
-    category: 'Noticias',
-    image: 'https://images.unsplash.com/photo-1605792657660-596af9009e82?w=800&q=85',
-    title: 'Pacomarca presenta nuevos resultados del programa genético Black Alpaca',
-    desc: 'La estación científica anuncia el registro de las alpacas número 3,000 en el programa de conservación del color negro puro, un hito histórico para la preservación genética de la especie.',
-    content: `La estación científica anuncia el registro de las alpacas número 3,000 en el programa de conservación del color negro puro, un hito histórico para la preservación genética de la especie.
+    date: 'Marzo 2026',
+    category: 'Sostenibilidad · IAEA',
+    location: 'Puno, Perú · 4 100 m s.n.m.',
+    readTime: '4 min de lectura',
+    image: '/blog/blog-1/foto-1.jpg',
+    images: ['/blog/blog-1/foto-1.jpg', '/blog/blog-1/foto-2.jpg', '/blog/blog-1/foto-3.jpg'],
+    title: 'LCA de la fibra de alpaca: ¿qué hacemos con el metano?',
+    desc: 'Pacomarca y la IAEA unen fuerzas para medir y reducir las emisiones de los camélidos sudamericanos — y cambiar el relato de las fibras naturales frente a los sintéticos.',
+    content: `## Las fibras naturales en desventaja: el sesgo del LCA
 
-El programa Black Alpaca fue iniciado hace más de dos décadas con el objetivo de rescatar, preservar y mejorar la alpaca de color negro puro, en riesgo de extinción por la preferencia histórica del mercado por la fibra blanca. Hoy, gracias a décadas de selección rigurosa y al apoyo de las comunidades alpaqueras, el programa cuenta con más de 3,000 individuos registrados en el sistema PacoPro.
+Los estudios de Análisis de Ciclo de Vida (LCA, por sus siglas en inglés) han sido, históricamente, poco amables con las fibras naturales. Alpaca, lana ovina, cachemira: todas han salido menos beneficiadas frente a los sintéticos cuando se aplica el estándar convencional de comparación.
 
-Este hito representa no solo un logro científico, sino también un impacto económico real para las familias alpaqueras que cuidan estas alpacas. La fibra negra certificada Pacomarca ha recuperado su valor de mercado y es utilizada por marcas de lujo como Kuna, Amano y The Inoue Brothers en colecciones exclusivas.
+El problema está en cómo se contabiliza. El estándar actual no tiene en cuenta el ciclo de vida completo del producto. Y hay un factor que pesa mucho en la balanza: los animales, por el simple hecho de vivir —comer, respirar, orinar, defecar— aportan metano a la atmósfera.
 
-El programa continúa con nuevos objetivos de selección orientados a incrementar la proporción de animales negros en el rebaño y mejorar la calidad de la fibra producida.`,
+"Los animales por el hecho de vivir aportan metano a la atmósfera. Pero eso no cuenta toda la historia."
+
+## La alpaca ya es resiliente — pero podemos ir más lejos
+
+La alpaca es un animal extraordinariamente adaptado a condiciones extremas: vive por encima de los 4 000 m s.n.m., aprovecha pastos que ningún otro rumiante podría digerir, y produce una fibra de valor único en el mundo. Comparada con la oveja merino o la cabra de cachemira, su huella ambiental ya es más ligera.
+
+Pero el Grupo Inca, a través de Pacomarca, tiene claro que "ya somos buenos" no es suficiente. La pregunta que nos hacemos es: ¿cuánto metano emite realmente una alpaca, y qué podemos hacer para reducirlo genéticamente?
+
+## La IAEA aprueba y financia el proyecto MET-SACs
+
+La Agencia Internacional de Energía Atómica (IAEA) ha aprobado oficialmente el proyecto de investigación presentado por el Dr. Carlos Alfredo Gómez Bravo de la Universidad Nacional Agraria La Molina (UNALM): el proyecto MET-SACs (Integrating Phenotypic and Genetic Approaches to Assess Methane Emissions in South American Camelids Under Extensive Rangeland Conditions), con un financiamiento aprobado de €45 000 bajo el Coordinated Research Project D31034.
+
+El proyecto se desarrollará en colaboración entre tres instituciones que combinan ciencia de vanguardia con conocimiento profundo del territorio andino: Iowa State University (Ames, Iowa, EE. UU.), UNALM (Lima, Perú) y Pacomarca (Laraqueri, Puno — Grupo Inca, Perú).
+
+## Medir hoy para criar el animal del mañana
+
+El propósito de MET-SACs va mucho más allá de medir gases en una estación experimental. La meta de largo plazo es identificar los rasgos genéticos asociados a menores emisiones de metano en alpacas que viven bajo condiciones reales de pastoreo extensivo en la puna.
+
+Con esa información, el programa de mejora genética de Pacomarca —que ya lleva más de veinte años seleccionando animales por la finura y el color de su fibra— podrá incorporar un nuevo criterio de selección: la eficiencia metabólica y la menor huella de carbono. Un camélido más resiliente para el planeta.
+
+"El Grupo Inca, a través de Pacomarca, tiene claro que es necesario evaluar las emisiones de metano en la crianza de alpaca y, a futuro, generar un animal mucho más resiliente con el planeta."
+
+## ¿Qué significa esto para la industria?
+
+Si logramos demostrar científicamente que la alpaca —bien gestionada genéticamente— tiene una huella de metano notablemente menor que otros animales productores de fibra, el LCA de la alpaca cambiará. Y con él, la narrativa frente a los sintéticos. Este proyecto es el primer paso hacia ese futuro.`,
   },
   {
     id: 2,
-    date: 'Febrero 2024',
-    category: 'Ciencia',
-    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=85',
-    title: 'Publicación en Journal of Animal Breeding and Genetics sobre finura de alpaca Huacaya',
-    desc: 'Un nuevo artículo co-autorado por investigadores de Pacomarca, UNAP y la Universidad Complutense de Madrid presenta avances en la estimación de parámetros genéticos para la finura de fibra.',
-    content: `Un nuevo artículo co-autorado por investigadores de Pacomarca, UNAP y la Universidad Complutense de Madrid presenta avances en la estimación de parámetros genéticos para la finura de fibra.
+    date: 'Enero 2026',
+    category: 'Investigación · Genómica',
+    image: null,
+    images: [],
+    journal: 'Small Ruminant Research, Elsevier',
+    doi: '10.1016/j.smallrumres.2026.107704',
+    doiUrl: 'https://doi.org/10.1016/j.smallrumres.2026.107704',
+    authors: 'R. Pinares · M.S. Daverio · A. Cruz · G.A. Gutiérrez-Reynoso · K.A. Munyard',
+    title: 'Los genes que definen el negro en la alpaca Huacaya: ASIP y MC1R como marcadores de selección',
+    desc: 'Estudio realizado en Pacomarca en colaboración con UNALM, Iowa State University y Curtin University que identifica, por primera vez, los genotipos que permiten predecir con precisión el color oscuro en la fibra de alpaca Huacaya.',
+    content: `## Clasificar el color de la alpaca: del ojo humano a la medición objetiva
 
-La publicación, disponible en el Journal of Animal Breeding and Genetics, presenta los resultados de un análisis de más de 13 millones de datos genéticos y productivos registrados en el sistema PacoPro de Pacomarca. Los investigadores estimaron parámetros de heredabilidad y correlaciones genéticas para el diámetro medio de fibra (DMF) en alpacas Huacaya.
+La Norma Técnica Peruana 231.301 reconoce ocho colores básicos en el vellón de alpaca. Sin embargo, su asignación ha dependido históricamente de la percepción visual del evaluador — un criterio subjetivo que varía entre personas y regiones, con consecuencias directas en la selección de reproductores y en la valorización de lotes de fibra de color.
 
-Los resultados confirman que la finura de la fibra tiene una heredabilidad media-alta, lo que valida la efectividad del programa de selección genética de Pacomarca para producir fibras extrafinas certificadas como Divine, Sixteen e Imperial Alpaca.
+Este estudio aborda ese problema desde dos frentes: la colorimetría objetiva mediante el sistema CIE L*a*b* y el análisis genético de los genes ASIP y MC1R, los principales reguladores de la pigmentación en mamíferos.
 
-Esta es la publicación número 33 del programa científico de Pacomarca en revistas indexadas internacionales.`,
-  },
-  {
-    id: 3,
-    date: 'Enero 2024',
-    category: 'Programas',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=85',
-    title: 'Entrega de la octava Cabaña del Pastor en la comunidad de Llalli',
-    desc: 'Pacomarca completó la construcción y entrega de su octava cabaña del pastor, beneficiando a una familia alpaquera de la comunidad de Llalli en la región de Puno.',
-    content: `Pacomarca completó la construcción y entrega de su octava cabaña del pastor, beneficiando a una familia alpaquera de la comunidad de Llalli en la región de Puno.
+## La interacción ASIP × MC1R define el negro en la alpaca
 
-Las Cabañas del Pastor son viviendas dignas construidas en las zonas altoandinas donde las familias alpaqueras viven y trabajan, a altitudes que superan los 4,000 m.s.n.m. y donde las temperaturas pueden descender a -20°C durante la noche.
+El estudio secuenció ambos genes en 89 alpacas Huacaya y 9 vicuñas, y correlacionó las variantes encontradas con los valores colorimétricos de cada animal. El hallazgo central es la caracterización de su interacción epistática: el fenotipo negro y marrón-negro requiere la presencia simultánea del alelo dominante E de MC1R —que activa la síntesis de eumelanina— combinado con dos copias de alelos recesivos de ASIP (a¹, a², a³), que bloquean la producción de feomelanina.
 
-Cada cabaña incluye sistema de calefacción, agua potable, baño y espacio de almacenamiento para implementos de trabajo. La octava cabaña fue construida para la familia Mamani, criadores de alpacas participantes en el programa Lote de Machos desde hace más de 10 años.
+"El 100 % de las alpacas negro/marrón-negro presentó al menos un alelo E de MC1R en combinación con alelos recesivos homocigotos o heterocigotos compuestos de ASIP."
 
-El programa Cabaña del Pastor es parte del compromiso de Pacomarca con el bienestar de las comunidades que hacen posible la producción de las mejores fibras del mundo.`,
-  },
-  {
-    id: 4,
-    date: 'Diciembre 2023',
-    category: 'Fibras',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85',
-    title: 'Sixteen Alpaca premiada en la feria Première Vision de París',
-    desc: 'La fibra más fina de alpaca del mundo recibió reconocimiento internacional en la principal feria textil de lujo como fibra innovadora y sostenible del año.',
-    content: `La fibra más fina de alpaca del mundo recibió reconocimiento internacional en la principal feria textil de lujo como fibra innovadora y sostenible del año.
+Un hallazgo adicional de relevancia evolutiva: los haplotipos H4 de ASIP y H4 de MC1R se encontraron en homocigosidad en el 100 % de las vicuñas analizadas, permitiendo designarlos como los alelos silvestres A⁺ y E⁺ — la referencia ancestral del color en camélidos sudamericanos, identificada aquí por primera vez.
 
-Première Vision, la feria textil de referencia para las marcas de lujo a nivel mundial, reconoció a Sixteen Alpaca como una de las fibras más innovadoras y sostenibles presentadas en la edición de diciembre 2023. La distinción fue otorgada en la categoría de fibras naturales de alto rendimiento.
+## Tres consecuencias prácticas para los programas de selección
 
-Sixteen Alpaca, con un diámetro inferior a 17 micras, es la fibra de alpaca más fina disponible comercialmente en el mundo. Es el resultado de décadas de selección genética en el programa de fibras extrafinas de Pacomarca y está disponible exclusivamente a través del ecosistema certificado.
+Marcadores moleculares validados: los genotipos a¹a¹/E-, a¹a²/E-, a³a³/E- y a¹a³/E- pueden incorporarse como criterio de selección para reproductores de fibra negra profunda, complementando la evaluación colorimétrica actual en Pacomarca.
 
-El reconocimiento refuerza la posición de Pacomarca como líder mundial en innovación en fibras naturales sostenibles.`,
-  },
-  {
-    id: 5,
-    date: 'Noviembre 2023',
-    category: 'Programas',
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=85',
-    title: 'Abrigando Corazones supera los 8,000 kits distribuidos',
-    desc: 'El programa de donación de abrigos de alpaca alcanzó un nuevo récord histórico, protegiendo del frío a más de 8,400 niños y adultos mayores en cinco departamentos del Perú.',
-    content: `El programa de donación de abrigos de alpaca alcanzó un nuevo récord histórico, protegiendo del frío a más de 8,400 niños y adultos mayores en cinco departamentos del Perú.
+Colorimetría como estándar reproducible: la correlación de Spearman entre grupos de color y valores L*/C* alcanzó 0.85 y 0.92 respectivamente (p < 0.0001), validando la carta de colores Pacomarca como herramienta objetiva de clasificación de lotes.
 
-Abrigando Corazones es el programa social de Pacomarca que distribuye kits de abrigo de alpaca a las poblaciones más vulnerables de las comunidades altoandinas: niños en edad escolar y adultos mayores que viven en condiciones de extrema friaje.
+Próximos pasos — GWAS y lectura larga: los autores proponen complementar estos hallazgos con estudios de asociación genómica amplia y análisis de genes adicionales (TYR, TYRP1/2, MATP, KIT) para una predicción aún más precisa del fenotipo.
 
-Cada kit incluye mantas, suéteres, medias, bufandas y chullos elaborados con fibra de alpaca certificada. En la campaña 2023, se distribuyeron 1,200 kits adicionales en las regiones de Puno, Cusco, Arequipa, Apurímac y Huancavelica, superando por primera vez la barrera de los 8,000 kits acumulados desde el inicio del programa.
+## Por qué importa para Pacomarca
 
-El programa es financiado por las marcas aliadas del ecosistema Pacomarca como parte de su compromiso con el desarrollo comunitario.`,
-  },
-  {
-    id: 6,
-    date: 'Octubre 2023',
-    category: 'Alianzas',
-    image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=85',
-    title: 'The Inoue Brothers visita Pacomarca y lanza colección Black Alpaca',
-    desc: 'Los diseñadores daneses visitaron la estación científica y las comunidades alpaqueras de Puno, resultando en el lanzamiento de una colección exclusiva de Black Alpaca para el mercado europeo.',
-    content: `Los diseñadores daneses visitaron la estación científica y las comunidades alpaqueras de Puno, resultando en el lanzamiento de una colección exclusiva de Black Alpaca para el mercado europeo.
-
-Andreas y Peter Inoue, fundadores de The Inoue Brothers, realizaron una visita de tres días a Pacomarca y las comunidades alpaqueras de la región de Puno. La visita incluyó un recorrido por la estación científica, participación en el proceso de esquila y reuniones con las familias alpaqueras que cuidan las alpacas negras del programa.
-
-La experiencia inspiró el lanzamiento de su colección "Black Origin", elaborada íntegramente con fibra Black Alpaca certificada Pacomarca. La colección fue presentada en Copenhague y está disponible en sus puntos de venta en Europa y a través de su tienda online.
-
-"Ver de dónde viene la fibra, conocer a las familias que cuidan estos animales extraordinarios, es lo que da sentido a todo lo que hacemos", declaró Andreas Inoue durante la presentación de la colección.`,
+Pacomarca mantiene la base de datos de alpacas más completa del mundo y el hato de alpacas negras más grande del planeta. Contar con marcadores moleculares validados permite integrar la genómica al programa de mejora — seleccionar no solo por lo que el animal muestra, sino por lo que transmite.`,
   },
 ]
 
-export default function ActualidadPage() {
-  const [selected, setSelected] = useState<typeof posts[0] | null>(null)
+export default function BlogPage() {
+  const [selected, setSelected] = useState<Post | null>(null)
 
   return (
     <>
@@ -142,13 +149,85 @@ export default function ActualidadPage() {
               Volver al blog
             </button>
 
-            <p className="text-xs tracking-[0.2em] uppercase text-gold mb-3">{selected.category} · {selected.date}</p>
-            <h1 className="font-serif text-4xl text-ink mb-8 leading-snug">{selected.title}</h1>
-            <div className="space-y-5 text-base text-ink/65 leading-relaxed">
-              {selected.content.split('\n\n').map((para, i) => (
-                <p key={i}>{para}</p>
-              ))}
+            {/* Meta */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <span className="text-xs tracking-[0.2em] uppercase text-gold">{selected.category}</span>
+              <span className="text-ink/20">·</span>
+              <span className="text-xs text-ink/40">{selected.date}</span>
+              {selected.location && (
+                <>
+                  <span className="text-ink/20">·</span>
+                  <span className="text-xs text-ink/40">{selected.location}</span>
+                </>
+              )}
+              {selected.readTime && (
+                <>
+                  <span className="text-ink/20">·</span>
+                  <span className="text-xs text-ink/40">{selected.readTime}</span>
+                </>
+              )}
             </div>
+
+            <h1 className="font-serif text-4xl text-ink mb-6 leading-snug">{selected.title}</h1>
+            <p className="text-lg text-ink/60 leading-relaxed mb-10 border-l-4 border-gold pl-5">{selected.desc}</p>
+
+            {/* Journal / DOI info */}
+            {selected.journal && (
+              <div className="bg-beige p-6 mb-10 space-y-2">
+                <p className="text-xs tracking-[0.15em] uppercase text-gold mb-3">Publicación original</p>
+                {selected.authors && <p className="text-sm text-ink/70">{selected.authors}</p>}
+                <p className="text-sm text-ink/70 italic">{selected.journal}</p>
+                {selected.doiUrl && (
+                  <a
+                    href={selected.doiUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gold hover:underline break-all"
+                  >
+                    DOI: {selected.doi}
+                  </a>
+                )}
+              </div>
+            )}
+
+            {/* Hero image */}
+            {selected.image && (
+              <div className="relative h-72 w-full overflow-hidden mb-10">
+                <Image src={selected.image} alt={selected.title} fill className="object-cover" />
+              </div>
+            )}
+
+            {/* Content */}
+            <div className="space-y-5 text-base text-ink/65 leading-relaxed">
+              {selected.content.split('\n\n').map((para, i) => {
+                if (para.startsWith('## ')) {
+                  return (
+                    <h2 key={i} className="font-serif text-2xl text-ink mt-10 mb-2">
+                      {para.replace('## ', '')}
+                    </h2>
+                  )
+                }
+                if (para.startsWith('"')) {
+                  return (
+                    <blockquote key={i} className="border-l-4 border-gold pl-6 my-6">
+                      <p className="font-serif text-lg text-ink/70 italic leading-relaxed">{para}</p>
+                    </blockquote>
+                  )
+                }
+                return <p key={i}>{para}</p>
+              })}
+            </div>
+
+            {/* Photo gallery */}
+            {selected.images.length > 1 && (
+              <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {selected.images.map((src, i) => (
+                  <div key={i} className="relative h-52 overflow-hidden">
+                    <Image src={src} alt={`Foto ${i + 1}`} fill className="object-cover" />
+                  </div>
+                ))}
+              </div>
+            )}
 
             <div className="mt-16 pt-8 border-t border-sand/40">
               <button
@@ -179,25 +258,35 @@ export default function ActualidadPage() {
               </FadeUp>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl">
               {posts.map((post, i) => (
-                <FadeUp key={post.id} delay={i * 0.08} className="h-full">
+                <FadeUp key={post.id} delay={i * 0.1} className="h-full">
                   <button
                     onClick={() => setSelected(post)}
                     className="group bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300 text-left w-full h-full flex flex-col overflow-hidden"
                   >
-                    <div className="relative h-44 w-full shrink-0">
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover grayscale group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
+                    {/* Image or placeholder */}
+                    {post.image ? (
+                      <div className="relative h-52 w-full shrink-0">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    ) : (
+                      <div className="h-52 w-full shrink-0 bg-ink flex flex-col items-center justify-center px-8 text-center">
+                        <p className="text-xs tracking-[0.2em] uppercase text-gold mb-3">{post.journal}</p>
+                        <p className="font-serif text-white/60 text-sm leading-relaxed">{post.category}</p>
+                      </div>
+                    )}
+
                     <div className="px-6 py-3 flex items-center justify-between bg-cream shrink-0">
                       <span className="text-xs tracking-[0.15em] uppercase text-gold">{post.category}</span>
                       <span className="text-xs text-ink/35">{post.date}</span>
                     </div>
+
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="font-serif text-lg text-ink mb-3 group-hover:text-gold transition-colors leading-snug">
                         {post.title}
@@ -217,29 +306,6 @@ export default function ActualidadPage() {
           </motion.section>
         )}
       </AnimatePresence>
-
-      {/* Newsletter CTA */}
-      {!selected && (
-        <section className="bg-ink py-20">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <FadeUp>
-              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Mantente informado</p>
-              <h2 className="font-serif text-3xl text-white mb-6">
-                Suscríbete a las novedades de Pacomarca
-              </h2>
-              <p className="text-base text-white/60 mb-10">
-                Recibe las últimas noticias sobre el ecosistema, publicaciones científicas, programas comunitarios y novedades de las fibras certificadas.
-              </p>
-              <a
-                href="/contacto"
-                className="inline-block bg-gold text-white text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-gold/90 transition-colors"
-              >
-                Contactar para suscribirse
-              </a>
-            </FadeUp>
-          </div>
-        </section>
-      )}
     </>
   )
 }
