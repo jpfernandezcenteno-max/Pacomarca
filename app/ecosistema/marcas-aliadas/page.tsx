@@ -42,7 +42,7 @@ function BrandCard({ name, desc, url, logo }: { name: string; desc: string; url?
             src={logo}
             alt={name}
             className="max-h-full w-auto max-w-[160px] object-contain"
-            style={{ mixBlendMode: 'multiply' }}
+            style={{ filter: 'brightness(0)' }}
           />
         ) : (
           <div className="w-14 h-14 bg-beige flex items-center justify-center group-hover:bg-gold/10 transition-colors">
