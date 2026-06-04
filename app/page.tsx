@@ -156,7 +156,6 @@ export default function HomePage() {
         <div className="sticky top-0 h-screen overflow-hidden">
           <video
             ref={videoRef}
-            muted
             loop
             playsInline
             className="absolute w-auto h-auto min-w-full min-h-full"
