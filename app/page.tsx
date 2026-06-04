@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 
 function FadeUp({
@@ -118,34 +118,27 @@ const fibers = [
 export default function HomePage() {
   const heroRef = useRef(null)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [muted, setMuted] = useState(true)
   const { scrollY } = useScroll()
   const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
   const textY = useTransform(scrollY, [0, 40], [0, -30])
   const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
 
   useEffect(() => {
-    // Video arranca pausado y muted; al primer scroll se activa con sonido
-    const vid = videoRef.current
-    if (vid) {
-      vid.muted = true
-      vid.pause()
+    // Video arranca pausado y muted
+    if (videoRef.current) {
+      videoRef.current.muted = true
+      videoRef.current.pause()
     }
 
     let played = false
     const handleFirstScroll = () => {
       if (played || !videoRef.current) return
       played = true
-      videoRef.current.muted = false
-      videoRef.current.play().catch(() => {
-        // Si el navegador bloquea el sonido, reproducir sin él
-        if (videoRef.current) {
-          videoRef.current.muted = true
-          videoRef.current.play()
-        }
-      })
+      videoRef.current.play()
     }
-    window.addEventListener('scroll', handleFirstScroll)
-    window.addEventListener('wheel', handleFirstScroll, { passive: true })
+    window.addEventListener('scroll', handleFirstScroll, { once: true })
+    window.addEventListener('wheel', handleFirstScroll, { once: true, passive: true })
 
     let jumping = false
     const handleWheel = (e: WheelEvent) => {
@@ -167,34 +160,62 @@ export default function HomePage() {
     }
   }, [])
 
+  const toggleMute = () => {
+    if (!videoRef.current) return
+    videoRef.current.muted = !videoRef.current.muted
+    setMuted(videoRef.current.muted)
+  }
+
   return (
     <>
       {/* HERO — 200vh para efecto inmersivo */}
       <section ref={heroRef} className="relative h-[200vh]">
         <div className="sticky top-0 h-screen overflow-hidden">
-          <video
-            ref={videoRef}
-            loop
-            playsInline
-            preload="auto"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-            }}
-          >
-            <source src="/home/20240813163648.mp4" type="video/mp4" />
-          </video>
+          {/* Wrapper para forzar full-cover sin márgenes negros */}
+          <div className="absolute inset-0 overflow-hidden">
+            <video
+              ref={videoRef}
+              loop
+              playsInline
+              preload="auto"
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                minWidth: '100%',
+                minHeight: '100%',
+                width: 'auto',
+                height: 'auto',
+                transform: 'translate(-50%, -50%)',
+              }}
+            >
+              <source src="/home/20240813163648.mp4" type="video/mp4" />
+            </video>
+          </div>
 
           {/* Overlay que desaparece al scrollear */}
           <motion.div
             style={{ opacity: overlayOpacity }}
             className="absolute inset-0 bg-ink"
           />
+
+          {/* Botón mute/unmute */}
+          <button
+            onClick={toggleMute}
+            className="absolute bottom-8 right-8 z-20 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
+            aria-label={muted ? 'Activar sonido' : 'Silenciar'}
+          >
+            {muted ? (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              </svg>
+            )}
+          </button>
 
           {/* Texto que desaparece al scrollear */}
           <motion.div
