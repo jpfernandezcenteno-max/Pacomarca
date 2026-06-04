@@ -124,11 +124,28 @@ export default function HomePage() {
   const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
 
   useEffect(() => {
-    // Arrancar video en el primer scroll
-    const handleFirstScroll = () => {
-      videoRef.current?.play()
+    // Video arranca pausado y muted; al primer scroll se activa con sonido
+    const vid = videoRef.current
+    if (vid) {
+      vid.muted = true
+      vid.pause()
     }
-    window.addEventListener('scroll', handleFirstScroll, { once: true })
+
+    let played = false
+    const handleFirstScroll = () => {
+      if (played || !videoRef.current) return
+      played = true
+      videoRef.current.muted = false
+      videoRef.current.play().catch(() => {
+        // Si el navegador bloquea el sonido, reproducir sin él
+        if (videoRef.current) {
+          videoRef.current.muted = true
+          videoRef.current.play()
+        }
+      })
+    }
+    window.addEventListener('scroll', handleFirstScroll)
+    window.addEventListener('wheel', handleFirstScroll, { passive: true })
 
     let jumping = false
     const handleWheel = (e: WheelEvent) => {
@@ -145,6 +162,7 @@ export default function HomePage() {
     window.addEventListener('wheel', handleWheel, { passive: false })
     return () => {
       window.removeEventListener('scroll', handleFirstScroll)
+      window.removeEventListener('wheel', handleFirstScroll)
       window.removeEventListener('wheel', handleWheel)
     }
   }, [])
@@ -158,8 +176,16 @@ export default function HomePage() {
             ref={videoRef}
             loop
             playsInline
-            className="absolute w-auto h-auto min-w-full min-h-full"
-            style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
+            preload="auto"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+            }}
           >
             <source src="/home/20240813163648.mp4" type="video/mp4" />
           </video>
