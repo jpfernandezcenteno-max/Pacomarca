@@ -36,13 +36,13 @@ const aliadosEstrategicos = [
 function BrandCard({ name, desc, url, logo }: { name: string; desc: string; url?: string; logo?: string }) {
   const inner = (
     <div className="border border-sand/40 p-8 hover:border-gold/40 hover:shadow-md transition-all duration-300 bg-white group h-full flex flex-col">
-      <div className="h-14 flex items-center mb-6">
+      <div className="h-20 flex items-center mb-6">
         {logo ? (
           <img
             src={logo}
             alt={name}
-            className="max-h-full w-auto max-w-[160px] object-contain"
-            style={{ filter: 'brightness(0)' }}
+            className="max-h-full w-auto max-w-[200px] object-contain"
+            style={{ mixBlendMode: 'multiply' }}
           />
         ) : (
           <div className="w-14 h-14 bg-beige flex items-center justify-center group-hover:bg-gold/10 transition-colors">
