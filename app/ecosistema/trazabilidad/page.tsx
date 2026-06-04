@@ -32,7 +32,7 @@ export default function TrazabilidadPage() {
         section="ECOSISTEMA"
         title="Trazabilidad"
         subtitle="Del animal al producto final: transparencia total en cada eslabón"
-        imageUrl="/ecosistema/trazabilidad/DDG_5570.jpg"
+        imageUrl="/ecosistema/trazabilidad/portada.jpg"
         imagePosition="object-[center_25%]"
       />
 
@@ -60,20 +60,12 @@ export default function TrazabilidadPage() {
           <FadeUp delay={0.2}>
             <div className="bg-beige p-10">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Video de trazabilidad</p>
-              <div className="aspect-video bg-sand/50 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-6 h-6 text-gold ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-ink/50 font-medium">Video de Trazabilidad Pacomarca</p>
-                  <p className="text-xs text-ink/35 mt-1">Del animal al producto final</p>
-                </div>
-              </div>
-              <p className="text-xs text-ink/40 mt-4 text-center">
-                Próximamente disponible
-              </p>
+              <video
+                controls
+                playsInline
+                className="w-full aspect-video"
+                src="/ecosistema/trazabilidad/video-trazabilidad.mp4"
+              />
             </div>
           </FadeUp>
         </div>
@@ -123,10 +115,10 @@ export default function TrazabilidadPage() {
           <FadeUp delay={0.2}>
             <div className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=85"
+                src="/ecosistema/trazabilidad/foto-1.jpg"
                 alt="PacoPro sistema de registro"
                 fill
-                className="object-cover grayscale"
+                className="object-cover"
               />
             </div>
           </FadeUp>
