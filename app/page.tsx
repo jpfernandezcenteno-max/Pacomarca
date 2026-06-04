@@ -182,10 +182,9 @@ export default function HomePage() {
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
-                minWidth: '100%',
-                minHeight: '100%',
+                height: '100vh',
                 width: 'auto',
-                height: 'auto',
+                minWidth: '100%',
                 transform: 'translate(-50%, -50%)',
               }}
             >
