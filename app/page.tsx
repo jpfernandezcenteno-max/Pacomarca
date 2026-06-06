@@ -440,7 +440,7 @@ export default function HomePage() {
               <FadeUp key={fiber.name} delay={i * 0.1}>
                 <Link href={fiber.href}>
                   <div className="group border border-white/10 hover:border-gold/50 p-8 text-center transition-all duration-300">
-                    <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-6 ring-1 ring-gold/30 group-hover:ring-gold transition-all duration-300 relative">
+                    <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-6 ring-1 ring-gold/30 group-hover:ring-gold transition-all duration-300 relative">
                       <Image src={fiber.image} alt={fiber.label} fill className="object-cover scale-[1.2] object-center" />
                     </div>
                     <h3 className="font-serif text-base text-white mb-2 group-hover:text-gold transition-colors">
