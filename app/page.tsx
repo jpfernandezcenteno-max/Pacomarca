@@ -175,7 +175,8 @@ export default function HomePage() {
             ref={videoRef}
             loop
             playsInline
-            preload="auto"
+            preload="none"
+            poster="/home/foto-1.jpg"
             className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
           >
             <source src="/home/20240813163648.mp4" type="video/mp4" />
