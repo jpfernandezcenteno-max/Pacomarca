@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 
 function FadeUp({
@@ -118,6 +118,8 @@ const fibers = [
 export default function HomePage() {
   const heroRef = useRef(null)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const [videoStarted, setVideoStarted] = useState(false)
+  const [muted, setMuted] = useState(true)
   const { scrollY } = useScroll()
   const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
   const textY = useTransform(scrollY, [0, 40], [0, -30])
@@ -135,6 +137,7 @@ export default function HomePage() {
       if (played || !videoRef.current) return
       played = true
       videoRef.current.play()
+      setVideoStarted(true)
     }
     window.addEventListener('scroll', handleFirstScroll, { once: true })
     window.addEventListener('wheel', handleFirstScroll, { once: true, passive: true })
@@ -181,6 +184,30 @@ export default function HomePage() {
             className="absolute inset-0 bg-ink"
           />
 
+          {/* Botón mute — aparece solo cuando el video está reproduciendo */}
+          {videoStarted && (
+            <button
+              onClick={() => {
+                if (!videoRef.current) return
+                videoRef.current.muted = !videoRef.current.muted
+                setMuted(videoRef.current.muted)
+              }}
+              className="absolute bottom-8 right-8 z-20 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
+              aria-label={muted ? 'Activar sonido' : 'Silenciar'}
+            >
+              {muted ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+              )}
+            </button>
+          )}
+
 
           {/* Texto que desaparece al scrollear */}
           <motion.div
@@ -216,23 +243,9 @@ export default function HomePage() {
                   ))}
                 </motion.span>
               </h1>
-              <p className="text-lg md:text-xl text-white/70 mb-10 font-light">
+              <p className="text-lg md:text-xl text-white/70 font-light">
                 Impulsado por el Grupo Inca
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/ecosistema"
-                  className="inline-block bg-gold text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-gold/90 transition-colors duration-200"
-                >
-                  Conocer el ecosistema
-                </Link>
-                <Link
-                  href="/fibras"
-                  className="inline-block border border-white/50 text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-white/10 transition-colors duration-200"
-                >
-                  Ver fibras
-                </Link>
-              </div>
             </motion.div>
 
             {/* Scroll indicator */}
