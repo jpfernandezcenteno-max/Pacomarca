@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import PageHeader from '@/components/PageHeader'
 import Image from 'next/image'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
@@ -21,6 +22,8 @@ type Post = {
   category: string
   image: string | null
   images: string[]
+  imageInsertAfter: number[]
+  imageStartIndex: number
   title: string
   desc: string
   content: string
@@ -41,6 +44,8 @@ const posts: Post[] = [
     readTime: '4 min de lectura',
     image: '/blog/blog-1/foto-1.jpg',
     images: ['/blog/blog-1/foto-1.jpg', '/blog/blog-1/foto-2.jpg', '/blog/blog-1/foto-3.jpg'],
+    imageStartIndex: 1,
+    imageInsertAfter: [4, 10],
     title: 'LCA de la fibra de alpaca: ¿qué hacemos con el metano?',
     desc: 'Pacomarca y la IAEA unen fuerzas para medir y reducir las emisiones de los camélidos sudamericanos — y cambiar el relato de las fibras naturales frente a los sintéticos.',
     content: `## Las fibras naturales en desventaja: el sesgo del LCA
@@ -81,6 +86,8 @@ Si logramos demostrar científicamente que la alpaca —bien gestionada genétic
     category: 'Investigación · Genómica',
     image: '/blog/blog-2/foto-1.jpg',
     images: ['/blog/blog-2/foto-1.jpg', '/blog/blog-2/foto-2.jpg', '/blog/blog-2/foto-3.jpg'],
+    imageStartIndex: 0,
+    imageInsertAfter: [3, 7, 11],
     journal: 'Small Ruminant Research, Elsevier',
     doi: '10.1016/j.smallrumres.2026.107704',
     doiUrl: 'https://doi.org/10.1016/j.smallrumres.2026.107704',
@@ -191,36 +198,44 @@ export default function BlogPage() {
             )}
 
             {/* Content con imágenes intercaladas */}
-            <div className="space-y-5 text-base text-ink/65 leading-relaxed">
-              {selected.content.split('\n\n').map((para, i) => {
-                if (para.startsWith('## ')) {
-                  return (
-                    <h2 key={i} className="font-serif text-2xl text-ink mt-10 mb-2">
-                      {para.replace('## ', '')}
-                    </h2>
-                  )
-                }
-                if (para.startsWith('"')) {
-                  return (
-                    <blockquote key={i} className="border-l-4 border-gold pl-6 my-6">
-                      <p className="font-serif text-lg text-ink/70 italic leading-relaxed">{para}</p>
-                    </blockquote>
-                  )
-                }
-                return <p key={i}>{para}</p>
-              })}
-            </div>
+            {(() => {
+              const paragraphs = selected.content.split('\n\n')
+              const imagesToShow = selected.images.slice(selected.imageStartIndex)
+              let imgIdx = 0
+              return (
+                <div className="space-y-5 text-base text-ink/65 leading-relaxed">
+                  {paragraphs.map((para, i) => {
+                    let block: React.ReactNode
+                    if (para.startsWith('## ')) {
+                      block = <h2 key={`p-${i}`} className="font-serif text-2xl text-ink mt-10 mb-2">{para.replace('## ', '')}</h2>
+                    } else if (para.startsWith('"')) {
+                      block = (
+                        <blockquote key={`p-${i}`} className="border-l-4 border-gold pl-6 my-6">
+                          <p className="font-serif text-lg text-ink/70 italic leading-relaxed">{para}</p>
+                        </blockquote>
+                      )
+                    } else {
+                      block = <p key={`p-${i}`}>{para}</p>
+                    }
 
-            {/* Imágenes grandes en secuencia (sin repetir) */}
-            {selected.images.length > 0 && (
-              <div className="mt-14 space-y-6">
-                {selected.images.map((src, i) => (
-                  <div key={i} className="relative h-80 w-full overflow-hidden">
-                    <Image src={src} alt={`Foto ${i + 1}`} fill className="object-cover" />
-                  </div>
-                ))}
-              </div>
-            )}
+                    const shouldInsertImage = selected.imageInsertAfter.includes(i) && imgIdx < imagesToShow.length
+                    const imgSrc = shouldInsertImage ? imagesToShow[imgIdx] : null
+                    if (shouldInsertImage) imgIdx++
+
+                    return (
+                      <React.Fragment key={i}>
+                        {block}
+                        {imgSrc && (
+                          <div className="relative h-80 w-full overflow-hidden my-8">
+                            <Image src={imgSrc} alt={`Foto`} fill className="object-cover" />
+                          </div>
+                        )}
+                      </React.Fragment>
+                    )
+                  })}
+                </div>
+              )
+            })()}
 
             <div className="mt-16 pt-8 border-t border-sand/40">
               <button
