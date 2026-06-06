@@ -1,6 +1,7 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -23,7 +24,7 @@ const fibers = [
     desc: 'La innovación más sofisticada de Pacomarca. Divine Alpaca es el resultado de décadas de selección genética orientada a eliminar las fibras meduladas del vellón, logrando una suavidad comparable al cachemir pero con las propiedades únicas de la alpaca.',
     partners: 'Kuna, Amano',
     bgColor: 'bg-cream',
-    circleColor: 'bg-sand',
+    image: '/fibras/fibra-divine-imperial-sixteen.jpg',
   },
   {
     name: 'Sixteen Alpaca',
@@ -32,7 +33,7 @@ const fibers = [
     desc: 'La fibra de alpaca más fina jamás certificada comercialmente. Sixteen Alpaca tiene un diámetro medio inferior a 17 micras, comparable a la vicuña y a las mejores fibras de guanaco. Es el resultado del programa de fibras extrafinas de Pacomarca.',
     partners: 'Inca Tops, marcas selectas',
     bgColor: 'bg-beige',
-    circleColor: 'bg-sand/60',
+    image: '/fibras/fibra-divine-imperial-sixteen.jpg',
   },
   {
     name: 'Imperial Alpaca',
@@ -41,7 +42,7 @@ const fibers = [
     desc: 'Con un diámetro medio inferior a 18 micras y la certificación del Responsible Alpaca Standard (RAS), Imperial Alpaca representa el más alto estándar de trazabilidad y bienestar animal en la industria. Disponible en la gama de colores naturales de la alpaca.',
     partners: 'Inca Tops, Incalpaca',
     bgColor: 'bg-cream',
-    circleColor: 'bg-gold/20',
+    image: '/fibras/fibra-divine-imperial-sixteen.jpg',
   },
   {
     name: 'Black Alpaca',
@@ -50,7 +51,7 @@ const fibers = [
     desc: 'La fibra más escasa y buscada del ecosistema. Black Alpaca proviene de las alpacas de color negro puro que Pacomarca ha rescatado de la extinción. Solo el 0.07% de la producción nacional es negro puro, sin pigmentación mixta.',
     partners: 'Kuna, Amano, The Inoue Brothers',
     bgColor: 'bg-ink',
-    circleColor: 'bg-white/10',
+    image: '/fibras/fibra-black.jpg',
     dark: true,
   },
   {
@@ -60,7 +61,7 @@ const fibers = [
     desc: 'La alpaca peruana posee la paleta de colores naturales más amplia de cualquier fibra animal: más de 22 tonalidades reconocidas, del blanco puro al negro profundo, pasando por decenas de grises, cafés y cremas. Sin ningún proceso de tintura química.',
     partners: 'Kuna, Amano',
     bgColor: 'bg-beige',
-    circleColor: 'bg-cream',
+    image: '/fibras/fibra-colores.jpg',
   },
 ]
 
@@ -98,11 +99,14 @@ export default function FibrasPage() {
               <Link href={fiber.href}>
                 <div className={`group grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden hover:shadow-2xl transition-all duration-500 ${fiber.bgColor}`}>
                   {/* Circle side */}
-                  <div className={`lg:col-span-3 flex items-center justify-center py-16 px-8 ${fiber.dark ? '' : ''}`}>
-                    <div className={`w-32 h-32 rounded-full ${fiber.circleColor} border-2 ${fiber.dark ? 'border-white/20' : 'border-sand/50'} flex items-center justify-center group-hover:scale-105 transition-transform duration-500`}>
-                      <span className={`font-serif text-2xl ${fiber.dark ? 'text-gold' : 'text-gold'}`}>
-                        {fiber.name.charAt(0)}
-                      </span>
+                  <div className="lg:col-span-3 flex items-center justify-center py-16 px-8">
+                    <div className="w-36 h-36 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-500 relative">
+                      <Image
+                        src={fiber.image}
+                        alt={fiber.name}
+                        fill
+                        className="object-cover scale-[1.8] object-center"
+                      />
                     </div>
                   </div>
 
