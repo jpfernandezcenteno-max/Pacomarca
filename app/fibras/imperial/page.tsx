@@ -100,11 +100,13 @@ export default function ImperialPage() {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <img
-                  src="/fibras/imperial/logo-ras.svg"
-                  alt="Responsible Alpaca Standard"
-                  className="w-48 h-48 object-contain"
-                />
+                <div className="w-48 h-48 rounded-full overflow-hidden bg-white flex items-center justify-center">
+                  <img
+                    src="/fibras/imperial/logo-ras.svg"
+                    alt="Responsible Alpaca Standard"
+                    className="w-full h-full object-contain scale-[0.85]"
+                  />
+                </div>
               </div>
               <div className="grid grid-cols-1 gap-3">
                 {[

@@ -148,10 +148,13 @@ export default function IncaEsquilaPage() {
                   La Norma Técnica Peruana NTP 231.370-2014 establece los requisitos para la esquila, recolección, acondicionamiento, clasificación y almacenamiento de la fibra de alpaca. Es el primer estándar peruano que formaliza el proceso de esquila con base en criterios científicos de bienestar animal y calidad de fibra, fruto del trabajo conjunto entre Pacomarca, el INDECOPI y el sector académico.
                 </p>
               </div>
-              {/* Sello NTP — reemplazar con <Image> cuando esté disponible */}
               <div className="flex items-center justify-center">
-                <div className="w-48 h-48 bg-beige border border-sand/60 flex items-center justify-center">
-                  <p className="text-xs text-ink/30 text-center px-4">Sello NTP<br />231.370-2014</p>
+                <div className="w-48 h-48 rounded-full overflow-hidden bg-white flex items-center justify-center">
+                  <img
+                    src="/conocimiento/inca-esquila/logo-ntp.svg"
+                    alt="Sello NTP 231.370-2014"
+                    className="w-full h-full object-contain scale-[0.85]"
+                  />
                 </div>
               </div>
             </div>
