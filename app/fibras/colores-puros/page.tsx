@@ -59,7 +59,7 @@ export default function ColoresPurosPage() {
           <FadeUp>
             <div className="flex items-center justify-center mb-10">
               <div className="w-72 h-72 rounded-full overflow-hidden relative">
-                <Image src="/fibras/fibra-colores.jpg" alt="Colores Puros" fill className="object-cover scale-[1.75] object-center" />
+                <Image src="/fibras/fibra-colores.jpg" alt="Colores Puros" fill className="object-cover scale-[1.35] object-center" />
               </div>
             </div>
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">22+ tonalidades naturales</p>
