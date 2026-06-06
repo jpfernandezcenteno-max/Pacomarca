@@ -100,7 +100,7 @@ export default function FibrasPage() {
                 <div className={`group grid grid-cols-1 lg:grid-cols-12 gap-0 overflow-hidden hover:shadow-2xl transition-all duration-500 ${fiber.bgColor}`}>
                   {/* Circle side */}
                   <div className="lg:col-span-3 flex items-center justify-center py-16 px-8">
-                    <div className="w-36 h-36 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-500 relative">
+                    <div className="w-44 h-44 rounded-full overflow-hidden group-hover:scale-105 transition-transform duration-500 relative">
                       <Image
                         src={fiber.image}
                         alt={fiber.name}

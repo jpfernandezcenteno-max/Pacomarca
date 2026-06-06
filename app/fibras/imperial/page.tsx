@@ -34,7 +34,7 @@ export default function ImperialPage() {
           <FadeUp>
             <div className="flex items-center justify-center">
               <div className="relative">
-                <div className="w-72 h-72 rounded-full overflow-hidden relative">
+                <div className="w-80 h-80 rounded-full overflow-hidden relative">
                   <Image src="/fibras/fibra-divine-imperial-sixteen.jpg" alt="Imperial Alpaca" fill className="object-cover scale-[1.2] object-center" />
                 </div>
                 <div className="absolute -top-4 -right-4 bg-gold text-white text-xs tracking-[0.1em] uppercase px-4 py-2">
