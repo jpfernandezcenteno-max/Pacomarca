@@ -99,11 +99,12 @@ export default function ImperialPage() {
                   <p>La certificación incluye auditorías independientes de bienestar animal, condiciones laborales de las comunidades, gestión de la tierra y trazabilidad de la cadena de suministro.</p>
                 </div>
               </div>
-              {/* Sello RAS — reemplazar con <Image> cuando esté disponible */}
               <div className="flex items-center justify-center">
-                <div className="w-48 h-48 bg-white border border-sand/60 flex items-center justify-center">
-                  <p className="text-xs text-ink/30 text-center px-4">Sello<br />RAS</p>
-                </div>
+                <img
+                  src="/fibras/imperial/logo-ras.svg"
+                  alt="Responsible Alpaca Standard"
+                  className="w-48 h-48 object-contain"
+                />
               </div>
               <div className="grid grid-cols-1 gap-3">
                 {[
