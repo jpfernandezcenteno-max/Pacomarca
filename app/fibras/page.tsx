@@ -105,7 +105,7 @@ export default function FibrasPage() {
                         src={fiber.image}
                         alt={fiber.name}
                         fill
-                        className="object-cover scale-[1.45] object-center"
+                        className="object-cover scale-[1.2] object-center"
                       />
                     </div>
                   </div>
