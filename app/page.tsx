@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 
 
 function FadeUp({
@@ -118,7 +118,6 @@ const fibers = [
 export default function HomePage() {
   const heroRef = useRef(null)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [muted, setMuted] = useState(true)
   const { scrollY } = useScroll()
   const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
   const textY = useTransform(scrollY, [0, 40], [0, -30])
@@ -160,11 +159,6 @@ export default function HomePage() {
     }
   }, [])
 
-  const toggleMute = () => {
-    if (!videoRef.current) return
-    videoRef.current.muted = !videoRef.current.muted
-    setMuted(videoRef.current.muted)
-  }
 
   return (
     <>
@@ -175,8 +169,7 @@ export default function HomePage() {
             ref={videoRef}
             loop
             playsInline
-            preload="none"
-            poster="/home/foto-1.jpg"
+            preload="metadata"
             className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
           >
             <source src="/home/20240813163648.mp4" type="video/mp4" />
@@ -188,23 +181,6 @@ export default function HomePage() {
             className="absolute inset-0 bg-ink"
           />
 
-          {/* Botón mute/unmute */}
-          <button
-            onClick={toggleMute}
-            className="absolute bottom-8 right-8 z-20 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
-            aria-label={muted ? 'Activar sonido' : 'Silenciar'}
-          >
-            {muted ? (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-              </svg>
-            )}
-          </button>
 
           {/* Texto que desaparece al scrollear */}
           <motion.div
@@ -269,7 +245,7 @@ export default function HomePage() {
                 transition={{ repeat: Infinity, duration: 2 }}
                 className="flex flex-col items-center gap-2"
               >
-                <span className="text-xs tracking-[0.2em] text-white/50 uppercase">Scroll</span>
+                <span className="text-xs tracking-[0.2em] text-white/60 uppercase">Scroll para reproducir el video</span>
                 <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
                 </svg>
