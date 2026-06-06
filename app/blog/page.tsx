@@ -190,14 +190,7 @@ export default function BlogPage() {
               </div>
             )}
 
-            {/* Hero image */}
-            {selected.image && (
-              <div className="relative h-72 w-full overflow-hidden mb-10">
-                <Image src={selected.image} alt={selected.title} fill className="object-cover" />
-              </div>
-            )}
-
-            {/* Content */}
+            {/* Content con imágenes intercaladas */}
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               {selected.content.split('\n\n').map((para, i) => {
                 if (para.startsWith('## ')) {
@@ -218,11 +211,11 @@ export default function BlogPage() {
               })}
             </div>
 
-            {/* Photo gallery */}
-            {selected.images.length > 1 && (
-              <div className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {/* Imágenes grandes en secuencia (sin repetir) */}
+            {selected.images.length > 0 && (
+              <div className="mt-14 space-y-6">
                 {selected.images.map((src, i) => (
-                  <div key={i} className="relative h-52 overflow-hidden">
+                  <div key={i} className="relative h-80 w-full overflow-hidden">
                     <Image src={src} alt={`Foto ${i + 1}`} fill className="object-cover" />
                   </div>
                 ))}
