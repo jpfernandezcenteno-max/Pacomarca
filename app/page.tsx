@@ -108,11 +108,11 @@ const programs = [
 ]
 
 const fibers = [
-  { name: 'Divine', label: 'Divine Alpaca', href: '/fibras/divine', description: 'Cero medulación. La suavidad perfecta.' },
-  { name: 'Sixteen', label: 'Sixteen Alpaca', href: '/fibras/sixteen', description: '< 17 micras. La más fina del mundo.' },
-  { name: 'Imperial', label: 'Imperial Alpaca', href: '/fibras/imperial', description: '< 18 micras. Certificación RAS.' },
-  { name: 'Black', label: 'Black Alpaca', href: '/fibras/black', description: 'Negro natural puro. 0.07% producción.' },
-  { name: 'Colores Puros', label: 'Colores Puros', href: '/fibras/colores-puros', description: '22+ tonalidades. Sin tinturas químicas.' },
+  { name: 'Divine', label: 'Divine Alpaca', href: '/fibras/divine', description: 'Cero medulación. La suavidad perfecta.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
+  { name: 'Sixteen', label: 'Sixteen Alpaca', href: '/fibras/sixteen', description: '< 17 micras. La más fina del mundo.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
+  { name: 'Imperial', label: 'Imperial Alpaca', href: '/fibras/imperial', description: '< 18 micras. Certificación RAS.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
+  { name: 'Black', label: 'Black Alpaca', href: '/fibras/black', description: 'Negro natural puro. 0.07% producción.', image: '/fibras/fibra-black.jpg' },
+  { name: 'Colores Puros', label: 'Colores Puros', href: '/fibras/colores-puros', description: '22+ tonalidades. Sin tinturas químicas.', image: '/fibras/fibra-colores.jpg' },
 ]
 
 export default function HomePage() {
@@ -440,8 +440,8 @@ export default function HomePage() {
               <FadeUp key={fiber.name} delay={i * 0.1}>
                 <Link href={fiber.href}>
                   <div className="group border border-white/10 hover:border-gold/50 p-8 text-center transition-all duration-300">
-                    <div className="w-16 h-16 rounded-full border border-gold/30 group-hover:border-gold mx-auto mb-6 flex items-center justify-center transition-colors duration-300">
-                      <span className="font-serif text-lg text-gold">{fiber.name.charAt(0)}</span>
+                    <div className="w-16 h-16 rounded-full overflow-hidden mx-auto mb-6 ring-1 ring-gold/30 group-hover:ring-gold transition-all duration-300 relative">
+                      <Image src={fiber.image} alt={fiber.label} fill className="object-cover scale-[1.2] object-center" />
                     </div>
                     <h3 className="font-serif text-base text-white mb-2 group-hover:text-gold transition-colors">
                       {fiber.label}
