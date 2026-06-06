@@ -1,6 +1,7 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -54,8 +55,13 @@ export default function ColoresPurosPage() {
       {/* Split layout */}
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Color palette */}
+          {/* Fiber sample */}
           <FadeUp>
+            <div className="flex items-center justify-center mb-10">
+              <div className="w-72 h-72 rounded-full overflow-hidden relative">
+                <Image src="/fibras/fibra-colores.jpg" alt="Colores Puros" fill className="object-cover scale-[1.55] object-center" />
+              </div>
+            </div>
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">22+ tonalidades naturales</p>
             <div className="grid grid-cols-6 gap-2">
               {colors.map((color) => (

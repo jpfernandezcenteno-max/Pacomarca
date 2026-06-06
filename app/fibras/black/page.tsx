@@ -1,6 +1,7 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -34,11 +35,8 @@ export default function BlackAlpacaPage() {
             <FadeUp>
               <div className="flex items-center justify-center">
                 <div className="relative">
-                  <div className="w-72 h-72 rounded-full bg-white/5 border-2 border-white/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <p className="font-serif text-6xl text-gold mb-2">B</p>
-                      <p className="text-xs tracking-[0.2em] uppercase text-white/40">Black Alpaca</p>
-                    </div>
+                  <div className="w-72 h-72 rounded-full overflow-hidden relative">
+                    <Image src="/fibras/fibra-black.jpg" alt="Black Alpaca" fill className="object-cover scale-[1.55] object-center" />
                   </div>
                   <div className="absolute -top-4 -right-4 bg-gold text-white text-xs tracking-[0.1em] uppercase px-4 py-2">
                     0.07% producción
