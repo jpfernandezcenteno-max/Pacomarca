@@ -36,7 +36,7 @@ export default function BlackAlpacaPage() {
               <div className="flex items-center justify-center">
                 <div className="relative">
                   <div className="w-72 h-72 rounded-full overflow-hidden relative">
-                    <Image src="/fibras/fibra-black.jpg" alt="Black Alpaca" fill className="object-cover scale-[1.35] object-center" />
+                    <Image src="/fibras/fibra-black.jpg" alt="Black Alpaca" fill className="object-cover scale-[1.45] object-center" />
                   </div>
                   <div className="absolute -top-4 -right-4 bg-gold text-white text-xs tracking-[0.1em] uppercase px-4 py-2">
                     0.07% producción
