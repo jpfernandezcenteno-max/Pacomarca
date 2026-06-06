@@ -149,7 +149,7 @@ export default function IncaEsquilaPage() {
                 </p>
               </div>
               <div className="flex items-center justify-center">
-                <div className="w-48 h-48 rounded-full overflow-hidden bg-white flex items-center justify-center">
+                <div className="w-64 h-64 rounded-full overflow-hidden bg-white flex items-center justify-center">
                   <img
                     src="/conocimiento/inca-esquila/logo-ntp.svg"
                     alt="Sello NTP 231.370-2014"
