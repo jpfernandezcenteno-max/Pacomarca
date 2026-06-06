@@ -466,6 +466,59 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* BLOG */}
+      <section className="py-28 max-w-7xl mx-auto px-6 lg:px-8">
+        <FadeUp>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Blog</p>
+              <h2 className="font-serif text-4xl lg:text-5xl text-ink">Últimas publicaciones</h2>
+            </div>
+            <Link href="/blog" className="text-xs tracking-[0.2em] uppercase text-ink border-b border-ink/30 pb-1 hover:border-gold hover:text-gold transition-colors whitespace-nowrap">
+              Ver todos los artículos
+            </Link>
+          </div>
+        </FadeUp>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {[
+            {
+              title: 'LCA de la fibra de alpaca: ¿qué hacemos con el metano?',
+              desc: 'Pacomarca y la IAEA unen fuerzas para medir y reducir las emisiones de los camélidos sudamericanos.',
+              category: 'Sostenibilidad · IAEA',
+              date: 'Marzo 2026',
+              image: '/blog/blog-1/foto-1.jpg',
+              href: '/blog',
+            },
+            {
+              title: 'Los genes que definen el negro en la alpaca Huacaya: ASIP y MC1R',
+              desc: 'Estudio realizado en Pacomarca identifica, por primera vez, los genotipos que permiten predecir el color oscuro en la fibra.',
+              category: 'Investigación · Genómica',
+              date: 'Enero 2026',
+              image: '/blog/blog-2/foto-1.jpg',
+              href: '/blog',
+            },
+          ].map((post, i) => (
+            <FadeUp key={post.title} delay={i * 0.1}>
+              <Link href={post.href}>
+                <div className="group overflow-hidden bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300">
+                  <div className="relative h-56 overflow-hidden">
+                    <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  </div>
+                  <div className="px-6 py-3 flex items-center justify-between bg-cream">
+                    <span className="text-xs tracking-[0.15em] uppercase text-gold">{post.category}</span>
+                    <span className="text-xs text-ink/35">{post.date}</span>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors leading-snug">{post.title}</h3>
+                    <p className="text-sm text-ink/55 leading-relaxed">{post.desc}</p>
+                  </div>
+                </div>
+              </Link>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
       {/* IMAGE BREAK */}
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
         <Image
