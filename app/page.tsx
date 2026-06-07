@@ -511,43 +511,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* IMAGE BREAK */}
-      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
-        <Image
-          src="/ecosistema/alpacas.jpg"
-          alt="Alpacas en los Andes peruanos"
-          fill
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-ink/60" />
-        <FadeUp>
-          <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-            <svg className="w-8 h-6 text-gold mx-auto mb-8 opacity-60" fill="currentColor" viewBox="0 0 32 24">
-              <path d="M0 24V14.4C0 6.528 5.016 1.392 15.048 0L16.8 2.976C12.624 3.984 9.888 5.616 8.592 8.112H14.4V24H0zm17.6 0V14.4C17.6 6.528 22.616 1.392 32.648 0L34.4 2.976C30.224 3.984 27.488 5.616 26.192 8.112H32V24H17.6z" />
-            </svg>
-            <p className="font-serif text-3xl md:text-4xl lg:text-5xl text-white font-light leading-relaxed">
-              La verdadera sostenibilidad solo es posible cuando todos ganan.
-            </p>
-          </div>
-        </FadeUp>
-      </section>
-
-      {/* LIBRO DE RECLAMACIONES — requerido por DS 011-2011-PCM */}
-      <section className="bg-white py-10 border-t border-sand/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-end">
-          <Link href="/libro-reclamaciones" title="Libro de Reclamaciones Virtual">
-            <Image
-              src="/libro-reclamaciones-badge.png"
-              alt="Libro de Reclamaciones"
-              width={140}
-              height={100}
-              className="hover:opacity-80 transition-opacity"
-            />
-          </Link>
-        </div>
-      </section>
-
       {/* CONTACT CTA */}
       <section className="bg-beige py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
