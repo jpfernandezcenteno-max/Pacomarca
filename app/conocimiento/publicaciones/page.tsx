@@ -103,6 +103,82 @@ const otrasPub: Pub[] = [
   { title: 'Resultados de experiencias de investigación sobre fibra de alpaca', authors: 'Gutiérrez, J.P.', source: 'Arequipa, Perú', year: '2010', ref: '' },
 ]
 
+// PDFs de descarga (mismo orden que los arrays de arriba), alojados en pacomarca.com
+const PDF_BASE = 'https://pacomarca.com'
+const indexadasFiles = [
+  '/media/Alpaca_skin_analyzed_under_architecture_and_structure.pdf',
+  '/media/Genetic_parameters_for_different_types_of_medullated_fibre_in_alpacas.pdf',
+  '/media/Genome-Wide_Association_Study_of_Fiber_Diameter_in_Alpacas.pdf',
+  '/media/Comparison_of_projection_microscope_with_OFDA100_in_alpaca_fibers_medullation_xrdinmx.pdf',
+  '/media/Genetic_parameters_for_fleece_uniformity_in_alpacas.pdf',
+  '/media/Genomic_selection_improves_genetic_gain_for_fiber_traits_in_a_breeding_program_for_alpacas.pdf',
+  '/media/Relationships_between_the_incidence_and_degree_of_medullation_with_the_diamter_of_alpaca_fibers_evaluated_using_a_novel_device_based_on_artificial_intelligence.pdf',
+  '/media/Application_of_artificial_intelligence_and_digital_analysis_to_automatically_determine_the_percentage_of_fiber_medullation_in_alpaca_fleece_samples.pdf',
+  '/media/ssGBLUP_method_improves_the_accuracy_of_breeding_value_prediction_in_Huacaya_alpaca.pdf',
+  '/media/Software_de_gestion_para_pedigri_y_produccion_de_camelidos_del_nuevo_mundo_Pacokipu_y_Llamakipu.pdf',
+  '/media/Colorimetry_analysis_of_coat_color_and_its_relationship_with_fiber_traits_in_alpacas.pdf',
+  '/media/Polimorfismos_de_nucleotido_simple_PNSs_del_gen_MC1R_en_alpacas_negras_y_marrones.pdf',
+  '/media/development-of-a-76k-alpaca-single-nucleotide-polymorphisms-microarray.pdf',
+  '/media/Calving_date_and_its_variability_as_a_potential_trait_in_the_breeding_objective_to_account_for_reproductive_seasonality_in_alpacas.pdf',
+  '/media/Genetic_parameters_for_medullated_fiber_and_its_relationship_with_other_productive_traits_in_alpacas_c0t6Pic_m7mLGk2.pdf',
+  '/media/Phenotypic_variability_of_percentage_of_medullated_fibers_in_Huacaya_alpaca_fleece.pdf',
+  '/media/Genetic_parameters_for_medullated_fiber_and_its_relationship_with_other_productive_traits_in_alpacas_c0t6Pic.pdf',
+  '/media/Heritability_of_individual_fiber_medullation_in_Peruvian_alpacas_76iNKqt.pdf',
+  '/media/Genetic_parameters_estimation_for_preweaning_traits_and_their_relationship_with_reproductive_productive_and_morphological_traits_in_alpaca_yE2NxnU.pdf',
+  '/media/Effect_of_the_gestation_and_lactation_on_fiber_diameter_and_its_variability_in_Peruvian_alpacas_QUGtDsH.pdf',
+  '/media/Estimation_of_genetic_parameters_for_reproductive_traits_in_alpacas_mLEpgaO.pdf',
+  '/media/weighting_fibre_and_morphological_traits_in_a_genetic_index_for_an_alpaca_breeding_programme_IIH2yir.pdf',
+  '/media/Association_of_microsatellite_markers_with_fiber_diameter_trait_in_Peruvian_alpacas_Vicugna_pacos_BSYsku0.pdf',
+  '/media/Genetic_parameters_for_growth_of_fiber_diameter_in_alpacas_ZDbs0Zk.pdf',
+  '/media/Genetic_parameters_and_relationships_between_fibre_and_type_traits_in_two_breeds_of_peruvian_alpacas_GrOuFBy.pdf',
+  '/media/Analysis_of_the_existence_of_major_genes_affecting_alpaca_fiber_traits_SEa19GP.pdf',
+  '/media/Genetic_analyss_of_six_production_traits_in_Peruvian_alpacas_YgPZWIo.pdf',
+  '/media/Genetic_improvement_for_alpaca_fibre_production_in_the_peruvian_altiplano_-_The_Pacomarca_experience_JNbQqCX.pdf',
+  '/media/Heredabilidad_estimada_de_fibras_meduladas_en_alpaca_huacaya.pdf',
+  '/media/Quantitative_genetic_Analysis_of_micron_Blowout_in_alpacas.pdf',
+]
+const otrasFiles = [
+  '/media/Alpacas_-_genetica_en_blanco_y_negro_Cubierta.pdf',
+  '/media/EAAP_2023_Gj5LzYT.pdf',
+  '/media/La_genomica_al_rescate_de_la_fibra_de_alpaca.pdf',
+  '/media/Stress_in_alpacas_physiological_and_behavioral_responses_during_the_shearing_procedure.pdf',
+  '/media/Improving_a_black_alpaca_breeding_program_using_colourimeter_values_for_male_selection.pdf',
+  '/media/Relationship_between_coat_colour_and_temperature_measurements_along_the_alpaca_fibre.pdf',
+  '/media/Polymorphisms_in_MC1R_and_ASIP_genes_associated_with_color_phenotypes_in_alpaca_huacaya.pdf',
+  '/media/Genetic_improvement_of_alpacas_and_llamas_in_Peru.pdf',
+  '/media/Attitudes_of_Peruvian_llama_farmers_towards_genetic_improvement.pdf',
+  '/media/Efficiency_of_genomic_selection_for_fiber_traits_in_alpacas.pdf',
+  '/media/Comparison_of_breeding_values_accuracy_using_BLUP_and_ss-GBLUP_methodology_in_Peruvian_alpacas_1.pdf',
+  '/media/Assessment_of_two_shearing_practices_on_animal_welfare_in_alpaca_using_infrared_thermography_1.pdf',
+  '/media/Calving_date_as_a_potential_breeding_objective_to_manage_the_reproductive_seasonality_in_alpacas_1.pdf',
+  '/media/Analysis_of_the_body_weight_and_prediction_of_the_growth_curve_using_non-linears_models_in_Peruvian_alpacas.pdf',
+  '/media/La_medula_como_criterio_de_selecci%C3%B3n.pdf',
+  '/media/Challenges_and_opportunities_of_genetic_improvement_in_alpacas_and_llamas_in_Peru.pdf',
+  '/media/Desarrollo_de_un_programa_de_mejora_de_alpacas_en_Per%C3%BA.pdf',
+  '/media/Genetic_parameters_of_medullation_percentage_in_alpacas_-_Tallin_-_Estonia_2017.pdf',
+  '/media/Dehairing_of_alpaca_fibre_top_with_AM2_dehairing_technology_-_Assisi_2017.pdf',
+  '/media/Heritability_estimate_of_medullated_fibre_in_alpaca_huacaya_-_Assisi_Italia_2017.pdf',
+  '/media/Tesis_doctoral_2017_-_Parametros_geneticos_de_caracteres_funcionales_y_secundarios_en_alpacas.pdf',
+  '/media/Heritabilities_for_preweaning_and_its_genetic_correlations_with_other_traits_in_Peruvian_alpacas_-_United_kingdon_EAAP_2016.pdf',
+  '/media/Construcci%C3%B3n_de_%C3%ADndices_de_selecci%C3%B3n_para_programas_de_mejora_gen%C3%A9tica_en_alpacas_-_Puno_2015.pdf',
+  '/media/Importancia_de_la_estima_de_par%C3%A1metros_gen%C3%A9ticos_de_caracteres_productivos_y_funcionales_en_alpacas_-_Puno_2015.pdf',
+  '/media/La_Inca_esquila_-_Esquila_tecnificada_para_la_industria_textil_-_Puno_2015.pdf',
+  '/media/Estimation_of_genetic_parameters_for_reproductive_traits_in_alpaca_-_Polonia_2015.pdf',
+  '/media/Resultados_de_la_selecci%C3%B3n_en_busca_de_la_alpaca_textil_en_Pacomarca_-_Abancay_2015.pdf',
+  '/media/Fibre_genetics_on_alpaca_-_Francia_EAAP_2013.pdf',
+  '/media/Economically_weighting_fibre_and_morphological_traits_in_an_alpaca_breeding_program_-_Slovakia_2012.pdf',
+  '/media/Genetic_parameters_for_fiber_diameter_at_different_shearings_-_Noruega_2011.pdf',
+  '/media/Animal_breeding_in_Alpaca_Suri_-_Chicago_2011.pdf',
+  '/media/Producing_alpaca_fibre_for_the_textile_industry_-_Sevilla_2010.pdf',
+  '/media/Genetic_parameters_for_growth_of_fibre_diameter_in_alpacas_-_Sevilla_2010.pdf',
+  '/media/Mejoramiento_gen%C3%A9tico_de_fibra_de_alpaca_para_la_industria_textil_-_Arequipa_2010.pdf',
+  '/media/Resultados_de_experiencias_de_investigacion_sobre_fibra_de_alpaca_-_Huancavelica_2010.pdf',
+  '/media/Genes_mayores_afectando_al_di%C3%A1metro_de_fibra_en_alpacas_-_Vigo_2010.pdf',
+  '/media/Par%C3%A1metros_gen%C3%A9ticos_y_tendencias_gen%C3%A9ticas_asociados_a_caracteres_productivos_y_de_apariencia_del_vell%C3%B3n_en_alpacas_-_Zaragoza_2009.pdf',
+  '/media/Influence_of_effect_of_pregnancy_and_lactation_on_alpaca_fiber_diameter_in_estimated_breeding_values_-_Spermova_2016.pdf',
+  '/media/Resultados_de_experiencias_de_investigacion_sobre_fibra_de_alpaca_-_Arequipa_2010.pdf',
+]
+
 // Revistas indexadas donde Pacomarca ha publicado
 const journals = [
   { name: 'Small Ruminant Research' },
@@ -115,7 +191,7 @@ const journals = [
   { name: 'Reproduction in Domestic Animals' },
 ]
 
-function PublicationAccordion({ title, publications }: { title: string; publications: Pub[] }) {
+function PublicationAccordion({ title, publications, files }: { title: string; publications: Pub[]; files: string[] }) {
   const [open, setOpen] = useState(false)
   return (
     <div className="border border-sand/50">
@@ -143,16 +219,31 @@ function PublicationAccordion({ title, publications }: { title: string; publicat
                     <p className="text-xs text-ink/45">{pub.authors}</p>
                     <p className="text-xs text-ink/55 mt-1"><span className="italic">{pub.source}</span>, {pub.year}{pub.ref ? ` — ${pub.ref}` : ''}</p>
                   </div>
-                  {pub.doi && (
-                    <a
-                      href={pub.doi}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-gold border border-gold/50 px-5 py-3 hover:bg-ink hover:text-white hover:border-ink transition-colors shrink-0"
-                    >
-                      DOI ↗
-                    </a>
-                  )}
+                  <div className="flex items-center gap-2 shrink-0">
+                    {files[i] && (
+                      <a
+                        href={`${PDF_BASE}${files[i]}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-gold border border-gold/50 px-5 py-3 hover:bg-ink hover:text-white hover:border-ink transition-colors"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Descargar
+                      </a>
+                    )}
+                    {pub.doi && (
+                      <a
+                        href={pub.doi}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-xs tracking-[0.15em] uppercase text-ink/50 hover:text-gold transition-colors px-2"
+                      >
+                        DOI ↗
+                      </a>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -279,8 +370,8 @@ export default function PublicacionesPage() {
           </FadeUp>
           <FadeUp delay={0.1}>
             <div className="space-y-4">
-              <PublicationAccordion title="Revistas indexadas (ISI / Scopus)" publications={publicacionesIndexadas} />
-              <PublicationAccordion title="Otras publicaciones y materiales técnicos" publications={otrasPub} />
+              <PublicationAccordion title="Revistas indexadas (ISI / Scopus)" publications={publicacionesIndexadas} files={indexadasFiles} />
+              <PublicationAccordion title="Otras publicaciones y materiales técnicos" publications={otrasPub} files={otrasFiles} />
             </div>
           </FadeUp>
 
