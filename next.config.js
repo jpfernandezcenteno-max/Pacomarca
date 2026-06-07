@@ -1,13 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        pathname: '/**',
-      },
-    ],
+    // Todas las imágenes son locales; Next las sirve en AVIF/WebP automáticamente.
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 31536000,
   },
 }
 

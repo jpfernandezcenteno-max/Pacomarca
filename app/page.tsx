@@ -296,6 +296,7 @@ export default function HomePage() {
                 src="/home/foto-1.jpg"
                 alt="Comunidad alpaquera peruana"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -390,6 +391,7 @@ export default function HomePage() {
                         src={program.image}
                         alt={program.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute top-4 right-4 bg-gold text-white text-xs tracking-[0.1em] px-3 py-1">
@@ -431,7 +433,7 @@ export default function HomePage() {
                 <Link href={fiber.href}>
                   <div className="group border border-white/10 hover:border-gold/50 p-8 text-center transition-all duration-300">
                     <div className="w-28 h-28 rounded-full overflow-hidden mx-auto mb-6 ring-1 ring-gold/30 group-hover:ring-gold transition-all duration-300 relative">
-                      <Image src={fiber.image} alt={fiber.label} fill className="object-cover scale-[1.2] object-center" />
+                      <Image src={fiber.image} alt={fiber.label} fill sizes="112px" className="object-cover scale-[1.2] object-center" />
                     </div>
                     <h3 className="font-serif text-base text-white mb-2 group-hover:text-gold transition-colors">
                       {fiber.label}
@@ -492,7 +494,7 @@ export default function HomePage() {
               <Link href={post.href}>
                 <div className="group overflow-hidden bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300">
                   <div className="relative h-56 overflow-hidden">
-                    <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <Image src={post.image} alt={post.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
                   <div className="px-6 py-3 flex items-center justify-between bg-cream">
                     <span className="text-xs tracking-[0.15em] uppercase text-gold">{post.category}</span>
@@ -512,9 +514,10 @@ export default function HomePage() {
       {/* IMAGE BREAK */}
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2400&q=90"
-          alt="Andes peruanos"
+          src="/ecosistema/alpacas.jpg"
+          alt="Alpacas en los Andes peruanos"
           fill
+          sizes="100vw"
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-ink/60" />

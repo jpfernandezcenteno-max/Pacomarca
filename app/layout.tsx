@@ -55,9 +55,9 @@ export const metadata: Metadata = {
       'El principal Ecosistema de Alpaca Sostenible del mundo. Investigación científica, fibras de excepción y programas sociales desde los Andes peruanos.',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/home/foto-1.jpg',
+        width: 1800,
+        height: 1200,
         alt: 'Pacomarca — Ecosistema de Alpaca Sostenible',
       },
     ],
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: 'Pacomarca — Ecosistema de Alpaca Sostenible',
     description:
       'El principal Ecosistema de Alpaca Sostenible del mundo. Impulsado por el Grupo Inca desde los Andes peruanos.',
-    images: ['/og-image.jpg'],
+    images: ['/home/foto-1.jpg'],
   },
   alternates: {
     canonical: 'https://www.pacomarca.com',
@@ -80,6 +80,7 @@ const jsonLd = {
   name: 'Pacomarca',
   url: 'https://www.pacomarca.com',
   logo: 'https://www.pacomarca.com/logo.svg',
+  image: 'https://www.pacomarca.com/home/foto-1.jpg',
   description:
     'El principal Ecosistema de Alpaca Sostenible del mundo. Investigación científica, fibras de excepción y programas sociales desde los Andes peruanos.',
   address: {
@@ -101,7 +102,7 @@ const jsonLd = {
   parentOrganization: {
     '@type': 'Organization',
     name: 'Grupo Inca',
-    url: 'https://www.grupoinc.com',
+    url: 'https://grupoinca.com',
   },
 }
 

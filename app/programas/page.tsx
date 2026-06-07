@@ -25,7 +25,7 @@ const programs = [
     statNum: '8',
     desc: 'Viviendas dignas para familias alpaqueras en las alturas andinas, donde la temperatura puede descender a -20°C. Cada cabaña incluye servicios básicos y equipamiento para mejorar la calidad de vida.',
     icon: '🏠',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85',
+    image: '/programas/cabana-del-pastor/portada.jpg',
   },
   {
     num: '02',
@@ -35,7 +35,7 @@ const programs = [
     statNum: '1',
     desc: 'Estructura para producir vegetales frescos en zonas donde la altitud y el frío lo hacen casi imposible. Combate la desnutrición infantil en las comunidades altoandinas.',
     icon: '🌱',
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=85',
+    image: '/programas/invernadero/portada.jpg',
   },
   {
     num: '03',
@@ -45,7 +45,7 @@ const programs = [
     statNum: '1,512',
     desc: 'Donación de reproductores machos genéticamente seleccionados para mejorar la calidad de la fibra de las comunidades. De 30% a 80% de fibra fina con el programa.',
     icon: '◈',
-    image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1600&q=85',
+    image: '/programas/lote-de-machos/portada.jpg',
   },
   {
     num: '04',
@@ -55,7 +55,7 @@ const programs = [
     statNum: '9',
     desc: 'Infraestructura y equipamiento completo para realizar la esquila bajo el método Inca Esquila, garantizando bienestar animal, calidad de fibra y trazabilidad.',
     icon: '✂',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85',
+    image: '/programas/modulo-de-esquila/portada.jpg',
   },
   {
     num: '05',
@@ -65,7 +65,7 @@ const programs = [
     statNum: '32',
     desc: 'Financiamiento de investigaciones científicas sobre alpacas y el ecosistema andino. Más de 32 artículos en revistas indexadas internacionales.',
     icon: '◎',
-    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1600&q=85',
+    image: '/programas/fondo-investigacion/portada.jpg',
   },
   {
     num: '06',
@@ -75,7 +75,7 @@ const programs = [
     statNum: '8,400+',
     desc: 'Kits de abrigo para los miembros más vulnerables de las comunidades: niños y adultos mayores. Mantas, suéteres, medias, bufandas, chullos y más.',
     icon: '♡',
-    image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&q=85',
+    image: '/programas/abrigando-corazones/portada.jpg',
   },
 ]
 
