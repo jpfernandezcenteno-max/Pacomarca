@@ -35,7 +35,7 @@ const actors = [
     href: '/ecosistema/marcas-aliadas',
     icon: '✦',
     description: 'Las marcas del Grupo Inca (Incalpaca, Kuna, Amano, Inca Tops, Alpaca 111) y aliados estratégicos globales como The Inoue Brothers, Sandra Jordan y Hessnatur validan y llevan estas fibras al mundo.',
-    stat: '12+ marcas aliadas',
+    stat: 'Grupo Inca + aliados',
   },
   {
     title: 'Sociedad Civil',
@@ -69,13 +69,13 @@ export default function EcosistemaPage() {
           <FadeUp delay={0.2}>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                Pacomarca articula la Sustainable Alpaca Network, un ecosistema sin precedentes en la industria de fibras naturales. Su diseño parte de una premisa simple pero revolucionaria: para que la sostenibilidad sea real, todos los actores de la cadena deben beneficiarse.
+                Pacomarca no es un proyecto aislado, es un ecosistema que une a todos los actores que hacen posible que la alpaca siga siendo parte del futuro de la sostenibilidad.
               </p>
               <p>
-                Desde las comunidades alpaqueras en las alturas de los Andes, pasando por los científicos que generan conocimiento, hasta las marcas que llevan estas fibras al consumidor final, cada eslabón está conectado y cada uno recibe valor real.
+                La llamamos <em>Sustainable Alpaca Network</em> porque creemos que solo a través de la colaboración se puede transformar esta industria. Los pastores alpaqueros aportan su conocimiento ancestral; los científicos investigan para determinar mejores prácticas en genética, trazabilidad y bienestar animal; las marcas conectan la fibra con consumidores que valoran la transparencia y la calidad; y se suman instituciones y personas que buscan un uso responsable de este recurso único.
               </p>
               <p>
-                Este modelo fue diseñado por el Grupo Inca con la convicción de que la industria textil puede ser un motor de desarrollo social y ambiental, sin sacrificar la calidad ni la excelencia que el mercado de lujo exige.
+                En Pacomarca, cada miembro del ecosistema cumple un papel esencial. Todos compartimos un mismo objetivo: que la alpaca siga siendo motor de desarrollo en los Andes y símbolo de lujo sostenible en el mundo.
               </p>
             </div>
           </FadeUp>
@@ -126,10 +126,10 @@ export default function EcosistemaPage() {
         <FadeUp>
           <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">El modelo</p>
           <h2 className="font-serif text-3xl lg:text-4xl text-ink mb-8 leading-relaxed">
-            "La verdadera sostenibilidad no se declara: se demuestra con datos, con compromisos y con el bienestar de las familias."
+            La verdadera sostenibilidad solo es posible cuando todos ganan: los alpaqueros, la naturaleza y quienes buscan en la alpaca un lujo auténtico.
           </h2>
           <p className="text-base text-ink/60 max-w-2xl mx-auto leading-relaxed mb-10">
-            Cada programa, cada investigación y cada fibra certificada es evidencia concreta del compromiso de Pacomarca con las comunidades alpaqueras del Perú y con el planeta.
+            En Pacomarca, cada miembro del ecosistema cumple un papel esencial. Todos compartimos un mismo objetivo: que la alpaca siga siendo motor de desarrollo en los Andes y símbolo de lujo sostenible en el mundo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

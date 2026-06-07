@@ -15,16 +15,16 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const benefitsLeft = [
-  { title: 'Mejor precio', desc: 'La fibra limpia y bien clasificada obtiene mejores precios en el mercado, beneficiando directamente a las familias alpaqueras.' },
-  { title: 'Bienestar animal', desc: 'La técnica reduce el estrés del animal durante la esquila y minimiza el riesgo de cortes y heridas.' },
-  { title: 'Mayor rendimiento de fibra', desc: 'La técnica correcta maximiza el aprovechamiento del vellón, reduciendo las pérdidas de fibra.' },
+  { title: 'Mejor precio de mercado', desc: 'El pago directo, sin intermediarios, y al mejor precio de mercado beneficia directamente a las familias alpaqueras.' },
+  { title: 'Bienestar animal', desc: 'La técnica protege al esquilador y reduce el estrés del animal durante la esquila.' },
+  { title: 'Mayor rendimiento de fibra', desc: 'La técnica correcta maximiza el aprovechamiento del vellón.' },
 ]
 
 const benefitsRight = [
-  { title: 'Fibra más limpia', desc: 'El método elimina la contaminación vegetal y las fibras de segunda que reducen la calidad del lote.' },
-  { title: 'Uniformidad', desc: 'El vellón esquilado con técnica correcta presenta mayor uniformidad de longitud y diámetro.' },
-  { title: 'Mayor rendimiento en calidades finas', desc: 'La clasificación correcta incrementa el porcentaje de fibras en las categorías de mayor valor comercial.' },
-  { title: 'Trazabilidad 100%', desc: 'El módulo de esquila certifica el origen del vellón, vinculando cada fibra con el animal y la familia de origen.' },
+  { title: 'Fibra más limpia e inalterada', desc: 'El método garantiza una fibra más limpia y uniforme, manteniendo sus características.' },
+  { title: 'Uniformidad en la calidad', desc: 'El vellón esquilado con la técnica presenta mayor uniformidad.' },
+  { title: 'Mayor rendimiento en calidades finas', desc: 'Mejora el porcentaje de fibras en las categorías más finas.' },
+  { title: 'Trazabilidad 100%', desc: 'Los lotes forman parte de la marca Pacomarca, lo que asegura su trazabilidad al 100%.' },
 ]
 
 export default function IncaEsquilaPage() {
@@ -48,13 +48,13 @@ export default function IncaEsquilaPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                Inca Esquila es el método de esquila de alpacas desarrollado y perfeccionado por Pacomarca con base en evidencia científica. Fue reconocido como Norma Técnica Peruana <strong className="text-ink font-medium">NTP 231.370-2014</strong>, convirtiéndose en el estándar oficial para la esquila de camélidos sudamericanos domésticos en el Perú.
+                La Inca Esquila es un método de trasquila mecanizada desarrollado por Pacomarca que protege al esquilador, asegura el bienestar de la alpaca y garantiza una fibra más limpia y uniforme. Reconocida oficialmente como norma técnica nacional del Perú (<strong className="text-ink font-medium">NTP 231.370-2014</strong>), esta práctica se ha convertido en un referente que beneficia tanto a los productores como a la industria textil.
               </p>
               <p>
-                A diferencia de la esquila tradicional, que se realiza con el animal en pie o con métodos improvisados, Inca Esquila establece procedimientos precisos para cada etapa: la sujeción del animal, la secuencia de corte, la recolección del vellón y la clasificación de la fibra.
+                En muchas comunidades alpaqueras, la esquila tradicional causa estrés, lesiones e incluso abortos en las alpacas, reduciendo la tasa de nacimientos al 60%. En contraste, en Pacomarca, el uso de la Inca Esquila eleva este porcentaje al 76%, al reducir el estrés y obtener una fibra más limpia y uniforme.
               </p>
               <p>
-                El impacto es medible: las comunidades que adoptan Inca Esquila incrementan significativamente su tasa de natalidad, reducen la mortalidad neonatal y obtienen mejor precio por su fibra.
+                Además, Pacomarca cuenta con un programa para llevar esta tecnología a los alpaqueros, asegurando el pago directo (sin intermediarios) y al mejor precio de mercado. Los lotes obtenidos bajo esta modalidad forman parte de la marca Pacomarca, lo que asegura su trazabilidad al 100%.
               </p>
             </div>
           </FadeUp>

@@ -39,10 +39,10 @@ export default function LoteDeMachosPage() {
 
             <blockquote className="border-l-4 border-gold pl-6 mb-8">
               <p className="font-serif text-xl text-ink/80 italic leading-relaxed mb-4">
-                "Antes tenía mis alpacas y sabía que la fibra no era de buena calidad. Desde que Pacomarca nos trajo los reproductores, la calidad ha mejorado mucho. Ahora soy socio del programa."
+                "Las alpacas de Pacomarca nos ayudan a mejorar la genética de las crías, para que salgan mejor. Con las alpacas de Pacomarca obtenemos crías con mejor fibra."
               </p>
               <cite className="text-xs tracking-[0.15em] uppercase text-gold not-italic">
-                — Juan Faustino, alpaquero de Nuñoa, Puno
+                — Juan Faustino, alpaquero de Nuñoa
               </cite>
             </blockquote>
           </FadeUp>
@@ -102,10 +102,10 @@ export default function LoteDeMachosPage() {
             <h2 className="font-serif text-3xl text-ink mb-6">Endogamia y deterioro genético</h2>
             <div className="space-y-4 text-base text-ink/65 leading-relaxed">
               <p>
-                La mayoría de los hatos alpaqueros de las comunidades son sistemas cerrados: los mismos animales se reproducen entre sí generación tras generación. Este proceso, conocido como endogamia, lleva progresivamente al deterioro de la calidad genética y a la reducción de la finura de la fibra.
+                Los pastores de alpaca enfrentan un gran reto: la endogamia. El cruce entre animales de la misma familia reduce la diversidad genética y origina alpacas más débiles, menos resistentes a las duras temperaturas de los Andes y con fibra de menor calidad.
               </p>
               <p>
-                Sin acceso a reproductores de calidad genética superior, las familias no tienen forma de mejorar su hato. Los machos de calidad tienen un costo prohibitivo para la mayoría de los criadores andinos.
+                Como consecuencia, solo alrededor del 30% de la fibra obtenida alcanza la categoría de fibra fina.
               </p>
             </div>
           </FadeUp>
@@ -114,10 +114,10 @@ export default function LoteDeMachosPage() {
             <h2 className="font-serif text-3xl text-ink mb-6">Machos seleccionados, donados gratuitamente</h2>
             <div className="space-y-4 text-base text-ink/65 leading-relaxed">
               <p>
-                Pacomarca selecciona reproductores machos del programa genético con los mejores índices de mejora estimados (IME) para finura, uniformidad y producción. Estos machos se donan a las familias participantes.
+                Al entregar a los pastores alpacas machos provenientes de Pacomarca, no solo se renueva la genética de sus rebaños para obtener crías más fuertes, sino que también se garantiza que estas nuevas generaciones produzcan una fibra de mejor calidad en los próximos años.
               </p>
               <p>
-                Los resultados son medibles en la primera generación: la descendencia de los machos donados presenta significativamente mayor porcentaje de fibra fina, mejorando los ingresos de la familia desde el primer año de esquila.
+                Hoy, el 80% de la fibra obtenida de alpacas de Pacomarca se clasifica como fibra fina.
               </p>
             </div>
           </FadeUp>
@@ -135,10 +135,10 @@ export default function LoteDeMachosPage() {
           </FadeUp>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: '4 reproductores machos', desc: 'Machos seleccionados del programa genético con los mejores índices de mejora para finura y producción.' },
-              { title: 'Software PacoPro', desc: 'Acceso al sistema de registro genético y productivo para gestionar el hato y hacer seguimiento de la mejora.' },
-              { title: 'Capacitación técnica', desc: 'Formación en manejo reproductivo, evaluación de animales y criterios de selección para el hato.' },
-              { title: 'Seguimiento periódico', desc: 'El equipo técnico de Pacomarca visita regularmente a las familias para verificar el progreso y ajustar el programa.' },
+              { title: '4 alpacas machos reproductores', desc: 'Reproductores de Pacomarca: alpacas blancas para obtener fibra más fina o alpacas negras para la conservación de la genética de la alpaca negra.' },
+              { title: 'Software con datos', desc: 'Información sobre las alpacas donadas, incluyendo pedigrí, análisis de fibra, porcentaje de medulación, colorimetría y datos biométricos.' },
+              { title: 'Capacitación continua', desc: 'Capacitación y acompañamiento del equipo de Pacomarca para asegurar la implementación de buenas prácticas de crianza.' },
+              { title: 'Acompañamiento del equipo', desc: 'El equipo de Pacomarca acompaña a las familias para asegurar el éxito del programa a lo largo del tiempo.' },
             ].map((item, i) => (
               <FadeUp key={item.title} delay={i * 0.1}>
                 <div className="bg-white p-8 h-full">

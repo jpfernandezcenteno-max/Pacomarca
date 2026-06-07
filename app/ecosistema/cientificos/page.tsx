@@ -28,29 +28,30 @@ const scientists = [
 ]
 
 const universities = [
-  'Universidad Nacional del Altiplano (UNAP) – Puno, Perú',
-  'Universidad Nacional de San Agustín (UNSA) – Arequipa, Perú',
-  'Universidad Nacional Micaela Bastidas de Apurímac – Perú',
-  'Universidad Nacional Autónoma de Chota – Perú',
+  'University of Natural Resources and Life Sciences (BOKU) – Austria',
   'Universidad Complutense de Madrid – España',
+  'Universidad Nacional Agraria La Molina – Perú',
+  'Universidad Nacional San Antonio de Abad del Cusco – Perú',
+  'Universidad Católica de Santa María – Perú',
+  'Max Corp Techonologies SAC – Perú',
+  'Texas A&M University – USA',
+  'University of Minnesota – USA',
   'Universidad Politécnica de Madrid – España',
-  'Universidad de Córdoba – España',
-  'Universidad Autónoma de Barcelona – España',
-  'Universitat de Lleida – España',
-  'University of Natural Resources and Life Sciences (BOKU) – Viena, Austria',
-  'Georg-August-Universität Göttingen – Alemania',
-  'International Livestock Research Institute (ILRI) – Nairobi, Kenia',
-  'University of New England – Australia',
-  'Lincoln University – Nueva Zelanda',
-  'Iowa State University – Estados Unidos',
-  'Universidad Nacional Mayor de San Marcos – Lima, Perú',
-  'Universidad Nacional Agraria La Molina – Lima, Perú',
+  'Natural Fiber Tech SAC – Perú',
+  'Iowa State University – USA',
+  'Neural X SAC – Perú',
+  'INIA – Perú',
   'Universidad Nacional de Huancavelica – Perú',
-  'Universidad Nacional del Centro del Perú – Junín, Perú',
-  'Universidad Andina del Cusco – Perú',
-  'Universidad Nacional de San Antonio Abad del Cusco – Perú',
-  'Universidad Nacional José María Arguedas – Apurímac, Perú',
-  'Instituto Nacional de Innovación Agraria (INIA) – Perú',
+  'Deakin University – Australia',
+  'Descosur – Perú',
+  'IMBICE – Argentina',
+  'Universidad Nacional de la Plata – Argentina',
+  'Universidad Nacional Micaela Bastidas de Apurímac – Perú',
+  'Universidad de Córdoba – España',
+  'Universidad la Rioja – Argentina',
+  'Universidad Católica de Córdoba – Argentina',
+  'SERIDA – Somió, España',
+  'Universidad de Zaragoza – España',
 ]
 
 function Accordion({ title, items }: { title: string; items: string[] }) {
@@ -109,10 +110,10 @@ export default function CientificosPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                Pacomarca alberga la mayor base de datos genéticos de alpacas del mundo. Con más de <strong className="text-ink font-medium">13 millones de registros genéticos</strong>, nuestra estación científica es el centro de referencia mundial para la investigación sobre Vicugna pacos.
+                En Pacomarca, la investigación científica es el motor que impulsa la sostenibilidad de la alpaca y de quienes dependen de ella. Con más de <strong className="text-ink font-medium">13 millones de datos genéticos recopilados</strong> y múltiples publicaciones científicas, el centro se ha consolidado como un referente internacional en genética, trazabilidad y bienestar animal, trabajando de la mano con <strong className="text-ink font-medium">más de 30 investigadores</strong> afiliados a <strong className="text-ink font-medium">más de 23 universidades</strong> y centros de investigación en el Perú y el mundo.
               </p>
               <p>
-                Esta riqueza científica es el fruto de años de colaboración con <strong className="text-ink font-medium">más de 30 investigadores</strong> y <strong className="text-ink font-medium">23 universidades</strong> de Perú, España, Austria, Alemania, Australia, Nueva Zelanda y Estados Unidos, entre otros países.
+                Lo más importante, sin embargo, es que el conocimiento generado regresa a las comunidades: capacitaciones, pasantías y programas de transferencia tecnológica convierten la ciencia en mejoras tangibles para los productores y sus familias. En Pacomarca, la ciencia no se queda en los laboratorios: se vive en los Andes, transformando la relación entre alpaqueros, naturaleza y mercado.
               </p>
             </div>
           </FadeUp>
@@ -151,18 +152,18 @@ export default function CientificosPage() {
             {[
               {
                 num: '01',
-                title: 'Mejora genética',
-                desc: 'Desarrollar y consolidar programas de selección genética que mejoren la calidad de la fibra (finura, uniformidad, ausencia de medulación) y la productividad de las alpacas en las comunidades.',
+                title: 'Rescatar el negro puro',
+                desc: 'Rescatar a las alpacas de color negro puro, que estuvieron a punto de desaparecer, preservando un recurso genético único de los Andes.',
               },
               {
                 num: '02',
-                title: 'Bienestar animal',
-                desc: 'Investigar y difundir prácticas de manejo que mejoren la salud, el bienestar y la productividad de las alpacas en condiciones altoandinas, incluyendo nutrición, sanidad y prácticas de esquila.',
+                title: 'Lograr una fibra extrafina',
+                desc: 'Lograr una fibra extrafina que compita con otras fibras finas a nivel mundial, elevando la calidad textil de la alpaca.',
               },
               {
                 num: '03',
-                title: 'Sostenibilidad sistémica',
-                desc: 'Generar evidencia científica sobre el impacto social y ambiental del ecosistema alpaquero, contribuyendo a políticas públicas y estándares internacionales de certificación.',
+                title: 'Reducir la medulación',
+                desc: 'Lograr una fibra con una menor medulación, disminuyendo la sensación de picazón y asegurando un futuro atractivo y rentable para los criadores altoandinos.',
               },
             ].map((obj) => (
               <FadeUp key={obj.num} delay={Number(obj.num) * 0.1}>

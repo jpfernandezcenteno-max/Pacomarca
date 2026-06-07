@@ -18,16 +18,14 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const equipment = [
-  'Planta de esquila portátil con motor eléctrico',
-  'Equipo de esquila eléctrica (máquinas, peines, cortantes)',
-  'Mesa de clasificación de fibra con iluminación adecuada',
-  'Balanzas de precisión para pesado de vellones',
-  'Equipos de protección personal para esquiladores',
-  'Mantas de recolección y bolsas de almacenamiento',
-  'Sistema de etiquetado y registro por animal',
-  'Kit de primeros auxilios para animales',
-  'Material de capacitación y guías técnicas',
-  'Generador de respaldo para zonas sin electricidad',
+  'Máquina de esquilar',
+  'Tijeras automatizadas',
+  'Juegos de peines y cuchillas',
+  'Herramientas de afilado',
+  'Aceites',
+  'Cepillos',
+  'Accesorios que aseguran el buen funcionamiento del equipo',
+  'Material para la comodidad durante la esquila',
 ]
 
 export default function ModuloDeEsquilaPage() {
@@ -56,10 +54,10 @@ export default function ModuloDeEsquilaPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                El Módulo de Esquila es la infraestructura que permite aplicar el método Inca Esquila en las comunidades alpaqueras. Sin el equipamiento adecuado, incluso los mejores conocimientos técnicos no pueden traducirse en resultados concretos para la fibra.
+                En muchas comunidades alpaqueras, la esquila se realiza con técnicas básicas que generan un alto nivel de estrés en las alpacas y cortes que pueden derivar en infecciones. Estas prácticas también aumentan el riesgo de abortos, ya que la temporada de esquila coincide con la última etapa de gestación. En consecuencia, solo el 60% de las hembras adultas logra dar a luz, frente al 76% alcanzado en Pacomarca.
               </p>
               <p>
-                Pacomarca implementa módulos completos en las comunidades participantes, incluyendo todo el equipamiento necesario para realizar la esquila de manera profesional: con bienestar animal, alta calidad de fibra y trazabilidad completa.
+                Pacomarca ha diseñado un módulo de esquila mecanizado que permite obtener una fibra más limpia y uniforme, a la vez que optimiza el tiempo de trabajo de los pastores. Este sistema reduce al mínimo el estrés y las lesiones en los animales, y deja de manera intencional entre 1 y 2 cm de fibra sobre sus cuerpos para protegerlos del shock térmico posterior a la esquila. Cada módulo es rotado entre comunidades alpaqueras, asegurando que los beneficios alcancen a varias familias.
               </p>
             </div>
           </FadeUp>

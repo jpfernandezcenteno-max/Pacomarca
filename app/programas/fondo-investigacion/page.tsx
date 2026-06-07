@@ -38,10 +38,10 @@ export default function FondoInvestigacionPage() {
 
             <blockquote className="border-l-4 border-gold pl-6 mb-8">
               <p className="font-serif text-xl text-ink/80 italic leading-relaxed mb-4">
-                "El acceso a la base de datos de Pacomarca fue determinante para mi investigación. Sin ese apoyo, mi tesis doctoral sobre genética cuantitativa en alpacas hubiera sido imposible de completar con la solidez científica que logré."
+                "Durante más de dos décadas, Pacomarca ha sido el punto de encuentro donde la ciencia, la sostenibilidad y el esfuerzo colaborativo se unen para mejorar la calidad genética de la fibra de alpaca. Nuestra misión es fortalecer la cadena textil y mejorar los medios de vida de las comunidades alpaqueras involucradas."
               </p>
               <cite className="text-xs tracking-[0.15em] uppercase text-gold not-italic">
-                — Alan Cruz, PhD en Genética Animal
+                — Alan Cruz, PhD, experto en genética en camélidos y científico responsable de Pacomarca
               </cite>
             </blockquote>
           </FadeUp>

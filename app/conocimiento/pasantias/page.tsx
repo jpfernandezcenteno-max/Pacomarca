@@ -17,20 +17,18 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const countries = [
-  'Perú', 'España', 'Austria', 'Alemania', 'Argentina', 'Bolivia', 'Chile',
-  'Ecuador', 'Estados Unidos', 'Australia', 'Nueva Zelanda', 'Países Bajos',
-  'Francia', 'Italia', 'Japón', 'Corea del Sur', 'Brasil', 'México',
+  'Perú', 'Bolivia', 'Ecuador', 'Chile', 'Argentina', 'Estados Unidos',
+  'Japón', 'Australia', 'Reino Unido', 'Suiza', 'Noruega', 'Corea', 'China',
 ]
 
 const topics = [
-  'Genética y mejoramiento animal de alpacas',
-  'Manejo del hato: nutrición, sanidad y reproducción',
-  'Técnica Inca Esquila y bienestar animal',
-  'Clasificación y evaluación de la calidad de fibra',
-  'Sistema PacoPro: registro genético y productivo',
-  'Programas comunitarios y modelo de negocio sostenible',
-  'Trazabilidad de la fibra: del animal al producto',
-  'Impacto social y ambiental del ecosistema Pacomarca',
+  'Programas de mejora genética',
+  'Selección de padrillos',
+  'Manejo de datos',
+  'Esquila mecanizada',
+  'Sanidad',
+  'Alimentación',
+  'Reproducción',
 ]
 
 export default function PasantiasPage() {
@@ -54,10 +52,13 @@ export default function PasantiasPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                La estación científica de Pacomarca, ubicada en Llalli, Melgar, Puno, es un destino de referencia para investigadores, estudiantes, profesionales del sector textil y criadores de alpacas de todo el mundo que desean aprender de primera mano sobre el ecosistema más avanzado de producción sostenible de fibra de alpaca.
+                Cada año, la estación científica Pacomarca recibe entre <strong className="text-ink font-medium">300 y 800 visitantes</strong>, entre productores, técnicos y profesionales del Perú y de países como Bolivia, Ecuador, Chile, Argentina, Estados Unidos, Japón, Australia, Reino Unido, Suiza, Noruega, Corea y China, interesados en conocer de cerca nuestro programa genético.
               </p>
               <p>
-                Cada año recibimos entre <strong className="text-ink font-medium">300 y 800 visitantes</strong> provenientes de distintos países, que participan en dos modalidades de programa: la visita de un día o la pasantía de tres días.
+                A través de visitas de un día y pasantías de tres días, compartimos con ellos los conocimientos y prácticas que desarrollamos en la estación científica. Estos espacios tienen gran acogida entre los grupos organizados de alpaqueros de distintas regiones del país, quienes encuentran aquí un lugar de aprendizaje y de intercambio.
+              </p>
+              <p>
+                Durante su estancia, los visitantes conocen de primera mano aspectos clave de nuestro trabajo: programas de mejora genética, selección de padrillos, manejo de datos, esquila mecanizada, sanidad, alimentación y reproducción.
               </p>
             </div>
           </FadeUp>
@@ -69,7 +70,7 @@ export default function PasantiasPage() {
                 <p className="text-xs text-white/50 uppercase tracking-[0.15em]">Visitantes por año</p>
               </div>
               <div className="bg-beige p-8 text-center">
-                <p className="font-serif text-5xl text-gold mb-2">18+</p>
+                <p className="font-serif text-5xl text-gold mb-2">12+</p>
                 <p className="text-xs text-ink/50 uppercase tracking-[0.15em]">Países de origen</p>
               </div>
               <div className="bg-cream p-8 text-center">
@@ -77,7 +78,7 @@ export default function PasantiasPage() {
                 <p className="text-xs text-ink/50 uppercase tracking-[0.15em]">Formatos disponibles</p>
               </div>
               <div className="bg-beige p-8 text-center">
-                <p className="font-serif text-5xl text-gold mb-2">8</p>
+                <p className="font-serif text-5xl text-gold mb-2">7</p>
                 <p className="text-xs text-ink/50 uppercase tracking-[0.15em]">Temas de formación</p>
               </div>
             </div>

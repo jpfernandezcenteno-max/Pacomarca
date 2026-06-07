@@ -84,9 +84,17 @@ export default function FibrasPage() {
             <h2 className="font-serif text-4xl text-ink mb-8 leading-snug">
               Cada fibra Pacomarca es el resultado de décadas de trabajo
             </h2>
-            <p className="text-base text-ink/65 leading-relaxed">
-              Las fibras certificadas Pacomarca son el producto visible de un ecosistema invisible pero poderoso: las comunidades alpaqueras que cuidan a los animales, los científicos que diseñan los programas genéticos, y los técnicos que garantizan la calidad en cada etapa. Cada fibra lleva consigo la historia de todo ese esfuerzo.
-            </p>
+            <div className="space-y-5 text-base text-ink/65 leading-relaxed">
+              <p>
+                En Pacomarca, la ciencia aplicada a la tradición andina ha permitido desarrollar fibras de alpaca únicas en el mundo. A través de la comunidad Pacochayllu y junto a cientos de familias alpaqueras, impulsamos programas de mejora genética que han dado lugar a calidades excepcionales como la Sixteen Alpaca y la Imperial Alpaca, reconocidas por su extraordinaria finura. También hemos innovado con la Divine Alpaca, que reduce significativamente la medulación de la fibra para ofrecer una suavidad superior, libre de escozor.
+              </p>
+              <p>
+                Además, trabajamos en la recuperación y valorización de los colores naturales, destacando la Black Alpaca y los Colores Puros, que reafirman la riqueza cromática de la especie y devuelven al mercado fibras de gran valor en su tono original.
+              </p>
+              <p>
+                Gracias a esta investigación y colaboración, el Grupo Inca, a través de Incatops, puede ofrecer fibras que combinan finura, uniformidad, suavidad y diversidad natural, posicionando a la alpaca como un verdadero lujo sostenible con impacto positivo en los Andes y en la industria textil global.
+              </p>
+            </div>
           </FadeUp>
         </div>
       </section>

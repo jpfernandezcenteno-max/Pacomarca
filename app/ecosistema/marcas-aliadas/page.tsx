@@ -16,21 +16,21 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const grupoIncaMarcas = [
-  { name: 'Grupo Inca', desc: 'El conglomerado empresarial líder en la industria textil de fibras naturales en el Perú.', url: 'https://grupoinca.com/es/', logo: '/ecosistema/marcas-aliadas/logos/grupo-inca.svg' },
-  { name: 'Inca Tops', desc: 'Procesadora y exportadora líder de fibras especiales. Top Maker referente a nivel mundial.', url: 'https://www.incatops.com/stockservice/', logo: '/ecosistema/marcas-aliadas/logos/incatops.svg' },
-  { name: 'Incalpaca', desc: 'Empresa textil integrada con presencia internacional, especialista en fibras de alpaca de alta calidad.', url: 'https://www.incalpaca.com/es', logo: '/ecosistema/marcas-aliadas/logos/incalpaca.svg' },
-  { name: 'Kuna', desc: 'Marca de lujo con tiendas en los principales destinos turísticos del mundo, embajadora de la alpaca peruana.', url: 'https://pe.kunastores.com/', logo: '/ecosistema/marcas-aliadas/logos/kuna.svg' },
-  { name: 'Alpaca 111', desc: 'Marca especializada en prendas de alpaca para el mercado de lujo internacional.', url: 'https://alpaca111.com/', logo: '/ecosistema/marcas-aliadas/logos/alpaca-111.svg' },
-  { name: 'Amano', desc: 'Marca de lujo peruana especializada en prendas de alpaca y fibras exclusivas.', url: 'https://amanoyarns.com/pe/', logo: '/ecosistema/marcas-aliadas/logos/amano.svg' },
+  { name: 'Grupo Inca', desc: 'Conglomerado empresarial peruano de la industria textil de fibras naturales que da vida y sostiene Pacomarca.', url: 'https://grupoinca.com/es/', logo: '/ecosistema/marcas-aliadas/logos/grupo-inca.svg' },
+  { name: 'Inca Tops', desc: 'Empresa del Grupo Inca dedicada al procesamiento y la exportación de tops e hilados de alpaca.', url: 'https://www.incatops.com/stockservice/', logo: '/ecosistema/marcas-aliadas/logos/incatops.svg' },
+  { name: 'Incalpaca', desc: 'Empresa textil del Grupo Inca especializada en prendas y tejidos de fibra de alpaca.', url: 'https://www.incalpaca.com/es', logo: '/ecosistema/marcas-aliadas/logos/incalpaca.svg' },
+  { name: 'Kuna', desc: 'Marca del Grupo Inca especializada en prendas de alpaca y fibras naturales.', url: 'https://pe.kunastores.com/', logo: '/ecosistema/marcas-aliadas/logos/kuna.svg' },
+  { name: 'Alpaca 111', desc: 'Marca del Grupo Inca especializada en prendas de fibra de alpaca.', url: 'https://alpaca111.com/', logo: '/ecosistema/marcas-aliadas/logos/alpaca-111.svg' },
+  { name: 'Amano', desc: 'Marca del Grupo Inca especializada en hilados y prendas de alpaca.', url: 'https://amanoyarns.com/pe/', logo: '/ecosistema/marcas-aliadas/logos/amano.svg' },
 ]
 
 const aliadosEstrategicos = [
-  { name: 'Intifil', desc: 'Empresa especializada en fibras finas. Socio estratégico en el procesamiento de fibras extrafinas.', logo: '/ecosistema/marcas-aliadas/logos/intifil.svg' },
-  { name: 'The Inoue Brothers', desc: 'Marca de moda sostenible danesa con profundo compromiso con las comunidades alpaqueras peruanas.', logo: '/ecosistema/marcas-aliadas/logos/the-inoue-brothers.svg' },
-  { name: 'Sandra Jordan', desc: 'Marca de lujo norteamericana pionera en el uso de fibras naturales sostenibles de alta calidad.', logo: '/ecosistema/marcas-aliadas/logos/sandra-jordan.svg' },
-  { name: 'Pelipeli', desc: 'Empresa europea especializada en accesorios de lujo en fibras naturales peruanas.', logo: '/ecosistema/marcas-aliadas/logos/polipeli.svg' },
-  { name: 'Alpha Tops', desc: 'Procesadora especializada en la transformación de fibras de alpaca para el mercado textil internacional.', logo: '/ecosistema/marcas-aliadas/logos/alpha-tops.svg' },
-  { name: 'Hessnatur', desc: 'Referente europeo en moda sostenible y textiles naturales con certificaciones de sostenibilidad.', logo: '/ecosistema/marcas-aliadas/logos/hessnatur.svg' },
+  { name: 'Intifil', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/intifil.svg' },
+  { name: 'The Inoue Brothers', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/the-inoue-brothers.svg' },
+  { name: 'Sandra Jordan', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/sandra-jordan.svg' },
+  { name: 'Pelipeli', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/polipeli.svg' },
+  { name: 'Alpha Tops', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/alpha-tops.svg' },
+  { name: 'Hessnatur', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/hessnatur.svg' },
 ]
 
 function BrandCard({ name, desc, url, logo }: { name: string; desc: string; url?: string; logo?: string }) {
@@ -82,13 +82,13 @@ export default function MarcasAliadasPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                El ecosistema Pacomarca no sería completo sin las marcas que validan, comercializan y dan visibilidad global a las fibras certificadas. Su participación garantiza la viabilidad económica del sistema y el precio justo para las comunidades.
+                El compromiso de las empresas en la cadena de valor de la alpaca es esencial para alcanzar los objetivos de Pacomarca. Su participación garantiza que la ciencia, la tradición y la innovación se traduzcan en un modelo sostenible que beneficia a todos los actores.
               </p>
               <p>
-                Las marcas del Grupo Inca son las principales promotoras del ecosistema, con presencia en los mercados de lujo de Europa, Norteamérica y Asia. Junto a ellas, un grupo selecto de aliados estratégicos internacionales comparten el compromiso con la sostenibilidad auténtica.
+                Las empresas del Grupo Inca dan vida y sostienen este proyecto, integrando la investigación de Pacomarca con procesos de transformación y comercialización que posicionan la fibra de alpaca en los mercados más exigentes del mundo.
               </p>
               <p>
-                Para las marcas, pertenecer al ecosistema Pacomarca significa acceder a fibras con trazabilidad completa, certificación científica y una historia de impacto social real que sus clientes valoran profundamente.
+                A su lado, otras marcas y aliados estratégicos apoyan proyectos que fortalecen a las comunidades alpaqueras, impulsan la trazabilidad de la fibra y promueven la sostenibilidad en toda la cadena. Cada empresa que se suma al ecosistema contribuye a construir un futuro donde la alpaca sea sinónimo de calidad, innovación y responsabilidad compartida.
               </p>
             </div>
           </FadeUp>

@@ -52,13 +52,13 @@ export default function DivinePage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed mb-8">
               <p>
-                Divine Alpaca es el resultado más refinado del programa de selección genética para Fibras de Confort Superior de Pacomarca. Su característica definitoria es la ausencia prácticamente total de fibras meduladas —fibras huecas que son las responsables del "prickle factor" o sensación de picazón en la piel.
+                La Divine Alpaca marca un antes y un después en la forma de medir la calidad de la fibra. A diferencia de otras categorías que se definen por el diámetro, esta fibra se distingue por su bajo porcentaje de medulación, una característica interna del pelo directamente relacionada con la sensación de picazón en las prendas.
               </p>
               <p>
-                Con una finura comparable a las calidades 18-19 micras de alpaca y cero medulación verificable, Divine Alpaca ofrece una experiencia táctil que supera incluso al cachemir en suavidad y confort sobre la piel desnuda.
+                Gracias a los avances en ingeniería genética, en Pacomarca hemos logrado reducir casi por completo los tipos de medulación asociados a esa incomodidad, conservando al mismo tiempo las propiedades termoaislantes naturales de la alpaca.
               </p>
               <p>
-                Es el resultado de más de una década de selección sistemática de animales con los menores índices de medulación, construyendo una línea genética única en el mundo.
+                Con una finura comparable a otras calidades de <strong className="text-ink font-medium">18–19 micras</strong>, la Divine Alpaca ofrece una suavidad excepcional, fruto del trabajo conjunto entre científicos, alpaqueros e industria para elevar los estándares de confort y sostenibilidad en el mercado textil.
               </p>
             </div>
 

@@ -17,7 +17,7 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const vegetables = [
-  'Lechuga', 'Espinaca', 'Acelga', 'Zanahoria', 'Rabanitos', 'Col', 'Brócoli', 'Betarraga', 'Perejil', 'Cilantro', 'Tomate cherry', 'Pimiento',
+  'Cebolla', 'Lechuga', 'Apio', 'Acelga', 'Beterraga', 'Zanahoria', 'Tomate',
 ]
 
 export default function InvernaderoPage() {
@@ -46,13 +46,13 @@ export default function InvernaderoPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                Las comunidades alpaqueras que viven por encima de los 4,000 metros sobre el nivel del mar enfrentan una severa limitación: la imposibilidad de cultivar vegetales al aire libre debido a las bajas temperaturas, las heladas y la escasez de oxígeno.
+                El <strong className="text-ink font-medium">24% de los niños menores de cinco años</strong> en zonas rurales del Perú sufre de desnutrición crónica. Las dietas balanceadas cumplen un rol crucial en la vida de los pastores y sus familias. Sin embargo, la gran altitud limita la disponibilidad de frutas, verduras y fuentes de proteína.
               </p>
               <p>
-                Esto tiene un impacto directo en la nutrición de sus familias. El Perú registra una tasa de <strong className="text-ink font-medium">24% de desnutrición crónica en menores de 5 años</strong> en zonas rurales altoandinas, uno de los indicadores más preocupantes del país.
+                Como resultado, las comunidades alpaqueras suelen depender de la papa y la carne de alpaca, poniéndolas en una situación vulnerable.
               </p>
               <p>
-                El programa Invernadero de Pacomarca construye y entrega estructuras de cultivo protegido que permiten a las familias producir sus propios vegetales frescos durante todo el año, sin depender de los ciclos climáticos del altiplano.
+                El invernadero se establece en un espacio comunal, como el área de una asociación o una escuela, para beneficiar a toda una comunidad de pastores. Esta iniciativa busca mejorar su alimentación y su salud, brindando un ambiente ideal para cultivar productos como cebolla, lechuga, apio, acelga, beterraga, zanahoria y tomate.
               </p>
             </div>
           </FadeUp>
@@ -106,12 +106,9 @@ export default function InvernaderoPage() {
         </FadeUp>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { title: 'Estructura del invernadero', desc: 'Construcción completa de la estructura de policarbonato con sistemas de ventilación y manejo térmico.' },
-            { title: 'Sistema de riego', desc: 'Instalación de sistema de riego por goteo adaptado a las condiciones hídricas del altiplano.' },
-            { title: 'Insumos iniciales', desc: 'Semillas, sustrato, herramientas de trabajo y materiales para el inicio de la producción.' },
-            { title: 'Capacitación', desc: 'Formación práctica para la familia en técnicas de cultivo bajo cubierta y manejo del invernadero.' },
-            { title: 'Seguimiento técnico', desc: 'Visitas periódicas del equipo técnico de Pacomarca para acompañar el desarrollo del programa.' },
-            { title: 'Banco de semillas', desc: 'Dotación de un banco de semillas de variedades adaptadas a las condiciones del altiplano.' },
+            { title: 'Estructura de policarbonato', desc: 'Invernadero cubierto con policarbonato, con doble ventana y doble puerta para mantener una temperatura y humedad adecuadas.' },
+            { title: 'Ubicación comunal', desc: 'Se establece en un espacio comunal, como el área de una asociación o una escuela, para beneficiar a toda una comunidad de pastores.' },
+            { title: 'Acompañamiento', desc: 'Capacitación y acompañamiento para que la comunidad aproveche el invernadero y mejore su alimentación durante todo el año.' },
           ].map((item, i) => (
             <FadeUp key={item.title} delay={i * 0.08}>
               <div className="bg-beige p-8">

@@ -53,13 +53,13 @@ export default function BlackAlpacaPage() {
               </h2>
               <div className="space-y-5 text-base text-white/60 leading-relaxed mb-8">
                 <p>
-                  Black Alpaca proviene de las alpacas de color negro absolutamente puro que Pacomarca ha rescatado de la extinción a través de su programa de conservación genética. Solo el <strong className="text-white/90 font-medium">0.07% de la producción nacional</strong> de fibra de alpaca es negro puro, sin mezcla de otros pigmentos.
+                  La Black Alpaca es el resultado de un programa dedicado a rescatar y conservar la alpaca de color negro intenso, una de las más escasas del mundo, que representa apenas <strong className="text-white/90 font-medium">0.07% de la producción nacional</strong> y que estuvo al borde de desaparecer debido al blanqueamiento de los rebaños.
                 </p>
                 <p>
-                  Su valor radica no solo en su extrema escasez, sino en su cualidad única: es un negro profundo, natural, que no requiere ningún proceso de tintura química. Las prendas confeccionadas con Black Alpaca son ecológicamente impecables y mantienen su color sin desgaste.
+                  Gracias a los esfuerzos de Pacomarca, hoy se ha logrado una recuperación significativa, especialmente en las comunidades alrededor de nuestra estación científica. Su principal atributo es su color natural oscuro, que elimina la necesidad de tintes químicos, reduce la huella hídrica y abre camino a una moda sostenible en todo sentido.
                 </p>
                 <p>
-                  El programa Black Alpaca de Pacomarca registra y selecciona más de 3,000 animales negros, manteniendo un promedio de 1,000 animales negros vivos en el rebaño en todo momento, para garantizar la continuidad del programa.
+                  Esta fibra única ya forma parte de colecciones exclusivas de marcas aliadas como Kuna, Amano e Inoue Brothers, llevando al mundo una propuesta textil que combina tradición, ciencia y respeto por el ambiente.
                 </p>
               </div>
 
@@ -99,7 +99,7 @@ export default function BlackAlpacaPage() {
                 Durante décadas, el mercado internacional prefirió la fibra blanca de alpaca porque es más fácil de teñir. Esto generó una presión de selección contraria a los animales de colores, y muy especialmente contra los negros puros, que fueron progresivamente marginados de los programas de reproducción.
               </p>
               <p>
-                Pacomarca reconoció este problema en los años 90 e inició el programa de conservación y mejora del color negro. Hoy, con más de 3,000 animales registrados, la continuidad de la alpaca negra pura en el Perú está garantizada.
+                Pacomarca reconoció este problema e inició el programa de conservación y mejora del color negro. Hoy, con más de 3,000 animales registrados, la continuidad de la alpaca negra pura en el Perú está garantizada.
               </p>
             </div>
           </FadeUp>

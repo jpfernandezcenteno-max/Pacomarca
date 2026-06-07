@@ -21,14 +21,12 @@ const tabs = [
     id: 'black',
     label: 'Black Alpaca',
     title: 'Programa Black Alpaca',
-    objetivo: 'Rescatar, preservar y mejorar la alpaca de color negro puro, en riesgo de extinción por la preferencia histórica del mercado por la fibra blanca.',
+    objetivo: 'Rescatar y fortalecer la población de alpacas de color negro puro para producir fibra en su tonalidad natural, preservando un recurso genético único que forma parte de la diversidad y riqueza de los Andes.',
     logros: [
-      'Más de 3,000 alpacas negras registradas en el programa',
-      'Promedio de 1,000 animales negros vivos en el rebaño en todo momento',
-      'Parámetros genéticos establecidos para la selección de negro puro',
-      'Base genética para el desarrollo de la fibra Black Alpaca comercial',
+      'Se han registrado más de 3,000 alpacas negras.',
+      'Cada año se mantiene un promedio de 1,000 ejemplares vivos en Pacomarca, conformando una de las poblaciones más grandes y organizadas de esta variedad en el mundo.',
     ],
-    impacto: 'La fibra negra recuperó su valor de mercado gracias a la certificación Pacomarca. Marcas como Kuna, Amano y The Inoue Brothers la usan en colecciones exclusivas, generando nuevos ingresos para las comunidades alpaqueras que cuidan estas alpacas.',
+    impacto: 'La fibra negra natural, antes en riesgo de desaparecer, ha recuperado su valor en el mercado y hoy alcanza precios similares a la fibra blanca, generando nuevas oportunidades para las familias alpaqueras.',
     color: 'bg-ink text-white',
     accent: 'border-gold',
     image: '/conocimiento/programa-genetico/foto-1.jpg',
@@ -37,14 +35,12 @@ const tabs = [
     id: 'extrafinas',
     label: 'Fibras Extrafinas',
     title: 'Programa Fibras Extrafinas',
-    objetivo: 'Desarrollar animales capaces de producir fibra con diámetros inferiores a los estándares normales de la alpaca, en la categoría "extrafina" comparable a la vicuña.',
+    objetivo: 'Producir fibra extrafina de alpaca, posicionándola al nivel de las fibras de lujo más exclusivas del mundo.',
     logros: [
-      'Sixteen Alpaca: fibra menor a 17 micras, la más fina del mundo en alpaca',
-      'Imperial Alpaca: fibra menor a 18 micras con certificación RAS',
-      'Royal Alpaca: fibra menor a 20 micras',
-      'Representan el 40% de la fibra superfina del país',
+      'Pacomarca ha desarrollado categorías únicas de fibra: Sixteen (<17 μm), Imperial (<18 μm) y Royal (<20 μm).',
+      'Todas superiores a la calidad estándar Baby Alpaca (<23 μm).',
     ],
-    impacto: 'Beneficia directamente a entre 80,000 y 150,000 familias alpaqueras en el Perú, que reciben mejores precios por su fibra gracias a la clasificación y certificación. El Perú se posicionó como líder mundial en fibras de alpaca extrafinas.',
+    impacto: 'Gracias a este avance, entre 80.000 y 150.000 familias alpaqueras producen hoy cerca del 40% de la fibra superfina del país.',
     color: 'bg-cream',
     accent: 'border-gold',
     image: '/conocimiento/programa-genetico/foto-2.jpg',
@@ -53,14 +49,12 @@ const tabs = [
     id: 'confort',
     label: 'Fibras de Confort Superior',
     title: 'Programa Fibras de Confort Superior',
-    objetivo: 'Reducir el porcentaje de fibras meduladas (huecas) en el vellón, que son las responsables del prickle factor o sensación de picazón en la piel.',
+    objetivo: 'Reducir la medulación de la fibra de alpaca mediante el mejoramiento genético, eliminando la sensación de picazón y ofreciendo una experiencia de confort y suavidad excepcionales.',
     logros: [
-      'Reducción del 30% en las fibras meduladas del rebaño del programa',
-      'Desarrollo de herramientas estadísticas para la selección por medulación',
-      'Establecimiento de parámetros de heredabilidad para la característica',
-      'Origen del Divine Alpaca, la fibra con cero medulación comercial',
+      'Reducción aproximada del 30% en el porcentaje de fibras meduladas asociadas a la sensación de picazón.',
+      'Mejora significativa de la suavidad y calidad al tacto de la fibra.',
     ],
-    impacto: 'Dio origen al Divine Alpaca, la fibra de alpaca con el menor porcentaje de medulación del mercado. Esta innovación permitió crear prendas con la suavidad del cachemir pero con las propiedades únicas de la alpaca peruana.',
+    impacto: 'Aunque este programa aún no se ha implementado en las comunidades alpaqueras, ha dado origen al Divine Alpaca, una fibra con características comparables al cashmere por su suavidad y confort. Se proyecta que, en dos generaciones de alpacas, entre el 5% y 10% de la población pueda producir fibra con estas cualidades, posicionando a la alpaca como una alternativa competitiva en el mercado de fibras de lujo.',
     color: 'bg-beige',
     accent: 'border-gold',
     image: '/conocimiento/programa-genetico/foto-3.jpg',
@@ -91,13 +85,13 @@ export default function ProgramaGeneticoPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                El programa genético de Pacomarca es único en el mundo por su rigor científico, la escala de sus datos y su conexión directa con las comunidades alpaqueras. Con más de <strong className="text-ink font-medium">17,000 individuos registrados</strong> en el sistema PacoPro y décadas de evaluaciones periódicas, constituye la mayor base de datos genéticos de alpaca en existencia.
+                El futuro sostenible de la alpaca depende de que su fibra alcance un valor competitivo frente a otras fibras de lujo en el mercado mundial. Solo así las nuevas generaciones de criadores verán en la alpaca una oportunidad de vida digna y sostenible.
               </p>
               <p>
-                Los objetivos de mejora se diseñan en función de las necesidades del mercado y del bienestar de las comunidades: mayor finura, menor medulación, colores específicos y mejor productividad son los ejes principales de selección.
+                En Pacomarca, nuestro programa genético se centra en tres grandes retos: rescatar a las alpacas de color negro puro (que estuvieron a punto de desaparecer), lograr una fibra extrafina (que compita con otras fibras finas a nivel mundial) y lograr una fibra con una menor medulación (disminuyendo la sensación de picazón). Estos objetivos son la base de nuestra estrategia de mejora genética y el camino hacia una fibra de mayor valor y un futuro más prometedor para toda la cadena.
               </p>
               <p>
-                Los machos seleccionados del programa se distribuyen entre las comunidades alpaqueras participantes, llevando la mejora genética directamente a los hatos familiares, sin costo para los criadores.
+                Pacomarca ha desarrollado <strong className="text-ink font-medium">PacoPro</strong>, un sistema de gestión genética que permite registrar y analizar información relevante de cada alpaca. Integra datos genealógicos, peso, características de la fibra y otros indicadores clave, convirtiéndose en una herramienta esencial para orientar los programas de reproducción y mejora genética. Actualmente el sistema tiene datos de más de <strong className="text-ink font-medium">17 mil individuos</strong>.
               </p>
             </div>
           </FadeUp>

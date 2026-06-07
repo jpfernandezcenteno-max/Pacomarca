@@ -39,13 +39,13 @@ export default function AlpaquerosPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                Las comunidades alpaqueras son el pilar fundamental sobre el que se construye todo el ecosistema Pacomarca. Organizadas bajo la red <strong className="text-ink font-medium">Pacochayllu</strong> —término quechua que evoca la comunidad de alpacas—, estas familias son las guardianas de un recurso genético que la humanidad ha cultivado durante miles de años.
+                Los pastores altoandinos son el corazón del ecosistema Pacomarca. Herederos de un conocimiento transmitido de generación en generación, mantienen viva una relación única con las alpacas y con la tierra que las sostiene. Para fortalecer este legado, Pacomarca creó <strong className="text-ink font-medium">Pacochayllu</strong>, una comunidad exclusiva de alpaqueros que proveen fibra directamente desde los Andes. El nombre une dos conceptos quechuas: <em>pacocha</em> (cría de alpaca) y <em>ayllu</em> (comunidad), expresando la esencia de esta alianza: el cuidado colectivo de la alpaca como fuente de vida y futuro.
               </p>
               <p>
-                Son aproximadamente <strong className="text-ink font-medium">1,000 familias alpaqueras</strong> distribuidas en las zonas altoandinas del Perú, viviendo y trabajando desde los <strong className="text-ink font-medium">3,800 metros sobre el nivel del mar</strong>, en condiciones de gran dureza climática, con temperaturas que pueden descender a -20°C durante las heladas.
+                A través de Pacochayllu, los criadores acceden a programas de mejora genética, donación de animales seleccionados, préstamo de padrillos élite y capacitaciones en esquila, manejo de rebaños y pastizales. De esta manera, la investigación científica de Pacomarca se traduce en beneficios concretos: rebaños más sanos, fibras más finas y precios más justos para los productores. Al mismo tiempo, Pacomarca acompaña a las comunidades con proyectos que mejoran su calidad de vida, como invernaderos que diversifican la alimentación, cabañas que aseguran condiciones dignas en las alturas y programas de tejido y abrigo que fortalecen la vida comunitaria.
               </p>
               <p>
-                Su conocimiento ancestral sobre el manejo de alpacas, combinado con los programas científicos de Pacomarca, crea una sinergia única que beneficia tanto a las comunidades como a la calidad de la fibra que llega al mercado internacional.
+                En este círculo virtuoso todos ganan: los criadores acceden a mejores oportunidades, Pacomarca asegura calidad desde el origen y el Grupo Inca transforma esa fibra en productos de alto valor. Así, la tradición alpaquera se proyecta al futuro, atrayendo a nuevas generaciones hacia un oficio que combina cultura, ciencia y sostenibilidad.
               </p>
             </div>
           </FadeUp>

@@ -52,13 +52,10 @@ export default function ImperialPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed mb-8">
               <p>
-                Imperial Alpaca es la fibra con diámetro inferior a <strong className="text-ink font-medium">18 micras</strong> y la certificación del <strong className="text-ink font-medium">Responsible Alpaca Standard (RAS)</strong>, el estándar más riguroso de bienestar animal y trazabilidad en la industria alpaquera.
+                La Imperial Alpaca es una fibra de gran confort y finura <strong className="text-ink font-medium">menor a 18 micras</strong>, reconocida por su suavidad, durabilidad y versatilidad gracias a su longitud. Su origen está en las comunidades alpaqueras certificadas bajo el estándar <strong className="text-ink font-medium">RAS (Responsible Alpaca Standard)</strong>, lo que asegura trazabilidad total y prácticas responsables.
               </p>
               <p>
-                La certificación RAS verifica independientemente que los animales han sido criados con altos estándares de bienestar, que la comunidad ha sido tratada con equidad y que la fibra puede rastrearse desde el animal hasta el producto final.
-              </p>
-              <p>
-                Imperial Alpaca combina la excelencia en finura del programa de Fibras Extrafinas con la garantía de sostenibilidad que solo el ecosistema Pacomarca puede ofrecer.
+                Al elegir esta fibra, se respalda el trabajo de mejora genética impulsado por Pacomarca y se contribuye a un modelo sostenible que garantiza bienestar animal, desarrollo social y respeto ambiental.
               </p>
             </div>
 

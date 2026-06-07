@@ -25,23 +25,14 @@ const featuredPublication = {
   image: '/conocimiento/publicaciones/ultima-publicacion.png',
 }
 
-// Revistas indexadas — agregar/editar según listado real
+// Revistas indexadas — pendiente de cargar el listado real de publicaciones
 const publicacionesIndexadas = [
-  { title: 'Genetic parameters for fiber traits in Peruvian alpacas', authors: 'Autor et al.', journal: 'Small Ruminant Research', year: '2023', url: '#' },
-  { title: 'Heritability of medullation in Huacaya alpaca fleece', authors: 'Autor et al.', journal: 'Livestock Science', year: '2022', url: '#' },
-  { title: 'Welfare indicators during shearing in South American camelids', authors: 'Autor et al.', journal: 'Animal Welfare', year: '2022', url: '#' },
-  { title: 'Breeding values for fiber diameter in Suri alpaca', authors: 'Autor et al.', journal: 'Journal of Animal Breeding and Genetics', year: '2021', url: '#' },
-  { title: 'Sustainable fiber production and rural livelihoods in the Andes', authors: 'Autor et al.', journal: 'Sustainability', year: '2021', url: '#' },
-  { title: 'Color genetics in Huacaya alpaca: a quantitative approach', authors: 'Autor et al.', journal: 'Animal Genetics', year: '2020', url: '#' },
-  { title: 'Genetic diversity in Peruvian alpaca populations', authors: 'Autor et al.', journal: 'Genetics Selection Evolution', year: '2020', url: '#' },
-  { title: 'Impact of Inca Esquila on fiber quality and animal stress', authors: 'Autor et al.', journal: 'Small Ruminant Research', year: '2019', url: '#' },
+  { title: 'El listado de publicaciones en revistas indexadas (ISI / Scopus) se encuentra en actualización.', authors: 'Para acceder a los artículos, escríbenos al equipo científico de Pacomarca.', journal: '', year: '', url: '/contacto?rol=cientifico' },
 ]
 
-// Otras publicaciones — agregar/editar según listado real
+// Otras publicaciones — pendiente de cargar el listado real
 const otrasPub = [
-  { title: 'Manual técnico de manejo de alpacas Pacomarca', authors: 'Equipo Pacomarca', journal: 'Material técnico', year: '2022', url: '#' },
-  { title: 'Guía de clasificación de fibra de alpaca', authors: 'Equipo Pacomarca', journal: 'Material técnico', year: '2021', url: '#' },
-  { title: 'Memorias del Congreso Mundial de Camélidos', authors: 'Autor et al.', journal: 'Congreso internacional', year: '2020', url: '#' },
+  { title: 'Presentaciones, congresos y materiales técnicos en actualización.', authors: 'Para más información, escríbenos al equipo científico de Pacomarca.', journal: '', year: '', url: '/contacto?rol=cientifico' },
 ]
 
 function PublicationAccordion({ title, publications }: { title: string; publications: typeof publicacionesIndexadas }) {
@@ -69,18 +60,13 @@ function PublicationAccordion({ title, publications }: { title: string; publicat
                 <div key={i} className="bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 py-5 border-l-4 border-gold/40 hover:border-gold transition-colors">
                   <div className="flex-1">
                     <p className="font-serif text-base text-ink mb-1">{pub.title}</p>
-                    <p className="text-xs text-ink/45">{pub.authors} — <span className="italic">{pub.journal}</span>, {pub.year}</p>
+                    <p className="text-xs text-ink/45">{pub.authors}{pub.journal ? <> — <span className="italic">{pub.journal}</span></> : ''}{pub.year ? `, ${pub.year}` : ''}</p>
                   </div>
                   <a
                     href={pub.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase text-gold border border-gold/50 px-5 py-3 hover:bg-ink hover:text-white hover:border-ink transition-colors shrink-0"
                   >
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Descargar
+                    Escríbenos
                   </a>
                 </div>
               ))}
@@ -124,13 +110,10 @@ export default function PublicacionesPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                El programa científico de Pacomarca ha generado más de 32 publicaciones en revistas científicas internacionales de alto impacto. Esta producción cubre áreas como genética cuantitativa, bienestar animal, calidad de fibra, sostenibilidad y economía rural.
+                Gracias a la base de datos que maneja Pacomarca, la más grande y completa en el mundo, y a la colaboración con la <strong className="text-ink font-medium">Universidad Complutense de Madrid</strong>, se ha logrado producir una serie de papers científicos que han sido publicados en algunas de las revistas indexadas más importantes a nivel internacional.
               </p>
               <p>
-                Una parte significativa de las publicaciones son el resultado de la colaboración con la <strong className="text-ink font-medium">Universidad Complutense de Madrid</strong> y otras instituciones académicas de nivel internacional.
-              </p>
-              <p>
-                Las publicaciones están disponibles en los repositorios de las respectivas revistas indexadas (ISI, Scopus). El listado actualizado se mantiene en el sitio web institucional de Pacomarca.
+                Asímismo, Pacomarca realiza continuamente presentaciones no científicas de su programa de mejora genética en diversas publicaciones, nacionales e internacionales, así como en congresos veterinarios, encuentros de agrupaciones ligadas por la alpaca, eventos especializados, charlas a nivel universitario, etc.
               </p>
             </div>
           </FadeUp>
@@ -256,7 +239,7 @@ export default function PublicacionesPage() {
       <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-10">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase text-gold text-center">Publicado en</p>
+            <p className="text-xs tracking-[0.25em] uppercase text-gold text-center">Revistas indexadas del sector</p>
           </FadeUp>
         </div>
         <div className="relative">

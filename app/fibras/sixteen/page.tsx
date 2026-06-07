@@ -52,13 +52,10 @@ export default function SixteenPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed mb-8">
               <p>
-                Sixteen Alpaca es la fibra de alpaca más fina jamás certificada comercialmente en el mundo. Con un diámetro medio inferior a <strong className="text-ink font-medium">17 micras</strong>, entra en la categoría de las fibras más finas que existen, comparable a la vicuña silvestre y a las mejores fibras de guanaco.
+                La Sixteen Alpaca es la fibra más fina del mundo dentro del mercado textil de alpaca, con una finura <strong className="text-ink font-medium">menor a 17 micras</strong>. Su suavidad excepcional, comparable únicamente con la vicuña, es el resultado de unir los avances en ingeniería genética y textil con el conocimiento ancestral de los alpaqueros.
               </p>
               <p>
-                Es el producto cumbre del programa de Fibras Extrafinas de Pacomarca, el resultado de décadas de selección de los animales con menores diámetros de fibra del rebaño, combinado con una gestión alimentaria y de manejo optimizada.
-              </p>
-              <p>
-                Su nombre hace referencia al umbral de las 16 micras: el límite que convierte a una alpaca en un animal de excepción absoluta dentro de su especie.
+                Esta fibra exclusiva no solo eleva los estándares de la moda de lujo, sino que también refleja un modelo de sostenibilidad basado en el respeto al ambiente, el bienestar animal y el desarrollo de las comunidades altoandinas.
               </p>
             </div>
 

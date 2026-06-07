@@ -277,10 +277,10 @@ export default function HomePage() {
               "En las alturas de los Andes peruanos, donde la relación entre el ser humano y la alpaca se ha tejido durante milenios, nace Pacomarca."
             </blockquote>
             <p className="text-base text-ink/60 leading-relaxed mb-6">
-              Pacomarca es la estación científica de alpacas más importante del mundo. Desde aquí, articulamos un ecosistema único que une a comunidades alpaqueras, científicos, marcas de lujo y la sociedad civil en torno a un objetivo común: la sostenibilidad real de la fibra de alpaca.
+              Nuestra estación científica es reconocida internacionalmente por sus avances en mejora genética, trazabilidad y bienestar animal. Sin embargo, más allá de los laboratorios, la verdadera innovación está en llevar este conocimiento de regreso a los criadores altoandinos, quienes mejoran sus rebaños y la calidad de la fibra que producen. De esta manera, cada avance científico se traduce en un beneficio concreto para las familias alpaqueras y para toda la industria.
             </p>
             <p className="text-base text-ink/60 leading-relaxed mb-8">
-              Con más de 13 millones de datos genéticos acumulados y décadas de investigación científica, hemos desarrollado las fibras más finas y sostenibles del mundo, transformando vidas en las comunidades altoandinas del Perú.
+              En Pacomarca trabajamos para que el legado de la alpaca se mantenga vivo, conectando a los productores con consumidores y marcas que valoran la transparencia, la calidad y la sostenibilidad. Ser parte de Pacomarca es integrarse a un ecosistema global que entiende que la verdadera sostenibilidad solo es posible cuando todos ganan: los alpaqueros, la naturaleza y quienes buscan en la alpaca un lujo auténtico.
             </p>
             <Link
               href="/ecosistema"

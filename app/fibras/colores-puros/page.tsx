@@ -90,13 +90,13 @@ export default function ColoresPurosPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed mb-8">
               <p>
-                La alpaca peruana posee la paleta de colores naturales más amplia de cualquier fibra animal: más de <strong className="text-ink font-medium">22 tonalidades reconocidas oficialmente</strong> por el estándar peruano, desde el blanco más puro hasta el negro profundo, pasando por toda la gama de grises, marrones, cafés, cremas y rojos.
+                La alpaca ofrece una riqueza cromática única, con más de <strong className="text-ink font-medium">22 tonalidades naturales</strong> en su fibra. Sin embargo, no todos los vellones presentan colores uniformes. Con ayuda de la colorimetría, en Pacomarca trabajamos para lograr fibras con tonos consistentes, especialmente en gamas de marrón, que puedan ser reconocidos como colores puros.
               </p>
               <p>
-                Colores Puros es la línea de Pacomarca que valoriza esta diversidad cromática natural. Cada lote es clasificado cuidadosamente por tono y pureza de color, garantizando uniformidad dentro de la tanda y autenticidad en el resultado final.
+                Estos tonos naturales no requieren de tintes químicos, lo que reduce significativamente la huella hídrica en el proceso textil y potencia una moda más responsable.
               </p>
               <p>
-                Para las marcas de moda sostenible, Colores Puros representa la eliminación total de tintes químicos del proceso productivo, con el beneficio adicional de poder comunicar la historia del color natural al consumidor final.
+                Los colores puros de alpaca ya forman parte de las colecciones de nuestras marcas aliadas como Kuna y Amano, llevando al mercado mundial fibras que celebran la autenticidad y la sostenibilidad.
               </p>
             </div>
 

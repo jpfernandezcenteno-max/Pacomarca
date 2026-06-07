@@ -17,7 +17,7 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 
 const fiberFacts = [
   { num: '1', title: 'Naturalmente hipoalergénica', desc: 'No contiene lanolina, lo que la hace apta para personas con piel sensible o alérgicas a otras fibras naturales como la lana.' },
-  { num: '2', title: 'Aislamiento térmico superior', desc: 'Las microcavidades de la fibra de alpaca ofrecen un aislamiento térmico hasta 7 veces superior al de la lana de oveja.' },
+  { num: '2', title: 'Aislamiento térmico superior', desc: 'Ofrece un aislamiento térmico superior al de otras fibras, manteniendo el calor en las condiciones más extremas.' },
   { num: '3', title: 'Longitud excepcional', desc: 'Entre 18 y 25 cm por esquila anual. Esta longitud permite obtener hilados de mayor resistencia y brillo.' },
   { num: '4', title: 'Finura extraordinaria', desc: 'Con un diámetro de entre 16 y 32 micras según calidad y raza. Las fibras extrafinas de Pacomarca alcanzan menos de 17 micras.' },
   { num: '5', title: 'Paleta de colores naturales', desc: 'Más de 22 tonalidades reconocidas, desde el blanco puro hasta el negro profundo, pasando por grises, cafés y cremas.' },
@@ -44,13 +44,10 @@ export default function AlpacaPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                Desde hace miles de años, las alpacas han acompañado a los pueblos andinos en una relación de mutua dependencia y cuidado. Los incas las consideraban sagradas y su fibra era reservada para la realeza: el "oro de los Andes", como la llamaban los cronistas coloniales.
+                Desde hace miles de años, las alpacas han acompañado a los pueblos andinos, ofreciendo abrigo y sustento en uno de los territorios más desafiantes del planeta. En Pacomarca investigamos su genética, su fibra y su bienestar para honrar este legado ancestral y proyectarlo hacia un futuro donde la ciencia y la sostenibilidad se encuentran.
               </p>
               <p>
-                La alpaca (<em>Vicugna pacos</em>) es un camélido sudamericano doméstico, producto de la domesticación de la vicuña hace aproximadamente 6,000 años en las alturas del altiplano andino. Es un animal perfectamente adaptado a las condiciones extremas de la puna: frío intenso, escasez de oxígeno y vegetación austera.
-              </p>
-              <p>
-                Hoy, el Perú alberga el <strong className="text-ink font-medium">87% de la población mundial de alpacas</strong>, con más de 3.6 millones de animales distribuidos principalmente en Puno, Cusco, Arequipa, Apurímac y Huancavelica.
+                La alpaca (<em>Vicugna pacos</em>) es un camélido sudamericano doméstico, perfectamente adaptado a las condiciones extremas de la puna. Se cría principalmente en los departamentos de Apurímac, Cusco, Puno, Arequipa y Huancavelica.
               </p>
             </div>
           </FadeUp>
@@ -123,7 +120,7 @@ export default function AlpacaPage() {
                   </div>
                   <div className="flex gap-3">
                     <span className="text-gold mt-1">◆</span>
-                    <p><strong className="text-ink font-medium">Escasa:</strong> Representa solo el 5-10% de la población total de alpacas, lo que la hace especialmente valiosa.</p>
+                    <p><strong className="text-ink font-medium">Escasa:</strong> Representa cerca del 15% de la población de alpacas, lo que la hace especialmente valiosa.</p>
                   </div>
                 </div>
               </div>
@@ -162,7 +159,7 @@ export default function AlpacaPage() {
                   </div>
                   <div className="flex gap-3">
                     <span className="text-gold mt-1">◆</span>
-                    <p><strong className="text-ink font-medium">Predominante:</strong> Representa el 90-95% de la población alpaquera en el Perú.</p>
+                    <p><strong className="text-ink font-medium">Predominante:</strong> Representa cerca del 85% de la población alpaquera en el Perú.</p>
                   </div>
                 </div>
               </div>

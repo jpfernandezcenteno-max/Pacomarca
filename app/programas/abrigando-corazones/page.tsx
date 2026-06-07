@@ -52,10 +52,10 @@ export default function AbrigandoCorazonesPage() {
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                Abrigando Corazones es el programa más cercano al corazón del ecosistema Pacomarca. Su premisa es simple y poderosa: en las zonas donde se produce la fibra de alpaca más fina del mundo, los habitantes más vulnerables —niños y adultos mayores— no siempre tienen acceso a ella.
+                En las alturas de los Andes peruanos, los niños y adultos mayores enfrentan condiciones de vida especialmente difíciles: poco acceso a salud y educación, sumado a la dureza del frío y la altitud que agravan los problemas de salud. Esta realidad se ve intensificada por la pobreza, que afecta al <strong className="text-ink font-medium">40% de la población rural</strong>.
               </p>
               <p>
-                Con el <strong className="text-ink font-medium">40% de la población rural en situación de pobreza</strong> en las zonas altoandinas, el programa recolecta y distribuye kits de abrigo de alpaca entre las familias más vulnerables de las comunidades participantes.
+                El Programa Abrigando Corazones entrega a niños y adultos mayores de las comunidades alpaqueras kits que les permiten enfrentar las duras condiciones de los Andes, mejorando su calidad de vida y asegurando un futuro más digno.
               </p>
             </div>
           </FadeUp>

@@ -41,10 +41,10 @@ export default function CabanaDelPastorPage() {
             {/* Quote */}
             <blockquote className="border-l-4 border-gold pl-6 mb-10">
               <p className="font-serif text-xl text-ink/80 italic leading-relaxed mb-4">
-                "Antes de la cabaña, mi familia y yo dormíamos con las alpacas para resistir el frío. Ahora tenemos un hogar de verdad y podemos cuidar mejor a nuestros animales."
+                "La cabaña del pastor es para nosotros una gran mejora: tiene un cuarto con calefacción, una cocina mejorada, electricidad y un baño con ducha con agua caliente. Además, tiene un invernadero que nos permite tener verduras y eso es muy bueno para mi alimentación y la de mi familia."
               </p>
               <cite className="text-xs tracking-[0.15em] uppercase text-gold not-italic">
-                — Martín Chipana Vilchez, alpaquero beneficiario
+                — Martín Chipana Vilchez, alpaquero de la zona de influencia de Pacomarca
               </cite>
             </blockquote>
           </FadeUp>
@@ -71,9 +71,9 @@ export default function CabanaDelPastorPage() {
                 <p className="text-xs tracking-[0.25em] uppercase text-ink/40 mb-6">El problema</p>
                 <h3 className="font-serif text-2xl text-ink mb-6">Condiciones extremas de vida</h3>
                 <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
-                  <p>El <strong className="text-ink font-medium">90%</strong> de las familias alpaqueras enfrentan riesgo de heladas severas en sus viviendas durante los meses de invierno andino (mayo-agosto).</p>
-                  <p>Las viviendas tradicionales, construidas con adobe sin aislamiento, no ofrecen protección adecuada contra temperaturas que pueden descender a <strong className="text-ink font-medium">-20°C</strong> o menos durante las noches.</p>
-                  <p>La falta de servicios básicos (agua potable, saneamiento, energía) genera condiciones insalubres que afectan la salud de las familias y su capacidad de cuidar adecuadamente a sus animales.</p>
+                  <p>El <strong className="text-ink font-medium">90%</strong> de las personas en los Andes están expuestas a un alto riesgo debido a las heladas. Los pastores alpaqueros viven en zonas con geografías y condiciones climáticas desafiantes.</p>
+                  <p>Sus viviendas no están equipadas para enfrentar estas condiciones y carecen de servicios básicos.</p>
+                  <p>Además, suelen tener la cocina dentro de la habitación para calentarse, exponiéndose a enfermedades respiratorias.</p>
                 </div>
               </div>
             </FadeUp>
@@ -83,8 +83,8 @@ export default function CabanaDelPastorPage() {
                 <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">La solución</p>
                 <h3 className="font-serif text-2xl text-white mb-6">Una cabaña diseñada para el altiplano</h3>
                 <div className="space-y-4 text-sm text-white/65 leading-relaxed">
-                  <p>Las Cabañas del Pastor son viviendas diseñadas específicamente para las condiciones del altiplano andino, con materiales de construcción que ofrecen aislamiento térmico real y resistencia a las condiciones climáticas extremas.</p>
-                  <p>Cada cabaña es construida, equipada y entregada completamente a la familia beneficiaria, sin costo alguno para ellos. El programa selecciona a las familias más vulnerables del ecosistema.</p>
+                  <p>La cabaña del pastor brinda a las familias alpaqueras una vivienda digna, donde ellas pueden acceder a servicios esenciales como agua, electricidad, instalaciones sanitarias y calefacción.</p>
+                  <p>El diseño de estas cabañas combina de manera armónica las técnicas tradicionales con soluciones innovadoras y sostenibles, utilizando materiales de origen local.</p>
                 </div>
               </div>
             </FadeUp>
@@ -103,10 +103,10 @@ export default function CabanaDelPastorPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { title: 'Estructura e instalación', desc: 'Construcción completa con materiales de calidad adaptados a las condiciones del altiplano andino.' },
-            { title: 'Sistemas básicos', desc: 'Instalación de agua potable, saneamiento básico y sistema de energía solar para iluminación.' },
-            { title: 'Equipamiento interior', desc: 'Mobiliario básico, cocina mejorada y camas con abrigos de alpaca para proteger del frío.' },
-            { title: 'Espacio para animales', desc: 'Corral techado adyacente para proteger a los animales más jóvenes durante las heladas nocturnas.' },
+            { title: 'Dormitorio con calefacción', desc: 'Dormitorio con calefactor de pared trombe, un sistema que utiliza el sol para calentar los espacios interiores, y cocina mejorada.' },
+            { title: 'Baño con agua caliente', desc: 'Baño con ducha de agua caliente, alimentada por un calentador solar, y sistema de biodigestor.' },
+            { title: 'Sistema eléctrico solar', desc: 'Toda la cabaña cuenta con un sistema eléctrico alimentado con energía solar.' },
+            { title: 'Invernadero', desc: 'Invernadero que permite a la familia cultivar sus propias verduras y mejorar su alimentación.' },
           ].map((item, i) => (
             <FadeUp key={item.title} delay={i * 0.1}>
               <div className="bg-cream p-8 h-full">
