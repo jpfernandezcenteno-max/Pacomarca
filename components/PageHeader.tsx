@@ -15,7 +15,7 @@ export default function PageHeader({
   section,
   title,
   subtitle,
-  imageUrl = 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=2400&q=90',
+  imageUrl = '/home/foto-1.jpg',
   imagePosition = 'object-center',
 }: PageHeaderProps) {
   return (
@@ -25,6 +25,8 @@ export default function PageHeader({
         src={imageUrl}
         alt={title}
         fill
+        sizes="100vw"
+        quality={80}
         className={`object-cover ${imagePosition}`}
         priority
       />
