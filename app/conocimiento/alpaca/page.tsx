@@ -151,10 +151,6 @@ export default function AlpacaPage() {
                   </div>
                   <div className="flex gap-3">
                     <span className="text-gold mt-1">◆</span>
-                    <p><strong className="text-ink font-medium">Mayor densidad:</strong> Produce más fibra por animal que la Suri, con mayor densidad de mechas.</p>
-                  </div>
-                  <div className="flex gap-3">
-                    <span className="text-gold mt-1">◆</span>
                     <p><strong className="text-ink font-medium">Versatilidad:</strong> Su finura la hace ideal para prendas de uso diario de alto lujo. Es la base de fibras como Divine, Sixteen e Imperial.</p>
                   </div>
                   <div className="flex gap-3">
