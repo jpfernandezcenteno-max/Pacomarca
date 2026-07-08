@@ -50,7 +50,7 @@ const posts: Post[] = [
     desc: 'Pacomarca y la IAEA unen fuerzas para medir y reducir las emisiones de los camélidos sudamericanos — y cambiar el relato de las fibras naturales frente a los sintéticos.',
     content: `## Las fibras naturales en desventaja: el sesgo del LCA
 
-Los estudios de Análisis de Ciclo de Vida (LCA, por sus siglas en inglés) han sido, históricamente, poco amables con las fibras naturales. Alpaca, lana ovina, cachemira: todas han salido menos beneficiadas frente a los sintéticos cuando se aplica el estándar convencional de comparación.
+Los estudios de Análisis de Ciclo de Vida (LCA, por sus siglas en inglés) han sido, históricamente, poco amables con las fibras naturales. Alpaca, lana ovina, Cashmere: todas han salido menos beneficiadas frente a los sintéticos cuando se aplica el estándar convencional de comparación.
 
 El problema está en cómo se contabiliza. El estándar actual no tiene en cuenta el ciclo de vida completo del producto. Y hay un factor que pesa mucho en la balanza: los animales, por el simple hecho de vivir —comer, respirar, orinar, defecar— aportan metano a la atmósfera.
 
@@ -58,7 +58,7 @@ El problema está en cómo se contabiliza. El estándar actual no tiene en cuent
 
 ## La alpaca ya es resiliente — pero podemos ir más lejos
 
-La alpaca es un animal extraordinariamente adaptado a condiciones extremas: vive por encima de los 4 000 m s.n.m., aprovecha pastos que ningún otro rumiante podría digerir, y produce una fibra de valor único en el mundo. Comparada con la oveja merino o la cabra de cachemira, su huella ambiental ya es más ligera.
+La alpaca es un animal extraordinariamente adaptado a condiciones extremas: vive por encima de los 4 000 m s.n.m., aprovecha pastos que ningún otro rumiante podría digerir, y produce una fibra de valor único en el mundo. Comparada con la oveja merino o la cabra de Cashmere, su huella ambiental ya es más ligera.
 
 Pero el Grupo Inca, a través de Pacomarca, tiene claro que "ya somos buenos" no es suficiente. La pregunta que nos hacemos es: ¿cuánto metano emite realmente una alpaca, y qué podemos hacer para reducirlo genéticamente?
 

@@ -96,7 +96,7 @@ export default function SixteenPage() {
                 { fiber: 'Vicuña', micras: '12–14 µm', note: 'Protegida' },
                 { fiber: 'Sixteen Alpaca', micras: '< 17 µm', note: 'Pacomarca', highlight: true },
                 { fiber: 'Imperial Alpaca', micras: '< 18 µm', note: 'Pacomarca' },
-                { fiber: 'Cashemere fino', micras: '14–16 µm', note: 'Animal distinto' },
+                { fiber: 'Cashmere fino', micras: '14–16 µm', note: 'Animal distinto' },
               ].map((item) => (
                 <div key={item.fiber} className={`p-6 ${item.highlight ? 'bg-gold' : 'bg-white/5'}`}>
                   <p className="font-serif text-2xl mb-2">{item.micras}</p>
