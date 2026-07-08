@@ -102,7 +102,7 @@ export default function TrazabilidadPage() {
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Tecnología</p>
             <h2 className="font-serif text-3xl text-ink mb-6">PacoPro: el sistema de registro</h2>
             <p className="text-base text-ink/65 leading-relaxed mb-10">
-              PacoPro es el software de gestión genética y productiva desarrollado específicamente para el ecosistema Pacomarca. Permite registrar, analizar y rastrear más de 17,000 individuos con sus datos genealógicos, productivos y de calidad de fibra. Es la base tecnológica de la trazabilidad del ecosistema.
+              PacoPro es el software de gestión genética y productiva desarrollado específicamente para el ecosistema Pacomarca. Permite registrar, analizar y rastrear a cada alpaca con sus datos genealógicos, productivos y de calidad de fibra. Es la base tecnológica de la trazabilidad del ecosistema.
             </p>
             <Link
               href="/contacto"
