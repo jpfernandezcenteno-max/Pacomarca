@@ -18,8 +18,8 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 const fiberFacts = [
   { num: '1', title: 'Naturalmente hipoalergénica', desc: 'No contiene lanolina, lo que la hace apta para personas con piel sensible o alérgicas a otras fibras naturales como la lana.' },
   { num: '2', title: 'Aislamiento térmico superior', desc: 'Ofrece un aislamiento térmico superior al de otras fibras, manteniendo el calor en las condiciones más extremas.' },
-  { num: '3', title: 'Longitud excepcional', desc: 'Entre 18 y 25 cm por esquila anual. Esta longitud permite obtener hilados de mayor resistencia y brillo.' },
-  { num: '4', title: 'Finura extraordinaria', desc: 'Con un diámetro de entre 16 y 32 micras según calidad y tipo. Las fibras extrafinas de Pacomarca alcanzan menos de 17 micras.' },
+  { num: '3', title: 'Longitud excepcional', desc: 'Entre 8.5 a 13 cm por esquila anual. Esta longitud permite obtener hilados de mayor resistencia y brillo.' },
+  { num: '4', title: 'Finura extraordinaria', desc: 'Con un diámetro entre 18 a 36 micrones. Incluso fibras que pueden ser tan exclusivas con diámetros menores.' },
   { num: '5', title: 'Paleta de colores naturales', desc: 'Más de 22 tonalidades reconocidas, desde el blanco puro hasta el negro profundo, pasando por grises, cafés y cremas.' },
 ]
 
