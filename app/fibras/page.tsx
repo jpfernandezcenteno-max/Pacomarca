@@ -92,7 +92,7 @@ export default function FibrasPage() {
                 Además, trabajamos en la recuperación y valorización de los colores naturales, destacando la Black Alpaca y los Colores Puros, que reafirman la riqueza cromática de la especie y devuelven al mercado fibras de gran valor en su tono original.
               </p>
               <p>
-                Gracias a esta investigación y colaboración, el Grupo Inca, a través de Incatops, puede ofrecer fibras que combinan finura, uniformidad, suavidad y diversidad natural, posicionando a la alpaca como un verdadero lujo sostenible con impacto positivo en los Andes y en la industria textil global.
+                Gracias a esta investigación y colaboración, las empresas del Grupo Inca pueden ofrecer fibras que combinan finura, uniformidad, suavidad y diversidad natural, posicionando a la alpaca como un verdadero lujo sostenible con impacto positivo en los Andes y en la industria textil global.
               </p>
             </div>
           </FadeUp>
