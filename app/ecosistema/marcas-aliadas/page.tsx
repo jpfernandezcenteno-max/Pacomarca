@@ -21,7 +21,7 @@ const grupoIncaMarcas = [
   { name: 'Incalpaca', desc: 'Empresa textil del Grupo Inca especializada en prendas y tejidos de fibra de alpaca.', url: 'https://www.incalpaca.com/es', logo: '/ecosistema/marcas-aliadas/logos/incalpaca.svg' },
   { name: 'Kuna', desc: 'Marca del Grupo Inca especializada en prendas de alpaca y fibras naturales.', url: 'https://pe.kunastores.com/', logo: '/ecosistema/marcas-aliadas/logos/kuna.svg' },
   { name: 'Alpaca 111', desc: 'Marca del Grupo Inca especializada en prendas de fibra de alpaca.', url: 'https://alpaca111.com/', logo: '/ecosistema/marcas-aliadas/logos/alpaca-111.svg' },
-  { name: 'Amano', desc: 'Marca del Grupo Inca especializada en hilados y prendas de alpaca.', url: 'https://amanoyarns.com/pe/', logo: '/ecosistema/marcas-aliadas/logos/amano.svg' },
+  { name: 'Amano', desc: 'Marca del Grupo Inca especializada en hilados de alpaca.', url: 'https://amanoyarns.com/pe/', logo: '/ecosistema/marcas-aliadas/logos/amano.svg' },
 ]
 
 const aliadosEstrategicos = [
