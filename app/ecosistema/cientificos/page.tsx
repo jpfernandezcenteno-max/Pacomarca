@@ -22,9 +22,8 @@ const scientists = [
   'Formoso-Rafferty N', 'Daverio María Silvana', 'Di Rocco Florencia',
   'Mancisidor Betsy', 'McGregor BA', 'Menéndez-Buxadera Alberto',
   'More MJ', 'Morón JA', 'Murillo Yanin', 'Paucar-Chanca Rufino',
-  'Poma Adolfo', 'Ponce de Leon FA', 'Quispe Christian C',
+  'Poma Adolfo', 'Ponce de León Federico Abel', 'Quispe Christian C',
   'Quispe-Ccalluari Carlos', 'Sedano Jorge', 'Veli Eudosio A',
-  'de León Federico Abel Ponce',
 ]
 
 const universities = [
