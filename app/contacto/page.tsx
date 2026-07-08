@@ -194,8 +194,14 @@ export default function ContactoPage() {
               <div>
                 <h3 className="font-serif text-lg text-ink mb-4">Estación científica</h3>
                 <div className="space-y-2 text-sm text-ink/65">
-                  <p>Carretera Llalli-Ocuviri</p>
-                  <p>Llalli, Melgar, Puno – Perú</p>
+                  <a
+                    href="https://maps.app.goo.gl/b3Q1F1Tes3CGsDqAA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block hover:text-gold transition-colors"
+                  >
+                    Carretera Ayaviri-Ocuviri km 54, Llalli, Melgar, Puno
+                  </a>
                   <p className="text-xs text-ink/40 mt-2">4,200 m.s.n.m.</p>
                 </div>
               </div>

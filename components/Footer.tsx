@@ -139,9 +139,14 @@ export default function Footer() {
               <p className="text-xs tracking-[0.15em] text-white/30 uppercase mb-2">
                 Estación científica
               </p>
-              <p className="text-sm text-white/50">
-                Carretera Llalli-Ocuviri, Llalli, Melgar, Puno – Perú
-              </p>
+              <a
+                href="https://maps.app.goo.gl/b3Q1F1Tes3CGsDqAA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white/50 hover:text-white/80 transition-colors"
+              >
+                Carretera Ayaviri-Ocuviri km 54, Llalli, Melgar, Puno
+              </a>
             </div>
           </div>
 

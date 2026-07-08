@@ -167,7 +167,7 @@ const fibers = [
   { name: 'Sixteen', label: 'Sixteen Alpaca', href: '/fibras/sixteen', description: '< 17 micras. La más fina del mundo.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
   { name: 'Imperial', label: 'Imperial Alpaca', href: '/fibras/imperial', description: '< 18 micras. Certificación RAS.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
   { name: 'Black', label: 'Black Alpaca', href: '/fibras/black', description: 'Negro natural puro. 0.07% producción.', image: '/fibras/fibra-black.jpg' },
-  { name: 'Colores Puros', label: 'Colores Puros', href: '/fibras/colores-puros', description: '22+ tonalidades. Sin tinturas químicas.', image: '/fibras/fibra-colores.jpg' },
+  { name: 'Colores Naturales', label: 'Colores Naturales', href: '/fibras/colores-puros', description: '22+ tonalidades. Sin tinturas químicas.', image: '/fibras/fibra-colores.jpg' },
 ]
 
 export default function HomePage() {
@@ -475,7 +475,7 @@ export default function HomePage() {
             <div className="text-center mb-16">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Fibras de excepción</p>
               <h2 className="font-serif text-4xl lg:text-5xl text-white mb-6">
-                Las fibras más finas del mundo
+                Las fibras más exclusivas del mundo
               </h2>
               <p className="text-base text-white/50 max-w-2xl mx-auto">
                 Cada fibra Pacomarca es el resultado de décadas de investigación científica, selección genética rigurosa y el cuidado de cientos de familias alpaqueras.
