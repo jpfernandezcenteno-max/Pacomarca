@@ -91,7 +91,7 @@ export default function ProgramaGeneticoPage() {
                 En Pacomarca, nuestro programa genético se centra en tres grandes retos: rescatar a las alpacas de color negro puro (que estuvieron a punto de desaparecer), lograr una fibra extrafina (que compita con otras fibras finas a nivel mundial) y lograr una fibra con una menor medulación (disminuyendo la sensación de picazón). Estos objetivos son la base de nuestra estrategia de mejora genética y el camino hacia una fibra de mayor valor y un futuro más prometedor para toda la cadena.
               </p>
               <p>
-                Pacomarca ha desarrollado <strong className="text-ink font-medium">PacoPro</strong>, un sistema de gestión genética que permite registrar y analizar información relevante de cada alpaca. Integra datos genealógicos, peso, características de la fibra y otros indicadores clave, convirtiéndose en una herramienta esencial para orientar los programas de reproducción y mejora genética. Actualmente el sistema tiene datos de más de <strong className="text-ink font-medium">17 mil individuos</strong>.
+                Pacomarca ha desarrollado el <strong className="text-ink font-medium">PacoPro</strong>. Un software con un sistema de gestión genética que permite registrar y analizar información relevante de cada alpaca. Integra datos genealógicos, peso, características de la fibra y otros indicadores clave, convirtiéndose en una herramienta esencial para orientar los programas de reproducción y mejora genética. Actualmente el sistema tiene datos de más de <strong className="text-ink font-medium">17 mil individuos</strong>.
               </p>
             </div>
           </FadeUp>
