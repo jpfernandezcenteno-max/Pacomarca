@@ -163,7 +163,7 @@ const programs = [
 ]
 
 const fibers = [
-  { name: 'Divine', label: 'Divine Alpaca', href: '/fibras/divine', description: 'Cero medulación. La suavidad perfecta.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
+  { name: 'Divine', label: 'Divine Alpaca', href: '/fibras/divine', description: 'Bajo % de medulación. La suavidad perfecta.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
   { name: 'Sixteen', label: 'Sixteen Alpaca', href: '/fibras/sixteen', description: '< 17 micras. La más fina del mundo.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
   { name: 'Imperial', label: 'Imperial Alpaca', href: '/fibras/imperial', description: '< 18 micras. Certificación RAS.', image: '/fibras/fibra-divine-imperial-sixteen.jpg' },
   { name: 'Black', label: 'Black Alpaca', href: '/fibras/black', description: 'Negro natural puro. 0.07% producción.', image: '/fibras/fibra-black.jpg' },
