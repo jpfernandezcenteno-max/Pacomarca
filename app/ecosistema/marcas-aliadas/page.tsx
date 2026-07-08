@@ -25,12 +25,12 @@ const grupoIncaMarcas = [
 ]
 
 const aliadosEstrategicos = [
-  { name: 'Intifil', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/intifil.svg' },
-  { name: 'The Inoue Brothers', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/the-inoue-brothers.svg' },
-  { name: 'Sandra Jordan', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/sandra-jordan.svg' },
-  { name: 'Pelipeli', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/polipeli.svg' },
-  { name: 'Alpha Tops', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/alpha-tops.svg' },
-  { name: 'Hessnatur', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', logo: '/ecosistema/marcas-aliadas/logos/hessnatur.svg' },
+  { name: 'Intifil', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', url: 'https://www.intifil.com/', logo: '/ecosistema/marcas-aliadas/logos/intifil.svg' },
+  { name: 'The Inoue Brothers', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', url: 'https://www.theinouebrothers.net/', logo: '/ecosistema/marcas-aliadas/logos/the-inoue-brothers.svg' },
+  { name: 'Sandra Jordan', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', url: 'https://www.sandrajordan.com/', logo: '/ecosistema/marcas-aliadas/logos/sandra-jordan.svg' },
+  { name: 'Pelipeli', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', url: 'https://polipeli.com/en/', logo: '/ecosistema/marcas-aliadas/logos/polipeli.svg' },
+  { name: 'Alpha Tops', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', url: 'https://www.alphatops.com/', logo: '/ecosistema/marcas-aliadas/logos/alpha-tops.svg' },
+  { name: 'Hessnatur', desc: 'Aliado estratégico que apoya los programas de Pacomarca y la sostenibilidad de la cadena de la alpaca.', url: 'https://www.hessnatur.com/en-DE', logo: '/ecosistema/marcas-aliadas/logos/hessnatur.svg' },
 ]
 
 function BrandCard({ name, desc, url, logo }: { name: string; desc: string; url?: string; logo?: string }) {
@@ -148,7 +148,7 @@ export default function MarcasAliadasPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {aliadosEstrategicos.map((aliado, i) => (
               <FadeUp key={aliado.name} delay={i * 0.08}>
-                <BrandCard name={aliado.name} desc={aliado.desc} logo={aliado.logo} />
+                <BrandCard name={aliado.name} desc={aliado.desc} url={aliado.url} logo={aliado.logo} />
               </FadeUp>
             ))}
           </div>
