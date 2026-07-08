@@ -98,7 +98,7 @@ export default function MarcasAliadasPage() {
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">¿Qué ofrece el ecosistema a las marcas?</p>
               <div className="space-y-6">
                 {[
-                  { title: 'Trazabilidad total', desc: 'Cada fibra es trazable desde el animal hasta el producto final, con datos verificables.' },
+                  { title: 'Trazabilidad total', desc: 'Cada fibra es trazable desde el origen hasta el producto final, con datos verificables.' },
                   { title: 'Certificación científica', desc: 'Respaldo de 23 universidades y 32 artículos científicos publicados en revistas indexadas.' },
                   { title: 'Historia de impacto', desc: 'Una narrativa auténtica de desarrollo comunitario que conecta con los valores del consumidor de lujo.' },
                   { title: 'Exclusividad', desc: 'Acceso a fibras únicas como Divine, Sixteen o Black Alpaca, disponibles solo a través del ecosistema.' },
