@@ -19,7 +19,7 @@ const fiberFacts = [
   { num: '1', title: 'Naturalmente hipoalergénica', desc: 'No contiene lanolina, lo que la hace apta para personas con piel sensible o alérgicas a otras fibras naturales como la lana.' },
   { num: '2', title: 'Aislamiento térmico superior', desc: 'Ofrece un aislamiento térmico superior al de otras fibras, manteniendo el calor en las condiciones más extremas.' },
   { num: '3', title: 'Longitud excepcional', desc: 'Entre 18 y 25 cm por esquila anual. Esta longitud permite obtener hilados de mayor resistencia y brillo.' },
-  { num: '4', title: 'Finura extraordinaria', desc: 'Con un diámetro de entre 16 y 32 micras según calidad y raza. Las fibras extrafinas de Pacomarca alcanzan menos de 17 micras.' },
+  { num: '4', title: 'Finura extraordinaria', desc: 'Con un diámetro de entre 16 y 32 micras según calidad y tipo. Las fibras extrafinas de Pacomarca alcanzan menos de 17 micras.' },
   { num: '5', title: 'Paleta de colores naturales', desc: 'Más de 22 tonalidades reconocidas, desde el blanco puro hasta el negro profundo, pasando por grises, cafés y cremas.' },
 ]
 
@@ -71,7 +71,7 @@ export default function AlpacaPage() {
           <FadeUp>
             <div className="text-center">
               <p className="font-serif text-xl text-ink/70 italic">
-                "Las alpacas habitan las zonas altoandinas, desde los 3,500 a los 5,000 m.s.n.m., en uno de los ecosistemas más extremos del planeta."
+                "Las alpacas habitan las zonas altoandinas desde los 3,800 msnm, en uno de los ecosistemas más extremos del planeta."
               </p>
             </div>
           </FadeUp>
@@ -82,8 +82,8 @@ export default function AlpacaPage() {
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <FadeUp>
           <div className="text-center mb-16">
-            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Razas</p>
-            <h2 className="font-serif text-4xl text-ink">Dos razas, dos expresiones de excelencia</h2>
+            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Tipos</p>
+            <h2 className="font-serif text-4xl text-ink">Dos tipos, dos expresiones de excelencia</h2>
           </div>
         </FadeUp>
 
@@ -99,7 +99,7 @@ export default function AlpacaPage() {
                 />
               </div>
               <div className="p-10">
-                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Raza Suri</p>
+                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Tipo Suri</p>
                 <h3 className="font-serif text-3xl text-ink mb-6">Suri</h3>
                 <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
                   <div className="flex gap-3">
@@ -138,7 +138,7 @@ export default function AlpacaPage() {
                 />
               </div>
               <div className="p-10">
-                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Raza Huacaya</p>
+                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Tipo Huacaya</p>
                 <h3 className="font-serif text-3xl text-ink mb-6">Huacaya</h3>
                 <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
                   <div className="flex gap-3">

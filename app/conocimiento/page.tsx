@@ -20,7 +20,7 @@ const sections = [
     label: '01',
     title: 'Alpaca (Vicugna pacos)',
     href: '/conocimiento/alpaca',
-    desc: 'La historia, biología y características únicas de la alpaca peruana: las dos razas, las propiedades de su fibra y su hábitat en las alturas andinas.',
+    desc: 'La historia, biología y características únicas de la alpaca peruana: los dos tipos, las propiedades de su fibra y su hábitat en las alturas andinas.',
     tag: 'Biología',
   },
   {
