@@ -21,7 +21,7 @@ const fibers = [
     name: 'Divine Alpaca',
     href: '/fibras/divine',
     spec: 'Comparable 18-19 µm | Bajo % de medulación',
-    desc: 'La innovación más sofisticada de Pacomarca. Divine Alpaca es el resultado de décadas de selección genética orientada a eliminar las fibras meduladas del vellón, logrando una suavidad comparable al cachemir pero con las propiedades únicas de la alpaca.',
+    desc: 'La innovación más sofisticada de Pacomarca. Divine Alpaca es el resultado de décadas de selección genética orientada a eliminar las fibras meduladas del vellón, logrando una suavidad comparable al Cashemere pero con las propiedades únicas de la alpaca.',
     partners: 'Kuna, Amano',
     bgColor: 'bg-cream',
     image: '/fibras/fibra-divine-imperial-sixteen.jpg',

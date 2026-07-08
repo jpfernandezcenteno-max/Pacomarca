@@ -54,7 +54,7 @@ const tabs = [
       'Reducción aproximada del 30% en el porcentaje de fibras meduladas asociadas a la sensación de picazón.',
       'Mejora significativa de la suavidad y calidad al tacto de la fibra.',
     ],
-    impacto: 'Aunque este programa aún no se ha implementado en las comunidades alpaqueras, ha dado origen al Divine Alpaca, una fibra con características comparables al cashmere por su suavidad y confort. Se proyecta que, en dos generaciones de alpacas, entre el 5% y 10% de la población pueda producir fibra con estas cualidades, posicionando a la alpaca como una alternativa competitiva en el mercado de fibras de lujo.',
+    impacto: 'Aunque este programa aún no se ha implementado en las comunidades alpaqueras, ha dado origen al Divine Alpaca, una fibra con características comparables al Cashemere por su suavidad y confort. Se proyecta que, en dos generaciones de alpacas, entre el 5% y 10% de la población pueda producir fibra con estas cualidades, posicionando a la alpaca como una alternativa competitiva en el mercado de fibras de lujo.',
     color: 'bg-beige',
     accent: 'border-gold',
     image: '/conocimiento/programa-genetico/foto-3.jpg',
