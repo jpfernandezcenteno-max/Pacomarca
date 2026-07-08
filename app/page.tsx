@@ -32,12 +32,67 @@ function FadeUp({
 }
 
 const stats = [
-  { number: '8', label: 'Cabañas del pastor construidas' },
-  { number: '1', label: 'Invernadero comunitario' },
-  { number: '1,512', label: 'Alpacas donadas a familias' },
-  { number: '9', label: 'Módulos de esquila implementados' },
-  { number: '32', label: 'Artículos científicos publicados' },
-  { number: '8,400+', label: 'Kits Abrigando Corazones' },
+  {
+    number: '8',
+    label: 'Cabañas del pastor construidas',
+    icon: (
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
+        <path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+      </svg>
+    ),
+  },
+  {
+    number: '1',
+    label: 'Invernadero comunitario',
+    icon: (
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
+        <path d="M7 20h10" />
+        <path d="M10 20c5.5-2.5.8-6.4 3-10" />
+        <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
+        <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
+      </svg>
+    ),
+  },
+  {
+    number: '1,512',
+    label: 'Alpacas donadas a familias',
+    icon: (
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
+        <path d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+      </svg>
+    ),
+  },
+  {
+    number: '9',
+    label: 'Módulos de esquila implementados',
+    icon: (
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
+        <circle cx="6" cy="6" r="3" />
+        <path d="M8.12 8.12 12 12" />
+        <path d="M20 4 8.12 15.88" />
+        <circle cx="6" cy="18" r="3" />
+        <path d="M14.8 14.8 20 20" />
+      </svg>
+    ),
+  },
+  {
+    number: '32',
+    label: 'Artículos científicos publicados',
+    icon: (
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
+        <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.066 9.066 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+      </svg>
+    ),
+  },
+  {
+    number: '8,400+',
+    label: 'Kits Abrigando Corazones',
+    icon: (
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
+        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+      </svg>
+    ),
+  },
 ]
 
 const actors = [
@@ -317,6 +372,7 @@ export default function HomePage() {
             {stats.map((stat, i) => (
               <FadeUp key={stat.label} delay={i * 0.1}>
                 <div className="text-center p-8 bg-white/60">
+                  <div className="text-gold/70 mb-4 flex justify-center">{stat.icon}</div>
                   <p className="font-serif text-5xl lg:text-6xl text-gold mb-3">{stat.number}</p>
                   <p className="text-sm text-ink/60 leading-snug">{stat.label}</p>
                 </div>
