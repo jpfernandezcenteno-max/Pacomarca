@@ -114,6 +114,7 @@ export default function AlpaquerosPage() {
                 { title: 'Infraestructura', desc: 'Cabañas del pastor, módulos de esquila e invernaderos comunitarios construidos y entregados a las comunidades.' },
                 { title: 'Precio justo', desc: 'Gracias a la trazabilidad y certificación, las familias reciben mejores precios por su fibra en el mercado.' },
                 { title: 'Capacitación', desc: 'Programas de formación en bienestar animal, sanidad, manejo del hato y uso de software PacoPro.' },
+                { title: 'App PacoKipu', desc: 'Las familias registran y gestionan la información de su hato —genealogía, producción y características de la fibra— directamente desde la aplicación PacoKipu, desarrollada por Pacomarca.' },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4">
                   <div className="w-1 bg-gold flex-shrink-0 mt-1" style={{ height: 'auto' }} />
