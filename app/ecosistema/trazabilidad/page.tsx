@@ -17,10 +17,10 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 }
 
 const steps = [
-  { step: '01', title: 'El animal', desc: 'Cada alpaca en el programa está identificada individualmente con microchip o arete, con su historial genético registrado en el sistema PacoPro.' },
-  { step: '02', title: 'La esquila', desc: 'La fibra se extrae siguiendo el método Inca Esquila, garantizando bienestar animal y calidad óptima. Se registra el peso, finura y caracterización de cada vellón.' },
+  { step: '01', title: 'El animal', desc: 'Cada alpaca en el programa está identificada individualmente con arete, con su historial genético registrado en el sistema PacoPro.' },
+  { step: '02', title: 'La esquila', desc: 'La fibra se extrae siguiendo el método Inca Esquila, garantizando bienestar animal y calidad óptima. Se registra la longitud y el peso de cada vellón.' },
   { step: '03', title: 'El acopio', desc: 'Los módulos de esquila certificados concentran la fibra clasificada por comunidad y calidad, con registros digitales de procedencia.' },
-  { step: '04', title: 'El procesamiento', desc: 'Las plantas del Grupo Inca (Inca Tops, Incalpaca) procesan la fibra manteniendo la trazabilidad desde el raw material hasta el top o hilo final.' },
+  { step: '04', title: 'El procesamiento', desc: 'Las plantas del Grupo Inca (Inca Tops, Incalpaca) procesan la fibra manteniendo la trazabilidad desde el origen hasta el top o hilo final.' },
   { step: '05', title: 'La certificación', desc: 'Cada lote es verificado y certificado con el estándar RAS (Responsible Alpaca Standard) y el sello de calidad Pacomarca.' },
   { step: '06', title: 'El producto final', desc: 'Las marcas aliadas reciben fibra trazable que pueden comunicar con autenticidad a sus clientes en el mercado internacional.' },
 ]
