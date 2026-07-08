@@ -389,7 +389,7 @@ export default function HomePage() {
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Sustainable Alpaca Network</p>
             <h2 className="font-serif text-4xl lg:text-5xl text-ink mb-6">Un ecosistema vivo</h2>
             <p className="text-base text-ink/60 max-w-2xl mx-auto leading-relaxed">
-              La verdadera sostenibilidad de la alpaca solo es posible cuando todos los actores de la cadena trabajan juntos, con objetivos claros y beneficios compartidos.
+              Red de más de 30 investigadores de unas 23 Universidades y Centros de Investigación generando conocimiento científico a nivel mundial.
             </p>
           </div>
         </FadeUp>
