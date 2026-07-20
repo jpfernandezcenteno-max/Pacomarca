@@ -52,7 +52,7 @@ export default function FondoInvestigacionPage() {
                 { num: '32+', label: 'Artículos en revistas indexadas' },
                 { num: '13M+', label: 'Datos disponibles' },
                 { num: '23+', label: 'Universidades colaboradoras' },
-                { num: '30+', label: 'Investigadores financiados' },
+                { num: '30+', label: 'Investigadores colaboradores' },
               ].map((s) => (
                 <div key={s.label} className="bg-beige p-8 text-center">
                   <p className="font-serif text-4xl text-gold mb-2">{s.num}</p>
