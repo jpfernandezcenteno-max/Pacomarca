@@ -102,7 +102,7 @@ export default function AbrigandoCorazonesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeUp>
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Cómo funciona</p>
-            <h2 className="font-serif text-3xl text-ink mb-6">Del excedente productivo al abrigo solidario</h2>
+            <h2 className="font-serif text-3xl text-ink mb-6">Tejiendo oportunidades para un abrigo solidario</h2>
             <div className="space-y-4 text-base text-ink/65 leading-relaxed">
               <p>
                 Los kits se confeccionan principalmente con fibra de alpaca producida por las mismas comunidades, incluyendo calidades y colores que no siempre encuentran mercado en el exterior pero que son perfectamente adecuados para prendas de uso diario.
