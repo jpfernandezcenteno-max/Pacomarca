@@ -42,13 +42,13 @@ export default function IncaEsquilaPage() {
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Norma técnica NTP 231.370-2014</p>
+            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Norma técnica NTP 231.370</p>
             <h2 className="font-serif text-4xl text-ink mb-8 leading-snug">
               La esquila elevada a estándar nacional
             </h2>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
-                La Inca Esquila es un método de trasquila mecanizada desarrollado por Pacomarca que protege al esquilador, asegura el bienestar de la alpaca y garantiza una fibra más limpia y uniforme. Reconocida oficialmente como norma técnica nacional del Perú (<strong className="text-ink font-medium">NTP 231.370-2014</strong>), esta práctica se ha convertido en un referente que beneficia tanto a los productores como a la industria textil.
+                La Inca Esquila es un método de trasquila mecanizada desarrollado por Pacomarca que protege al esquilador, asegura el bienestar de la alpaca y garantiza una fibra más limpia y uniforme. Reconocida oficialmente como norma técnica nacional del Perú (<strong className="text-ink font-medium">NTP 231.370 "Buenas prácticas de esquila y manejo de vellón"</strong>), esta práctica se ha convertido en un referente que beneficia tanto a los productores como a la industria textil.
               </p>
               <p>
                 En muchas comunidades alpaqueras, la esquila tradicional causa estrés, lesiones e incluso abortos en las alpacas, reduciendo la tasa de nacimientos al 60%. En contraste, en Pacomarca, el uso de la Inca Esquila eleva este porcentaje al 76%, al reducir el estrés y obtener una fibra más limpia y uniforme.
@@ -78,7 +78,7 @@ export default function IncaEsquilaPage() {
                   </div>
                 </div>
                 <p className="text-sm text-white/50 leading-relaxed border-t border-white/10 pt-6">
-                  Un incremento del 27% en la tasa de natalidad representa decenas de crías adicionales por comunidad, con impacto directo en los ingresos familiares.
+                  Un incremento del 16% en la tasa de natalidad representa decenas de crías adicionales por comunidad, con impacto directo en los ingresos familiares.
                 </p>
               </div>
             </div>
@@ -143,16 +143,16 @@ export default function IncaEsquilaPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Reconocimiento oficial</p>
-                <h2 className="font-serif text-3xl text-ink mb-6">NTP 231.370-2014</h2>
+                <h2 className="font-serif text-3xl text-ink mb-6">NTP 231.370 "Buenas prácticas de esquila y manejo de vellón"</h2>
                 <p className="text-base text-ink/65 leading-relaxed">
-                  La Norma Técnica Peruana NTP 231.370-2014 establece los requisitos para la esquila, recolección, acondicionamiento, clasificación y almacenamiento de la fibra de alpaca. Es el primer estándar peruano que formaliza el proceso de esquila con base en criterios científicos de bienestar animal y calidad de fibra, fruto del trabajo conjunto entre Pacomarca, el INDECOPI y el sector académico.
+                  La Norma Técnica Peruana NTP 231.370 establece los requisitos para la esquila, recolección, acondicionamiento, clasificación y almacenamiento de la fibra de alpaca. Es el primer estándar peruano que formaliza el proceso de esquila con base en criterios científicos de bienestar animal y calidad de fibra, fruto del trabajo conjunto entre Pacomarca, el INDECOPI y el sector académico.
                 </p>
               </div>
               <div className="flex items-center justify-center">
                 <div className="w-64 h-64 rounded-full overflow-hidden bg-white flex items-center justify-center">
                   <img
                     src="/conocimiento/inca-esquila/logo-ntp.svg"
-                    alt="Sello NTP 231.370-2014"
+                    alt="Sello NTP 231.370"
                     className="w-full h-full object-contain scale-[0.85]"
                   />
                 </div>

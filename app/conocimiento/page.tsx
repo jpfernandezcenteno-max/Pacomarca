@@ -34,7 +34,7 @@ const sections = [
     label: '03',
     title: 'Inca Esquila',
     href: '/conocimiento/inca-esquila',
-    desc: 'El método de esquila científico que revolucionó la industria alpaquera. Normalizado como NTP 231.370-2014, mejora el bienestar animal y la calidad de la fibra.',
+    desc: 'El método de esquila científico que revolucionó la industria alpaquera. Normalizado como NTP 231.370, mejora el bienestar animal y la calidad de la fibra.',
     tag: 'Manejo',
   },
   {

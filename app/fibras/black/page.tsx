@@ -49,7 +49,7 @@ export default function BlackAlpacaPage() {
             <FadeUp delay={0.2}>
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Extremadamente escasa</p>
               <h2 className="font-serif text-4xl text-white mb-8 leading-snug">
-                Negro puro. Sin tintes. Sin compromisos.
+                Negro puro. 0 tintes. Sin compromisos.
               </h2>
               <div className="space-y-5 text-base text-white/60 leading-relaxed mb-8">
                 <p>
