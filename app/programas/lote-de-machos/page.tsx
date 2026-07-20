@@ -76,7 +76,7 @@ export default function LoteDeMachosPage() {
                 <p className="font-serif text-7xl text-ink/25 mb-4">30%</p>
                 <p className="text-sm text-ink/50">de fibra fina en el hato promedio</p>
                 <p className="text-xs text-ink/35 mt-4 leading-relaxed">
-                  La consanguinidad (endogamia) en hatos cerrados reduce progresivamente la calidad genética y la finura de la fibra.
+                  La consanguinidad (endogamia) en hatos cerrados reduce progresivamente los porcentajes de fertilidad, natalidad y sobrevivencia de las alpacas.
                 </p>
               </div>
             </FadeUp>
