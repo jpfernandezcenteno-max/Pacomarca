@@ -1,6 +1,7 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import ImageCarousel from '@/components/ImageCarousel'
 import Link from 'next/link'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
@@ -136,6 +137,18 @@ export default function CientificosPage() {
           </FadeUp>
         </div>
       </section>
+
+      {/* Carrusel de fotos */}
+      <ImageCarousel
+        images={[
+          '/ecosistema/cientificos/foto-1.jpg',
+          '/ecosistema/cientificos/foto-2.jpg',
+          '/ecosistema/cientificos/foto-3.jpg',
+          '/ecosistema/cientificos/foto-4.jpg',
+          '/ecosistema/cientificos/foto-5.jpg',
+        ]}
+        grayscale={false}
+      />
 
       {/* Objectives */}
       <section className="bg-beige py-20">

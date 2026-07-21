@@ -5,9 +5,10 @@ import { motion } from 'framer-motion'
 
 interface ImageCarouselProps {
   images: string[]
+  grayscale?: boolean
 }
 
-export default function ImageCarousel({ images }: ImageCarouselProps) {
+export default function ImageCarousel({ images, grayscale = true }: ImageCarouselProps) {
   // Triplicar para scroll infinito suave
   const repeated = [...images, ...images, ...images]
 
@@ -25,7 +26,8 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
               src={src}
               alt=""
               fill
-              className="object-cover grayscale"
+              sizes="288px"
+              className={`object-cover ${grayscale ? 'grayscale' : ''}`}
             />
           </div>
         ))}
