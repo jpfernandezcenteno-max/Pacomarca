@@ -126,11 +126,11 @@ const otrasFiles = [
 
 // Logos de revistas indexadas donde Pacomarca ha publicado
 const journalLogos = [
-  '/conocimiento/publicaciones/logos/1.svg',
-  '/conocimiento/publicaciones/logos/2.svg',
-  '/conocimiento/publicaciones/logos/3.svg',
-  '/conocimiento/publicaciones/logos/4.svg',
-  '/conocimiento/publicaciones/logos/5.svg',
+  '/conocimiento/publicaciones/logos/w-1.png',
+  '/conocimiento/publicaciones/logos/w-2.png',
+  '/conocimiento/publicaciones/logos/w-3.png',
+  '/conocimiento/publicaciones/logos/w-4.png',
+  '/conocimiento/publicaciones/logos/w-5.png',
 ]
 
 function PublicationAccordion({ title, publications, files }: { title: string; publications: Pub[]; files: string[] }) {
@@ -354,7 +354,7 @@ export default function PublicacionesPage() {
                 <img
                   src={src}
                   alt=""
-                  className="max-h-full w-auto max-w-full object-contain brightness-0 invert opacity-80"
+                  className="max-h-full w-auto max-w-full object-contain opacity-80"
                 />
               </div>
             ))}
