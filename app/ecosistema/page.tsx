@@ -65,6 +65,14 @@ export default function EcosistemaPage() {
             <h2 className="font-serif text-4xl text-ink mb-8 leading-snug">
               Cuando todos ganan, la sostenibilidad es posible
             </h2>
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full h-auto"
+            >
+              <source src="/ecosistema/alpacomarca.mp4" type="video/mp4" />
+            </video>
           </FadeUp>
           <FadeUp delay={0.2}>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
