@@ -1,10 +1,11 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import Image from 'next/image'
 import Link from 'next/link'
 import ImageCarousel from '@/components/ImageCarousel'
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null)
@@ -19,6 +20,64 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 const vegetables = [
   'Cebolla', 'Lechuga', 'Apio', 'Acelga', 'Beterraga', 'Zanahoria', 'Tomate',
 ]
+
+const carruselFotos = [
+  '/programas/invernadero/carrusel/c-1.jpg',
+  '/programas/invernadero/carrusel/c-2.jpg',
+  '/programas/invernadero/carrusel/c-3.jpg',
+  '/programas/invernadero/carrusel/c-4.jpg',
+  '/programas/invernadero/carrusel/c-5.jpg',
+  '/programas/invernadero/carrusel/c-6.jpg',
+]
+
+function Carousel({ images }: { images: string[] }) {
+  const [i, setI] = useState(0)
+  const n = images.length
+  const go = (d: number) => setI((p) => (p + d + n) % n)
+  useEffect(() => {
+    const t = setInterval(() => setI((p) => (p + 1) % n), 4500)
+    return () => clearInterval(t)
+  }, [n])
+  return (
+    <div className="relative aspect-[3/2] overflow-hidden bg-white border border-sand/40">
+      {images.map((src, idx) => (
+        <Image
+          key={src}
+          src={src}
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 100vw, 900px"
+          priority={idx === 0}
+          className={`object-contain transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
+        />
+      ))}
+      <button
+        onClick={() => go(-1)}
+        aria-label="Anterior"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-ink/40 hover:bg-ink/70 text-white rounded-full transition-colors"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <button
+        onClick={() => go(1)}
+        aria-label="Siguiente"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center bg-ink/40 hover:bg-ink/70 text-white rounded-full transition-colors"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+      </button>
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {images.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => setI(idx)}
+            aria-label={`Ir a la foto ${idx + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${idx === i ? 'w-6 bg-ink' : 'w-1.5 bg-ink/30'}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function InvernaderoPage() {
   return (
@@ -93,6 +152,12 @@ export default function InvernaderoPage() {
               </FadeUp>
             ))}
           </div>
+
+          <FadeUp delay={0.1}>
+            <div className="max-w-4xl mx-auto mt-14">
+              <Carousel images={carruselFotos} />
+            </div>
+          </FadeUp>
         </div>
       </section>
 
