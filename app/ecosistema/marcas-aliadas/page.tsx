@@ -1,6 +1,7 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
@@ -93,25 +94,15 @@ export default function MarcasAliadasPage() {
             </div>
           </FadeUp>
 
-          <FadeUp delay={0.2}>
-            <div className="bg-cream p-10 h-full flex flex-col justify-center">
-              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">¿Qué ofrece el ecosistema a las marcas?</p>
-              <div className="space-y-6">
-                {[
-                  { title: 'Trazabilidad total', desc: 'Cada fibra es trazable desde el origen hasta el producto final, con datos verificables.' },
-                  { title: 'Certificación científica', desc: 'Respaldo de 23 universidades y 32 artículos científicos publicados en revistas indexadas.' },
-                  { title: 'Historia de impacto', desc: 'Una narrativa auténtica de desarrollo comunitario que conecta con los valores del consumidor de lujo.' },
-                  { title: 'Exclusividad', desc: 'Acceso a fibras únicas como Divine, Sixteen o Black Alpaca, disponibles solo a través del ecosistema.' },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4 items-start">
-                    <span className="text-gold font-serif text-lg mt-0.5">◆</span>
-                    <div>
-                      <h4 className="font-serif text-base text-ink mb-1">{item.title}</h4>
-                      <p className="text-sm text-ink/55 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <FadeUp delay={0.2} className="h-full">
+            <div className="relative h-full min-h-[380px] overflow-hidden">
+              <Image
+                src="/ecosistema/marcas-aliadas/foto-1.jpg"
+                alt="Marcas aliadas de Pacomarca"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
           </FadeUp>
         </div>
