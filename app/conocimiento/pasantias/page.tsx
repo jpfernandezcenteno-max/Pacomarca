@@ -64,24 +64,14 @@ export default function PasantiasPage() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-ink text-white p-8 text-center">
-                <p className="font-serif text-5xl text-gold mb-2">300–800</p>
-                <p className="text-xs text-white/50 uppercase tracking-[0.15em]">Visitantes por año</p>
-              </div>
-              <div className="bg-beige p-8 text-center">
-                <p className="font-serif text-5xl text-gold mb-2">12+</p>
-                <p className="text-xs text-ink/50 uppercase tracking-[0.15em]">Países de origen</p>
-              </div>
-              <div className="bg-cream p-8 text-center">
-                <p className="font-serif text-5xl text-gold mb-2">2</p>
-                <p className="text-xs text-ink/50 uppercase tracking-[0.15em]">Formatos disponibles</p>
-              </div>
-              <div className="bg-beige p-8 text-center">
-                <p className="font-serif text-5xl text-gold mb-2">7</p>
-                <p className="text-xs text-ink/50 uppercase tracking-[0.15em]">Temas de formación</p>
-              </div>
-            </div>
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full h-auto"
+            >
+              <source src="/conocimiento/pasantias/video.mp4" type="video/mp4" />
+            </video>
           </FadeUp>
         </div>
       </section>
