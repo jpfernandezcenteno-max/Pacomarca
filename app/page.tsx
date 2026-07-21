@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useInView, useScroll, useTransform } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 
 
@@ -171,156 +171,137 @@ const fibers = [
 ]
 
 export default function HomePage() {
-  const heroRef = useRef(null)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [videoStarted, setVideoStarted] = useState(false)
+  const [cinema, setCinema] = useState(false)
   const [muted, setMuted] = useState(true)
-  const { scrollY } = useScroll()
-  const textOpacity = useTransform(scrollY, [0, 40], [1, 0])
-  const textY = useTransform(scrollY, [0, 40], [0, -30])
-  const overlayOpacity = useTransform(scrollY, [0, 40], [0.6, 0])
+  const scrolledAway = useRef(false)
+
+  const enterCinema = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = false
+      videoRef.current.play().catch(() => {})
+    }
+    setMuted(false)
+    setCinema(true)
+  }
 
   useEffect(() => {
-    // Video arranca pausado y muted
+    // El video arranca en loop, silenciado, como fondo ambiente
     if (videoRef.current) {
       videoRef.current.muted = true
-      videoRef.current.pause()
+      videoRef.current.play().catch(() => {})
     }
-
-    let played = false
-    const handleFirstScroll = () => {
-      if (played || !videoRef.current) return
-      played = true
-      videoRef.current.play()
-      setVideoStarted(true)
-    }
-    window.addEventListener('scroll', handleFirstScroll, { once: true })
-    window.addEventListener('wheel', handleFirstScroll, { once: true, passive: true })
-
-    let jumping = false
-    const handleWheel = (e: WheelEvent) => {
+    const onScroll = () => {
       const y = window.scrollY
       const vh = window.innerHeight
-      if (y > 40 && y < vh * 1.9 && e.deltaY > 0 && !jumping) {
-        e.preventDefault()
-        jumping = true
-        window.scrollTo({ top: vh * 2, behavior: 'smooth' })
-        setTimeout(() => { jumping = false }, 1000)
+      if (y > vh * 0.4) scrolledAway.current = true
+      // Al volver arriba del todo, reaparece el texto y se silencia el video
+      if (y <= 5 && scrolledAway.current) {
+        scrolledAway.current = false
+        setCinema(false)
+        setMuted(true)
+        if (videoRef.current) videoRef.current.muted = true
       }
     }
-
-    window.addEventListener('wheel', handleWheel, { passive: false })
-    return () => {
-      window.removeEventListener('scroll', handleFirstScroll)
-      window.removeEventListener('wheel', handleFirstScroll)
-      window.removeEventListener('wheel', handleWheel)
-    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
 
   return (
     <>
-      {/* HERO — 200vh para efecto inmersivo */}
-      <section ref={heroRef} className="relative h-[200vh]">
-        <div className="sticky top-0 h-screen overflow-hidden">
-          <video
-            ref={videoRef}
-            loop
-            playsInline
-            preload="metadata"
-            className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
+      {/* HERO */}
+      <section className="relative h-screen overflow-hidden">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
+        >
+          <source src="/home/20240813163648.mp4" type="video/mp4" />
+        </video>
+
+        {/* Overlay oscuro (se desvanece en modo video) */}
+        <motion.div
+          animate={{ opacity: cinema ? 0 : 0.5 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="absolute inset-0 bg-ink pointer-events-none"
+        />
+
+        {/* Botón mute — solo en modo video */}
+        {cinema && (
+          <button
+            onClick={() => {
+              if (!videoRef.current) return
+              videoRef.current.muted = !videoRef.current.muted
+              setMuted(videoRef.current.muted)
+            }}
+            className="absolute bottom-8 right-8 z-20 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
+            aria-label={muted ? 'Activar sonido' : 'Silenciar'}
           >
-            <source src="/home/20240813163648.mp4" type="video/mp4" />
-          </video>
+            {muted ? (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              </svg>
+            )}
+          </button>
+        )}
 
-          {/* Overlay que desaparece al scrollear */}
+        {/* Texto + botón "Ver video" (se ocultan en modo video) */}
+        <motion.div
+          animate={{ opacity: cinema ? 0 : 1, y: cinema ? -20 : 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className={`relative z-10 h-full flex items-center justify-center text-center px-6 ${cinema ? 'pointer-events-none' : ''}`}
+        >
           <motion.div
-            style={{ opacity: overlayOpacity }}
-            className="absolute inset-0 bg-ink"
-          />
-
-          {/* Botón mute — aparece solo cuando el video está reproduciendo */}
-          {videoStarted && (
-            <button
-              onClick={() => {
-                if (!videoRef.current) return
-                videoRef.current.muted = !videoRef.current.muted
-                setMuted(videoRef.current.muted)
-              }}
-              className="absolute bottom-8 right-8 z-20 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
-              aria-label={muted ? 'Activar sonido' : 'Silenciar'}
-            >
-              {muted ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                </svg>
-              )}
-            </button>
-          )}
-
-
-          {/* Texto que desaparece al scrollear */}
-          <motion.div
-            style={{ opacity: textOpacity, y: textY }}
-            className="relative z-10 h-full flex items-center justify-center text-center px-6"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: 'easeOut' }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-            >
-              <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6 font-medium">
-                Grupo Inca — Perú
-              </p>
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
-                <motion.span
-                  className="inline"
-                  initial="hidden"
-                  animate="visible"
-                  variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.6 } } }}
-                >
-                  {['El', 'principal', 'Ecosistema', 'de', 'Alpaca', 'Sostenible', 'del', 'mundo'].map((word, i) => (
-                    <motion.span
-                      key={i}
-                      className="inline-block mr-[0.3em]"
-                      variants={{
-                        hidden: { opacity: 0, y: 20 },
-                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-                      }}
-                    >
-                      {word}
-                    </motion.span>
-                  ))}
-                </motion.span>
-              </h1>
-              <p className="text-lg md:text-xl text-white/70 font-light">
-                Impulsado por el Grupo Inca
-              </p>
-            </motion.div>
-
-            {/* Scroll indicator */}
-            <motion.div
-              style={{ opacity: textOpacity }}
-              className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-            >
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ repeat: Infinity, duration: 2 }}
-                className="flex flex-col items-center gap-2"
+            <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6 font-medium">
+              Grupo Inca — Perú
+            </p>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
+              <motion.span
+                className="inline"
+                initial="hidden"
+                animate="visible"
+                variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.6 } } }}
               >
-                <span className="text-xs tracking-[0.2em] text-white/60 uppercase">Scroll para reproducir el video</span>
-                <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-                </svg>
-              </motion.div>
-            </motion.div>
+                {['El', 'principal', 'Ecosistema', 'de', 'Alpaca', 'Sostenible', 'del', 'mundo'].map((word, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block mr-[0.3em]"
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/70 font-light mb-10">
+              Impulsado por el Grupo Inca
+            </p>
+            <button
+              onClick={enterCinema}
+              className="inline-flex items-center gap-3 border border-white/50 text-white text-xs tracking-[0.25em] uppercase px-8 py-4 hover:bg-white hover:text-ink transition-colors duration-300"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              Ver video
+            </button>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* ABOUT STRIP */}

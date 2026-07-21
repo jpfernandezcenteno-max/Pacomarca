@@ -68,10 +68,8 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY
-      const vh = window.innerHeight
       setScrolled(y > 20)
-      // Only hide navbar during immersive hero video zone on homepage
-      setHidden(isHomepage && y > 5 && y < vh * 1.1)
+      setHidden(false)
     }
     // Reset hidden state immediately when pathname changes
     setHidden(false)
