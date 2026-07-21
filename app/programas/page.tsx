@@ -69,13 +69,13 @@ const programs = [
   },
   {
     num: '06',
-    title: 'Abrigando Corazones',
-    href: '/programas/abrigando-corazones',
+    title: 'Tejiendo Corazones',
+    href: '/programas/tejiendo-corazones',
     stat: '8,400+ kits donados',
     statNum: '8,400+',
     desc: 'Kits de abrigo para los miembros más vulnerables de las comunidades: niños y adultos mayores. Mantas, suéteres, medias, bufandas, chullos y más.',
     icon: '♡',
-    image: '/programas/abrigando-corazones/portada.jpg',
+    image: '/programas/tejiendo-corazones/portada.jpg',
   },
 ]
 

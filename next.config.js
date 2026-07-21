@@ -8,6 +8,15 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
   },
+  async redirects() {
+    return [
+      {
+        source: '/programas/abrigando-corazones',
+        destination: '/programas/tejiendo-corazones',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig

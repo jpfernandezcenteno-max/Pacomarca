@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/programas/lote-de-machos', priority: 0.7, changeFrequency: 'monthly' },
     { url: '/programas/modulo-de-esquila', priority: 0.7, changeFrequency: 'monthly' },
     { url: '/programas/fondo-investigacion', priority: 0.7, changeFrequency: 'monthly' },
-    { url: '/programas/abrigando-corazones', priority: 0.7, changeFrequency: 'monthly' },
+    { url: '/programas/tejiendo-corazones', priority: 0.7, changeFrequency: 'monthly' },
     { url: '/fibras', priority: 0.9, changeFrequency: 'monthly' },
     { url: '/fibras/imperial', priority: 0.8, changeFrequency: 'monthly' },
     { url: '/fibras/divine', priority: 0.8, changeFrequency: 'monthly' },

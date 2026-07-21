@@ -154,7 +154,7 @@ export default function FondoInvestigacionPage() {
         '/programas/lote-de-machos/foto-1.jpg',
         '/programas/modulo-de-esquila/portada.jpg',
         '/programas/modulo-de-esquila/foto-1.jpg',
-        '/programas/abrigando-corazones/portada.jpg',
+        '/programas/tejiendo-corazones/portada.jpg',
         '/programas/portada.jpg',
       ]} />
     </>

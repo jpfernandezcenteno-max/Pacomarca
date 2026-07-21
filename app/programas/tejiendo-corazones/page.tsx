@@ -26,14 +26,14 @@ const kitItems = [
   { item: 'Hilos de alpaca', desc: 'Para que las madres y abuelas puedan continuar tejiendo para sus familias.' },
 ]
 
-export default function AbrigandoCorazonesPage() {
+export default function TejiendoCorazonesPage() {
   return (
     <>
       <PageHeader
         section="PROGRAMAS"
-        title="Abrigando Corazones"
+        title="Tejiendo Corazones"
         subtitle="Abrigo de alpaca para los más vulnerables de las comunidades andinas"
-        imageUrl="/programas/abrigando-corazones/portada.jpg"
+        imageUrl="/programas/tejiendo-corazones/portada.jpg"
         imagePosition="object-center"
       />
 
@@ -55,7 +55,7 @@ export default function AbrigandoCorazonesPage() {
                 En las alturas de los Andes peruanos, los niños y adultos mayores enfrentan condiciones de vida especialmente difíciles: poco acceso a salud y educación, sumado a la dureza del frío y la altitud que agravan los problemas de salud. Esta realidad se ve intensificada por la pobreza, que afecta al <strong className="text-ink font-medium">40% de la población rural</strong>.
               </p>
               <p>
-                El Programa Abrigando Corazones entrega a niños y adultos mayores de las comunidades alpaqueras kits que les permiten enfrentar las duras condiciones de los Andes, mejorando su calidad de vida y asegurando un futuro más digno.
+                El Programa Tejiendo Corazones entrega a niños y adultos mayores de las comunidades alpaqueras kits que les permiten enfrentar las duras condiciones de los Andes, mejorando su calidad de vida y asegurando un futuro más digno.
               </p>
             </div>
           </FadeUp>
@@ -153,7 +153,7 @@ export default function AbrigandoCorazonesPage() {
       </section>
 
       <ImageCarousel images={[
-        '/programas/abrigando-corazones/portada.jpg',
+        '/programas/tejiendo-corazones/portada.jpg',
         '/programas/cabana-del-pastor/portada.jpg',
         '/programas/cabana-del-pastor/foto-1.jpg',
         '/programas/invernadero/portada.jpg',

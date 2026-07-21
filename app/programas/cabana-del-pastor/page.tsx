@@ -153,7 +153,7 @@ export default function CabanaDelPastorPage() {
         '/programas/modulo-de-esquila/portada.jpg',
         '/programas/modulo-de-esquila/foto-1.jpg',
         '/programas/fondo-investigacion/portada.jpg',
-        '/programas/abrigando-corazones/portada.jpg',
+        '/programas/tejiendo-corazones/portada.jpg',
         '/programas/portada.jpg',
       ]} />
     </>
