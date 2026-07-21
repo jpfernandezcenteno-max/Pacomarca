@@ -143,9 +143,9 @@ export default function InvernaderoPage() {
               <p className="text-base text-ink/55 mb-8 max-w-xl">
                 En el microclima controlado del invernadero es posible producir vegetales que normalmente no sobrevivirían en las condiciones del altiplano.
               </p>
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 {vegetables.map((v) => (
-                  <span key={v} className="bg-white border border-sand/50 text-ink/60 text-sm px-5 py-2">{v}</span>
+                  <span key={v} className="bg-white border border-sand/50 text-ink/60 text-sm px-5 py-2 text-center">{v}</span>
                 ))}
               </div>
             </FadeUp>

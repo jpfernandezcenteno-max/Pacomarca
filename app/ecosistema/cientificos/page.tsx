@@ -32,6 +32,20 @@ function AutoCarousel({ images, className = '' }: { images: string[]; className?
           className={`object-cover transition-opacity duration-1000 ${i === active ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
+      <button
+        onClick={() => setActive((p) => (p - 1 + images.length) % images.length)}
+        aria-label="Anterior"
+        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center bg-ink/40 hover:bg-ink/70 text-white rounded-full transition-colors"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <button
+        onClick={() => setActive((p) => (p + 1) % images.length)}
+        aria-label="Siguiente"
+        className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center bg-ink/40 hover:bg-ink/70 text-white rounded-full transition-colors"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+      </button>
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {images.map((_, i) => (
           <button
