@@ -168,20 +168,10 @@ export default function TejiendoCorazonesPage() {
               </blockquote>
             </FadeUp>
           </div>
-        </div>
-      </section>
 
-      {/* CTA */}
-      <section className="bg-ink py-20">
-        <div className="max-w-3xl mx-auto px-6 text-center">
           <FadeUp>
-            <blockquote className="mb-10">
-              <p className="font-serif text-2xl text-white/80 italic leading-relaxed">
-                "En el mismo lugar donde nace la fibra más preciada del mundo, aseguramos que sus guardianes tengan el abrigo que merecen."
-              </p>
-            </blockquote>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/programas" className="inline-block border border-white/30 text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:border-white/60 transition-colors">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
+              <Link href="/programas" className="inline-block border border-ink/30 text-ink text-xs tracking-[0.2em] uppercase px-8 py-4 hover:border-gold hover:text-gold transition-colors">
                 ← Volver a programas
               </Link>
               <Link href="/contacto?tipo=programa" className="inline-block bg-gold text-white text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-gold/90 transition-colors">
