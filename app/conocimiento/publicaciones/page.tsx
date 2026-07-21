@@ -23,7 +23,7 @@ const featuredPublication = {
   authors: 'Cruz, A.; Murillo, Y.; Burgos, A.; Yucra, A.; Morante, R.; Quispe, M.; Quispe, C.; Quispe, E.; Gutiérrez, J.P.',
   journal: 'Journal of Animal Breeding and Genetics',
   year: '2024',
-  image: '/conocimiento/publicaciones/portada.jpg',
+  image: '/conocimiento/publicaciones/foto-1.jpg',
 }
 
 // Revistas indexadas
@@ -124,16 +124,13 @@ const otrasFiles = [
   '', '', '/otr-38.pdf', '/otr-39.pdf',
 ]
 
-// Revistas indexadas donde Pacomarca ha publicado
-const journals = [
-  { name: 'Small Ruminant Research' },
-  { name: 'Livestock Science' },
-  { name: 'Animal' },
-  { name: 'Journal of Animal Science' },
-  { name: 'Journal of Animal Breeding and Genetics' },
-  { name: 'Animals' },
-  { name: 'Animal Reproduction Science' },
-  { name: 'Reproduction in Domestic Animals' },
+// Logos de revistas indexadas donde Pacomarca ha publicado
+const journalLogos = [
+  '/conocimiento/publicaciones/logos/1.svg',
+  '/conocimiento/publicaciones/logos/2.svg',
+  '/conocimiento/publicaciones/logos/3.svg',
+  '/conocimiento/publicaciones/logos/4.svg',
+  '/conocimiento/publicaciones/logos/5.svg',
 ]
 
 function PublicationAccordion({ title, publications, files }: { title: string; publications: Pub[]; files: string[] }) {
@@ -345,17 +342,20 @@ export default function PublicacionesPage() {
         </div>
         <div className="relative">
           <motion.div
-            className="flex gap-12 items-center"
+            className="flex gap-16 items-center"
             animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
           >
-            {[...journals, ...journals].map((j, i) => (
+            {[...journalLogos, ...journalLogos, ...journalLogos, ...journalLogos].map((src, i) => (
               <div
                 key={i}
-                className="shrink-0 w-48 h-20 bg-beige border border-sand/50 flex items-center justify-center px-4"
+                className="shrink-0 h-16 w-40 flex items-center justify-center px-2"
               >
-                {/* Reemplazar con <Image> cuando estén los logos */}
-                <p className="text-xs text-ink/40 text-center leading-snug">{j.name}</p>
+                <img
+                  src={src}
+                  alt=""
+                  className="max-h-full w-auto max-w-full object-contain"
+                />
               </div>
             ))}
           </motion.div>
