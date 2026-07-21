@@ -70,13 +70,10 @@ export default function FondoInvestigacionPage() {
               <h2 className="font-serif text-3xl text-ink mb-6">Inversión en conocimiento para el sector</h2>
               <div className="space-y-4 text-base text-ink/65 leading-relaxed">
                 <p>
-                  El Fondo a la Investigación de Pacomarca financia proyectos de investigación científica sobre alpacas y el ecosistema andino. Las investigaciones se desarrollan en colaboración entre la estación científica de Pacomarca y universidades e institutos de investigación de todo el mundo.
+                  La investigación desarrollada en Pacomarca es la base que hace posible todos nuestros esfuerzos por mejorar la vida de los pastores de alpaca. Desde este centro de investigación se teje un ecosistema de conocimiento que fortalece a las comunidades alpaqueras cercanas y promueve medios de vida más sostenibles y prósperos.
                 </p>
                 <p>
-                  El fondo provee acceso a los datos, las instalaciones y el rebaño de Pacomarca como infraestructura de investigación. En muchos casos, también incluye apoyo financiero directo para los investigadores y sus proyectos.
-                </p>
-                <p>
-                  A cambio, los resultados se publican en revistas científicas de acceso abierto o se ponen a disposición de las comunidades, generando conocimiento aplicable que mejora las condiciones de los alpaqueros.
+                  En Pacomarca se desarrollan investigaciones que abarcan toda la cadena de valor de la fibra de alpaca: desde la genética y la genómica hasta el bienestar, la reproducción y la salud animal. Estas iniciativas se realizan en colaboración con reconocidas universidades del Perú y del mundo, y han permitido alcanzar logros notables, como la obtención de fibra de alpaca con una finura de hasta 16 micras.
                 </p>
               </div>
             </FadeUp>
