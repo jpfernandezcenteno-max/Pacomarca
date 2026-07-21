@@ -64,6 +64,17 @@ export default function LoteDeMachosPage() {
       <section className="bg-beige py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeUp>
+            <div className="relative aspect-[3/2] overflow-hidden max-w-4xl mx-auto mb-14">
+              <Image
+                src="/programas/lote-de-machos/foto-2.jpg"
+                alt="Alpacas del programa de mejora genética"
+                fill
+                sizes="(max-width: 1024px) 100vw, 900px"
+                className="object-cover"
+              />
+            </div>
+          </FadeUp>
+          <FadeUp>
             <div className="text-center mb-14">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Transformación</p>
               <h2 className="font-serif text-3xl text-ink">El impacto de la mejora genética</h2>
