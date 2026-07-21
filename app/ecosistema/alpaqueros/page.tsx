@@ -4,7 +4,7 @@ import PageHeader from '@/components/PageHeader'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null)
@@ -13,6 +13,29 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
     <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay, ease: 'easeOut' }} className={className}>
       {children}
     </motion.div>
+  )
+}
+
+function RotatingImages({ images, alt, className = '' }: { images: string[]; alt: string; className?: string }) {
+  const [active, setActive] = useState(0)
+  useEffect(() => {
+    const t = setInterval(() => setActive((p) => (p + 1) % images.length), 4500)
+    return () => clearInterval(t)
+  }, [images.length])
+  return (
+    <div className={`relative overflow-hidden ${className}`}>
+      {images.map((src, i) => (
+        <Image
+          key={src}
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          priority={i === 0}
+          className={`object-cover transition-opacity duration-1000 ${i === active ? 'opacity-100' : 'opacity-0'}`}
+        />
+      ))}
+    </div>
   )
 }
 
@@ -51,14 +74,11 @@ export default function AlpaquerosPage() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <div className="relative h-[500px] overflow-hidden">
-              <Image
-                src="/ecosistema/alpaqueros/foto-1.jpg"
-                alt="Familia alpaquera andina"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <RotatingImages
+              images={['/ecosistema/alpaqueros/foto-1.jpg', '/ecosistema/alpaqueros/foto-2.jpg']}
+              alt="Familia alpaquera andina"
+              className="h-[500px]"
+            />
           </FadeUp>
         </div>
       </section>
