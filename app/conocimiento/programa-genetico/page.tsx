@@ -110,6 +110,14 @@ export default function ProgramaGeneticoPage() {
                 </div>
               ))}
             </div>
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="mt-4 w-full h-auto"
+            >
+              <source src="/conocimiento/programa-genetico/video.mp4" type="video/mp4" />
+            </video>
           </FadeUp>
         </div>
       </section>
