@@ -334,10 +334,10 @@ export default function PublicacionesPage() {
       </section>
 
       {/* Journal logos banner */}
-      <section className="py-16 bg-white overflow-hidden">
+      <section className="py-16 bg-ink overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-10">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase text-gold text-center">Revistas indexadas del sector</p>
+            <p className="text-xs tracking-[0.25em] uppercase text-white/50 text-center">Revistas indexadas del sector</p>
           </FadeUp>
         </div>
         <div className="relative">
@@ -354,7 +354,7 @@ export default function PublicacionesPage() {
                 <img
                   src={src}
                   alt=""
-                  className="max-h-full w-auto max-w-full object-contain"
+                  className="max-h-full w-auto max-w-full object-contain brightness-0 invert opacity-80"
                 />
               </div>
             ))}
