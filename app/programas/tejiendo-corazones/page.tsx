@@ -85,15 +85,28 @@ export default function TejiendoCorazonesPage() {
               <h2 className="font-serif text-3xl text-ink">¿Qué lleva cada kit Abrigando Corazones?</h2>
             </div>
           </FadeUp>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {kitItems.map((k, i) => (
-              <FadeUp key={k.item} delay={i * 0.08}>
-                <div className="bg-white p-6 h-full">
-                  <h3 className="font-serif text-lg text-ink mb-2">{k.item}</h3>
-                  <p className="text-sm text-ink/50 leading-relaxed">{k.desc}</p>
-                </div>
-              </FadeUp>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <FadeUp>
+              <ul>
+                {kitItems.map((k) => (
+                  <li key={k.item} className="flex items-center gap-4 py-4 border-b border-sand/50">
+                    <span className="text-gold">◆</span>
+                    <span className="font-serif text-xl text-ink">{k.item}</span>
+                  </li>
+                ))}
+              </ul>
+            </FadeUp>
+            <FadeUp delay={0.2}>
+              <div className="relative aspect-[3/2] overflow-hidden">
+                <Image
+                  src="/programas/tejiendo-corazones/foto-1.jpg"
+                  alt="Kit Abrigando Corazones de Tejiendo Corazones"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -157,15 +170,6 @@ export default function TejiendoCorazonesPage() {
                   — Nemecio Ticona, Presidente de la Asociación de Artesanos de Parinas
                 </cite>
               </blockquote>
-              <div className="relative aspect-[16/9] overflow-hidden">
-                <Image
-                  src="/programas/tejiendo-corazones/foto-1.jpg"
-                  alt="Artesanos de Parinas tejiendo prendas de alpaca"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
             </FadeUp>
           </div>
         </div>
