@@ -1,10 +1,50 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
-import ImageCarousel from '@/components/ImageCarousel'
+import Image from 'next/image'
 import Link from 'next/link'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
+
+const cientificosFotos = [
+  '/ecosistema/cientificos/foto-1.jpg',
+  '/ecosistema/cientificos/foto-2.jpg',
+  '/ecosistema/cientificos/foto-3.jpg',
+  '/ecosistema/cientificos/foto-4.jpg',
+  '/ecosistema/cientificos/foto-5.jpg',
+]
+
+function AutoCarousel({ images, className = '' }: { images: string[]; className?: string }) {
+  const [active, setActive] = useState(0)
+  useEffect(() => {
+    const t = setInterval(() => setActive((p) => (p + 1) % images.length), 4000)
+    return () => clearInterval(t)
+  }, [images.length])
+  return (
+    <div className={`relative overflow-hidden ${className}`}>
+      {images.map((src, i) => (
+        <Image
+          key={src}
+          src={src}
+          alt=""
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className={`object-cover transition-opacity duration-1000 ${i === active ? 'opacity-100' : 'opacity-0'}`}
+        />
+      ))}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setActive(i)}
+            aria-label={`Ver foto ${i + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? 'w-6 bg-white' : 'w-1.5 bg-white/50'}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null)
@@ -134,21 +174,10 @@ export default function CientificosPage() {
                 </div>
               ))}
             </div>
+            <AutoCarousel images={cientificosFotos} className="mt-6 h-64" />
           </FadeUp>
         </div>
       </section>
-
-      {/* Carrusel de fotos */}
-      <ImageCarousel
-        images={[
-          '/ecosistema/cientificos/foto-1.jpg',
-          '/ecosistema/cientificos/foto-2.jpg',
-          '/ecosistema/cientificos/foto-3.jpg',
-          '/ecosistema/cientificos/foto-4.jpg',
-          '/ecosistema/cientificos/foto-5.jpg',
-        ]}
-        grayscale={false}
-      />
 
       {/* Objectives */}
       <section className="bg-beige py-20">
