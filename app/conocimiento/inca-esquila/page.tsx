@@ -66,14 +66,14 @@ export default function IncaEsquilaPage() {
                 <div>
                   <p className="text-xs tracking-[0.1em] uppercase text-white/40 mb-3">Esquila tradicional</p>
                   <div className="flex items-end gap-4">
-                    <p className="font-serif text-6xl text-white/40">60%</p>
+                    <p className="font-serif text-5xl md:text-6xl text-white/40">60%</p>
                     <p className="text-sm text-white/40 pb-2">tasa de nacimientos</p>
                   </div>
                 </div>
                 <div className="border-t border-white/10 pt-8">
                   <p className="text-xs tracking-[0.1em] uppercase text-gold mb-3">Con Inca Esquila</p>
                   <div className="flex items-end gap-4">
-                    <p className="font-serif text-6xl text-gold">76%</p>
+                    <p className="font-serif text-5xl md:text-6xl text-gold">76%</p>
                     <p className="text-sm text-white/60 pb-2">tasa de nacimientos</p>
                   </div>
                 </div>

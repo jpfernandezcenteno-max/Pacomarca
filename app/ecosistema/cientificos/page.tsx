@@ -173,7 +173,7 @@ export default function CientificosPage() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
               {[
                 { num: '13M+', label: 'Datos genéticos' },
                 { num: '30+', label: 'Investigadores' },

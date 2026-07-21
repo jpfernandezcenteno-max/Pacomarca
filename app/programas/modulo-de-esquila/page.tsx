@@ -69,14 +69,14 @@ export default function ModuloDeEsquilaPage() {
                 <div>
                   <p className="text-xs uppercase text-white/40 tracking-[0.1em] mb-3">Esquila tradicional</p>
                   <div className="flex items-baseline gap-4">
-                    <p className="font-serif text-6xl text-white/30">60%</p>
+                    <p className="font-serif text-5xl md:text-6xl text-white/30">60%</p>
                     <p className="text-sm text-white/40">tasa de nacimientos</p>
                   </div>
                 </div>
                 <div className="border-t border-white/10 pt-8">
                   <p className="text-xs uppercase text-gold tracking-[0.1em] mb-3">Con módulo Inca Esquila</p>
                   <div className="flex items-baseline gap-4">
-                    <p className="font-serif text-6xl text-gold">76%</p>
+                    <p className="font-serif text-5xl md:text-6xl text-gold">76%</p>
                     <p className="text-sm text-white/60">tasa de nacimientos</p>
                   </div>
                 </div>

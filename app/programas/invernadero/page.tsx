@@ -120,7 +120,7 @@ export default function InvernaderoPage() {
             <div className="bg-ink text-white p-10">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">La problemática</p>
               <div className="text-center py-8">
-                <p className="font-serif text-7xl text-gold mb-4">24%</p>
+                <p className="font-serif text-6xl md:text-7xl text-gold mb-4">24%</p>
                 <p className="text-base text-white/60">desnutrición crónica en menores de 5 años en zonas rurales altoandinas</p>
               </div>
               <div className="border-t border-white/10 pt-8">

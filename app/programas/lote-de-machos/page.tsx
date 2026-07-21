@@ -84,7 +84,7 @@ export default function LoteDeMachosPage() {
             <FadeUp delay={0.1}>
               <div className="bg-white p-10 text-center">
                 <p className="text-xs tracking-[0.2em] uppercase text-ink/40 mb-4">Sin el programa</p>
-                <p className="font-serif text-7xl text-ink/25 mb-4">30%</p>
+                <p className="font-serif text-6xl md:text-7xl text-ink/25 mb-4">30%</p>
                 <p className="text-sm text-ink/50">de fibra fina en el hato promedio</p>
                 <p className="text-xs text-ink/35 mt-4 leading-relaxed">
                   La consanguinidad (endogamia) en hatos cerrados reduce progresivamente los porcentajes de fertilidad, natalidad y sobrevivencia de las alpacas.
@@ -94,7 +94,7 @@ export default function LoteDeMachosPage() {
             <FadeUp delay={0.2}>
               <div className="bg-ink text-white p-10 text-center">
                 <p className="text-xs tracking-[0.2em] uppercase text-gold mb-4">Con el programa</p>
-                <p className="font-serif text-7xl text-gold mb-4">80%</p>
+                <p className="font-serif text-6xl md:text-7xl text-gold mb-4">80%</p>
                 <p className="text-sm text-white/60">de fibra fina en el hato</p>
                 <p className="text-xs text-white/40 mt-4 leading-relaxed">
                   La incorporación de reproductores genéticamente seleccionados multiplica en toda la descendencia la mejora lograda por el programa científico.

@@ -103,19 +103,19 @@ export default function AlpaquerosPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FadeUp>
               <div className="text-center p-10 bg-white">
-                <p className="font-serif text-6xl text-gold mb-3">~1,000</p>
+                <p className="font-serif text-5xl md:text-6xl text-gold mb-3">~1,000</p>
                 <p className="text-sm text-ink/60 uppercase tracking-[0.15em]">Familias alpaqueras</p>
               </div>
             </FadeUp>
             <FadeUp delay={0.1}>
               <div className="text-center p-10 bg-white">
-                <p className="font-serif text-6xl text-gold mb-3">3,800+</p>
+                <p className="font-serif text-5xl md:text-6xl text-gold mb-3">3,800+</p>
                 <p className="text-sm text-ink/60 uppercase tracking-[0.15em]">Metros sobre el nivel del mar</p>
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
               <div className="text-center p-10 bg-white">
-                <p className="font-serif text-6xl text-gold mb-3">5</p>
+                <p className="font-serif text-5xl md:text-6xl text-gold mb-3">5</p>
                 <p className="text-sm text-ink/60 uppercase tracking-[0.15em]">Departamentos</p>
               </div>
             </FadeUp>
