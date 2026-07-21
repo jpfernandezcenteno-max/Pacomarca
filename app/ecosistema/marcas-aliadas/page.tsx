@@ -94,8 +94,8 @@ export default function MarcasAliadasPage() {
             </div>
           </FadeUp>
 
-          <FadeUp delay={0.2} className="h-full">
-            <div className="relative h-full min-h-[380px] overflow-hidden">
+          <FadeUp delay={0.2}>
+            <div className="relative aspect-video overflow-hidden">
               <Image
                 src="/ecosistema/marcas-aliadas/foto-1.jpg"
                 alt="Marcas aliadas de Pacomarca"
