@@ -1,6 +1,7 @@
 'use client'
 
 import PageHeader from '@/components/PageHeader'
+import Image from 'next/image'
 import Link from 'next/link'
 import ImageCarousel from '@/components/ImageCarousel'
 import { motion, useInView } from 'framer-motion'
@@ -47,18 +48,14 @@ export default function FondoInvestigacionPage() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { num: '32+', label: 'Artículos en revistas indexadas' },
-                { num: '13M+', label: 'Datos disponibles' },
-                { num: '23+', label: 'Universidades colaboradoras' },
-                { num: '30+', label: 'Investigadores colaboradores' },
-              ].map((s) => (
-                <div key={s.label} className="bg-beige p-8 text-center">
-                  <p className="font-serif text-4xl text-gold mb-2">{s.num}</p>
-                  <p className="text-xs text-ink/55 leading-snug">{s.label}</p>
-                </div>
-              ))}
+            <div className="relative aspect-[3/2] overflow-hidden">
+              <Image
+                src="/programas/fondo-investigacion/alan.jpg"
+                alt="Alan Cruz, PhD, científico responsable de Pacomarca"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
           </FadeUp>
         </div>
