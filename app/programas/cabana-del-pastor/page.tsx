@@ -52,9 +52,10 @@ export default function CabanaDelPastorPage() {
           <FadeUp delay={0.2}>
             <div className="relative h-[420px] overflow-hidden">
               <Image
-                src="/programas/cabana-del-pastor/foto-1.jpg"
-                alt="Cabaña del pastor en los Andes"
+                src="/programas/cabana-del-pastor/testimonio.jpg"
+                alt="Martín Chipana, alpaquero beneficiario de la cabaña del pastor"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -67,24 +68,34 @@ export default function CabanaDelPastorPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <FadeUp>
-              <div className="bg-white p-10">
-                <p className="text-xs tracking-[0.25em] uppercase text-ink/40 mb-6">El problema</p>
-                <h3 className="font-serif text-2xl text-ink mb-6">Condiciones extremas de vida</h3>
-                <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
-                  <p>El <strong className="text-ink font-medium">90%</strong> de las personas en los Andes están expuestas a un alto riesgo debido a las heladas. Los pastores alpaqueros viven en zonas con geografías y condiciones climáticas desafiantes.</p>
-                  <p>Sus viviendas no están equipadas para enfrentar estas condiciones y carecen de servicios básicos.</p>
-                  <p>Además, suelen tener la cocina dentro de la habitación para calentarse, exponiéndose a enfermedades respiratorias.</p>
+              <div className="bg-white overflow-hidden h-full">
+                <div className="relative aspect-[16/9]">
+                  <Image src="/programas/cabana-del-pastor/foto-2.jpg" alt="Cabaña del pastor en los Andes" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                </div>
+                <div className="p-10">
+                  <p className="text-xs tracking-[0.25em] uppercase text-ink/40 mb-6">El problema</p>
+                  <h3 className="font-serif text-2xl text-ink mb-6">Condiciones extremas de vida</h3>
+                  <div className="space-y-4 text-sm text-ink/65 leading-relaxed">
+                    <p>El <strong className="text-ink font-medium">90%</strong> de las personas en los Andes están expuestas a un alto riesgo debido a las heladas. Los pastores alpaqueros viven en zonas con geografías y condiciones climáticas desafiantes.</p>
+                    <p>Sus viviendas no están equipadas para enfrentar estas condiciones y carecen de servicios básicos.</p>
+                    <p>Además, suelen tener la cocina dentro de la habitación para calentarse, exponiéndose a enfermedades respiratorias.</p>
+                  </div>
                 </div>
               </div>
             </FadeUp>
 
             <FadeUp delay={0.15}>
-              <div className="bg-ink text-white p-10">
-                <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">La solución</p>
-                <h3 className="font-serif text-2xl text-white mb-6">Una cabaña diseñada para el altiplano</h3>
-                <div className="space-y-4 text-sm text-white/65 leading-relaxed">
-                  <p>La cabaña del pastor brinda a las familias alpaqueras una vivienda digna, donde ellas pueden acceder a servicios esenciales como agua, electricidad, instalaciones sanitarias y calefacción.</p>
-                  <p>El diseño de estas cabañas combina de manera armónica las técnicas tradicionales con soluciones innovadoras y sostenibles, utilizando materiales de origen local.</p>
+              <div className="bg-ink text-white overflow-hidden h-full">
+                <div className="relative aspect-[16/9]">
+                  <Image src="/programas/cabana-del-pastor/foto-3.jpg" alt="Cabaña del pastor equipada" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                </div>
+                <div className="p-10">
+                  <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">La solución</p>
+                  <h3 className="font-serif text-2xl text-white mb-6">Una cabaña diseñada para el altiplano</h3>
+                  <div className="space-y-4 text-sm text-white/65 leading-relaxed">
+                    <p>La cabaña del pastor brinda a las familias alpaqueras una vivienda digna, donde ellas pueden acceder a servicios esenciales como agua, electricidad, instalaciones sanitarias y calefacción.</p>
+                    <p>El diseño de estas cabañas combina de manera armónica las técnicas tradicionales con soluciones innovadoras y sostenibles, utilizando materiales de origen local.</p>
+                  </div>
                 </div>
               </div>
             </FadeUp>
