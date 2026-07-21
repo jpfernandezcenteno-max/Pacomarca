@@ -39,16 +39,16 @@ function Carousel({ images }: { images: string[] }) {
     return () => clearInterval(t)
   }, [n])
   return (
-    <div className="relative aspect-[3/2] overflow-hidden bg-white border border-sand/40">
+    <div className="relative aspect-[4/3] overflow-hidden bg-white border border-sand/40">
       {images.map((src, idx) => (
         <Image
           key={src}
           src={src}
           alt=""
           fill
-          sizes="(max-width: 1024px) 100vw, 900px"
+          sizes="(max-width: 1024px) 100vw, 50vw"
           priority={idx === 0}
-          className={`object-contain transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
+          className={`object-cover transition-opacity duration-700 ${idx === i ? 'opacity-100' : 'opacity-0'}`}
         />
       ))}
       <button
@@ -136,28 +136,24 @@ export default function InvernaderoPage() {
       {/* Vegetables */}
       <section className="bg-cream py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <FadeUp>
-            <div className="text-center mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <FadeUp>
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Producción</p>
-              <h2 className="font-serif text-3xl text-ink">Qué se puede cultivar</h2>
-              <p className="text-base text-ink/55 mt-4 max-w-xl mx-auto">
+              <h2 className="font-serif text-3xl text-ink mb-4">Qué se puede cultivar</h2>
+              <p className="text-base text-ink/55 mb-8 max-w-xl">
                 En el microclima controlado del invernadero es posible producir vegetales que normalmente no sobrevivirían en las condiciones del altiplano.
               </p>
-            </div>
-          </FadeUp>
-          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {vegetables.map((v, i) => (
-              <FadeUp key={v} delay={i * 0.04}>
-                <span className="bg-white border border-sand/50 text-ink/60 text-sm px-5 py-2">{v}</span>
-              </FadeUp>
-            ))}
-          </div>
+              <div className="flex flex-wrap gap-3">
+                {vegetables.map((v) => (
+                  <span key={v} className="bg-white border border-sand/50 text-ink/60 text-sm px-5 py-2">{v}</span>
+                ))}
+              </div>
+            </FadeUp>
 
-          <FadeUp delay={0.1}>
-            <div className="max-w-4xl mx-auto mt-14">
+            <FadeUp delay={0.15}>
               <Carousel images={carruselFotos} />
-            </div>
-          </FadeUp>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
