@@ -174,7 +174,7 @@ export default function CientificosPage() {
                 </div>
               ))}
             </div>
-            <AutoCarousel images={cientificosFotos} className="mt-6 h-64" />
+            <AutoCarousel images={cientificosFotos} className="mt-6 aspect-[3/2]" />
           </FadeUp>
         </div>
       </section>
