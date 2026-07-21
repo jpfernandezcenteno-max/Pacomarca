@@ -79,19 +79,15 @@ export default function TejiendoCorazonesPage() {
       {/* Kit contents */}
       <section className="bg-beige py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <FadeUp>
-            <div className="text-center mb-14">
-              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Contenido del kit</p>
-              <h2 className="font-serif text-3xl text-ink">¿Qué lleva cada kit Abrigando Corazones?</h2>
-            </div>
-          </FadeUp>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeUp>
-              <ul>
+              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Contenido del kit</p>
+              <h2 className="font-serif text-3xl text-ink mb-8">¿Qué lleva cada kit Abrigando Corazones?</h2>
+              <ul className="space-y-2">
                 {kitItems.map((k) => (
-                  <li key={k.item} className="flex items-center gap-4 py-4 border-b border-sand/50">
-                    <span className="text-gold">◆</span>
-                    <span className="font-serif text-xl text-ink">{k.item}</span>
+                  <li key={k.item} className="flex items-center gap-3">
+                    <span className="text-gold text-sm">◆</span>
+                    <span className="font-serif text-lg text-ink">{k.item}</span>
                   </li>
                 ))}
               </ul>
