@@ -81,6 +81,18 @@ export default function MarcasAliadasPage() {
             <h2 className="font-serif text-4xl text-ink mb-8 leading-snug">
               Las marcas que llevan Pacomarca al mundo
             </h2>
+            <div className="relative aspect-video overflow-hidden">
+              <Image
+                src="/ecosistema/marcas-aliadas/foto-1.jpg"
+                alt="Marcas aliadas de Pacomarca"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          </FadeUp>
+
+          <FadeUp delay={0.2}>
             <div className="space-y-5 text-base text-ink/65 leading-relaxed">
               <p>
                 El compromiso de las empresas en la cadena de valor de la alpaca es esencial para alcanzar los objetivos de Pacomarca. Su participación garantiza que la ciencia, la tradición y la innovación se traduzcan en un modelo sostenible que beneficia a todos los actores.
@@ -91,18 +103,6 @@ export default function MarcasAliadasPage() {
               <p>
                 A su lado, otras marcas y aliados estratégicos apoyan proyectos que fortalecen a las comunidades alpaqueras, impulsan la trazabilidad de la fibra y promueven la sostenibilidad en toda la cadena. Cada empresa que se suma al ecosistema contribuye a construir un futuro donde la alpaca sea sinónimo de calidad, innovación y responsabilidad compartida.
               </p>
-            </div>
-          </FadeUp>
-
-          <FadeUp delay={0.2}>
-            <div className="relative aspect-video overflow-hidden">
-              <Image
-                src="/ecosistema/marcas-aliadas/foto-1.jpg"
-                alt="Marcas aliadas de Pacomarca"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
             </div>
           </FadeUp>
         </div>
