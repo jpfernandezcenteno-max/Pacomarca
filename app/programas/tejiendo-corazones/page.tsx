@@ -142,24 +142,24 @@ export default function TejiendoCorazonesPage() {
       </section>
 
       {/* Testimonio artesanos — Tejiendo Oportunidades */}
-      <section className="bg-cream py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="bg-cream py-14">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <FadeUp>
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-square overflow-hidden">
                 <Image
                   src="/programas/tejiendo-corazones/foto-2.jpg"
                   alt="Artesana tejiendo con hilo de alpaca de Pacomarca"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover object-[center_72%]"
                 />
               </div>
             </FadeUp>
             <FadeUp delay={0.2}>
-              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Tejiendo oportunidades</p>
-              <blockquote className="border-l-4 border-gold pl-6 mb-8">
-                <p className="font-serif text-2xl text-ink/80 italic leading-relaxed mb-4">
+              <p className="text-xs tracking-[0.25em] uppercase text-gold mb-5">Tejiendo oportunidades</p>
+              <blockquote className="border-l-4 border-gold pl-5">
+                <p className="font-serif text-lg text-ink/80 italic leading-relaxed mb-4">
                   "Tenemos una buena amistad con Pacomarca. Les vendemos nuestra fibra y ellos nos donan hilo. Su hilo es más fino, lo que nos permite crear prendas más delicadas y elegantes, con un mercado más amplio, especialmente entre los turistas."
                 </p>
                 <cite className="text-xs tracking-[0.15em] uppercase text-gold not-italic">
