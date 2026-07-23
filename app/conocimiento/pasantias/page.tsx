@@ -3,8 +3,8 @@
 import PageHeader from '@/components/PageHeader'
 import Link from 'next/link'
 import Image from 'next/image'
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { useRef, useState } from 'react'
 
 function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null)
@@ -31,7 +31,195 @@ const topics = [
   'Reproducción',
 ]
 
+type Dia = { label: string | null; comidas: string | null; manana: string[]; tarde: string[] }
+type Modalidad = {
+  title: string
+  image: string
+  participantes: string
+  incluye: string
+  noIncluye: string
+  dias: Dia[]
+}
+
+const modalidades: Modalidad[] = [
+  {
+    title: 'Visita de 1 día',
+    image: '/conocimiento/pasantias/foto-1.jpg',
+    participantes: 'Ilimitados',
+    incluye: '—',
+    noIncluye: 'Movilidad de ida y vuelta',
+    dias: [
+      {
+        label: null,
+        comidas: null,
+        manana: [
+          'Registros genealógicos',
+          'Registros productivos',
+          'Introducción a la mejora genética',
+          'Break',
+        ],
+        tarde: [
+          'Programa genético del diámetro',
+          'Programa genético de la médula',
+          'Programa genético del color',
+          'Visita de laboratorio e infraestructuras de manejo',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Pasantía de 2 días',
+    image: '/conocimiento/pasantias/foto-2.jpg',
+    participantes: 'Mínimo 8, máximo 19 personas',
+    incluye: '1 noche de alojamiento y 2 días de alimentación',
+    noIncluye: 'Movilidad de ida y vuelta',
+    dias: [
+      {
+        label: 'Día 1',
+        comidas: 'Incluye almuerzo y cena',
+        manana: [
+          'Instalación',
+          'Bienvenida y presentación de ponentes',
+          'Introducción al Programa de Pacomarca',
+          'Break',
+          'Etapas de un plan de mejora genética',
+          'Definición de objetivos y criterios de selección',
+          'Registros genealógicos',
+          'Instalación de software (opcional)',
+        ],
+        tarde: [
+          'Mejora genética — Programa del diámetro',
+          'Mejora genética — Programa de la medulación',
+          'Mejora genética — Programa Black Alpaka',
+          'Índices de selección',
+          'Break',
+          'Visita a la cabaña del pastor',
+          'Consideraciones generales de la esquila',
+          'Uso de máquina esquiladora',
+          'Demostración de esquila (NTP)',
+          'Registros productivos de la esquila',
+        ],
+      },
+      {
+        label: 'Día 2',
+        comidas: 'Incluye desayuno y almuerzo',
+        manana: [
+          'Manejo reproductivo en alpacas (protocolo de empadre)',
+          'Protocolos de diagnóstico de gestación y demostración de ecografía (opcional)',
+          'Manejo en parición en alpacas',
+          'Registros del nacimiento',
+          'Break',
+          'Visita a laboratorio',
+          'Uso del Fiber Med (diámetro y medulación)',
+          'Uso de la cámara FLIR (temperatura infrarroja)',
+          'Uso de cartillas de campo',
+          'Uso del Chroma meter (colorimetría)',
+        ],
+        tarde: [
+          'Salud de alpacas',
+          'Programas de prevención y tratamiento de enfermedades',
+          'Protocolos de inmunización para enterotoxemia',
+          'Break',
+          'Evaluación de suelos para la producción de pastos y forrajes',
+          'Instalación de forrajes',
+          'Conservación de forrajes (ensilado y henificado)',
+          'Guiado para el uso de implementos agrícolas',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Pasantía de 3 días',
+    image: '/conocimiento/pasantias/foto-3.jpg',
+    participantes: 'Mínimo 8, máximo 19 personas',
+    incluye: '2 noches de alojamiento y 3 días de alimentación',
+    noIncluye: 'Movilidad de ida y vuelta',
+    dias: [
+      {
+        label: 'Día 1',
+        comidas: 'Incluye almuerzo y cena',
+        manana: [
+          'Instalación',
+          'Bienvenida y presentación de ponentes y participantes',
+          'Introducción al Programa de Pacomarca',
+          'Break',
+          'Etapas de un plan de mejora genética',
+          'Definición de objetivos y criterios de selección',
+          'Registros genealógicos',
+          'Instalación de software (opcional)',
+        ],
+        tarde: [
+          'Salida a campo',
+          'Evaluación morfológica',
+          'Evaluación de dentición',
+          'Uso de la valoración genética',
+          'Construcción de índice genético',
+          'Break',
+          'Mejora genética — Programa del diámetro',
+          'Mejora genética — Programa de la medulación',
+          'Mejora genética — Programa Black Alpaka',
+          'Índices de selección',
+        ],
+      },
+      {
+        label: 'Día 2',
+        comidas: 'Incluye desayuno, almuerzo y cena',
+        manana: [
+          'Manejo reproductivo en alpacas (protocolo de empadre)',
+          'Protocolos de diagnóstico de gestación',
+          'Demostración de ecografía (opcional)',
+          'Manejo en parición en alpacas',
+          'Registros del nacimiento',
+          'Break',
+          'Visita a laboratorio',
+          'Uso del Fiber Med (diámetro y medulación)',
+          'Uso de la cámara FLIR (temperatura infrarroja)',
+          'Uso de cartillas de campo',
+          'Uso del Chroma meter (colorimetría)',
+        ],
+        tarde: [
+          'Salud de alpacas',
+          'Programas de prevención y tratamiento de enfermedades',
+          'Protocolos de inmunización para enterotoxemia',
+          'Uso de registros de salud y seguimiento de casos clínicos',
+          'Break',
+          'Visita al almacén veterinario',
+          'Principales productos usados en el manejo de alpacas',
+          'Protocolos y vías de aplicación de medicamentos',
+        ],
+      },
+      {
+        label: 'Día 3',
+        comidas: 'Incluye desayuno y almuerzo',
+        manana: [
+          'Visita a la cabaña del pastor',
+          'Consideraciones generales de la esquila',
+          'Uso de máquina esquiladora, afiladora, peines y cortantes',
+          'Demostración de esquila (NTP)',
+          'Registros productivos de la esquila',
+          'Break',
+          'Certificaciones',
+          'Certificación de Trazabilidad',
+          'Certificación RAS (normatividad)',
+          'Estudio de caso de productor certificado para RAS',
+        ],
+        tarde: [
+          'Pastos y forrajes',
+          'Calendario agrícola',
+          'Instalación de forrajes',
+          'Conservación de forrajes',
+          'Break',
+          'Guiado para el uso de maquinaria agrícola',
+          'Guiado para el uso de implementos agrícolas',
+          'Visita de cultivos',
+        ],
+      },
+    ],
+  },
+]
+
 export default function PasantiasPage() {
+  const [open, setOpen] = useState<number | null>(0)
   return (
     <>
       <PageHeader
@@ -78,70 +266,133 @@ export default function PasantiasPage() {
 
       {/* Formats */}
       <section className="bg-cream py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <FadeUp>
-            <div className="text-center mb-14">
+            <div className="text-center mb-12">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Formatos</p>
-              <h2 className="font-serif text-3xl text-ink">Dos modalidades de programa</h2>
+              <h2 className="font-serif text-3xl text-ink">Tres modalidades de programa</h2>
+              <p className="text-sm text-ink/50 mt-4 max-w-xl mx-auto leading-relaxed">
+                Modalidad teórica o práctica según corresponda. Haz clic en una modalidad para desplegar su cronograma completo.
+              </p>
             </div>
           </FadeUp>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
-            <FadeUp delay={0.1} className="h-full">
-              <div className="bg-white border-t-4 border-gold overflow-hidden h-full flex flex-col">
-                <div className="relative h-56 w-full shrink-0">
-                  <Image
-                    src="/conocimiento/pasantias/foto-1.jpg"
-                    alt="Visita de 1 día"
-                    fill
-                    className="object-cover grayscale"
-                  />
-                </div>
-                <div className="p-10 flex flex-col flex-1">
-                  <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Modalidad 1</p>
-                  <h3 className="font-serif text-2xl text-ink mb-4">Visita de 1 día</h3>
-                  <p className="text-sm text-ink/60 leading-relaxed mb-6">
-                    Recorrido completo por la estación científica con guía especializado. Ideal para grupos académicos, clientes de marcas aliadas y medios de comunicación interesados en conocer el ecosistema Pacomarca en profundidad.
-                  </p>
-                  <ul className="space-y-2 mt-auto">
-                    {['Recorrido por el rebaño y las instalaciones', 'Demostración de Inca Esquila', 'Presentación del programa genético', 'Visita a los módulos comunitarios'].map((item) => (
-                      <li key={item} className="flex gap-3 text-sm text-ink/60">
-                        <span className="text-gold">◆</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </FadeUp>
+          <div className="space-y-4">
+            {modalidades.map((m, i) => {
+              const isOpen = open === i
+              return (
+                <FadeUp key={m.title} delay={i * 0.1}>
+                  <div
+                    className={`bg-white overflow-hidden border transition-colors duration-300 ${
+                      isOpen ? 'border-gold shadow-lg' : 'border-sand/40 hover:border-gold/50'
+                    }`}
+                  >
+                    {/* Header */}
+                    <button
+                      onClick={() => setOpen(isOpen ? null : i)}
+                      className="w-full flex items-stretch text-left"
+                      aria-expanded={isOpen}
+                    >
+                      <div className="relative w-28 sm:w-52 shrink-0 self-stretch min-h-[7rem]">
+                        <Image
+                          src={m.image}
+                          alt={m.title}
+                          fill
+                          sizes="208px"
+                          className={`object-cover transition-all duration-500 ${isOpen ? '' : 'grayscale'}`}
+                        />
+                      </div>
+                      <div className="flex-1 flex items-center justify-between gap-4 p-5 sm:p-7">
+                        <div>
+                          <p className="text-xs tracking-[0.25em] uppercase text-gold mb-2">Modalidad {i + 1}</p>
+                          <h3 className="font-serif text-xl sm:text-2xl text-ink mb-1.5">{m.title}</h3>
+                          <p className="text-xs sm:text-sm text-ink/50">{m.participantes}</p>
+                        </div>
+                        <span
+                          className={`shrink-0 w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-300 ${
+                            isOpen ? 'border-gold text-gold rotate-180' : 'border-sand text-ink/40'
+                          }`}
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </span>
+                      </div>
+                    </button>
 
-            <FadeUp delay={0.2} className="h-full">
-              <div className="bg-white border-t-4 border-gold overflow-hidden h-full flex flex-col">
-                <div className="relative h-56 w-full shrink-0">
-                  <Image
-                    src="/conocimiento/pasantias/foto-2.jpg"
-                    alt="Pasantía de 3 días"
-                    fill
-                    className="object-cover grayscale"
-                  />
-                </div>
-                <div className="p-10 flex flex-col flex-1">
-                  <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Modalidad 2</p>
-                  <h3 className="font-serif text-2xl text-ink mb-4">Pasantía de 3 días</h3>
-                  <p className="text-sm text-ink/60 leading-relaxed mb-6">
-                    Programa intensivo para investigadores, estudiantes de posgrado y profesionales del sector. Incluye trabajo práctico con los animales, análisis de datos y acceso a los laboratorios y sistemas de información.
-                  </p>
-                  <ul className="space-y-2 mt-auto">
-                    {['Trabajo práctico con el rebaño', 'Acceso a la base de datos PacoPro', 'Taller de clasificación de fibras', 'Sesiones con investigadores del programa', 'Visita a comunidades alpaqueras aliadas'].map((item) => (
-                      <li key={item} className="flex gap-3 text-sm text-ink/60">
-                        <span className="text-gold">◆</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </FadeUp>
+                    {/* Expanded content */}
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          key="content"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.4, ease: 'easeInOut' }}
+                          className="overflow-hidden"
+                        >
+                          <div className="border-t border-sand/40 p-6 sm:p-10">
+                            {/* Resumen */}
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                              {[
+                                { k: 'Participantes', v: m.participantes },
+                                { k: 'Incluye', v: m.incluye },
+                                { k: 'No incluye', v: m.noIncluye },
+                              ].map((r) => (
+                                <div key={r.k} className="bg-cream p-5">
+                                  <p className="text-[10px] tracking-[0.2em] uppercase text-gold mb-2">{r.k}</p>
+                                  <p className="text-sm text-ink/70 leading-relaxed">{r.v}</p>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Agenda */}
+                            <div className="space-y-10">
+                              {m.dias.map((d, di) => (
+                                <div key={di}>
+                                  {d.label && (
+                                    <div className="flex flex-wrap items-center gap-4 mb-6">
+                                      <span className="font-serif text-2xl text-gold">{d.label}</span>
+                                      {d.comidas && (
+                                        <span className="text-xs text-ink/45 border border-sand/60 px-3 py-1">{d.comidas}</span>
+                                      )}
+                                    </div>
+                                  )}
+                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div>
+                                      <p className="text-xs tracking-[0.25em] uppercase text-ink/40 mb-4 pb-2 border-b border-sand/40">Mañana</p>
+                                      <ul className="space-y-2.5">
+                                        {d.manana.map((it) => (
+                                          <li key={it} className="flex gap-3 text-sm text-ink/65 leading-snug">
+                                            <span className="text-gold mt-0.5 shrink-0">◆</span>
+                                            {it}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                    <div>
+                                      <p className="text-xs tracking-[0.25em] uppercase text-ink/40 mb-4 pb-2 border-b border-sand/40">Tarde</p>
+                                      <ul className="space-y-2.5">
+                                        {d.tarde.map((it) => (
+                                          <li key={it} className="flex gap-3 text-sm text-ink/65 leading-snug">
+                                            <span className="text-gold mt-0.5 shrink-0">◆</span>
+                                            {it}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </FadeUp>
+              )
+            })}
           </div>
         </div>
       </section>
