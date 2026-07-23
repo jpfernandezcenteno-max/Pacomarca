@@ -252,7 +252,7 @@ export default function PasantiasPage() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <div className="relative aspect-[160/84] w-full overflow-hidden bg-ink">
+            <div className="relative aspect-video w-full overflow-hidden bg-ink">
               <video
                 controls
                 playsInline
