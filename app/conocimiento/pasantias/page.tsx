@@ -358,30 +358,40 @@ export default function PasantiasPage() {
                                       )}
                                     </div>
                                   )}
-                                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div>
-                                      <p className="text-xs tracking-[0.25em] uppercase text-ink/40 mb-4 pb-2 border-b border-sand/40">Mañana</p>
-                                      <ul className="space-y-2.5">
-                                        {d.manana.map((it) => (
-                                          <li key={it} className="flex gap-3 text-sm text-ink/65 leading-snug">
-                                            <span className="text-gold mt-0.5 shrink-0">◆</span>
-                                            {it}
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                    <div>
-                                      <p className="text-xs tracking-[0.25em] uppercase text-ink/40 mb-4 pb-2 border-b border-sand/40">Tarde</p>
-                                      <ul className="space-y-2.5">
-                                        {d.tarde.map((it) => (
-                                          <li key={it} className="flex gap-3 text-sm text-ink/65 leading-snug">
-                                            <span className="text-gold mt-0.5 shrink-0">◆</span>
-                                            {it}
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-                                  </div>
+                                  {(() => {
+                                    const items = [...d.manana, ...d.tarde]
+                                    let n = 0
+                                    return (
+                                      <ol className="max-w-2xl border-t border-sand/30">
+                                        {items.map((it, ii) => {
+                                          if (it === 'Break') {
+                                            return (
+                                              <li key={ii} className="flex items-center gap-3 py-3.5">
+                                                <span className="h-px flex-1 bg-sand/60" />
+                                                <span className="inline-flex items-center gap-1.5 text-[11px] tracking-[0.25em] uppercase text-gold">
+                                                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8h13v5a4 4 0 01-4 4H7a4 4 0 01-4-4V8zM16 8h2a3 3 0 010 6h-2M6 3v2M10 3v2M14 3v2" />
+                                                  </svg>
+                                                  Break
+                                                </span>
+                                                <span className="h-px flex-1 bg-sand/60" />
+                                              </li>
+                                            )
+                                          }
+                                          n += 1
+                                          const num = n
+                                          return (
+                                            <li key={ii} className="flex gap-4 items-baseline py-2.5 border-b border-sand/30">
+                                              <span className="font-serif text-sm text-gold/50 w-6 shrink-0 tabular-nums">
+                                                {String(num).padStart(2, '0')}
+                                              </span>
+                                              <span className="text-sm text-ink/70 leading-snug">{it}</span>
+                                            </li>
+                                          )
+                                        })}
+                                      </ol>
+                                    )
+                                  })()}
                                 </div>
                               ))}
                             </div>
