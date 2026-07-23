@@ -174,6 +174,7 @@ export default function HomePage() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [cinema, setCinema] = useState(false)
   const [muted, setMuted] = useState(true)
+  const [playing, setPlaying] = useState(false)
   const scrolledAway = useRef(false)
 
   const enterCinema = () => {
@@ -184,6 +185,18 @@ export default function HomePage() {
     }
     setMuted(false)
     setCinema(true)
+  }
+
+  const togglePlay = () => {
+    const v = videoRef.current
+    if (!v) return
+    if (v.paused) {
+      // Si termino, reinicia desde el inicio antes de reproducir
+      if (v.ended || v.currentTime >= v.duration - 0.1) v.currentTime = 0
+      v.play().catch(() => {})
+    } else {
+      v.pause()
+    }
   }
 
   useEffect(() => {
@@ -201,6 +214,7 @@ export default function HomePage() {
         scrolledAway.current = false
         setCinema(false)
         setMuted(true)
+        setPlaying(false)
         if (videoRef.current) {
           videoRef.current.pause()
           videoRef.current.currentTime = 0
@@ -219,10 +233,12 @@ export default function HomePage() {
       <section className="relative h-screen overflow-hidden">
         <video
           ref={videoRef}
-          loop
           muted
           playsInline
           preload="metadata"
+          onPlay={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          onEnded={() => setPlaying(false)}
           className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
         >
           <source src="/home/20240813163648.mp4" type="video/mp4" />
@@ -235,28 +251,48 @@ export default function HomePage() {
           className="absolute inset-0 bg-ink pointer-events-none"
         />
 
-        {/* Botón mute — solo en modo video */}
+        {/* Controles — solo en modo video */}
         {cinema && (
-          <button
-            onClick={() => {
-              if (!videoRef.current) return
-              videoRef.current.muted = !videoRef.current.muted
-              setMuted(videoRef.current.muted)
-            }}
-            className="absolute bottom-8 right-8 z-20 bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
-            aria-label={muted ? 'Activar sonido' : 'Silenciar'}
-          >
-            {muted ? (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-              </svg>
-            )}
-          </button>
+          <div className="absolute bottom-8 right-8 z-20 flex items-center gap-3">
+            {/* Play / Pausa */}
+            <button
+              onClick={togglePlay}
+              className="bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
+              aria-label={playing ? 'Pausar' : 'Reproducir'}
+            >
+              {playing ? (
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6 5h4v14H6zM14 5h4v14h-4z" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              )}
+            </button>
+
+            {/* Volumen */}
+            <button
+              onClick={() => {
+                if (!videoRef.current) return
+                videoRef.current.muted = !videoRef.current.muted
+                setMuted(videoRef.current.muted)
+              }}
+              className="bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
+              aria-label={muted ? 'Activar sonido' : 'Silenciar'}
+            >
+              {muted ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.536 8.464a5 5 0 010 7.072M12 6v12m-3.536-9.536a5 5 0 000 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+              )}
+            </button>
+          </div>
         )}
 
         {/* Texto + botón "Ver video" (se ocultan en modo video) */}
