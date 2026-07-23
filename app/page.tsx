@@ -178,6 +178,7 @@ export default function HomePage() {
 
   const enterCinema = () => {
     if (videoRef.current) {
+      videoRef.current.currentTime = 0
       videoRef.current.muted = false
       videoRef.current.play().catch(() => {})
     }
@@ -186,21 +187,25 @@ export default function HomePage() {
   }
 
   useEffect(() => {
-    // El video arranca en loop, silenciado, como fondo ambiente
+    // El video arranca pausado: solo se reproduce al dar play
     if (videoRef.current) {
       videoRef.current.muted = true
-      videoRef.current.play().catch(() => {})
+      videoRef.current.pause()
     }
     const onScroll = () => {
       const y = window.scrollY
       const vh = window.innerHeight
       if (y > vh * 0.4) scrolledAway.current = true
-      // Al volver arriba del todo, reaparece el texto y se silencia el video
+      // Al volver arriba del todo: reset completo, como reingresar a la web
       if (y <= 5 && scrolledAway.current) {
         scrolledAway.current = false
         setCinema(false)
         setMuted(true)
-        if (videoRef.current) videoRef.current.muted = true
+        if (videoRef.current) {
+          videoRef.current.pause()
+          videoRef.current.currentTime = 0
+          videoRef.current.muted = true
+        }
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -214,7 +219,6 @@ export default function HomePage() {
       <section className="relative h-screen overflow-hidden">
         <video
           ref={videoRef}
-          autoPlay
           loop
           muted
           playsInline
