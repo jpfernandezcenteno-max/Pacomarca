@@ -252,14 +252,16 @@ export default function PasantiasPage() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              className="w-full h-auto"
-            >
-              <source src="/conocimiento/pasantias/video.mp4" type="video/mp4" />
-            </video>
+            <div className="relative aspect-video w-full overflow-hidden bg-ink">
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/conocimiento/pasantias/video.mp4" type="video/mp4" />
+              </video>
+            </div>
           </FadeUp>
         </div>
       </section>
