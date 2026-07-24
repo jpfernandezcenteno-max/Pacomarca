@@ -183,6 +183,7 @@ export default function HomePage() {
   const enterCinema = () => {
     if (videoRef.current) {
       videoRef.current.currentTime = 0
+      videoRef.current.volume = 1
       videoRef.current.muted = false
       videoRef.current.play().catch(() => {})
     }
@@ -221,6 +222,11 @@ export default function HomePage() {
       const y = window.scrollY
       const vh = window.innerHeight
       if (y > vh * 0.4) scrolledAway.current = true
+
+      // Volumen proporcional a cuanto del hero sigue visible (fade suave con el scroll)
+      if (cinemaRef.current && videoRef.current && sectionRef.current) {
+        videoRef.current.volume = Math.max(0, Math.min(1, 1 - y / sectionRef.current.offsetHeight))
+      }
 
       // Al terminar de pasar la seccion del video: volver a normal sin salto visible
       if (cinemaRef.current && sectionRef.current && y >= sectionRef.current.offsetHeight) {
