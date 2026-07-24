@@ -203,6 +203,20 @@ export default function HomePage() {
     }
   }
 
+  // Vuelve al estado inicial (poster a pantalla completa + texto), con animacion suave
+  const exitCinema = () => {
+    scrolledAway.current = false
+    setAnimateHeight(true)
+    setCinema(false)
+    setMuted(true)
+    setPlaying(false)
+    if (videoRef.current) {
+      videoRef.current.pause()
+      videoRef.current.currentTime = 0
+      videoRef.current.muted = true
+    }
+  }
+
   useEffect(() => {
     // El video arranca pausado: solo se reproduce al dar play
     if (videoRef.current) {
@@ -277,7 +291,7 @@ export default function HomePage() {
           poster="/home/hero-poster.jpg"
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
-          onEnded={() => setPlaying(false)}
+          onEnded={exitCinema}
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/home/20240813163648.mp4" type="video/mp4" />
