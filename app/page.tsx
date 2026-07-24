@@ -181,8 +181,8 @@ export default function HomePage() {
   const [uiVisible, setUiVisible] = useState(true)
   const [wiping, setWiping] = useState(false)
   const wipe = useMotionValue(0) // 0 -> 1: barrido de izquierda a derecha
-  const SOFT = 28 // ancho del borde degradado (mas alto = mas difuminado)
-  const LAG = 16 // adelanto del frente blanco antes de que empiece a revelarse el poster
+  const SOFT = 50 // ancho del borde degradado (mas alto = mas difuminado, casi imperceptible)
+  const LAG = 8 // adelanto minimo: el poster arranca apenas avanza el frente blanco
   const SPAN = 100 + LAG + SOFT
   // Frente lider (blanco) y frente seguidor (poster) avanzan casi juntos, muy difuminados
   const wipeMask = useTransform(wipe, (v) => {
@@ -227,7 +227,7 @@ export default function HomePage() {
   const endTransition = () => {
     setWiping(true)
     wipe.set(0)
-    animate(wipe, 1, { duration: 1.5, ease: 'easeInOut' })
+    animate(wipe, 1, { duration: 2.2, ease: 'easeInOut' })
     // Completado el barrido (el poster cubre todo por delante), se restablece el estado
     // normal por detras y la seccion crece suavemente a pantalla completa
     window.setTimeout(() => {
@@ -241,12 +241,12 @@ export default function HomePage() {
         videoRef.current.currentTime = 0
         videoRef.current.muted = true
       }
-    }, 1500)
-    // Tras crecer, se retira el overlay y aparecen texto, boton y menu
+    }, 2200)
+    // Tras crecer, se retira el overlay y aparecen (suavemente) texto, boton y menu
     window.setTimeout(() => {
       setUiVisible(true)
       setWiping(false)
-    }, 2250)
+    }, 2900)
   }
 
   useEffect(() => {
@@ -336,7 +336,7 @@ export default function HomePage() {
         {/* Overlay oscuro (se desvanece en modo video) */}
         <motion.div
           animate={{ opacity: uiVisible ? 0.5 : 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: uiVisible ? 1.4 : 0.8, ease: 'easeOut' }}
           className="absolute inset-0 bg-ink pointer-events-none"
         />
 
@@ -407,7 +407,7 @@ export default function HomePage() {
         {/* Texto + botón "Ver video" (se ocultan en modo video) */}
         <motion.div
           animate={{ opacity: uiVisible ? 1 : 0, y: uiVisible ? 0 : -20 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: uiVisible ? 1.4 : 0.8, ease: [0.22, 1, 0.36, 1] }}
           className={`relative z-10 h-full flex items-center justify-center text-center px-6 ${uiVisible ? '' : 'pointer-events-none'}`}
         >
           <motion.div
