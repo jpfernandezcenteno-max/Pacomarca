@@ -226,6 +226,11 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Avisa al navbar para que se oculte mientras se reproduce el video
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent('hero-cinema', { detail: cinema }))
+  }, [cinema])
+
 
   return (
     <>

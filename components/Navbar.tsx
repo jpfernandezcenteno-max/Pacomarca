@@ -78,6 +78,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isHomepage])
 
+  // Ocultar el navbar mientras el hero reproduce el video; reaparece al hacer scroll
+  useEffect(() => {
+    const onCinema = (e: Event) => setHidden((e as CustomEvent).detail === true)
+    window.addEventListener('hero-cinema', onCinema)
+    return () => window.removeEventListener('hero-cinema', onCinema)
+  }, [])
+
   const handleMouseEnter = (label: string) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
     setActiveMenu(label)
