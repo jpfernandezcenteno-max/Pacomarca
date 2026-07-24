@@ -178,6 +178,8 @@ export default function HomePage() {
   const [muted, setMuted] = useState(true)
   const [playing, setPlaying] = useState(false)
   const [animateHeight, setAnimateHeight] = useState(true)
+  const [uiVisible, setUiVisible] = useState(true)
+  const [flash, setFlash] = useState(false)
   const scrolledAway = useRef(false)
 
   const enterCinema = () => {
@@ -187,8 +189,10 @@ export default function HomePage() {
       videoRef.current.muted = false
       videoRef.current.play().catch(() => {})
     }
+    setFlash(false)
     setMuted(false)
     setCinema(true)
+    setUiVisible(false)
   }
 
   const togglePlay = () => {
@@ -203,18 +207,28 @@ export default function HomePage() {
     }
   }
 
-  // Vuelve al estado inicial (poster a pantalla completa + texto), con animacion suave
-  const exitCinema = () => {
-    scrolledAway.current = false
-    setAnimateHeight(true)
-    setCinema(false)
-    setMuted(true)
-    setPlaying(false)
-    if (videoRef.current) {
-      videoRef.current.pause()
-      videoRef.current.currentTime = 0
-      videoRef.current.muted = true
-    }
+  // Al terminar el video: fundido a blanco -> poster a pantalla completa -> aparecen UI
+  const endTransition = () => {
+    setFlash(true) // 1) fundido a blanco (cubre el ultimo frame)
+    window.setTimeout(() => {
+      // 2) detras del blanco: restablecer poster a pantalla completa al instante
+      setAnimateHeight(false)
+      scrolledAway.current = false
+      setCinema(false)
+      setMuted(true)
+      setPlaying(false)
+      if (videoRef.current) {
+        videoRef.current.pause()
+        videoRef.current.currentTime = 0
+        videoRef.current.muted = true
+      }
+      requestAnimationFrame(() => {
+        setFlash(false) // 3) el blanco se desvanece revelando el poster
+        requestAnimationFrame(() => setAnimateHeight(true))
+      })
+      // 4) tras aclararse el blanco, aparecen texto, boton y menu
+      window.setTimeout(() => setUiVisible(true), 480)
+    }, 550)
   }
 
   useEffect(() => {
@@ -226,6 +240,7 @@ export default function HomePage() {
     const resetVideo = () => {
       setMuted(true)
       setPlaying(false)
+      setUiVisible(true)
       if (videoRef.current) {
         videoRef.current.pause()
         videoRef.current.currentTime = 0
@@ -267,11 +282,14 @@ export default function HomePage() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Avisa al navbar para que se oculte mientras se reproduce el video
   useEffect(() => {
     cinemaRef.current = cinema
-    window.dispatchEvent(new CustomEvent('hero-cinema', { detail: cinema }))
   }, [cinema])
+
+  // Oculta el navbar mientras la UI del hero no esta visible (modo video)
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent('hero-cinema', { detail: !uiVisible }))
+  }, [uiVisible])
 
 
   return (
@@ -291,7 +309,7 @@ export default function HomePage() {
           poster="/home/hero-poster.jpg"
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
-          onEnded={exitCinema}
+          onEnded={endTransition}
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/home/20240813163648.mp4" type="video/mp4" />
@@ -299,9 +317,16 @@ export default function HomePage() {
 
         {/* Overlay oscuro (se desvanece en modo video) */}
         <motion.div
-          animate={{ opacity: cinema ? 0 : 0.5 }}
+          animate={{ opacity: uiVisible ? 0.5 : 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="absolute inset-0 bg-ink pointer-events-none"
+        />
+
+        {/* Fundido a blanco al terminar el video */}
+        <motion.div
+          animate={{ opacity: flash ? 1 : 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          className={`absolute inset-0 bg-white z-40 ${flash ? '' : 'pointer-events-none'}`}
         />
 
         {/* Controles — solo en modo video */}
@@ -350,9 +375,9 @@ export default function HomePage() {
 
         {/* Texto + botón "Ver video" (se ocultan en modo video) */}
         <motion.div
-          animate={{ opacity: cinema ? 0 : 1, y: cinema ? -20 : 0 }}
+          animate={{ opacity: uiVisible ? 1 : 0, y: uiVisible ? 0 : -20 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className={`relative z-10 h-full flex items-center justify-center text-center px-6 ${cinema ? 'pointer-events-none' : ''}`}
+          className={`relative z-10 h-full flex items-center justify-center text-center px-6 ${uiVisible ? '' : 'pointer-events-none'}`}
         >
           <motion.div
             initial={{ opacity: 0, y: 40 }}
