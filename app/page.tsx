@@ -230,12 +230,17 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative w-full aspect-[1920/820] min-h-[520px] overflow-hidden bg-ink">
+      <section
+        className={`relative w-full overflow-hidden bg-ink transition-[height] duration-700 ease-in-out ${
+          cinema ? 'h-[42.71vw] min-h-[300px]' : 'h-screen'
+        }`}
+      >
         <video
           ref={videoRef}
           muted
           playsInline
           preload="metadata"
+          poster="/home/hero-poster.jpg"
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onEnded={() => setPlaying(false)}
