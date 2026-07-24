@@ -181,20 +181,19 @@ export default function HomePage() {
   const [uiVisible, setUiVisible] = useState(true)
   const [wiping, setWiping] = useState(false)
   const wipe = useMotionValue(0) // 0 -> 1: barrido de izquierda a derecha
-  const SOFT = 9 // ancho del borde degradado (%)
-  // Frente lider: el blanco cubre el video (0->100 durante todo el barrido)
-  // Frente seguidor: el poster se revela detras (empieza a la mitad, 0->108)
+  const SOFT = 28 // ancho del borde degradado (mas alto = mas difuminado)
+  const LAG = 16 // adelanto del frente blanco antes de que empiece a revelarse el poster
+  const SPAN = 100 + LAG + SOFT
+  // Frente lider (blanco) y frente seguidor (poster) avanzan casi juntos, muy difuminados
   const wipeMask = useTransform(wipe, (v) => {
-    const cover = Math.min(1, v) * 100
-    const reveal = Math.max(0, 2 * v - 1) * 108
-    if (reveal >= cover) return 'linear-gradient(90deg, transparent 0%, transparent 100%)'
-    const b = Math.min(cover, reveal + SOFT)
-    const c = Math.max(b, cover - SOFT)
-    return `linear-gradient(90deg, transparent ${reveal}%, #000 ${b}%, #000 ${c}%, transparent ${cover}%)`
+    const cover = v * SPAN
+    const reveal = Math.max(0, cover - LAG)
+    return `linear-gradient(90deg, transparent ${reveal - SOFT}%, #000 ${reveal}%, #000 ${cover}%, transparent ${cover + SOFT}%)`
   })
   const posterMask = useTransform(wipe, (v) => {
-    const reveal = Math.max(0, 2 * v - 1) * 108
-    return `linear-gradient(90deg, #000 ${Math.max(0, reveal - SOFT)}%, transparent ${reveal}%)`
+    const cover = v * SPAN
+    const reveal = Math.max(0, cover - LAG)
+    return `linear-gradient(90deg, #000 ${reveal - SOFT}%, transparent ${reveal}%)`
   })
   const scrolledAway = useRef(false)
 
