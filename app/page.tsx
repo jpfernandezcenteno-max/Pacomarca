@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useRef, useEffect, useState } from 'react'
 
 
@@ -179,7 +179,16 @@ export default function HomePage() {
   const [playing, setPlaying] = useState(false)
   const [animateHeight, setAnimateHeight] = useState(true)
   const [uiVisible, setUiVisible] = useState(true)
-  const [flash, setFlash] = useState(false)
+  const [wiping, setWiping] = useState(false)
+  const wipe = useMotionValue(0) // 0 -> 1: barrido blanco de izquierda a derecha
+  const wipeMask = useTransform(wipe, (v) => {
+    const cover = Math.min(1, v * 2) * 100 // 0->100 (cubre) en la primera mitad
+    const reveal = Math.max(0, v * 2 - 1) * 100 // 0->100 (revela) en la segunda mitad
+    const soft = 8 // ancho del borde degradado
+    const b = Math.min(cover, reveal + soft)
+    const c = Math.max(b, cover - soft)
+    return `linear-gradient(90deg, transparent ${reveal}%, #000 ${b}%, #000 ${c}%, transparent ${cover}%)`
+  })
   const scrolledAway = useRef(false)
 
   const enterCinema = () => {
@@ -189,7 +198,8 @@ export default function HomePage() {
       videoRef.current.muted = false
       videoRef.current.play().catch(() => {})
     }
-    setFlash(false)
+    setWiping(false)
+    wipe.set(0)
     setMuted(false)
     setCinema(true)
     setUiVisible(false)
@@ -207,11 +217,13 @@ export default function HomePage() {
     }
   }
 
-  // Al terminar el video: fundido a blanco -> poster a pantalla completa -> aparecen UI
+  // Al terminar el video: barrido blanco izquierda->derecha que cubre y luego revela el poster
   const endTransition = () => {
-    setFlash(true) // 1) fundido a blanco (cubre el ultimo frame)
+    setWiping(true)
+    wipe.set(0)
+    animate(wipe, 1, { duration: 1.4, ease: 'easeInOut' })
+    // A la mitad (todo blanco) se restablece el poster a pantalla completa por detras
     window.setTimeout(() => {
-      // 2) detras del blanco: restablecer poster a pantalla completa al instante
       setAnimateHeight(false)
       scrolledAway.current = false
       setCinema(false)
@@ -222,13 +234,11 @@ export default function HomePage() {
         videoRef.current.currentTime = 0
         videoRef.current.muted = true
       }
-      requestAnimationFrame(() => {
-        setFlash(false) // 3) el blanco se desvanece revelando el poster
-        requestAnimationFrame(() => setAnimateHeight(true))
-      })
-      // 4) tras aclararse el blanco, aparecen texto, boton y menu
-      window.setTimeout(() => setUiVisible(true), 480)
-    }, 550)
+      requestAnimationFrame(() => requestAnimationFrame(() => setAnimateHeight(true)))
+    }, 700)
+    // Tras completarse el barrido, aparecen texto, boton y menu
+    window.setTimeout(() => setUiVisible(true), 1250)
+    window.setTimeout(() => setWiping(false), 1500)
   }
 
   useEffect(() => {
@@ -322,12 +332,14 @@ export default function HomePage() {
           className="absolute inset-0 bg-ink pointer-events-none"
         />
 
-        {/* Fundido a blanco al terminar el video */}
-        <motion.div
-          animate={{ opacity: flash ? 1 : 0 }}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className={`absolute inset-0 bg-white z-40 ${flash ? '' : 'pointer-events-none'}`}
-        />
+        {/* Barrido blanco (izquierda -> derecha) al terminar el video */}
+        {wiping && (
+          <motion.div
+            aria-hidden
+            style={{ WebkitMaskImage: wipeMask, maskImage: wipeMask }}
+            className="absolute inset-0 bg-white z-40 pointer-events-none"
+          />
+        )}
 
         {/* Controles — solo en modo video */}
         {cinema && (
