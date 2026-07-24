@@ -180,14 +180,21 @@ export default function HomePage() {
   const [animateHeight, setAnimateHeight] = useState(true)
   const [uiVisible, setUiVisible] = useState(true)
   const [wiping, setWiping] = useState(false)
-  const wipe = useMotionValue(0) // 0 -> 1: barrido blanco de izquierda a derecha
+  const wipe = useMotionValue(0) // 0 -> 1: barrido de izquierda a derecha
+  const SOFT = 9 // ancho del borde degradado (%)
+  // Frente lider: el blanco cubre el video (0->100 durante todo el barrido)
+  // Frente seguidor: el poster se revela detras (empieza a la mitad, 0->108)
   const wipeMask = useTransform(wipe, (v) => {
-    const cover = Math.min(1, v * 2) * 100 // 0->100 (cubre) en la primera mitad
-    const reveal = Math.max(0, v * 2 - 1) * 100 // 0->100 (revela) en la segunda mitad
-    const soft = 8 // ancho del borde degradado
-    const b = Math.min(cover, reveal + soft)
-    const c = Math.max(b, cover - soft)
+    const cover = Math.min(1, v) * 100
+    const reveal = Math.max(0, 2 * v - 1) * 108
+    if (reveal >= cover) return 'linear-gradient(90deg, transparent 0%, transparent 100%)'
+    const b = Math.min(cover, reveal + SOFT)
+    const c = Math.max(b, cover - SOFT)
     return `linear-gradient(90deg, transparent ${reveal}%, #000 ${b}%, #000 ${c}%, transparent ${cover}%)`
+  })
+  const posterMask = useTransform(wipe, (v) => {
+    const reveal = Math.max(0, 2 * v - 1) * 108
+    return `linear-gradient(90deg, #000 ${Math.max(0, reveal - SOFT)}%, transparent ${reveal}%)`
   })
   const scrolledAway = useRef(false)
 
@@ -217,14 +224,15 @@ export default function HomePage() {
     }
   }
 
-  // Al terminar el video: barrido blanco izquierda->derecha que cubre y luego revela el poster
+  // Al terminar: barrido con dos frentes (blanco cubre, poster revela detras), luego crece
   const endTransition = () => {
     setWiping(true)
     wipe.set(0)
-    animate(wipe, 1, { duration: 1.4, ease: 'easeInOut' })
-    // A la mitad (todo blanco) se restablece el poster a pantalla completa por detras
+    animate(wipe, 1, { duration: 1.5, ease: 'easeInOut' })
+    // Completado el barrido (el poster cubre todo por delante), se restablece el estado
+    // normal por detras y la seccion crece suavemente a pantalla completa
     window.setTimeout(() => {
-      setAnimateHeight(false)
+      setAnimateHeight(true)
       scrolledAway.current = false
       setCinema(false)
       setMuted(true)
@@ -234,11 +242,12 @@ export default function HomePage() {
         videoRef.current.currentTime = 0
         videoRef.current.muted = true
       }
-      requestAnimationFrame(() => requestAnimationFrame(() => setAnimateHeight(true)))
-    }, 700)
-    // Tras completarse el barrido, aparecen texto, boton y menu
-    window.setTimeout(() => setUiVisible(true), 1250)
-    window.setTimeout(() => setWiping(false), 1500)
+    }, 1500)
+    // Tras crecer, se retira el overlay y aparecen texto, boton y menu
+    window.setTimeout(() => {
+      setUiVisible(true)
+      setWiping(false)
+    }, 2250)
   }
 
   useEffect(() => {
@@ -332,7 +341,18 @@ export default function HomePage() {
           className="absolute inset-0 bg-ink pointer-events-none"
         />
 
-        {/* Barrido blanco (izquierda -> derecha) al terminar el video */}
+        {/* Poster que se revela por detras del blanco (izquierda -> derecha) */}
+        {wiping && (
+          <motion.img
+            src="/home/hero-poster.jpg"
+            alt=""
+            aria-hidden
+            style={{ WebkitMaskImage: posterMask, maskImage: posterMask }}
+            className="absolute inset-0 w-full h-full object-cover z-30 pointer-events-none"
+          />
+        )}
+
+        {/* Frente blanco que barre de izquierda a derecha */}
         {wiping && (
           <motion.div
             aria-hidden
