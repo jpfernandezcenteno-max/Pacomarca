@@ -172,9 +172,12 @@ const fibers = [
 
 export default function HomePage() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+  const cinemaRef = useRef(false)
   const [cinema, setCinema] = useState(false)
   const [muted, setMuted] = useState(true)
   const [playing, setPlaying] = useState(false)
+  const [animateHeight, setAnimateHeight] = useState(true)
   const scrolledAway = useRef(false)
 
   const enterCinema = () => {
@@ -205,21 +208,39 @@ export default function HomePage() {
       videoRef.current.muted = true
       videoRef.current.pause()
     }
+    const resetVideo = () => {
+      setMuted(true)
+      setPlaying(false)
+      if (videoRef.current) {
+        videoRef.current.pause()
+        videoRef.current.currentTime = 0
+        videoRef.current.muted = true
+      }
+    }
     const onScroll = () => {
       const y = window.scrollY
       const vh = window.innerHeight
       if (y > vh * 0.4) scrolledAway.current = true
+
+      // Al terminar de pasar la seccion del video: volver a normal sin salto visible
+      if (cinemaRef.current && sectionRef.current && y >= sectionRef.current.offsetHeight) {
+        const oldH = sectionRef.current.offsetHeight
+        scrolledAway.current = false
+        setAnimateHeight(false) // sin animacion: el hero crece fuera de la vista
+        setCinema(false)
+        resetVideo()
+        requestAnimationFrame(() => {
+          if (sectionRef.current) window.scrollBy(0, sectionRef.current.offsetHeight - oldH)
+          requestAnimationFrame(() => setAnimateHeight(true))
+        })
+        return
+      }
+
       // Al volver arriba del todo: reset completo, como reingresar a la web
       if (y <= 5 && scrolledAway.current) {
         scrolledAway.current = false
         setCinema(false)
-        setMuted(true)
-        setPlaying(false)
-        if (videoRef.current) {
-          videoRef.current.pause()
-          videoRef.current.currentTime = 0
-          videoRef.current.muted = true
-        }
+        resetVideo()
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -228,6 +249,7 @@ export default function HomePage() {
 
   // Avisa al navbar para que se oculte mientras se reproduce el video
   useEffect(() => {
+    cinemaRef.current = cinema
     window.dispatchEvent(new CustomEvent('hero-cinema', { detail: cinema }))
   }, [cinema])
 
@@ -236,9 +258,10 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section
-        className={`relative w-full overflow-hidden bg-ink transition-[height] duration-700 ease-in-out ${
-          cinema ? 'h-[42.71vw] min-h-[300px]' : 'h-screen'
-        }`}
+        ref={sectionRef}
+        className={`relative w-full overflow-hidden bg-ink ${
+          animateHeight ? 'transition-[height] duration-700 ease-in-out' : ''
+        } ${cinema ? 'h-[42.71vw] min-h-[300px]' : 'h-screen'}`}
       >
         <video
           ref={videoRef}
