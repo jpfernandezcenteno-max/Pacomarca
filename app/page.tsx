@@ -230,7 +230,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden bg-ink">
         <video
           ref={videoRef}
           muted
@@ -239,7 +239,7 @@ export default function HomePage() {
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onEnded={() => setPlaying(false)}
-          className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
+          className="absolute inset-0 w-full h-full object-contain"
         >
           <source src="/home/20240813163648.mp4" type="video/mp4" />
         </video>
