@@ -230,7 +230,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-screen overflow-hidden bg-ink">
+      <section className="relative w-full aspect-[1920/820] min-h-[520px] overflow-hidden bg-ink">
         <video
           ref={videoRef}
           muted
@@ -239,7 +239,7 @@ export default function HomePage() {
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onEnded={() => setPlaying(false)}
-          className="absolute inset-0 w-full h-full object-contain"
+          className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/home/20240813163648.mp4" type="video/mp4" />
         </video>
@@ -306,7 +306,7 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: 'easeOut' }}
           >
-            <p className="text-xs tracking-[0.35em] uppercase text-gold mb-6 font-medium">
+            <p className="text-xs tracking-[0.35em] uppercase text-white mb-6 font-medium">
               Grupo Inca — Perú
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
