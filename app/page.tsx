@@ -181,7 +181,7 @@ export default function HomePage() {
   const [uiVisible, setUiVisible] = useState(true)
   const [wiping, setWiping] = useState(false)
   const wipe = useMotionValue(0) // 0 -> 1: barrido de izquierda a derecha
-  const SOFT = 50 // ancho del borde degradado (mas alto = mas difuminado, casi imperceptible)
+  const SOFT = 80 // ancho del borde degradado (mas alto = mas difuminado, casi imperceptible)
   const LAG = 8 // adelanto minimo: el poster arranca apenas avanza el frente blanco
   const SPAN = 100 + LAG + SOFT
   // Frente lider (blanco) y frente seguidor (poster) avanzan casi juntos, muy difuminados
