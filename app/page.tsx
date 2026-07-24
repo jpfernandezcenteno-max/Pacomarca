@@ -223,6 +223,27 @@ export default function HomePage() {
     }
   }
 
+  // Pantalla completa (movil): rota a horizontal para ver el video en todo el celular
+  const goFullscreen = () => {
+    const v = videoRef.current as any
+    if (!v) return
+    try { v.play() } catch {}
+    // iOS Safari: fullscreen nativo del <video> (rota solo)
+    if (v.webkitEnterFullscreen) {
+      v.webkitEnterFullscreen()
+      return
+    }
+    const req = v.requestFullscreen || v.webkitRequestFullscreen
+    if (req) {
+      Promise.resolve(req.call(v))
+        .then(() => {
+          const o = (screen as any).orientation
+          if (o && o.lock) o.lock('landscape').catch(() => {})
+        })
+        .catch(() => {})
+    }
+  }
+
   // Al terminar: barrido con dos frentes (blanco cubre, poster revela detras), luego crece
   const endTransition = () => {
     setWiping(true)
@@ -363,6 +384,17 @@ export default function HomePage() {
         {/* Controles — solo en modo video */}
         {cinema && (
           <div className="absolute bottom-8 right-8 z-20 flex items-center gap-3">
+            {/* Pantalla completa / rotar — solo en movil */}
+            <button
+              onClick={goFullscreen}
+              className="md:hidden bg-white/10 hover:bg-white/25 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200"
+              aria-label="Ver en pantalla completa"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 9V5a1 1 0 011-1h4M20 9V5a1 1 0 00-1-1h-4M4 15v4a1 1 0 001 1h4M20 15v4a1 1 0 01-1 1h-4" />
+              </svg>
+            </button>
+
             {/* Play / Pausa */}
             <button
               onClick={togglePlay}
