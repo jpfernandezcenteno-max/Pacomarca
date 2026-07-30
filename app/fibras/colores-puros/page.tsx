@@ -58,7 +58,7 @@ export default function ColoresPurosPage() {
           {/* Fiber sample */}
           <FadeUp>
             <div className="flex items-center justify-center mb-10">
-              <div className="w-80 h-80 rounded-full overflow-hidden relative">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden relative">
                 <Image src="/fibras/fibra-colores.jpg" alt="Colores Puros" fill className="object-cover scale-[1.2] object-center" />
               </div>
             </div>
