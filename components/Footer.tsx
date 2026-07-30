@@ -132,7 +132,7 @@ export default function Footer() {
         </div>
 
         {/* Nav sections — mobile/tablet accordion */}
-        <div className="mb-16 divide-y divide-white/10 border-t border-white/10 lg:hidden">
+        <div className="divide-y divide-white/10 border-t border-white/10 lg:hidden">
           {footerSections.map((section) => {
             const isOpen = openSection === section.title
             return (
