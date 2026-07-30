@@ -304,8 +304,8 @@ export default function PasantiasPage() {
                           className={`object-cover transition-all duration-500 ${isOpen ? '' : 'grayscale'}`}
                         />
                       </div>
-                      <div className="flex-1 flex items-center justify-between gap-4 p-5 sm:p-7">
-                        <div>
+                      <div className="flex-1 flex items-center justify-between gap-2 sm:gap-4 p-5 sm:p-7">
+                        <div className="min-w-0">
                           <p className="text-xs tracking-[0.25em] uppercase text-gold mb-2">Modalidad {i + 1}</p>
                           <h3 className="font-serif text-xl sm:text-2xl text-ink mb-1.5">{m.title}</h3>
                           <p className="text-xs sm:text-sm text-ink/50">{m.participantes}</p>

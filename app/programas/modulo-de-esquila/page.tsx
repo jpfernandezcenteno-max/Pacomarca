@@ -43,9 +43,9 @@ export default function ModuloDeEsquilaPage() {
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeUp>
-            <div className="inline-block bg-gold text-white px-8 py-5 mb-10">
+            <div className="inline-block max-w-full bg-gold text-white px-5 sm:px-8 py-5 mb-10">
               <p className="text-xs tracking-[0.25em] uppercase opacity-80 mb-1">Impacto acumulado</p>
-              <p className="font-serif text-4xl">9 módulos implementados</p>
+              <p className="font-serif text-2xl sm:text-3xl md:text-4xl break-words">9 módulos implementados</p>
             </div>
 
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Infraestructura para la calidad</p>

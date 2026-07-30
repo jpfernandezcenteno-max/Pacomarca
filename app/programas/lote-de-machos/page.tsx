@@ -32,9 +32,9 @@ export default function LoteDeMachosPage() {
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <FadeUp>
-            <div className="inline-block bg-gold text-white px-8 py-5 mb-10">
+            <div className="inline-block max-w-full bg-gold text-white px-5 sm:px-8 py-5 mb-10">
               <p className="text-xs tracking-[0.25em] uppercase opacity-80 mb-1">Impacto acumulado</p>
-              <p className="font-serif text-4xl">1,512 alpacas donadas a comunidades</p>
+              <p className="font-serif text-2xl sm:text-3xl md:text-4xl break-words">1,512 alpacas donadas a comunidades</p>
             </div>
 
             <blockquote className="border-l-4 border-gold pl-6 mb-8">

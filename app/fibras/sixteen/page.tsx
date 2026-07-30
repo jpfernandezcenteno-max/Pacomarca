@@ -34,10 +34,10 @@ export default function SixteenPage() {
           <FadeUp>
             <div className="flex items-center justify-center">
               <div className="relative">
-                <div className="w-80 h-80 rounded-full overflow-hidden relative">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden relative">
                   <Image src="/fibras/fibra-divine-imperial-sixteen.jpg" alt="Sixteen Alpaca" fill className="object-cover scale-[1.2] object-center" />
                 </div>
-                <div className="absolute -top-4 -right-4 bg-gold text-white text-xs tracking-[0.1em] px-4 py-2">
+                <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 bg-gold text-white text-[10px] sm:text-xs tracking-[0.1em] px-3 py-1.5 sm:px-4 sm:py-2 whitespace-nowrap">
                   &lt; 17 µm
                 </div>
               </div>

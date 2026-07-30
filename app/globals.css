@@ -16,6 +16,12 @@ html {
 
 body {
   @apply bg-white text-ink font-sans antialiased;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+img, video {
+  max-width: 100%;
 }
 
 h1, h2, h3, h4 {

@@ -81,7 +81,8 @@ export default function PoliticaCookiesPage() {
             <p className="mb-6">Las cookies mencionadas no identifican personalmente a los Usuarios web, pues solo proporcionan información estadística anónima sobre la navegación en este sitio.</p>
 
             <h3 className="font-medium text-ink mb-3">Inca Tops</h3>
-            <table className="w-full border-collapse text-sm mb-8">
+            <div className="overflow-x-auto mb-8">
+            <table className="w-full min-w-[480px] border-collapse text-sm">
               <thead>
                 <tr className="bg-beige">
                   <th className="border border-sand/50 px-4 py-2 text-left font-medium text-ink">Nombre</th>
@@ -96,9 +97,11 @@ export default function PoliticaCookiesPage() {
                 <tr><td className="border border-sand/50 px-4 py-2">_gid</td><td className="border border-sand/50 px-4 py-2">Cookies de tercero</td><td className="border border-sand/50 px-4 py-2">Cookies persistentes</td><td className="border border-sand/50 px-4 py-2">Cookies de análisis</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3 className="font-medium text-ink mb-3">Pacomarca</h3>
-            <table className="w-full border-collapse text-sm mb-8">
+            <div className="overflow-x-auto mb-8">
+            <table className="w-full min-w-[480px] border-collapse text-sm">
               <thead>
                 <tr className="bg-beige">
                   <th className="border border-sand/50 px-4 py-2 text-left font-medium text-ink">Nombre</th>
@@ -116,9 +119,11 @@ export default function PoliticaCookiesPage() {
                 <tr><td className="border border-sand/50 px-4 py-2">__utmtb</td><td className="border border-sand/50 px-4 py-2">Cookies de tercero</td><td className="border border-sand/50 px-4 py-2">Cookies persistentes</td><td className="border border-sand/50 px-4 py-2">Cookies de análisis</td></tr>
               </tbody>
             </table>
+            </div>
 
             <h3 className="font-medium text-ink mb-3">Amano Yarns</h3>
-            <table className="w-full border-collapse text-sm">
+            <div className="overflow-x-auto">
+            <table className="w-full min-w-[480px] border-collapse text-sm">
               <thead>
                 <tr className="bg-beige">
                   <th className="border border-sand/50 px-4 py-2 text-left font-medium text-ink">Nombre</th>
@@ -134,6 +139,7 @@ export default function PoliticaCookiesPage() {
                 <tr><td className="border border-sand/50 px-4 py-2">_gat</td><td className="border border-sand/50 px-4 py-2">Cookies de tercero</td><td className="border border-sand/50 px-4 py-2">Cookies persistentes</td><td className="border border-sand/50 px-4 py-2">Cookies de análisis</td></tr>
               </tbody>
             </table>
+            </div>
           </section>
 
           <section>
