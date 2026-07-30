@@ -532,8 +532,8 @@ export default function HomePage() {
           </FadeUp>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {stats.map((stat, i) => (
-              <FadeUp key={stat.label} delay={i * 0.1}>
-                <div className="text-center p-4 sm:p-6 lg:p-8 bg-white/60">
+              <FadeUp key={stat.label} delay={i * 0.1} className="h-full">
+                <div className="h-full flex flex-col items-center justify-center text-center p-4 sm:p-6 lg:p-8 bg-white/60">
                   <div className="text-gold/70 mb-4 flex justify-center">{stat.icon}</div>
                   <p className="font-serif text-2xl sm:text-4xl lg:text-6xl text-gold mb-3">{stat.number}</p>
                   <p className="text-sm text-ink/60 leading-snug">{stat.label}</p>
