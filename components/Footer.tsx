@@ -132,11 +132,11 @@ export default function Footer() {
         </div>
 
         {/* Nav sections — mobile/tablet accordion */}
-        <div className="mb-16 border-t border-white/10 lg:hidden">
+        <div className="mb-16 divide-y divide-white/10 border-t border-white/10 lg:hidden">
           {footerSections.map((section) => {
             const isOpen = openSection === section.title
             return (
-              <div key={section.title} className="border-b border-white/10">
+              <div key={section.title}>
                 <button
                   onClick={() => setOpenSection(isOpen ? null : section.title)}
                   className="flex w-full items-center justify-between py-5 text-left"
