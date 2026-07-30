@@ -1,5 +1,9 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const footerSections = [
   {
@@ -46,13 +50,15 @@ const footerSections = [
 ]
 
 export default function Footer() {
+  const [openSection, setOpenSection] = useState<string | null>(null)
+
   return (
     <footer className="bg-ink text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
         {/* Top section */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 mb-16">
+        <div className="mb-16 lg:grid lg:grid-cols-5 lg:gap-16">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="mb-12 lg:col-span-1 lg:mb-0">
             <Link href="/">
               <span className="font-serif text-2xl tracking-[0.25em] text-white block mb-3">
                 PACOMARCA
@@ -101,26 +107,82 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Nav columns */}
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-xs tracking-[0.25em] uppercase text-gold mb-6">
-                {section.title}
-              </h3>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-white/50 hover:text-white transition-colors duration-150"
+          {/* Nav columns — desktop only, always expanded */}
+          <div className="hidden lg:contents">
+            {footerSections.map((section) => (
+              <div key={section.title}>
+                <h3 className="text-xs tracking-[0.25em] uppercase text-gold mb-6">
+                  {section.title}
+                </h3>
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-white/50 hover:text-white transition-colors duration-150"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Nav sections — mobile/tablet accordion */}
+        <div className="mb-16 border-t border-white/10 lg:hidden">
+          {footerSections.map((section) => {
+            const isOpen = openSection === section.title
+            return (
+              <div key={section.title} className="border-b border-white/10">
+                <button
+                  onClick={() => setOpenSection(isOpen ? null : section.title)}
+                  className="flex w-full items-center justify-between py-5 text-left"
+                  aria-expanded={isOpen}
+                >
+                  <span className="text-xs tracking-[0.25em] uppercase text-gold">
+                    {section.title}
+                  </span>
+                  <svg
+                    className={`h-4 w-4 shrink-0 text-white/40 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: 'easeInOut' }}
+                      className="overflow-hidden"
                     >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                      <ul className="space-y-3 pb-6">
+                        {section.links.map((link) => (
+                          <li key={link.href}>
+                            <Link
+                              href={link.href}
+                              className="text-sm text-white/50 hover:text-white transition-colors duration-150"
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            )
+          })}
         </div>
 
         {/* Bottom */}
