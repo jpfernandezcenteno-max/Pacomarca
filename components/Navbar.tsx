@@ -161,7 +161,7 @@ export default function Navbar() {
                 </div>
               ))}
 
-              <LanguageToggle className={scrolled ? 'text-ink' : 'text-white'} />
+              <LanguageToggle className={`pl-4 ${scrolled ? 'text-ink' : 'text-white'}`} />
             </div>
 
             {/* Mobile hamburger */}
