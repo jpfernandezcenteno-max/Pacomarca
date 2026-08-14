@@ -1,21 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Exporta el sitio como HTML/CSS/JS estático (carpeta "out/") para subir a cPanel.
+  output: 'export',
   reactStrictMode: true,
   poweredByHeader: false,
-  compress: true,
+  // URLs con barra final -> genera carpeta/index.html (más compatible con Apache/cPanel).
+  trailingSlash: true,
   images: {
-    // Todas las imágenes son locales; Next las sirve en AVIF/WebP automáticamente.
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 31536000,
-  },
-  async redirects() {
-    return [
-      {
-        source: '/programas/abrigando-corazones',
-        destination: '/programas/tejiendo-corazones',
-        permanent: true,
-      },
-    ]
+    // En hosting estático no hay optimizador de imágenes en tiempo real.
+    unoptimized: true,
   },
 }
 

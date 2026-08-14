@@ -32,8 +32,10 @@ function ContactForm() {
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
   const [mensaje, setMensaje] = useState('')
+  const [website, setWebsite] = useState('') // honeypot anti-spam
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
 
   useEffect(() => {
     if (rolParam) setRol(rolParam)
@@ -42,10 +44,24 @@ function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // Simulate form submission
-    await new Promise((r) => setTimeout(r, 1200))
-    setLoading(false)
-    setSubmitted(true)
+    setErrorMsg('')
+    try {
+      const res = await fetch('/contacto.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ rol, nombre, email, mensaje, website }),
+      })
+      const data = await res.json().catch(() => ({ ok: false }))
+      if (res.ok && data.ok) {
+        setSubmitted(true)
+      } else {
+        setErrorMsg(data.error || 'No se pudo enviar el mensaje. Inténtalo de nuevo.')
+      }
+    } catch {
+      setErrorMsg('No se pudo enviar el mensaje. Revisa tu conexión e inténtalo de nuevo.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -72,6 +88,21 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
+      {/* Honeypot anti-spam: oculto; los humanos lo dejan vacío */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden" tabIndex={-1}>
+        <label>
+          No llenar
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+        </label>
+      </div>
+
       {/* Role selection */}
       <div>
         <p className="text-xs tracking-[0.2em] uppercase text-ink/50 mb-4">Soy:</p>
@@ -148,6 +179,13 @@ function ContactForm() {
           placeholder="¿Cómo podemos ayudarte? Cuéntanos sobre ti y tus intereses..."
         />
       </div>
+
+      {/* Error */}
+      {errorMsg && (
+        <p className="text-sm text-red-600 -mb-4" role="alert">
+          {errorMsg}
+        </p>
+      )}
 
       {/* Submit */}
       <button
