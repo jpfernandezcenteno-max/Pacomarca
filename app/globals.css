@@ -66,13 +66,20 @@ h1, h2, h3, h4 {
 /* Google Translate: ocultar banner/UI propia y evitar que empuje el layout */
 .goog-te-banner-frame,
 .goog-te-banner-frame.skiptranslate,
+iframe.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
 .goog-tooltip,
 #goog-gt-tt,
 .goog-te-balloon-frame {
   display: none !important;
+  visibility: hidden !important;
 }
-body {
+body,
+html.translated-ltr body,
+html.translated-rtl body {
   top: 0 !important;
+  position: static !important;
 }
 #google_translate_element {
   position: absolute !important;

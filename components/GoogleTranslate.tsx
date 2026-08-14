@@ -50,6 +50,21 @@ export default function GoogleTranslate() {
       s.async = true
       document.body.appendChild(s)
     }
+
+    // Refuerzo: quitar la barra superior de Google y evitar el desplazamiento del body
+    const stripBar = () => {
+      if (document.body.style.top && document.body.style.top !== '0px') {
+        document.body.style.top = '0px'
+      }
+      document
+        .querySelectorAll<HTMLElement>('.goog-te-banner-frame, iframe.skiptranslate, .VIpgJd-ZVi9od-ORHb-OEVmcd')
+        .forEach((el) => {
+          el.style.display = 'none'
+        })
+    }
+    const interval = window.setInterval(stripBar, 300)
+    window.setTimeout(() => window.clearInterval(interval), 4000)
+    return () => window.clearInterval(interval)
   }, [])
 
   return <div id="google_translate_element" aria-hidden />
