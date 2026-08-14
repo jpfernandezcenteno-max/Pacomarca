@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
+import LanguageToggle from './LanguageToggle'
 
 const navItems = [
   {
@@ -159,6 +160,8 @@ export default function Navbar() {
                   </AnimatePresence>
                 </div>
               ))}
+
+              <LanguageToggle className={scrolled ? 'text-ink' : 'text-white'} />
             </div>
 
             {/* Mobile hamburger */}
@@ -265,7 +268,11 @@ export default function Navbar() {
                 ))}
               </div>
 
-              <div className="mt-12 pt-8 border-t border-sand/40">
+              <div className="mt-10 pt-6 border-t border-sand/40">
+                <LanguageToggle className="text-ink text-sm" />
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-sand/40">
                 <p className="text-xs tracking-[0.25em] text-ink/40 uppercase mb-4">Contacto</p>
                 <p className="text-sm text-ink/60">T++ 51 54 602500 Anexo 460/461</p>
                 <p className="text-sm text-ink/60">Arequipa, Perú</p>

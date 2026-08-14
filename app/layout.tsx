@@ -3,6 +3,7 @@ import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import GoogleTranslate from '@/components/GoogleTranslate'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -120,6 +121,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <GoogleTranslate />
         <Navbar />
         <main>{children}</main>
         <Footer />
