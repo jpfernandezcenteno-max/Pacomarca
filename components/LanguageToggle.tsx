@@ -27,27 +27,27 @@ export default function LanguageToggle({ className = '' }: { className?: string 
   }
 
   return (
-    <div
+    <span
       translate="no"
-      className={`notranslate flex items-center gap-1.5 text-xs tracking-[0.15em] font-medium select-none ${className}`}
+      className={`notranslate inline-block text-xs tracking-[0.15em] font-medium select-none ${className}`}
     >
       <button
         type="button"
         onClick={() => change('es')}
         aria-label="Español"
-        className={`transition-opacity duration-200 ${lang === 'es' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
+        className={`align-baseline transition-opacity duration-200 ${lang === 'es' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
       >
         ES
       </button>
-      <span className="opacity-30">|</span>
+      <span className="opacity-30 mx-1.5 align-baseline">|</span>
       <button
         type="button"
         onClick={() => change('en')}
         aria-label="English"
-        className={`transition-opacity duration-200 ${lang === 'en' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
+        className={`align-baseline transition-opacity duration-200 ${lang === 'en' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
       >
         EN
       </button>
-    </div>
+    </span>
   )
 }
