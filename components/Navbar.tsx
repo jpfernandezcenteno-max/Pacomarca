@@ -269,7 +269,7 @@ export default function Navbar() {
               </div>
 
               <div className="mt-10 pt-6 border-t border-sand/40">
-                <LanguageToggle className="text-ink text-sm" />
+                <LanguageToggle className="text-ink" />
               </div>
 
               <div className="mt-8 pt-8 border-t border-sand/40">
