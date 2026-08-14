@@ -26,16 +26,19 @@ export default function LanguageToggle({ className = '' }: { className?: string 
     window.location.reload()
   }
 
+  const btn =
+    'inline pb-1 border-b border-transparent hover:border-gold transition duration-300'
+
   return (
     <span
       translate="no"
-      className={`notranslate whitespace-nowrap uppercase text-xs tracking-[0.15em] font-medium pb-1 border-b border-transparent hover:border-gold transition-colors duration-300 ${className}`}
+      className={`notranslate whitespace-nowrap uppercase text-xs tracking-[0.15em] font-medium ${className}`}
     >
       <button
         type="button"
         onClick={() => change('es')}
         aria-label="Español"
-        className={`inline transition-opacity duration-200 ${lang === 'es' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
+        className={`${btn} ${lang === 'es' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
       >
         ES
       </button>
@@ -44,7 +47,7 @@ export default function LanguageToggle({ className = '' }: { className?: string 
         type="button"
         onClick={() => change('en')}
         aria-label="English"
-        className={`inline transition-opacity duration-200 ${lang === 'en' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
+        className={`${btn} ${lang === 'en' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
       >
         EN
       </button>
