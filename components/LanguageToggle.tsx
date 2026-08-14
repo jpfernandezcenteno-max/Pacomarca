@@ -26,31 +26,35 @@ export default function LanguageToggle({ className = '' }: { className?: string 
     window.location.reload()
   }
 
-  const btn =
-    'inline pb-1 border-b border-transparent hover:border-gold transition duration-300'
+  const cls =
+    'cursor-pointer pb-1 border-b border-transparent hover:border-gold transition duration-300'
 
   return (
     <span
       translate="no"
       className={`notranslate whitespace-nowrap uppercase text-xs tracking-[0.15em] font-medium ${className}`}
     >
-      <button
-        type="button"
-        onClick={() => change('es')}
+      <span
+        role="button"
+        tabIndex={0}
         aria-label="Español"
-        className={`${btn} ${lang === 'es' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
+        onClick={() => change('es')}
+        onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && change('es')}
+        className={`${cls} ${lang === 'es' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
       >
         ES
-      </button>
+      </span>
       <span className="opacity-30 mx-1.5">|</span>
-      <button
-        type="button"
-        onClick={() => change('en')}
+      <span
+        role="button"
+        tabIndex={0}
         aria-label="English"
-        className={`${btn} ${lang === 'en' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
+        onClick={() => change('en')}
+        onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && change('en')}
+        className={`${cls} ${lang === 'en' ? 'opacity-100' : 'opacity-50 hover:opacity-100'}`}
       >
         EN
-      </button>
+      </span>
     </span>
   )
 }
