@@ -10,8 +10,8 @@
 // ─────────────────────────────────────────────────────────────
 //  CONFIGURACIÓN  (ajustar estos 3 valores en el hosting)
 // ─────────────────────────────────────────────────────────────
-$DESTINATARIO = 'contacto@pacomarca.com';          // Correo donde llegan los mensajes
-$REMITENTE    = 'no-reply@pacomarca.com';           // Debe ser un correo del propio dominio (cPanel) para buena entregabilidad
+$DESTINATARIO = 'info@pacomarca.com';               // Correo donde llegan los mensajes
+$REMITENTE    = 'info@pacomarca.com';               // Correo del propio dominio (cPanel) para buena entregabilidad
 $ASUNTO_BASE  = 'Nuevo mensaje de contacto — Pacomarca';
 // ─────────────────────────────────────────────────────────────
 
