@@ -454,13 +454,36 @@ export default function HomePage() {
               Grupo Inca — Perú
             </p>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-8 max-w-4xl mx-auto">
+              {/* Espanol */}
               <motion.span
-                className="inline"
+                translate="no"
+                className="notranslate lang-es"
                 initial="hidden"
                 animate="visible"
                 variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.6 } } }}
               >
                 {['El', 'principal', 'Ecosistema', 'de', 'Alpaca', 'Sostenible', 'del', 'mundo'].map((word, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block mr-[0.3em]"
+                    variants={{
+                      hidden: { opacity: 0, y: 20 },
+                      visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.span>
+              {/* Ingles (traduccion forzada) */}
+              <motion.span
+                translate="no"
+                className="notranslate lang-en"
+                initial="hidden"
+                animate="visible"
+                variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.6 } } }}
+              >
+                {["The", "World's", 'Leading', 'Sustainable', 'Alpaca', 'Ecosystem'].map((word, i) => (
                   <motion.span
                     key={i}
                     className="inline-block mr-[0.3em]"
