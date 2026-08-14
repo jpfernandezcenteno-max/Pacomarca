@@ -341,11 +341,7 @@ export default function PublicacionesPage() {
           </FadeUp>
         </div>
         <div className="relative">
-          <motion.div
-            className="flex gap-16 items-center"
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-          >
+          <div className="flex gap-16 items-center marquee-track marquee-half">
             {[...journalLogos, ...journalLogos, ...journalLogos, ...journalLogos].map((src, i) => (
               <div
                 key={i}
@@ -358,7 +354,7 @@ export default function PublicacionesPage() {
                 />
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
     </>

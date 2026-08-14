@@ -333,6 +333,9 @@ export default function HomePage() {
 
   return (
     <>
+      {/* Preload del poster del hero para un LCP rapido */}
+      <link rel="preload" as="image" href="/home/hero-poster.jpg" fetchPriority="high" />
+
       {/* HERO */}
       <section
         ref={sectionRef}
@@ -344,7 +347,7 @@ export default function HomePage() {
           ref={videoRef}
           muted
           playsInline
-          preload="metadata"
+          preload="none"
           poster="/home/hero-poster.jpg"
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
