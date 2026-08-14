@@ -93,3 +93,16 @@ html.translated-rtl body {
   background: none !important;
   box-shadow: none !important;
 }
+
+/* Traducciones forzadas (<T es en />): mostrar solo la version del idioma activo */
+.lang-en {
+  display: none;
+}
+html.translated-ltr .lang-es,
+html.translated-rtl .lang-es {
+  display: none;
+}
+html.translated-ltr .lang-en,
+html.translated-rtl .lang-en {
+  display: inline;
+}
