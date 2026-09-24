@@ -28,6 +28,10 @@ const featuredPublication = {
 
 // Revistas indexadas
 const publicacionesIndexadas: Pub[] = [
+  { title: 'Association of ASIP and MC1R genotypes with the quantitative color variation in Huacaya alpaca', authors: 'Pinares, R.; Daverio, M.S.; Cruz, A.; Gutiérrez-Reynoso, G.A.; Munyard, K.A.', source: 'Small Ruminant Research', year: '2026', ref: 'Online ahead of print, 107704', doi: 'https://doi.org/10.1016/j.smallrumres.2026.107704' },
+  { title: 'Genetic parameters of fiber density traits and their relationship with textile traits in alpacas', authors: 'Cruz, A.; Quispe, E.; Yucra, A.; Morante, R.; Burgos, A.; Quispe, M.D.; Gutiérrez, J.P.; Gutiérrez-Reynoso, G.', source: 'Livestock Science', year: '2025', ref: '299, 105754', doi: 'https://doi.org/10.1016/j.livsci.2025.105754' },
+  { title: 'Genomic scan of selective sweeps in an alpaca population subjected to directional selection for fibre quality traits', authors: 'Arias, K.D.; More, M.; Goyache, F.; Cruz, A.; Burgos, A.; Gutiérrez, G.; Cervantes, I.; Gutiérrez, J.P.', source: 'Animal', year: '2025', ref: '19, 101674', doi: 'https://doi.org/10.1016/j.animal.2025.101674' },
+  { title: 'Flexible Software Architecture for Genetic Data Processing in Alpaca Breeding Programs', authors: 'Gama-Zapata, A.; Barra-Quipse, F.; Vidal, E.', source: 'International Journal of Advanced Computer Science and Applications (IJACSA)', year: '2025', ref: '16(4)' },
   { title: 'Alpaca (Vicugna pacos) skin analyzed under architecture and structure', authors: 'Sasahara, T.H.C.; Durand Neira, L.M.; Gomes, S.P.; McManus, C.M.; Chiarello, G.; Miglino, M.A.', source: 'International Journal of Morphology', year: '2024', ref: '42(2), 256–260' },
   { title: 'Genetic parameters for different types of medullated fibre in Alpacas', authors: 'Cruz, A.; Murillo, Y.; Burgos, A.; Yucra, A.; Morante, R.; Quispe, M.; Quispe, C.; Quispe, E.; Gutiérrez, J.P.', source: 'Journal of Animal Breeding and Genetics', year: '2024', ref: 'Online ahead of print' },
   { title: 'Genome-Wide Association Study of Fiber Diameter in Alpacas', authors: 'More, M.; Veli, E.; Cruz, A.; Gutiérrez, J.P.; Gutiérrez, G.; Ponce de León Bravo, F.A.', source: 'Animals', year: '2023', ref: '13, 3316' },
@@ -36,6 +40,7 @@ const publicacionesIndexadas: Pub[] = [
   { title: 'Genomic selection improves genetic gain for fiber traits in a breeding program for alpacas', authors: 'Cruz, A.; Sedano, J.; Burgos, A.; Gutiérrez, J.P.; Wurzinger, M.; Gutiérrez-Reynoso, G.', source: 'Livestock Science', year: '2023', ref: '270', doi: 'https://doi.org/10.1016/j.livsci.2023.105195' },
   { title: 'Relationship between the incidence and degree of medullation with the diameter of alpaca fibers evaluated using a novel device based on artificial intelligence', authors: 'Quispe, E.; Quispe, M.D.; Quispe, C.; Poma, A.; Paucar-Chanca, R.; Cruz, A.; McGregor, B.', source: 'The Journal of the Textile Institute', year: '2022', ref: '1-16' },
   { title: 'Application of artificial intelligence and digital images analysis to automatically determine the percentage of fiber medullation in alpaca fleece samples', authors: 'Quispe, M.D.; Serrano-Arriezu, L.; Trigo, J.D.; Quispe, C.; Poma, A.; Quispe, E.', source: 'Small Ruminant Research', year: '2022', ref: '213, 106724' },
+  { title: 'Design-based stereology in alpaca skin (Vicugna pacos): Impacts on fiber production', authors: 'Sasahara, T.H.C.; McManus, C.M.; Durand Neira, L.M.; Gomes, S.P.; Borghesi, J.; Giancoli-Kato, M.; Del Colletto, A.M.S.; Carreira, A.C.O.; Chiarello, G.; Miglino, M.A.', source: 'Small Ruminant Research', year: '2022', ref: '208, 106629', doi: 'https://doi.org/10.1016/j.smallrumres.2022.106629' },
   { title: 'ssGBLUP method improve the accuracy of breeding value prediction in Huacaya alpaca', authors: 'Mancisidor, B.; Cruz, A.; Gutiérrez, G.; Burgos, A.; Moron, J.; Wurzinger, M.; Gutiérrez, J.P.', source: 'Animals', year: '2021', ref: '11(11), 3052', doi: 'https://doi.org/10.3390/ani11113052' },
   { title: 'Software de gestión para pedigrí y producción de camélidos de nuevo mundo: Pacokipu y Llamakipu', authors: 'Cruz, A.; Gutiérrez, G.A.; Burgos, A.; Morante, R.; Wurzinger, M.; Gutiérrez, J.P.', source: 'Revista de Investigación Veterinaria del Perú', year: '2021', ref: '32(4), e19355' },
   { title: 'Colorimetry analysis of coat color and its relationship with fiber traits in alpacas', authors: 'Cruz, A.; Yucra, A.; Gutiérrez, G.A.; Burgos, A.; Morante, R.; Gutiérrez, J.P.; Wurzinger, M.', source: 'Animal', year: '2021', ref: '15(5), 100219' },
@@ -106,8 +111,15 @@ const otrasPub: Pub[] = [
 // PDFs de descarga, alojados en nuestro propio host (public/). Mismo orden que los arrays de arriba.
 const PDF_BASE = '/conocimiento/publicaciones/papers'
 const indexadasFiles = [
+  // Nuevas (2026 y 2025), al inicio del listado
+  '/ind-31.pdf', '/ind-32.pdf', '/ind-33.pdf', '/ind-34.pdf',
+  // Existentes 2024–2022
   '/ind-01.pdf', '/ind-02.pdf', '/ind-03.pdf', '/ind-04.pdf', '/ind-05.pdf',
-  '/ind-06.pdf', '/ind-07.pdf', '/ind-08.pdf', '/ind-09.pdf', '/ind-10.pdf',
+  '/ind-06.pdf', '/ind-07.pdf', '/ind-08.pdf',
+  // Nueva 2022 (stereology), junto a las otras de 2022
+  '/ind-35.pdf',
+  // Resto existentes (2021 en adelante)
+  '/ind-09.pdf', '/ind-10.pdf',
   '/ind-11.pdf', '/ind-12.pdf', '/ind-13.pdf', '/ind-14.pdf', '/ind-15.pdf',
   '/ind-16.pdf', '/ind-17.pdf', '/ind-18.pdf', '/ind-19.pdf', '/ind-20.pdf',
   '/ind-21.pdf', '/ind-22.pdf', '/ind-23.pdf', '/ind-24.pdf', '/ind-25.pdf',
