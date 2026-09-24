@@ -67,6 +67,14 @@ const publicacionesIndexadas: Pub[] = [
 
 // Otras publicaciones
 const otrasPub: Pub[] = [
+  { title: 'Restoring the black color of alpaca fiber', authors: 'Cruz, A.; Cayllahua, R.; Yucra, A.; Burgos, A.; Gutiérrez-Reynoso, G.; Gutiérrez, J.P.', source: '13th World Congress on Genetics Applied to Livestock Production (WCGALP)', year: '2026', ref: 'Artículo 24207' },
+  { title: 'Genetic parameters of fibre density in alpacas', authors: 'Cruz, A.; Burgos, A.; Yucra, A.; Morante, R.; Gutiérrez-Reynoso, G.; Quispe, M.; Quispe, E.; Gutiérrez, J.P.', source: '75th Annual Meeting of the European Federation of Animal Science (EAAP)', year: '2024', ref: 'Florencia, Italia. Book of Abstracts No. 34, Session 26' },
+  { title: 'Alternativas de selección y respuestas esperadas para diámetro de fibra, porcentaje de medulación y peso de vellón', authors: 'Gutiérrez, J.P.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
+  { title: 'Selección por densidad de fibras para mejorar diámetro y peso de vellón en alpacas', authors: 'Cruz, A.; Quispe, E.; Gutiérrez, J.P.; Gutiérrez, G.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
+  { title: 'El análisis transcriptómico de la piel de Vicugna pacos revela genes estructurales y vías de señalización asociados con las características de la fibra', authors: 'Pahuara Farfán, L.E.; Jimenez-Espinoza, A.; Villegas Llerena, C.; Cruz Camacho, L.A.; Obispo Achallma, D.M.; Gutiérrez Reynoso, G.A.; Acosta Conchucos, O.; Fujita, R.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
+  { title: 'Región genómica asociada a la diferencia del fenotipo de la fibra en alpacas (Vicugna pacos) Suri y Huacaya', authors: 'Pariona La Rotta, E.; Cruz Camacho, A.; Gutiérrez Reynoso, G.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
+  { title: 'Detección y conteo de camélidos mediante visión por computador usando aprendizaje profundo y técnicas de seguimiento multiobjeto', authors: 'Quispe Siancas, N.; Luque Mamani, M.; Llanos Angeles, L.; Lovon Ramos, P.; Monroy Barrios, J.; Cruz Camacho, A.; Nina Choquehuayta, W.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
+  { title: 'Leche de camélidos sudamericanos como insumo innovador en la gastronomía contemporánea y recurso para el desarrollo de comunidades altoandinas', authors: 'Sakugawa Ventura, L.; Martínez Véliz, M.; Martínez Véliz, V.; Yraja Nishiki, P.; Oliveri Carreras, A.; Tolosana Labarta, J.; Cermeño León, P.; Velásquez García, E.; Checca Quispe, J.; Meza Chatata, A.; Tintaya Salhua, L.M.; Huamán Yupanqui, L.; Huillcacuri, L.P.; Chura Quispe, R.; Cruz Camacho, A.; Reusche Soria, J.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
   { title: 'PACOMARCA, Alpacas: genética en blanco y negro', authors: 'Burgos, A.; Gutiérrez, J.P.; Cruz, A.; Gutiérrez, G.', source: 'Lima, Perú', year: '2023', ref: 'ISBN 978-612-49369-0-6' },
   { title: 'Genetic parameters of medullation types in alpaca fiber', authors: 'Cruz, A.; Murillo, Y.; Burgos, A.; Yucra, A.; Quispe, M.D.; Quispe, E.; Gutiérrez, J.P.', source: '74th Annual Meeting EAAP + WAAP + Interbull Congress', year: '2023', ref: 'Lyon, Francia. Abstract 41503' },
   { title: 'La genómica al rescate de la fibra de alpaca', authors: 'Gutiérrez R., G.; Cruz, A.; Wurzinger, M.; Gutiérrez, J.P.', source: 'Hominem Et Agrum', year: '2023', ref: '1(1), 25-26 — Universidad Nacional Agraria La Molina' },
@@ -126,6 +134,10 @@ const indexadasFiles = [
   '/ind-26.pdf', '/ind-27.pdf', '/ind-28.pdf', '/ind-29.pdf', '/ind-30.pdf',
 ]
 const otrasFiles = [
+  // Nuevas (2026, 2024) al inicio
+  '/otr-40.pdf', '/otr-41.pdf', '/otr-42.pdf', '/otr-43.pdf', '/otr-44.pdf',
+  '/otr-45.pdf', '/otr-46.pdf', '/otr-47.pdf',
+  // Existentes
   '/otr-01.pdf', '/otr-02.pdf', '/otr-03.pdf', '/otr-04.pdf', '/otr-05.pdf',
   '/otr-06.pdf', '/otr-07.pdf', '/otr-08.pdf', '/otr-09.pdf', '/otr-10.pdf',
   '/otr-11.pdf', '/otr-12.pdf', '/otr-13.pdf', '/otr-14.pdf', '',
