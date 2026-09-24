@@ -155,9 +155,9 @@ const programs = [
   },
   {
     title: 'Tejiendo Oportunidades',
-    href: '/programas/tejiendo-corazones',
+    href: '/programas/tejiendo-oportunidades',
     description: 'Kits de abrigo para niños y adultos mayores en las zonas más vulnerables de las comunidades andinas.',
-    image: '/programas/tejiendo-corazones/portada.jpg',
+    image: '/programas/tejiendo-oportunidades/portada.jpg',
     stat: '8,400+ kits donados',
   },
 ]

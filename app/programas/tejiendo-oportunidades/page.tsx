@@ -27,14 +27,14 @@ const kitItems = [
   { item: 'Hilos de alpaca', desc: 'Para que las madres y abuelas puedan continuar tejiendo para sus familias.' },
 ]
 
-export default function TejiendoCorazonesPage() {
+export default function TejiendoOportunidadesPage() {
   return (
     <>
       <PageHeader
         section="PROGRAMAS"
         title="Tejiendo Oportunidades"
         subtitle="Abrigo de alpaca para los más vulnerables de las comunidades andinas"
-        imageUrl="/programas/tejiendo-corazones/portada.jpg"
+        imageUrl="/programas/tejiendo-oportunidades/portada.jpg"
         imagePosition="object-center"
       />
 
@@ -95,7 +95,7 @@ export default function TejiendoCorazonesPage() {
             <FadeUp delay={0.2}>
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image
-                  src="/programas/tejiendo-corazones/foto-1.jpg"
+                  src="/programas/tejiendo-oportunidades/foto-1.jpg"
                   alt="Kit Abrigando Corazones de Tejiendo Oportunidades"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -148,7 +148,7 @@ export default function TejiendoCorazonesPage() {
             <FadeUp>
               <div className="relative aspect-square overflow-hidden">
                 <Image
-                  src="/programas/tejiendo-corazones/foto-2.jpg"
+                  src="/programas/tejiendo-oportunidades/foto-2.jpg"
                   alt="Artesana tejiendo con hilo de alpaca de Pacomarca"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -183,7 +183,7 @@ export default function TejiendoCorazonesPage() {
       </section>
 
       <ImageCarousel images={[
-        '/programas/tejiendo-corazones/portada.jpg',
+        '/programas/tejiendo-oportunidades/portada.jpg',
         '/programas/cabana-del-pastor/portada.jpg',
         '/programas/cabana-del-pastor/foto-1.jpg',
         '/programas/invernadero/portada.jpg',

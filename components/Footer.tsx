@@ -34,7 +34,7 @@ const footerSections = [
       { label: 'Lote de machos', href: '/programas/lote-de-machos' },
       { label: 'Módulo de esquila', href: '/programas/modulo-de-esquila' },
       { label: 'Fondo a la investigación', href: '/programas/fondo-investigacion' },
-      { label: 'Tejiendo Oportunidades', href: '/programas/tejiendo-corazones' },
+      { label: 'Tejiendo Oportunidades', href: '/programas/tejiendo-oportunidades' },
     ],
   },
   {

@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Tejiendo Oportunidades | Pacomarca',
     description: 'La fibra más fina del mundo al servicio de los más vulnerables: 8,400+ kits de abrigo donados en los Andes.',
-    url: 'https://www.pacomarca.com/programas/tejiendo-corazones',
+    url: 'https://www.pacomarca.com/programas/tejiendo-oportunidades',
   },
-  alternates: { canonical: 'https://www.pacomarca.com/programas/tejiendo-corazones' },
+  alternates: { canonical: 'https://www.pacomarca.com/programas/tejiendo-oportunidades' },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

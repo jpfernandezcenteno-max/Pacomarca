@@ -70,12 +70,12 @@ const programs = [
   {
     num: '06',
     title: 'Tejiendo Oportunidades',
-    href: '/programas/tejiendo-corazones',
+    href: '/programas/tejiendo-oportunidades',
     stat: '8,400+ kits donados',
     statNum: '8,400+',
     desc: 'Kits de abrigo para los miembros más vulnerables de las comunidades: niños y adultos mayores. Mantas, suéteres, medias, bufandas, chullos y más.',
     icon: '♡',
-    image: '/programas/tejiendo-corazones/portada.jpg',
+    image: '/programas/tejiendo-oportunidades/portada.jpg',
   },
 ]
 

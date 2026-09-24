@@ -5,10 +5,11 @@
 # Página 404 personalizada (generada por Next en /404.html)
 ErrorDocument 404 /404.html
 
-# Redirección 301: abrigando-corazones -> tejiendo-corazones
+# Redirecciones 301 hacia el nombre actual del programa (tejiendo-oportunidades)
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteRule ^programas/abrigando-corazones/?$ /programas/tejiendo-corazones/ [R=301,L]
+  RewriteRule ^programas/abrigando-corazones/?$ /programas/tejiendo-oportunidades/ [R=301,L]
+  RewriteRule ^programas/tejiendo-corazones/?$ /programas/tejiendo-oportunidades/ [R=301,L]
 </IfModule>
 
 # Compresión (gzip) de recursos de texto

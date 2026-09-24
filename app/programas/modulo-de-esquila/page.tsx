@@ -179,7 +179,7 @@ export default function ModuloDeEsquilaPage() {
         '/programas/lote-de-machos/portada.jpg',
         '/programas/lote-de-machos/foto-1.jpg',
         '/programas/fondo-investigacion/portada.jpg',
-        '/programas/tejiendo-corazones/portada.jpg',
+        '/programas/tejiendo-oportunidades/portada.jpg',
         '/programas/portada.jpg',
       ]} />
     </>
