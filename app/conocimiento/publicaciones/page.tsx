@@ -187,16 +187,6 @@ function PublicationAccordion({ title, publications, files }: { title: string; p
                         Descargar
                       </a>
                     )}
-                    {pub.doi && (
-                      <a
-                        href={pub.doi}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-xs tracking-[0.15em] uppercase text-ink/50 hover:text-gold transition-colors px-2"
-                      >
-                        DOI ↗
-                      </a>
-                    )}
                   </div>
                 </div>
               ))}
