@@ -34,7 +34,7 @@ export default function FondoInvestigacionPage() {
           <FadeUp>
             <div className="inline-block max-w-full bg-gold text-white px-5 sm:px-8 py-5 mb-10">
               <p className="text-xs tracking-[0.25em] uppercase opacity-80 mb-1">Impacto acumulado</p>
-              <p className="font-serif text-2xl sm:text-3xl md:text-4xl break-words">32 artículos científicos publicados</p>
+              <p className="font-serif text-2xl sm:text-3xl md:text-4xl break-words">35 artículos científicos publicados</p>
             </div>
 
             <blockquote className="border-l-4 border-gold pl-6 mb-8">

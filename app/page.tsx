@@ -33,7 +33,7 @@ function FadeUp({
 
 const stats = [
   {
-    number: '8',
+    number: '10',
     label: 'Cabañas del pastor construidas',
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
@@ -54,7 +54,7 @@ const stats = [
     ),
   },
   {
-    number: '1,512',
+    number: '1,605',
     label: 'Alpacas donadas a familias',
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
@@ -76,7 +76,7 @@ const stats = [
     ),
   },
   {
-    number: '32',
+    number: '35',
     label: 'Artículos científicos publicados',
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}>
@@ -144,14 +144,14 @@ const programs = [
     href: '/programas/cabana-del-pastor',
     description: 'Viviendas dignas para familias alpaqueras en las alturas andinas, con servicios básicos y equipamiento.',
     image: '/programas/cabana-del-pastor/portada.jpg',
-    stat: '8 construidas',
+    stat: '10 construidas',
   },
   {
     title: 'Lote de Machos',
     href: '/programas/lote-de-machos',
     description: 'Donación de reproductores genéticamente seleccionados para mejorar la calidad de la fibra de las comunidades.',
     image: '/programas/lote-de-machos/portada.jpg',
-    stat: '1,512 alpacas donadas',
+    stat: '1,605 alpacas donadas',
   },
   {
     title: 'Tejiendo Oportunidades',

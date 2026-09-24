@@ -242,7 +242,7 @@ export default function PublicacionesPage() {
           <FadeUp delay={0.2}>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { num: '32+', label: 'Artículos científicos publicados' },
+                { num: '35+', label: 'Artículos científicos publicados' },
                 { num: '13M+', label: 'Datos de base' },
                 { num: '23+', label: 'Universidades colaboradoras' },
                 { num: '5', label: 'Continentes de investigadores' },

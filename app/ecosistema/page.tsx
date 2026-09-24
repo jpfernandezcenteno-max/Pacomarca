@@ -28,7 +28,7 @@ const actors = [
     href: '/ecosistema/cientificos',
     icon: '🔬',
     description: 'Más de 30 investigadores y 23 universidades de todo el mundo colaboran con Pacomarca para generar conocimiento científico riguroso que mejora las condiciones de las comunidades alpaqueras y la calidad de las fibras.',
-    stat: '32 artículos publicados',
+    stat: '35 artículos publicados',
   },
   {
     title: 'Marcas Aliadas',

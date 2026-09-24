@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Cabaña del Pastor',
-  description: 'Viviendas dignas para familias alpaqueras en los Andes: calefacción, cocina mejorada, agua caliente, energía solar e invernadero. 8 cabañas construidas por Pacomarca.',
+  description: 'Viviendas dignas para familias alpaqueras en los Andes: calefacción, cocina mejorada, agua caliente, energía solar e invernadero. 10 cabañas construidas por Pacomarca.',
   openGraph: {
     title: 'Cabaña del Pastor | Pacomarca',
     description: 'Viviendas dignas con calefacción, agua caliente, energía solar e invernadero para familias alpaqueras altoandinas.',

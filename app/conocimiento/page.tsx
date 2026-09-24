@@ -41,7 +41,7 @@ const sections = [
     label: '04',
     title: 'Publicaciones',
     href: '/conocimiento/publicaciones',
-    desc: 'Más de 32 artículos científicos publicados en revistas indexadas internacionales. El conocimiento Pacomarca, disponible para la comunidad científica global.',
+    desc: 'Más de 35 artículos científicos publicados en revistas indexadas internacionales. El conocimiento Pacomarca, disponible para la comunidad científica global.',
     tag: 'Investigación',
   },
   {

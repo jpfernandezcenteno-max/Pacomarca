@@ -178,7 +178,7 @@ export default function CientificosPage() {
                 { num: '13M+', label: 'Datos genéticos' },
                 { num: '30+', label: 'Investigadores' },
                 { num: '23+', label: 'Universidades' },
-                { num: '32', label: 'Artículos publicados' },
+                { num: '35', label: 'Artículos publicados' },
                 { num: '5', label: 'Continentes' },
                 { num: '1', label: 'Base de datos única' },
               ].map((s) => (
