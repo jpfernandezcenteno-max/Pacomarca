@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Tejiendo Corazones',
+  title: 'Tejiendo Oportunidades',
   description: 'Kits de abrigo de alpaca para niños y adultos mayores de las comunidades altoandinas. 8,400+ kits donados por Pacomarca a las familias más vulnerables.',
   openGraph: {
-    title: 'Tejiendo Corazones | Pacomarca',
+    title: 'Tejiendo Oportunidades | Pacomarca',
     description: 'La fibra más fina del mundo al servicio de los más vulnerables: 8,400+ kits de abrigo donados en los Andes.',
     url: 'https://www.pacomarca.com/programas/tejiendo-corazones',
   },

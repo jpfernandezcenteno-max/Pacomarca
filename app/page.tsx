@@ -154,7 +154,7 @@ const programs = [
     stat: '1,512 alpacas donadas',
   },
   {
-    title: 'Tejiendo Corazones',
+    title: 'Tejiendo Oportunidades',
     href: '/programas/tejiendo-corazones',
     description: 'Kits de abrigo para niños y adultos mayores en las zonas más vulnerables de las comunidades andinas.',
     image: '/programas/tejiendo-corazones/portada.jpg',

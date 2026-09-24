@@ -32,7 +32,7 @@ export default function TejiendoCorazonesPage() {
     <>
       <PageHeader
         section="PROGRAMAS"
-        title="Tejiendo Corazones"
+        title="Tejiendo Oportunidades"
         subtitle="Abrigo de alpaca para los más vulnerables de las comunidades andinas"
         imageUrl="/programas/tejiendo-corazones/portada.jpg"
         imagePosition="object-center"
@@ -56,7 +56,7 @@ export default function TejiendoCorazonesPage() {
                 En las alturas de los Andes peruanos, los niños y adultos mayores enfrentan condiciones de vida especialmente difíciles: poco acceso a salud y educación, sumado a la dureza del frío y la altitud que agravan los problemas de salud. Esta realidad se ve intensificada por la pobreza, que afecta al <strong className="text-ink font-medium">40% de la población rural</strong>.
               </p>
               <p>
-                El Programa Tejiendo Corazones entrega a niños y adultos mayores de las comunidades alpaqueras kits que les permiten enfrentar las duras condiciones de los Andes, mejorando su calidad de vida y asegurando un futuro más digno.
+                El Programa Tejiendo Oportunidades entrega a niños y adultos mayores de las comunidades alpaqueras kits que les permiten enfrentar las duras condiciones de los Andes, mejorando su calidad de vida y asegurando un futuro más digno.
               </p>
             </div>
           </FadeUp>
@@ -96,7 +96,7 @@ export default function TejiendoCorazonesPage() {
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image
                   src="/programas/tejiendo-corazones/foto-1.jpg"
-                  alt="Kit Abrigando Corazones de Tejiendo Corazones"
+                  alt="Kit Abrigando Corazones de Tejiendo Oportunidades"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"

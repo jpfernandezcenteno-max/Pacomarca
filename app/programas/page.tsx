@@ -69,7 +69,7 @@ const programs = [
   },
   {
     num: '06',
-    title: 'Tejiendo Corazones',
+    title: 'Tejiendo Oportunidades',
     href: '/programas/tejiendo-corazones',
     stat: '8,400+ kits donados',
     statNum: '8,400+',
