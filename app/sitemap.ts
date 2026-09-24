@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/fibras/colores-puros', priority: 0.8, changeFrequency: 'monthly' },
     { url: '/blog', priority: 0.8, changeFrequency: 'weekly' },
     { url: '/contacto', priority: 0.7, changeFrequency: 'yearly' },
+    { url: '/el-quintal-del-inca', priority: 0.8, changeFrequency: 'monthly' },
   ] as const
 
   return routes.map(({ url, priority, changeFrequency }) => ({
