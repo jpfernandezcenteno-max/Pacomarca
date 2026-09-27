@@ -1,6 +1,5 @@
 'use client'
 
-import PageHeader from '@/components/PageHeader'
 import Image from 'next/image'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
@@ -12,18 +11,6 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
     <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay, ease: 'easeOut' }} className={className}>
       {children}
     </motion.div>
-  )
-}
-
-// Marcador visual para fotos pendientes (se reemplaza por la imagen real)
-function PhotoPlaceholder({ label = 'Foto', className = '' }: { label?: string; className?: string }) {
-  return (
-    <div className={`flex flex-col items-center justify-center gap-2 bg-sand/25 text-ink/40 ${className}`}>
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.3} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
-      <span className="text-[11px] tracking-[0.15em] uppercase">{label}</span>
-    </div>
   )
 }
 
@@ -41,9 +28,16 @@ const pasos = [
 ]
 
 const premios = [
-  { medal: '🥇', place: '1.er lugar', prize: 'Cabaña del pastor' },
-  { medal: '🥈', place: '2.º lugar', prize: 'Alpacas' },
-  { medal: '🥉', place: '3.er lugar', prize: 'Reproductores y herramientas' },
+  { medal: '🥇', place: '1.er lugar', prize: 'Cabaña del pastor', image: '/concurso/premio-cabana.jpg' },
+  { medal: '🥈', place: '2.º lugar', prize: 'Alpacas', image: '/concurso/premio-alpacas.jpg' },
+  { medal: '🥉', place: '3.er lugar', prize: 'Reproductores y herramientas', image: '/concurso/premio-reproductores.jpg' },
+]
+
+// Fotos de productores/ganadores (prueba social)
+const productores = [
+  '/concurso/productor-1.jpg',
+  '/concurso/productor-2.jpg',
+  '/concurso/productor-3.jpg',
 ]
 
 const faqs = [
@@ -72,13 +66,33 @@ export default function ElQuintalDelIncaPage() {
 
   return (
     <>
-      <PageHeader
-        section="El Quintal del Inca · 8.ª edición · 2026/2027"
-        title="Demuestra la calidad de tu fibra y recibe el reconocimiento que merece"
-        subtitle="Participa en el concurso nacional que evalúa la calidad de tu fibra de alpaca, compra tu lote y reconoce a los mejores productores."
-        imageUrl="/concurso/portada.jpg"
-        imagePosition="object-center"
-      />
+      {/* HERO — centrado */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-ink">
+        <Image
+          src="/concurso/hero.jpg"
+          alt="El Quintal del Inca"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-ink/60" />
+        <FadeUp className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+          <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-white/80 mb-6 font-medium">Concurso</p>
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white font-semibold leading-tight">
+            El Quintal del Inca
+          </h1>
+          <p className="text-base md:text-lg text-white/75 mt-6 max-w-2xl mx-auto leading-relaxed">
+            Demuestra la calidad de tu fibra y recibe el reconocimiento que merece.
+          </p>
+          <a
+            href="#responsables"
+            className="mt-10 inline-flex items-center gap-3 border border-white/50 text-white text-xs tracking-[0.25em] uppercase px-8 py-4 hover:bg-white hover:text-ink transition-colors duration-300"
+          >
+            Encuentra tu responsable de acopio
+          </a>
+        </FadeUp>
+      </section>
 
       {/* Barra de confianza + CTA principal */}
       <section className="bg-ink text-white">
@@ -102,10 +116,12 @@ export default function ElQuintalDelIncaPage() {
           </div>
         </FadeUp>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[0, 1, 2].map((i) => (
-            <FadeUp key={i} delay={i * 0.1}>
+          {productores.map((img, i) => (
+            <FadeUp key={img} delay={i * 0.1}>
               <div className="bg-white border border-sand/40 h-full flex flex-col">
-                <PhotoPlaceholder label="Foto del productor" className="aspect-[4/3] w-full" />
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
+                  <Image src={img} alt="Productor de El Quintal del Inca" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                </div>
                 <div className="p-6 flex flex-col flex-1">
                   <p className="font-serif text-lg text-ink">[Nombre del productor]</p>
                   <p className="text-xs tracking-[0.15em] uppercase text-gold mt-1">[Comunidad]</p>
@@ -116,7 +132,7 @@ export default function ElQuintalDelIncaPage() {
             </FadeUp>
           ))}
         </div>
-        <p className="text-center text-xs text-ink/40 mt-8">Espacios reservados para fotos y testimonios reales de ediciones anteriores.</p>
+        <p className="text-center text-xs text-ink/40 mt-8">Espacios reservados para los nombres y testimonios reales de cada productor.</p>
       </section>
 
       {/* 3. Problema + oportunidad */}
@@ -176,6 +192,18 @@ export default function ElQuintalDelIncaPage() {
         </FadeUp>
       </section>
 
+      {/* Banda del evento */}
+      <section className="relative h-[45vh] min-h-[320px] overflow-hidden">
+        <Image src="/concurso/evento.jpg" alt="El Quintal del Inca — el concurso" fill sizes="100vw" className="object-cover object-center" />
+        <div className="absolute inset-0 bg-ink/45" />
+        <div className="absolute inset-0 flex items-end">
+          <FadeUp className="max-w-7xl mx-auto w-full px-6 lg:px-8 pb-10">
+            <p className="text-xs tracking-[0.25em] uppercase text-white/80 mb-3">El concurso en acción</p>
+            <h3 className="font-serif text-2xl md:text-3xl text-white max-w-xl leading-snug">Reconociendo la calidad de la fibra de alpaca en cada edición</h3>
+          </FadeUp>
+        </div>
+      </section>
+
       {/* 5. Premios */}
       <section className="bg-ink text-white py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -188,10 +216,15 @@ export default function ElQuintalDelIncaPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {premios.map((pr, i) => (
               <FadeUp key={pr.place} delay={i * 0.1}>
-                <div className="bg-white/5 border border-white/10 p-10 text-center h-full">
-                  <div className="text-5xl mb-5">{pr.medal}</div>
-                  <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-2">{pr.place}</p>
-                  <h3 className="font-serif text-2xl text-white">{pr.prize}</h3>
+                <div className="bg-white/5 border border-white/10 h-full overflow-hidden">
+                  <div className="relative aspect-[4/3] w-full">
+                    <Image src={pr.image} alt={pr.prize} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                  </div>
+                  <div className="p-8 text-center">
+                    <div className="text-4xl mb-3">{pr.medal}</div>
+                    <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-2">{pr.place}</p>
+                    <h3 className="font-serif text-2xl text-white">{pr.prize}</h3>
+                  </div>
                 </div>
               </FadeUp>
             ))}

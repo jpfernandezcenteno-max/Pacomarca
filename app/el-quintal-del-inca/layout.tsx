@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description:
       'Demuestra la calidad de tu fibra y recibe el reconocimiento que merece. Concurso nacional de fibra de alpaca.',
     url: 'https://www.pacomarca.com/el-quintal-del-inca',
-    images: [{ url: '/concurso/portada.jpg' }],
+    images: [{ url: '/concurso/hero.jpg' }],
   },
   alternates: { canonical: 'https://www.pacomarca.com/el-quintal-del-inca' },
 }
