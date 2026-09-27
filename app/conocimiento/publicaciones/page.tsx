@@ -75,6 +75,7 @@ const otrasPub: Pub[] = [
   { title: 'Región genómica asociada a la diferencia del fenotipo de la fibra en alpacas (Vicugna pacos) Suri y Huacaya', authors: 'Pariona La Rotta, E.; Cruz Camacho, A.; Gutiérrez Reynoso, G.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
   { title: 'Detección y conteo de camélidos mediante visión por computador usando aprendizaje profundo y técnicas de seguimiento multiobjeto', authors: 'Quispe Siancas, N.; Luque Mamani, M.; Llanos Angeles, L.; Lovon Ramos, P.; Monroy Barrios, J.; Cruz Camacho, A.; Nina Choquehuayta, W.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
   { title: 'Leche de camélidos sudamericanos como insumo innovador en la gastronomía contemporánea y recurso para el desarrollo de comunidades altoandinas', authors: 'Sakugawa Ventura, L.; Martínez Véliz, M.; Martínez Véliz, V.; Yraja Nishiki, P.; Oliveri Carreras, A.; Tolosana Labarta, J.; Cermeño León, P.; Velásquez García, E.; Checca Quispe, J.; Meza Chatata, A.; Tintaya Salhua, L.M.; Huamán Yupanqui, L.; Huillcacuri, L.P.; Chura Quispe, R.; Cruz Camacho, A.; Reusche Soria, J.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
+  { title: 'Avances preliminares del proyecto “Genalpaca: análisis transcriptómico de piel para identificar marcadores de mejora genética en la fibra de alpaca”', authors: 'Jiménez Espinoza, A.K.; Pahuara Farfán, L.E.; Yucra Mendoza, A.; Cruz Camacho, L.A.; Corredor Arizapana, F.A.; Gutiérrez Reynoso, G.A.; Fagundes de Avila, F.; Paredes-Moscosso, S.R.; Fujita, R.; Villegas-Llerena, C.', source: 'III Seminario Internacional en Producción Sostenible en Camélidos Sudamericanos', year: '2024', ref: 'Lima, Perú' },
   { title: 'PACOMARCA, Alpacas: genética en blanco y negro', authors: 'Burgos, A.; Gutiérrez, J.P.; Cruz, A.; Gutiérrez, G.', source: 'Lima, Perú', year: '2023', ref: 'ISBN 978-612-49369-0-6' },
   { title: 'Genetic parameters of medullation types in alpaca fiber', authors: 'Cruz, A.; Murillo, Y.; Burgos, A.; Yucra, A.; Quispe, M.D.; Quispe, E.; Gutiérrez, J.P.', source: '74th Annual Meeting EAAP + WAAP + Interbull Congress', year: '2023', ref: 'Lyon, Francia. Abstract 41503' },
   { title: 'La genómica al rescate de la fibra de alpaca', authors: 'Gutiérrez R., G.; Cruz, A.; Wurzinger, M.; Gutiérrez, J.P.', source: 'Hominem Et Agrum', year: '2023', ref: '1(1), 25-26 — Universidad Nacional Agraria La Molina' },
@@ -137,6 +138,7 @@ const otrasFiles = [
   // Nuevas (2026, 2024) al inicio
   '/otr-40.pdf', '/otr-41.pdf', '/otr-42.pdf', '/otr-43.pdf', '/otr-44.pdf',
   '/otr-45.pdf', '/otr-46.pdf', '/otr-47.pdf',
+  '/otr-48.pdf',
   // Existentes
   '/otr-01.pdf', '/otr-02.pdf', '/otr-03.pdf', '/otr-04.pdf', '/otr-05.pdf',
   '/otr-06.pdf', '/otr-07.pdf', '/otr-08.pdf', '/otr-09.pdf', '/otr-10.pdf',
