@@ -139,7 +139,6 @@ export default function ElQuintalDelIncaPage() {
       <section className="bg-cream py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <FadeUp>
-            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">El problema + la oportunidad</p>
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-8 leading-snug">No toda la fibra tiene el mismo valor</h2>
             <blockquote className="border-l-4 border-gold pl-6 mb-6">
               <p className="font-serif text-xl text-ink/80 italic leading-relaxed">“Mi fibra es buena, pero me pagan como a cualquiera.”</p>
