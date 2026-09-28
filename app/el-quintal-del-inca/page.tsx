@@ -91,9 +91,9 @@ export default function ElQuintalDelIncaPage() {
           >
             Encuentra tu responsable de acopio
           </a>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/70">
-            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/50" /> 8.ª edición</span>
-            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/50" /> Organizado por INCA TOPS S.A. y Pacomarca desde 2012</span>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-base md:text-lg font-bold italic text-white/90">
+            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/60" /> 8.ª edición</span>
+            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/60" /> Organizado por INCA TOPS S.A. y Pacomarca desde 2012</span>
           </div>
         </FadeUp>
       </section>
