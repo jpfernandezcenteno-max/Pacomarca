@@ -91,20 +91,11 @@ export default function ElQuintalDelIncaPage() {
           >
             Encuentra tu responsable de acopio
           </a>
-        </FadeUp>
-      </section>
-
-      {/* Barra de confianza + CTA principal */}
-      <section className="bg-ink text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/75">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/70">
             <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/50" /> 8.ª edición</span>
             <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/50" /> Organizado por INCA TOPS S.A. y Pacomarca desde 2012</span>
           </div>
-          <a href="#responsables" className="shrink-0 bg-white text-ink text-xs tracking-[0.2em] uppercase px-8 py-4 hover:bg-white/85 transition-colors">
-            Encuentra tu responsable de acopio
-          </a>
-        </div>
+        </FadeUp>
       </section>
 
       {/* 2. Prueba social */}
