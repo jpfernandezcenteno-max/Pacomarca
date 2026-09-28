@@ -263,18 +263,21 @@ export default function ElQuintalDelIncaPage() {
 
       {/* 7. Bases + requisitos */}
       <section className="bg-beige py-24">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="bg-white p-10 md:p-14 text-center">
-            <FadeUp>
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="bg-white overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+            <div className="relative min-h-[280px] lg:min-h-full">
+              <Image src="/concurso/bases.jpg" alt="Participa en El Quintal del Inca" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+            </div>
+            <FadeUp className="p-10 md:p-14">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Bases y requisitos</p>
               <h2 className="font-serif text-3xl md:text-4xl text-ink mb-8 leading-snug">Todo lo que necesitas saber para participar</h2>
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 mb-10">
+              <ul className="space-y-3 mb-10">
                 {basesIncluye.map((item) => (
-                  <span key={item} className="flex items-center gap-2 text-sm text-ink/70">
+                  <li key={item} className="flex items-center gap-3 text-base text-ink/70">
                     <span className="text-gold">✔</span> {item}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
               <a
                 href="/concurso/bases-el-quintal-del-inca.pdf"
                 target="_blank"
