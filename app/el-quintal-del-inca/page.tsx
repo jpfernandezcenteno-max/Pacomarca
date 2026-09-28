@@ -110,8 +110,8 @@ export default function ElQuintalDelIncaPage() {
           {productores.map((img, i) => (
             <FadeUp key={img} delay={i * 0.1}>
               <div className="bg-white border border-sand/40 h-full flex flex-col">
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image src={img} alt="Productor de El Quintal del Inca" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <Image src={img} alt="Productor de El Quintal del Inca" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <p className="font-serif text-lg text-ink">[Nombre del productor]</p>
