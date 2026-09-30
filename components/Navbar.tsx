@@ -117,7 +117,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-baseline space-x-8">
+            <div className="hidden xl:flex items-baseline space-x-6">
               {navItems.map((item) => (
                 <div
                   key={item.label}
@@ -162,12 +162,12 @@ export default function Navbar() {
                 </div>
               ))}
 
-              <LanguageToggle className={`pl-8 ${scrolled ? 'text-ink' : 'text-white'}`} />
+              <LanguageToggle className={`pl-6 ${scrolled ? 'text-ink' : 'text-white'}`} />
             </div>
 
             {/* Mobile hamburger */}
             <button
-              className="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
+              className="xl:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Menu"
             >
