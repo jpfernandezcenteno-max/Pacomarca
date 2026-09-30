@@ -217,18 +217,16 @@ export default function ElQuintalDelIncaPage() {
           </div>
           <FadeUp>
             <div className="text-center mt-16">
-              <div className="relative inline-flex group">
-                <span aria-hidden className="cta-ring pointer-events-none absolute inset-0 bg-white/30" />
-                <a
-                  href="#responsables"
-                  className="relative z-10 inline-flex items-center gap-3 bg-white text-ink text-sm font-medium tracking-[0.2em] uppercase px-12 py-5 hover:bg-gold hover:text-white transition-colors duration-300"
-                >
-                  Encuentra tu responsable de acopio
-                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-              </div>
+              <a
+                href="#responsables"
+                className="cta-breathe group relative inline-flex items-center gap-3 overflow-hidden bg-white text-ink text-sm font-medium tracking-[0.2em] uppercase px-12 py-5 hover:bg-gold hover:text-white transition-colors duration-300"
+              >
+                <span aria-hidden className="cta-shine pointer-events-none absolute inset-0" />
+                <span className="relative z-10">Encuentra tu responsable de acopio</span>
+                <svg className="relative z-10 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
             </div>
           </FadeUp>
         </div>
