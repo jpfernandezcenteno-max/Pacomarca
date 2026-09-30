@@ -29,7 +29,7 @@ const pasos = [
 
 const premios = [
   { medal: '🥇', place: '1.er lugar', prize: 'Cabaña del pastor', detail: 'Construida en el fundo del ganador', image: '/concurso/premio-cabana.jpg' },
-  { medal: '🥈', place: '2.º lugar', prize: 'Lote de 6 alpacas', detail: '1 macho + 6 hembras', image: '/concurso/premio-alpacas.jpg' },
+  { medal: '🥈', place: '2.º lugar', prize: 'Lote de 7 alpacas', detail: '1 macho + 6 hembras', image: '/concurso/premio-alpacas.jpg' },
   { medal: '🥉', place: '3.er lugar', prize: 'Lote de 4 alpacas', detail: '1 macho + 3 hembras', image: '/concurso/premio-alpacas2.jpg' },
   { medal: '🏅', place: '4.º y 5.º lugar', prize: '1 reproductor tipo A + kit de esquila', detail: '', image: '/concurso/premio-reproductores.jpg' },
 ]
@@ -53,10 +53,12 @@ const productores = [
 ]
 
 const faqs = [
-  { q: '¿Me pagan si no gano?', a: 'Sí, la fibra aprobada es comprada según las condiciones establecidas.' },
-  { q: '¿Tiene costo participar?', a: 'No.' },
+  { q: '¿Quiénes pueden participar?', a: 'Productores de fibra de alpaca que cumplan con las condiciones del concurso.' },
+  { q: '¿Pueden participar pequeños productores?', a: 'Sí. El concurso está abierto a productores de diferentes tamaños.' },
+  { q: '¿Qué tipo de fibra puedo presentar?', a: 'Fibra Huacaya, puede ser negra o blanca.' },
+  { q: '¿Qué cantidad de fibra necesito para participar?', a: '46 kg como mínimo.' },
   { q: '¿Qué pasa si vivo lejos?', a: 'Puedes coordinar con tu responsable de zona.' },
-  { q: '¿Pueden participar pequeños productores?', a: 'Sí, cumpliendo los requisitos.' },
+  { q: '¿Me pagan si no gano?', a: 'Sí, se pagará por la fibra que se entregue para participar del concurso.' },
 ]
 
 const basesIncluye = ['Requisitos', 'Fechas', 'Categorías', 'Criterios de evaluación', 'Premios completos']
