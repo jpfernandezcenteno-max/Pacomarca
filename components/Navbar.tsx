@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import LanguageToggle from './LanguageToggle'
 
 const navItems = [
+  { label: 'El Quintal del Inca', href: '/el-quintal-del-inca' },
   {
     label: 'Ecosistema',
     href: '/ecosistema',
