@@ -33,11 +33,22 @@ const premios = [
   { medal: '🥉', place: '3.er lugar', prize: 'Reproductores y herramientas', image: '/concurso/premio-reproductores.jpg' },
 ]
 
-// Fotos de productores/ganadores (prueba social)
+// Productores/ganadores (prueba social)
 const productores = [
-  '/concurso/productor-1.jpg',
-  '/concurso/productor-2.jpg',
-  '/concurso/productor-3.jpg',
+  {
+    image: '/concurso/productor-1.jpg',
+    nombre: 'Nemesio Ticona',
+    comunidad: 'Parina · Lampa · Puno',
+    premio: 'Cabaña del pastor',
+    testimonio: 'Con la cabaña, mi familia vive mejor en el campo.',
+  },
+  {
+    image: '/concurso/productor-2.jpg',
+    nombre: 'Buenaventura Haytara',
+    comunidad: 'Phinaya · Canchis · Cusco',
+    premio: 'Cabaña del pastor',
+    testimonio: 'Este premio mejoró la vida de mi familia.',
+  },
 ]
 
 const faqs = [
@@ -106,24 +117,23 @@ export default function ElQuintalDelIncaPage() {
             <h2 className="font-serif text-3xl md:text-4xl text-ink leading-snug">Productores como tú ya demostraron la calidad de su fibra</h2>
           </div>
         </FadeUp>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {productores.map((img, i) => (
-            <FadeUp key={img} delay={i * 0.1}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {productores.map((p, i) => (
+            <FadeUp key={p.nombre} delay={i * 0.1}>
               <div className="bg-white border border-sand/40 h-full flex flex-col">
                 <div className="relative aspect-[4/5] w-full overflow-hidden">
-                  <Image src={img} alt="Productor de El Quintal del Inca" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top" />
+                  <Image src={p.image} alt={p.nombre} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <p className="font-serif text-lg text-ink">[Nombre del productor]</p>
-                  <p className="text-xs tracking-[0.15em] uppercase text-gold mt-1">[Comunidad]</p>
-                  <span className="self-start mt-3 bg-cream text-ink/70 text-xs px-3 py-1">Premio: [premio obtenido]</span>
-                  <p className="text-sm text-ink/60 leading-relaxed italic mt-4">“[Testimonio del productor sobre su experiencia en el concurso…]”</p>
+                  <p className="font-serif text-lg text-ink">{p.nombre}</p>
+                  <p className="text-xs tracking-[0.15em] uppercase text-gold mt-1">{p.comunidad}</p>
+                  <span className="self-start mt-3 bg-cream text-ink/70 text-xs px-3 py-1">Premio: {p.premio}</span>
+                  <p className="text-sm text-ink/60 leading-relaxed italic mt-4">“{p.testimonio}”</p>
                 </div>
               </div>
             </FadeUp>
           ))}
         </div>
-        <p className="text-center text-xs text-ink/40 mt-8">Espacios reservados para los nombres y testimonios reales de cada productor.</p>
       </section>
 
       {/* 3. Problema + oportunidad */}
