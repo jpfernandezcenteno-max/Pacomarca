@@ -151,7 +151,7 @@ export default function ElQuintalDelIncaPage() {
           {productores.map((p, i) => (
             <FadeUp key={p.nombre} delay={i * 0.1}>
               <div className="bg-white border border-sand/40 h-full flex flex-col">
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                <div className="relative aspect-[4/3] w-full overflow-hidden">
                   <Image src={p.image} alt={p.nombre} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
