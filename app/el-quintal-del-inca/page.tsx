@@ -165,31 +165,43 @@ export default function ElQuintalDelIncaPage() {
       </section>
 
       {/* 4. Cómo funciona */}
-      <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
-        <FadeUp>
-          <div className="text-center mb-14">
-            <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Cómo funciona</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-ink">Participar es sencillo, en 4 pasos</h2>
+      <section className="bg-ink text-white py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <FadeUp>
+            <div className="text-center mb-16">
+              <p className="text-xs tracking-[0.3em] uppercase text-white/50 mb-4">Cómo funciona</p>
+              <h2 className="font-serif text-3xl md:text-5xl text-white leading-tight">Participar es sencillo, en 4 pasos</h2>
+            </div>
+          </FadeUp>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {pasos.map((p, i) => (
+              <FadeUp key={p.n} delay={i * 0.1}>
+                <div className="group relative h-full bg-white/[0.04] border border-white/10 p-8 overflow-hidden transition-all duration-300 hover:bg-white/[0.09] hover:-translate-y-1.5 hover:border-white/25">
+                  <span className="absolute top-0 left-0 h-0.5 w-10 bg-white/40 transition-all duration-500 group-hover:w-full" />
+                  <p className="font-serif text-6xl text-white/20 transition-colors duration-300 group-hover:text-white/50">{p.n}</p>
+                  <h3 className="font-serif text-xl text-white mt-4 mb-2">{p.title}</h3>
+                  <p className="text-sm text-white/55 leading-relaxed">{p.desc}</p>
+                </div>
+              </FadeUp>
+            ))}
           </div>
-        </FadeUp>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pasos.map((p, i) => (
-            <FadeUp key={p.n} delay={i * 0.08}>
-              <div className="bg-beige p-8 h-full">
-                <p className="font-serif text-4xl text-gold/50">{p.n}</p>
-                <h3 className="font-serif text-lg text-ink mt-3 mb-2">{p.title}</h3>
-                <p className="text-sm text-ink/55 leading-relaxed">{p.desc}</p>
+          <FadeUp>
+            <div className="text-center mt-16">
+              <div className="relative inline-flex group">
+                <span aria-hidden className="cta-ring pointer-events-none absolute inset-0 bg-white/30" />
+                <a
+                  href="#responsables"
+                  className="relative z-10 inline-flex items-center gap-3 bg-white text-ink text-sm font-medium tracking-[0.2em] uppercase px-12 py-5 hover:bg-gold hover:text-white transition-colors duration-300"
+                >
+                  Encuentra tu responsable de acopio
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
-            </FadeUp>
-          ))}
+            </div>
+          </FadeUp>
         </div>
-        <FadeUp>
-          <div className="text-center mt-12">
-            <a href="#responsables" className="inline-block bg-ink text-white text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-gold transition-colors duration-300">
-              Encuentra tu responsable de acopio
-            </a>
-          </div>
-        </FadeUp>
       </section>
 
       {/* Banda del evento */}
