@@ -297,7 +297,7 @@ export default function ElQuintalDelIncaPage() {
                 <div className={`border transition-colors ${isOpen ? 'border-gold' : 'border-sand/50'}`}>
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left min-h-[92px]"
+                    className="w-full flex items-center justify-between gap-4 px-6 py-4 text-left min-h-[104px]"
                     aria-expanded={isOpen}
                   >
                     <span className="font-serif text-lg text-ink">{f.q}</span>
