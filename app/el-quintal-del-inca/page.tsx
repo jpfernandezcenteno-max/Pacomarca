@@ -28,9 +28,10 @@ const pasos = [
 ]
 
 const premios = [
-  { medal: '🥇', place: '1.er lugar', prize: 'Cabaña del pastor', image: '/concurso/premio-cabana.jpg' },
-  { medal: '🥈', place: '2.º lugar', prize: 'Alpacas', image: '/concurso/premio-alpacas.jpg' },
-  { medal: '🥉', place: '3.er lugar', prize: 'Reproductores y herramientas', image: '/concurso/premio-reproductores.jpg' },
+  { medal: '🥇', place: '1.er lugar', prize: 'Cabaña del pastor', detail: 'Construida en el fundo del ganador', image: '/concurso/premio-cabana.jpg' },
+  { medal: '🥈', place: '2.º lugar', prize: 'Lote de 6 alpacas', detail: '1 macho + 6 hembras', image: '/concurso/premio-alpacas.jpg' },
+  { medal: '🥉', place: '3.er lugar', prize: 'Lote de 4 alpacas', detail: '1 macho + 3 hembras', image: '/concurso/premio-alpacas2.jpg' },
+  { medal: '🏅', place: '4.º y 5.º lugar', prize: '1 reproductor tipo A + kit de esquila', detail: '', image: '/concurso/premio-reproductores.jpg' },
 ]
 
 // Productores/ganadores (prueba social)
@@ -225,23 +226,29 @@ export default function ElQuintalDelIncaPage() {
               <h2 className="font-serif text-3xl md:text-4xl text-white">Reconocimiento para los mejores productores</h2>
             </div>
           </FadeUp>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {premios.map((pr, i) => (
               <FadeUp key={pr.place} delay={i * 0.1}>
-                <div className="bg-white/5 border border-white/10 h-full overflow-hidden">
+                <div className="bg-white/5 border border-white/10 h-full overflow-hidden flex flex-col">
                   <div className="relative aspect-[4/3] w-full">
-                    <Image src={pr.image} alt={pr.prize} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                    <Image src={pr.image} alt={pr.prize} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" />
                   </div>
-                  <div className="p-8 text-center">
-                    <div className="text-4xl mb-3">{pr.medal}</div>
+                  <div className="p-6 text-center flex flex-col flex-1">
+                    <div className="text-3xl mb-3">{pr.medal}</div>
                     <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-2">{pr.place}</p>
-                    <h3 className="font-serif text-2xl text-white">{pr.prize}</h3>
+                    <h3 className="font-serif text-xl text-white leading-snug">{pr.prize}</h3>
+                    {pr.detail && <p className="text-sm text-white/55 mt-2">{pr.detail}</p>}
                   </div>
                 </div>
               </FadeUp>
             ))}
           </div>
-          <p className="text-center text-sm text-white/40 mt-10">Consulta el detalle completo de los premios en las bases oficiales.</p>
+          <div className="mt-12 border border-white/15 bg-white/5 px-6 py-6 max-w-3xl mx-auto text-center">
+            <p className="text-base md:text-lg font-medium text-white">
+              Todos los ganadores tendrán un <span className="italic">precio preferencial</span> para su fibra la siguiente campaña.
+            </p>
+          </div>
+          <p className="text-center text-sm text-white/40 mt-6">Consulta el detalle completo de los premios en las bases oficiales.</p>
         </div>
       </section>
 
