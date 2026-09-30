@@ -289,7 +289,7 @@ export default function ElQuintalDelIncaPage() {
             <h2 className="font-serif text-3xl md:text-4xl text-ink">Resolvemos tus dudas</h2>
           </div>
         </FadeUp>
-        <div className="grid md:grid-cols-2 gap-3 items-start">
+        <div className="grid md:grid-cols-2 gap-3">
           {faqs.map((f, i) => {
             const isOpen = openFaq === i
             return (
