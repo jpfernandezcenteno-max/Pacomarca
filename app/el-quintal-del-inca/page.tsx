@@ -102,7 +102,7 @@ function ResponsableCard({ z }: { z: (typeof zonas)[number] }) {
 }
 
 export default function ElQuintalDelIncaPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [zonaSel, setZonaSel] = useState(0)
 
   return (
@@ -289,7 +289,7 @@ export default function ElQuintalDelIncaPage() {
             <h2 className="font-serif text-3xl md:text-4xl text-ink">Resolvemos tus dudas</h2>
           </div>
         </FadeUp>
-        <div className="grid md:grid-cols-2 gap-3">
+        <div className="grid md:grid-cols-2 gap-3 items-start">
           {faqs.map((f, i) => {
             const isOpen = openFaq === i
             return (
@@ -297,7 +297,7 @@ export default function ElQuintalDelIncaPage() {
                 <div className={`border transition-colors ${isOpen ? 'border-gold' : 'border-sand/50'}`}>
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : i)}
-                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left min-h-[92px]"
                     aria-expanded={isOpen}
                   >
                     <span className="font-serif text-lg text-ink">{f.q}</span>
