@@ -282,14 +282,14 @@ export default function ElQuintalDelIncaPage() {
       </section>
 
       {/* 6. FAQ */}
-      <section className="py-24 max-w-3xl mx-auto px-6 lg:px-8">
+      <section className="py-24 max-w-5xl mx-auto px-6 lg:px-8">
         <FadeUp>
           <div className="text-center mb-12">
             <p className="text-xs tracking-[0.25em] uppercase text-gold mb-4">Preguntas frecuentes</p>
             <h2 className="font-serif text-3xl md:text-4xl text-ink">Resolvemos tus dudas</h2>
           </div>
         </FadeUp>
-        <div className="space-y-3">
+        <div className="grid md:grid-cols-2 gap-3 items-start">
           {faqs.map((f, i) => {
             const isOpen = openFaq === i
             return (
