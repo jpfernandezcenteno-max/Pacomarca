@@ -253,23 +253,18 @@ export default function ElQuintalDelIncaPage() {
             <h2 className="font-serif text-3xl md:text-4xl text-ink leading-snug">Productores como tú ya demostraron la calidad de su fibra</h2>
           </div>
         </FadeUp>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
-          <FadeUp>
-            <ProductorCard p={productores[0]} />
-          </FadeUp>
-          {/* Galería al medio */}
-          <FadeUp delay={0.1}>
-            <Galeria />
-          </FadeUp>
-          <FadeUp delay={0.2}>
-            <ProductorCard p={productores[1]} />
-          </FadeUp>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {productores.map((p, i) => (
+            <FadeUp key={p.nombre} delay={i * 0.1}>
+              <ProductorCard p={p} />
+            </FadeUp>
+          ))}
         </div>
       </section>
 
       {/* 3. Problema + oportunidad */}
       <section className="bg-cream py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
           <FadeUp>
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-8 leading-snug">No toda la fibra tiene el mismo valor</h2>
             <blockquote className="border-l-4 border-gold pl-6 mb-6">
@@ -279,7 +274,11 @@ export default function ElQuintalDelIncaPage() {
               El Quintal del Inca permite <strong className="text-ink font-medium">evaluar y reconocer la calidad</strong> de tu fibra.
             </p>
           </FadeUp>
-          <FadeUp delay={0.2}>
+          {/* Galería al medio */}
+          <FadeUp delay={0.15}>
+            <Galeria />
+          </FadeUp>
+          <FadeUp delay={0.3}>
             <div className="bg-white p-10">
               <p className="text-xs tracking-[0.25em] uppercase text-gold mb-6">Beneficios</p>
               <ul className="space-y-4">
