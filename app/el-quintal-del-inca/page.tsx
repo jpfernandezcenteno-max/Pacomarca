@@ -140,6 +140,22 @@ const productores = [
   },
 ]
 
+function ProductorCard({ p }: { p: (typeof productores)[number] }) {
+  return (
+    <div className="bg-white border border-sand/40 h-full flex flex-col">
+      <div className="relative aspect-[4/3] w-full overflow-hidden">
+        <Image src={p.image} alt={p.nombre} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover object-top" />
+      </div>
+      <div className="p-6 flex flex-col flex-1">
+        <p className="font-serif text-lg text-ink">{p.nombre}</p>
+        <p className="text-xs tracking-[0.15em] uppercase text-gold mt-1">{p.comunidad}</p>
+        <span className="self-start mt-3 bg-cream text-ink/70 text-xs px-3 py-1">Premio: {p.premio}</span>
+        <p className="text-sm text-ink/60 leading-relaxed italic mt-4">“{p.testimonio}”</p>
+      </div>
+    </div>
+  )
+}
+
 const faqs = [
   { q: '¿Quiénes pueden participar?', a: 'Productores de fibra de alpaca que cumplan con las condiciones del concurso.' },
   { q: '¿Pueden participar pequeños productores?', a: 'Sí. El concurso está abierto a productores de diferentes tamaños.' },
@@ -237,22 +253,17 @@ export default function ElQuintalDelIncaPage() {
             <h2 className="font-serif text-3xl md:text-4xl text-ink leading-snug">Productores como tú ya demostraron la calidad de su fibra</h2>
           </div>
         </FadeUp>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {productores.map((p, i) => (
-            <FadeUp key={p.nombre} delay={i * 0.1}>
-              <div className="bg-white border border-sand/40 h-full flex flex-col">
-                <div className="relative aspect-[4/3] w-full overflow-hidden">
-                  <Image src={p.image} alt={p.nombre} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top" />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <p className="font-serif text-lg text-ink">{p.nombre}</p>
-                  <p className="text-xs tracking-[0.15em] uppercase text-gold mt-1">{p.comunidad}</p>
-                  <span className="self-start mt-3 bg-cream text-ink/70 text-xs px-3 py-1">Premio: {p.premio}</span>
-                  <p className="text-sm text-ink/60 leading-relaxed italic mt-4">“{p.testimonio}”</p>
-                </div>
-              </div>
-            </FadeUp>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
+          <FadeUp>
+            <ProductorCard p={productores[0]} />
+          </FadeUp>
+          {/* Galería al medio */}
+          <FadeUp delay={0.1}>
+            <Galeria />
+          </FadeUp>
+          <FadeUp delay={0.2}>
+            <ProductorCard p={productores[1]} />
+          </FadeUp>
         </div>
       </section>
 
@@ -282,11 +293,6 @@ export default function ElQuintalDelIncaPage() {
             </div>
           </FadeUp>
         </div>
-
-        {/* Galería */}
-        <FadeUp className="mt-16 max-w-3xl mx-auto px-6 lg:px-8">
-          <Galeria />
-        </FadeUp>
       </section>
 
       {/* 4. Cómo funciona */}
