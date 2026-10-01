@@ -98,6 +98,8 @@ export default function VideoHero({ videoSrc, poster, cinemaHeightClass, cinemaF
         videoRef.current.pause()
         videoRef.current.currentTime = 0
         videoRef.current.muted = true
+        // Restaura el poster (si no, el <video> se queda en su primer frame)
+        videoRef.current.load()
       }
     }, 2200)
     window.setTimeout(() => {
@@ -119,6 +121,8 @@ export default function VideoHero({ videoSrc, poster, cinemaHeightClass, cinemaF
         videoRef.current.pause()
         videoRef.current.currentTime = 0
         videoRef.current.muted = true
+        // Restaura el poster (si no, el <video> se queda en su primer frame, que puede ser negro)
+        videoRef.current.load()
       }
     }
     const onScroll = () => {
