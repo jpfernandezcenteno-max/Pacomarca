@@ -74,7 +74,7 @@ function Galeria() {
 
   return (
     <div
-      className="relative aspect-[3/2] w-full overflow-hidden bg-cream select-none"
+      className="relative h-full min-h-[320px] w-full overflow-hidden bg-cream select-none"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -87,34 +87,18 @@ function Galeria() {
           transition={{ duration: 0.8, ease: 'easeInOut' }}
           className="absolute inset-0"
         >
-          <Image src={galeria[idx]} alt={`Galería El Quintal del Inca ${idx + 1}`} fill sizes="(max-width: 1024px) 100vw, 900px" className="object-cover" />
+          <Image src={galeria[idx]} alt={`Galería El Quintal del Inca ${idx + 1}`} fill sizes="(max-width: 1024px) 100vw, 500px" className="object-cover" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Flechas */}
-      <button
-        onClick={() => go(idx - 1)}
-        aria-label="Imagen anterior"
-        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white text-ink w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-      </button>
-      <button
-        onClick={() => go(idx + 1)}
-        aria-label="Imagen siguiente"
-        className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white text-ink w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-      </button>
-
       {/* Indicadores */}
-      <div className="absolute bottom-4 left-0 right-0 z-10 flex justify-center gap-2">
+      <div className="absolute bottom-3 left-0 right-0 z-10 flex justify-center gap-1.5">
         {galeria.map((_, i) => (
           <button
             key={i}
             onClick={() => go(i)}
             aria-label={`Ver imagen ${i + 1}`}
-            className={`h-2 rounded-full transition-all duration-300 ${i === idx ? 'w-6 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'}`}
+            className={`h-1 rounded-full transition-all duration-300 ${i === idx ? 'w-3 bg-white' : 'w-1 bg-white/50 hover:bg-white/80'}`}
           />
         ))}
       </div>
@@ -264,7 +248,7 @@ export default function ElQuintalDelIncaPage() {
 
       {/* 3. Problema + oportunidad */}
       <section className="bg-cream py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-12 items-stretch">
           <FadeUp>
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-8 leading-snug">No toda la fibra tiene el mismo valor</h2>
             <blockquote className="border-l-4 border-gold pl-6 mb-6">
@@ -275,7 +259,7 @@ export default function ElQuintalDelIncaPage() {
             </p>
           </FadeUp>
           {/* Galería al medio */}
-          <FadeUp delay={0.15}>
+          <FadeUp delay={0.15} className="h-full">
             <Galeria />
           </FadeUp>
           <FadeUp delay={0.3}>
