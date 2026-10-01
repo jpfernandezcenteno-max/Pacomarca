@@ -254,11 +254,6 @@ export default function ElQuintalDelIncaPage() {
             </FadeUp>
           ))}
         </div>
-
-        {/* Galería */}
-        <FadeUp className="mt-16 max-w-3xl mx-auto">
-          <Galeria />
-        </FadeUp>
       </section>
 
       {/* 3. Problema + oportunidad */}
@@ -287,6 +282,11 @@ export default function ElQuintalDelIncaPage() {
             </div>
           </FadeUp>
         </div>
+
+        {/* Galería */}
+        <FadeUp className="mt-16 max-w-3xl mx-auto px-6 lg:px-8">
+          <Galeria />
+        </FadeUp>
       </section>
 
       {/* 4. Cómo funciona */}
