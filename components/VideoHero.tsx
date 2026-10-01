@@ -8,11 +8,13 @@ type VideoHeroProps = {
   poster: string
   /** Altura del hero cuando el video se reproduce (proporción del video). Ej: 'h-[56.25vw]' para 16:9. */
   cinemaHeightClass: string
+  /** object-fit del video en modo reproducción. 'object-cover' (default) o 'object-contain' para verlo entero. */
+  cinemaFitClass?: string
   /** Contenido del hero (texto + CTA). Recibe `enterCinema` para el botón "Ver video". */
   children: (api: { enterCinema: () => void }) => React.ReactNode
 }
 
-export default function VideoHero({ videoSrc, poster, cinemaHeightClass, children }: VideoHeroProps) {
+export default function VideoHero({ videoSrc, poster, cinemaHeightClass, cinemaFitClass = 'object-cover', children }: VideoHeroProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
   const cinemaRef = useRef(false)
@@ -180,7 +182,7 @@ export default function VideoHero({ videoSrc, poster, cinemaHeightClass, childre
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onEnded={endTransition}
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full bg-ink ${cinema ? cinemaFitClass : 'object-cover'}`}
         >
           <source src={videoSrc} type="video/mp4" />
         </video>
