@@ -34,6 +34,22 @@ const premios = [
   { medal: '🏅', place: '4.º y 5.º lugar', prize: '1 reproductor tipo A + kit de esquila', detail: '', image: '/concurso/premio-reproductores.jpg' },
 ]
 
+function PremioCard({ pr }: { pr: (typeof premios)[number] }) {
+  return (
+    <div className="bg-white/5 border border-white/10 h-full overflow-hidden flex flex-col">
+      <div className="relative aspect-[4/3] w-full">
+        <Image src={pr.image} alt={pr.prize} fill sizes="(max-width: 640px) 85vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" />
+      </div>
+      <div className="p-6 text-center flex flex-col flex-1">
+        <div className="text-3xl mb-3">{pr.medal}</div>
+        <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-2">{pr.place}</p>
+        <h3 className="font-serif text-xl text-white leading-snug">{pr.prize}</h3>
+        {pr.detail && <p className="text-sm text-white/55 mt-2">{pr.detail}</p>}
+      </div>
+    </div>
+  )
+}
+
 // Productores/ganadores (prueba social)
 const productores = [
   {
@@ -128,7 +144,7 @@ export default function ElQuintalDelIncaPage() {
           </p>
           <a
             href="#responsables"
-            className="mt-10 inline-flex items-center gap-3 border border-white/50 text-white text-xs tracking-[0.25em] uppercase px-8 py-4 hover:bg-white hover:text-ink transition-colors duration-300"
+            className="mt-10 inline-flex items-center gap-3 border border-white/50 text-white text-[11px] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] uppercase px-6 sm:px-8 py-4 max-w-full hover:bg-white hover:text-ink transition-colors duration-300"
           >
             Encuentra tu responsable de acopio
           </a>
@@ -219,7 +235,7 @@ export default function ElQuintalDelIncaPage() {
             <div className="text-center mt-16">
               <a
                 href="#responsables"
-                className="cta-breathe group relative inline-flex items-center gap-3 overflow-hidden bg-white text-ink text-sm font-medium tracking-[0.2em] uppercase px-12 py-5 hover:bg-gold hover:text-white transition-colors duration-300"
+                className="cta-breathe group relative inline-flex items-center justify-center gap-3 overflow-hidden bg-white text-ink text-[11px] sm:text-sm font-medium tracking-[0.1em] sm:tracking-[0.2em] uppercase px-6 sm:px-12 py-4 sm:py-5 max-w-full hover:bg-gold hover:text-white transition-colors duration-300"
               >
                 <span aria-hidden className="cta-shine pointer-events-none absolute inset-0" />
                 <span className="relative z-10">Encuentra tu responsable de acopio</span>
@@ -253,20 +269,26 @@ export default function ElQuintalDelIncaPage() {
               <h2 className="font-serif text-3xl md:text-4xl text-white">Reconocimiento para los mejores productores</h2>
             </div>
           </FadeUp>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Móvil: slider horizontal (deja ver el siguiente premio) */}
+          <div className="sm:hidden">
+            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4">
+              {premios.map((pr) => (
+                <div key={pr.place} className="snap-start shrink-0 w-[85%]">
+                  <PremioCard pr={pr} />
+                </div>
+              ))}
+            </div>
+            <p className="flex items-center justify-center gap-2 text-xs tracking-[0.15em] uppercase text-white/50 mt-2">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7l-5 5 5 5M16 7l5 5-5 5" /></svg>
+              Desliza para ver todos los premios
+            </p>
+          </div>
+
+          {/* Tablet / desktop: grid */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {premios.map((pr, i) => (
               <FadeUp key={pr.place} delay={i * 0.1}>
-                <div className="bg-white/5 border border-white/10 h-full overflow-hidden flex flex-col">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image src={pr.image} alt={pr.prize} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover" />
-                  </div>
-                  <div className="p-6 text-center flex flex-col flex-1">
-                    <div className="text-3xl mb-3">{pr.medal}</div>
-                    <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-2">{pr.place}</p>
-                    <h3 className="font-serif text-xl text-white leading-snug">{pr.prize}</h3>
-                    {pr.detail && <p className="text-sm text-white/55 mt-2">{pr.detail}</p>}
-                  </div>
-                </div>
+                <PremioCard pr={pr} />
               </FadeUp>
             ))}
           </div>
@@ -338,9 +360,9 @@ export default function ElQuintalDelIncaPage() {
                 href="/concurso/bases-el-quintal-del-inca.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-ink text-white text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-gold transition-colors duration-300"
+                className="inline-flex items-center gap-3 bg-ink text-white text-[11px] sm:text-xs tracking-[0.12em] sm:tracking-[0.2em] uppercase px-6 sm:px-10 py-4 max-w-full hover:bg-gold transition-colors duration-300"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
                 Descargar bases oficiales (PDF)
               </a>
             </FadeUp>

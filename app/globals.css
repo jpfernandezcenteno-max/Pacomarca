@@ -46,6 +46,15 @@ h1, h2, h3, h4 {
     text-wrap: balance;
   }
 
+  /* Ocultar scrollbar en sliders horizontales (movil) */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Marquee por CSS (corre en el compositor, no bloquea el hilo principal) */
   .marquee-track {
     width: max-content;
