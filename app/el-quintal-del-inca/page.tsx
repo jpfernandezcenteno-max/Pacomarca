@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
+import VideoHero from '@/components/VideoHero'
 
 function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null)
@@ -123,37 +124,39 @@ export default function ElQuintalDelIncaPage() {
 
   return (
     <>
-      {/* HERO — centrado */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-ink">
-        <Image
-          src="/concurso/hero.jpg"
-          alt="El Quintal del Inca"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-ink/60" />
-        <FadeUp className="relative z-10 text-center px-6 max-w-3xl mx-auto">
-          <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-white/80 mb-6 font-medium">Concurso</p>
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white font-semibold leading-tight">
-            El Quintal del Inca
-          </h1>
-          <p className="text-base md:text-lg text-white/75 mt-6 max-w-2xl mx-auto leading-relaxed">
-            Demuestra la calidad de tu fibra y recibe el reconocimiento que merece.
-          </p>
-          <a
-            href="#responsables"
-            className="mt-10 inline-flex items-center gap-3 border border-white/50 text-white text-[11px] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] uppercase px-6 sm:px-8 py-4 max-w-full hover:bg-white hover:text-ink transition-colors duration-300"
-          >
-            Encuentra tu responsable de acopio
-          </a>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-base md:text-lg font-bold italic text-white/90">
-            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/60" /> 8.ª edición</span>
-            <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/60" /> Organizado por INCA TOPS S.A. y Pacomarca desde 2012</span>
+      {/* HERO — video con la misma funcionalidad que el home */}
+      <VideoHero videoSrc="/concurso/hero-video.mp4" poster="/concurso/hero-video-poster.jpg" cinemaHeightClass="h-[56.25vw]">
+        {({ enterCinema }) => (
+          <div className="max-w-3xl mx-auto">
+            <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-white/80 mb-6 font-medium">Concurso</p>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white font-semibold leading-tight">
+              El Quintal del Inca
+            </h1>
+            <p className="text-base md:text-lg text-white/75 mt-6 max-w-2xl mx-auto leading-relaxed">
+              Demuestra la calidad de tu fibra y recibe el reconocimiento que merece.
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button
+                onClick={enterCinema}
+                className="inline-flex items-center gap-3 border border-white/50 text-white text-[11px] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] uppercase px-6 sm:px-8 py-4 max-w-full hover:bg-white hover:text-ink transition-colors duration-300"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                Ver video
+              </button>
+              <a
+                href="#responsables"
+                className="inline-flex items-center gap-3 border border-white/50 text-white text-[11px] sm:text-xs tracking-[0.15em] sm:tracking-[0.25em] uppercase px-6 sm:px-8 py-4 max-w-full hover:bg-white hover:text-ink transition-colors duration-300"
+              >
+                Encuentra tu responsable de acopio
+              </a>
+            </div>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-base md:text-lg font-bold italic text-white/90">
+              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/60" /> 8.ª edición</span>
+              <span className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-white/60" /> Organizado por INCA TOPS S.A. y Pacomarca desde 2012</span>
+            </div>
           </div>
-        </FadeUp>
-      </section>
+        )}
+      </VideoHero>
 
       {/* 2. Prueba social */}
       <section className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
