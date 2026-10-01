@@ -2,6 +2,7 @@
 
 import React from 'react'
 import PageHeader from '@/components/PageHeader'
+import Link from 'next/link'
 import Image from 'next/image'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
@@ -33,9 +34,23 @@ type Post = {
   doi?: string
   doiUrl?: string
   authors?: string
+  href?: string
 }
 
 const posts: Post[] = [
+  {
+    id: 3,
+    date: 'Septiembre 2026',
+    category: 'Noticias · Concursos',
+    image: '/concurso/premio-cabana.jpg',
+    images: [],
+    imageStartIndex: 0,
+    imageInsertAfter: [],
+    href: '/blog/el-quintal-del-inca-2026-2027',
+    title: 'Pacomarca e Inca Tops lanzan El Quintal del Inca 2026/2027',
+    desc: 'El concurso nacional que premia la excelencia alpaquera abre su convocatoria 2026/2027, con una Cabaña del Pastor equipada y lotes de alpacas como premios centrales. Recepción de fibra hasta el 30 de abril de 2027.',
+    content: '',
+  },
   {
     id: 1,
     date: 'Marzo 2026',
@@ -267,12 +282,11 @@ export default function BlogPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl">
-              {posts.map((post, i) => (
-                <FadeUp key={post.id} delay={i * 0.1} className="h-full">
-                  <button
-                    onClick={() => setSelected(post)}
-                    className="group bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300 text-left w-full h-full flex flex-col overflow-hidden"
-                  >
+              {posts.map((post, i) => {
+                const cardClass =
+                  'group bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300 text-left w-full h-full flex flex-col overflow-hidden'
+                const inner = (
+                  <>
                     {/* Image or placeholder */}
                     {post.image ? (
                       <div className="relative h-52 w-full shrink-0">
@@ -307,9 +321,22 @@ export default function BlogPage() {
                         </svg>
                       </span>
                     </div>
-                  </button>
-                </FadeUp>
-              ))}
+                  </>
+                )
+                return (
+                  <FadeUp key={post.id} delay={i * 0.1} className="h-full">
+                    {post.href ? (
+                      <Link href={post.href} className={cardClass}>
+                        {inner}
+                      </Link>
+                    ) : (
+                      <button onClick={() => setSelected(post)} className={cardClass}>
+                        {inner}
+                      </button>
+                    )}
+                  </FadeUp>
+                )
+              })}
             </div>
           </motion.section>
         )}
