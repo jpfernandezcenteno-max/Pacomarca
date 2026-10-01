@@ -196,7 +196,7 @@ export default function ElQuintalDelIncaPage() {
   return (
     <>
       {/* HERO — video con la misma funcionalidad que el home */}
-      <VideoHero videoSrc="/concurso/hero-video.mp4" poster="/concurso/hero-video-poster.jpg" cinemaHeightClass="h-[50vw]">
+      <VideoHero videoSrc="/concurso/hero-video.mp4" poster="/concurso/hero-video-poster.jpg" cinemaHeightClass="h-[45vw]">
         {({ enterCinema }) => (
           <div className="max-w-3xl mx-auto">
             <p className="text-xs md:text-sm tracking-[0.35em] uppercase text-white/80 mb-6 font-medium">Concurso</p>
