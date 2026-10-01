@@ -734,17 +734,17 @@ export default function HomePage() {
               href: '/blog',
             },
           ].map((post, i) => (
-            <FadeUp key={post.title} delay={i * 0.1}>
-              <Link href={post.href}>
-                <div className="group overflow-hidden bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300">
-                  <div className="relative h-56 overflow-hidden">
+            <FadeUp key={post.title} delay={i * 0.1} className="h-full">
+              <Link href={post.href} className="block h-full">
+                <div className="group h-full flex flex-col overflow-hidden bg-white border border-sand/40 hover:border-gold/40 hover:shadow-lg transition-all duration-300">
+                  <div className="relative h-56 shrink-0 overflow-hidden">
                     <Image src={post.image} alt={post.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                   </div>
-                  <div className="px-6 py-3 flex items-center justify-between bg-cream">
+                  <div className="px-6 py-3 flex items-center justify-between bg-cream shrink-0">
                     <span className="text-xs tracking-[0.15em] uppercase text-gold">{post.category}</span>
                     <span className="text-xs text-ink/35">{post.date}</span>
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex-1">
                     <h3 className="font-serif text-xl text-ink mb-3 group-hover:text-gold transition-colors leading-snug">{post.title}</h3>
                     <p className="text-sm text-ink/55 leading-relaxed">{post.desc}</p>
                   </div>
