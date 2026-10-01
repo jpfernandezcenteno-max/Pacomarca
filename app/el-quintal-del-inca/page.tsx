@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import VideoHero from '@/components/VideoHero'
 
 function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -46,6 +46,77 @@ function PremioCard({ pr }: { pr: (typeof premios)[number] }) {
         <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-2">{pr.place}</p>
         <h3 className="font-serif text-xl text-white leading-snug">{pr.prize}</h3>
         {pr.detail && <p className="text-sm text-white/55 mt-2">{pr.detail}</p>}
+      </div>
+    </div>
+  )
+}
+
+// Galería del concurso (un solo cuadro que va mostrando todas las imágenes)
+const galeria = [
+  '/concurso/galeria-1.jpg',
+  '/concurso/galeria-2.jpg',
+  '/concurso/galeria-3.jpg',
+  '/concurso/galeria-4.jpg',
+  '/concurso/galeria-5.jpg',
+]
+
+function Galeria() {
+  const [idx, setIdx] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+  useEffect(() => {
+    if (paused) return
+    const t = setInterval(() => setIdx((i) => (i + 1) % galeria.length), 4000)
+    return () => clearInterval(t)
+  }, [paused])
+
+  const go = (n: number) => setIdx((n + galeria.length) % galeria.length)
+
+  return (
+    <div
+      className="relative aspect-[3/2] w-full overflow-hidden bg-cream select-none"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <AnimatePresence>
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          className="absolute inset-0"
+        >
+          <Image src={galeria[idx]} alt={`Galería El Quintal del Inca ${idx + 1}`} fill sizes="(max-width: 1024px) 100vw, 900px" className="object-cover" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Flechas */}
+      <button
+        onClick={() => go(idx - 1)}
+        aria-label="Imagen anterior"
+        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white text-ink w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <button
+        onClick={() => go(idx + 1)}
+        aria-label="Imagen siguiente"
+        className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-white text-ink w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+      </button>
+
+      {/* Indicadores */}
+      <div className="absolute bottom-4 left-0 right-0 z-10 flex justify-center gap-2">
+        {galeria.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => go(i)}
+            aria-label={`Ver imagen ${i + 1}`}
+            className={`h-2 rounded-full transition-all duration-300 ${i === idx ? 'w-6 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'}`}
+          />
+        ))}
       </div>
     </div>
   )
@@ -183,6 +254,11 @@ export default function ElQuintalDelIncaPage() {
             </FadeUp>
           ))}
         </div>
+
+        {/* Galería */}
+        <FadeUp className="mt-16 max-w-3xl mx-auto">
+          <Galeria />
+        </FadeUp>
       </section>
 
       {/* 3. Problema + oportunidad */}
