@@ -223,18 +223,18 @@ export default function Footer() {
               <Link href="/blog" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 Blog
               </Link>
-              <Link href="/politica-privacidad" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+              <a href="https://www.incatops.com/politicas-privacidad" target="_blank" rel="noopener noreferrer" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 Política de Privacidad
-              </Link>
-              <Link href="/politica-cookies" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+              </a>
+              <a href="https://www.incatops.com/politicas-cookies" target="_blank" rel="noopener noreferrer" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 Política de Cookies
-              </Link>
-              <Link href="/terminos-condiciones" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+              </a>
+              <a href="https://www.incatops.com/terminos" target="_blank" rel="noopener noreferrer" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 Términos y Condiciones
-              </Link>
-              <Link href="/terminos-condiciones-especificos" className="text-xs text-white/30 hover:text-white/60 transition-colors">
-                Términos Específicos
-              </Link>
+              </a>
+              <a href="https://www.incatops.com/es/supplieragreements" target="_blank" rel="noopener noreferrer" className="text-xs text-white/30 hover:text-white/60 transition-colors">
+                Terceros Vinculados
+              </a>
             </div>
           </div>
         </div>
