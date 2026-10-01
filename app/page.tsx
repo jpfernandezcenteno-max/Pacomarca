@@ -718,19 +718,19 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             {
+              title: 'Pacomarca e Inca Tops lanzan El Quintal del Inca 2026/2027',
+              desc: 'El concurso nacional que premia la excelencia alpaquera abre su convocatoria 2026/2027. Recepción de fibra hasta el 30 de abril de 2027.',
+              category: 'Noticias · Concursos',
+              date: 'Septiembre 2026',
+              image: '/concurso/premio-cabana.jpg',
+              href: '/blog/el-quintal-del-inca-2026-2027',
+            },
+            {
               title: 'LCA de la fibra de alpaca: ¿qué hacemos con el metano?',
               desc: 'Pacomarca y la IAEA unen fuerzas para medir y reducir las emisiones de los camélidos sudamericanos.',
               category: 'Sostenibilidad · IAEA',
               date: 'Marzo 2026',
               image: '/blog/blog-1/foto-1.jpg',
-              href: '/blog',
-            },
-            {
-              title: 'Los genes que definen el negro en la alpaca Huacaya: ASIP y MC1R',
-              desc: 'Estudio realizado en Pacomarca identifica, por primera vez, los genotipos que permiten predecir el color oscuro en la fibra.',
-              category: 'Investigación · Genómica',
-              date: 'Enero 2026',
-              image: '/blog/blog-2/foto-1.jpg',
               href: '/blog',
             },
           ].map((post, i) => (
