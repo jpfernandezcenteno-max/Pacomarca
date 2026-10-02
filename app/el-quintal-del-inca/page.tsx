@@ -114,7 +114,7 @@ const productores = [
     comunidad: 'Parina · Lampa · Puno',
     premio: 'Cabaña del pastor',
     testimonio: 'Con la cabaña, mi familia vive mejor en el campo.',
-    pos: 'object-center',
+    pos: 'object-[center_40%]',
   },
   {
     image: '/concurso/productor-2.jpg',
