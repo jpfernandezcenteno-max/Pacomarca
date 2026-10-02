@@ -248,7 +248,7 @@ export default function ElQuintalDelIncaPage() {
           <FadeUp>
             <h2 className="font-serif text-3xl md:text-4xl text-ink mb-8 leading-snug">No toda la fibra tiene el mismo valor</h2>
             <blockquote className="border-l-4 border-gold pl-6 mb-6">
-              <p className="font-serif text-xl text-ink/80 italic leading-relaxed">“Mi fibra es buena, pero me pagan como a cualquiera.”</p>
+              <p className="font-serif text-xl text-ink/80 italic leading-relaxed">“Mi fibra es buena, y el Quintal del Inca lo reconoce.”</p>
             </blockquote>
             <p className="text-base text-ink/65 leading-relaxed">
               El Quintal del Inca permite <strong className="text-ink font-medium">evaluar y reconocer la calidad</strong> de tu fibra.
